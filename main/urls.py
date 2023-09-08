@@ -2,5 +2,5 @@ from django.urls import path
 from . import views 
 # URLConf module
 urlpatterns = [
-    path('hello/', views.say_hello) # endpoint and a views function.
+    path('', views.home) # endpoint and a views function.
 ]
