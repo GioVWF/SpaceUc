@@ -21,7 +21,8 @@ class TypePage(models.Model):
     name_type_page = models.CharField(max_length=200)
 
 class User_ours(models.Model):
-    run_user = models.IntegerField(primary_key=True)
+    id_user_ours = models.AutoField(primary_key=True)
+    run_user = models.CharField(max_length=30)
     name_user = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
     username_user = models.CharField(max_length=50)
@@ -42,14 +43,14 @@ class PerIcon(models.Model):
     id_per_icon = models.AutoField(primary_key=True)
     color_icon = models.IntegerField()
     icon_id_icon = models.ForeignKey(Icon, on_delete=models.CASCADE)
-    user_run_user = models.ForeignKey(User_ours, on_delete=models.CASCADE)
+    user_ours_id_user_ours = models.ForeignKey(User_ours, on_delete=models.CASCADE)
 
 class Podium(models.Model):
     id_podio = models.AutoField(primary_key=True)
     first_place = models.CharField(max_length=50)
     second_place = models.CharField(max_length=50)
     third_place = models.CharField(max_length=50)
-    user_run_user = models.ForeignKey(User_ours, on_delete=models.CASCADE)
+    user_ours_id_user_ours = models.ForeignKey(User_ours, on_delete=models.CASCADE)
 
 class Question(models.Model):
     id_question = models.AutoField(primary_key=True)
@@ -58,7 +59,7 @@ class Question(models.Model):
     title_lesson = models.CharField(max_length=200)
     level_id_level = models.ForeignKey(Level, on_delete=models.CASCADE)
     description_lesson = models.CharField(max_length=1000)
-    user_run_user = models.ForeignKey(User_ours, on_delete=models.CASCADE)
+    user_ours_id_user_ours = models.ForeignKey(User_ours, on_delete=models.CASCADE)
 
 
 
