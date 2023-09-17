@@ -43,14 +43,14 @@ class PerIcon(models.Model):
     id_per_icon = models.AutoField(primary_key=True)
     color_icon = models.IntegerField()
     icon_id_icon = models.ForeignKey(Icon, on_delete=models.CASCADE)
-    user_ours_id_user_ours = models.ForeignKey(User_ours, on_delete=models.CASCADE)
+    user_ours_id_user_ours = models.ForeignKey(User_ours, on_delete=models.CASCADE, null=True)
 
 class Podium(models.Model):
     id_podio = models.AutoField(primary_key=True)
     first_place = models.CharField(max_length=50)
     second_place = models.CharField(max_length=50)
     third_place = models.CharField(max_length=50)
-    user_ours_id_user_ours = models.ForeignKey(User_ours, on_delete=models.CASCADE)
+    user_ours_id_user_ours = models.ForeignKey(User_ours, on_delete=models.CASCADE, null=True)
 
 class Question(models.Model):
     id_question = models.AutoField(primary_key=True)
@@ -59,7 +59,7 @@ class Question(models.Model):
     title_lesson = models.CharField(max_length=200)
     level_id_level = models.ForeignKey(Level, on_delete=models.CASCADE)
     description_lesson = models.CharField(max_length=1000)
-    user_ours_id_user_ours = models.ForeignKey(User_ours, on_delete=models.CASCADE)
+    user_ours_id_user_ours = models.ForeignKey(User_ours, on_delete=models.CASCADE, null=True)
 
 
 

@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div><H1>Bienvenido Astronauta</H1></div>
+    <div>
+        <div><h1>PREGUNTA</h1></div>
+        <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, sed? rum quis? Repellat esse minima sint soluta voluptas?</p></div>
+    </div>
+
+    <ul>
+        <li><h1 class="counter" style="color: green"></h1></li>
+        <li><button id="resetCounter" data-timer-url="{% url 'get_timer' %}" style="text-decoration: none;">RESETEAR CONTADOR</button></li>
+    </ul>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var csrfToken = "{{ csrf_token }}";
+    </script>
+    <script src="{% static 'questionTimer.js' %}"></script>
+</body>
+</html>
