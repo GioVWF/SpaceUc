@@ -37,7 +37,7 @@ $(document).ready(function(){
                 if (data.success) {
                     clearInterval(timerInterval); // Detener el intervalo al restablecer
                     timerInterval = setInterval(updateCounter, 1000); // Iniciar nuevamente
-                    console.log("Seconds: " + data.seconds);
+                    //console.log("Seconds: " + data.seconds);
                 } else {
                     alert("Error al restablecer el contador.");
                 }

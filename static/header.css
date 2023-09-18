@@ -11,19 +11,16 @@ h1 {
 }
 
 #navbar-area {    
-    position: absolute;
-    height: 0;
     width: 100%;
     justify-content: center;
 }
 
 .navbar-background {
-    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    border-top: 12vh solid rgba(216, 219, 200, 0.952);
+    border-top: 12vh solid rgba(111, 126, 159, 1);
     border-right: 2vw solid transparent;    
     border-left: 2vw solid transparent;
     border-bottom-left-radius: 50% 20%;
@@ -33,76 +30,207 @@ h1 {
 
 .navbar-logo {
     display: flex;
-    width: 30vw;
-    height: 7vh;
-    justify-content: flex-start;
-    margin-top: -12vh;
+    width: 10vw;
+    height: 10vh;
+    justify-content: center;
+    margin-top: -13vh;
+    margin-right: 0vw;
+    z-index: 3;
+}
+
+.navbar-logo-text-position{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: white;
+
+}
+
+.navbar-logo-svg-position{
+    margin-right: -5vw;
+    margin-left: 5vw;
 }
 
 .navbar-main {
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 40vw;
+    width: 90vw;
     height: 100%;
     justify-content: center;
     margin-top: -12vh;
 }
 
-.navbar-about{
+.navbar-panel{
+    position: relative;
     display: flex;
-    width: 7vw;
-    height: 12vh;
-    display: inline-block;
-    background: black;    
-    border: 1px solid black;
-    transform: skewX(22deg);
+    align-items: center;
+    justify-content: center;
+    border-top: 15vh solid rgba(77, 92, 125, 1);
+    border-left: 15vh solid transparent;
+    border-right: 15vh solid transparent;
+    height: 0;
+    width: 71vw;
+    padding: 0;
+    margin-left: -1vw;
 }
 
-.navbar-aboutButton {
-    text-align:center;
-    overflow: hidden;
-    margin-top: 3.5vh;
-    width: 100%;
+.navbar-panel-inner{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 15vh solid rgba(70, 75, 120, 1);
+    border-left: 15vh solid transparent;
+    border-right: 15vh solid transparent;
+    height: 0;
+    margin-top: -18vh;
+    width: 71vw;
+}   
+
+.navbar-panel-podium{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.navbar-podium-position {
+ margin-top: -10vh;
+}
+
+.navbar-logIn-position {
+    margin-top: -11vh;
+}
+
+.navbar-podium-text-position {
+    margin-top: -2.4vh;
+    font-size: 12px;
     color: white;
-    font-size: 18px;
-    font-weight: bolder;
 }
 
-.navbar-levels {
-    width: 7vw;
-    height: 15vh;
-    display: inline-block;
-    background: rgba(216, 219, 200, 0.952);    
-    transform: skewX(22deg);
+.navbar-panel-blackButton-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 15vh solid rgba(3, 3, 3, 1);
+    border-left: 13vh solid transparent;
+    height: 0;
+    margin-top: -9vh;
+    width: 25vw;
+    z-index: 1;
 }
 
-.navbar-levelsButton {
-    text-align:center;
-    overflow: hidden;
-    margin-top: 7vh;
-    width: 100%;
-    color: black;
-    font-size: 18px;
-    font-weight: bolder;
+.navbar-panel-blackButton-left-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 13vh solid rgba(41, 41, 41, 1);
+    border-left: 11vh solid transparent;
+    height: 0;
+    margin-top: -15vh;
+    width: 13vw;
+    margin-left: -5vw;
+    margin-right: -7vw;
+}
+
+.navbar-panel-greyButton-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 18vh solid rgba(182, 182, 182, 1);
+    border-left: 8vh solid transparent;
+    height: 0;
+    margin-top: -12vh;
+    width: 10vw;
+    margin-left: -2vw;
+    z-index: 2;
+}
+
+.navbar-panel-greyButton-left-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 16vh solid rgba(144, 144, 144, 1);
+    border-left: 7vh solid transparent;
+    margin-top: -18vh;
+    width: 10vw;
+    margin-left: -3.3vw;
+}
+
+.navbar-panel-greyButton-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 18vh solid rgba(182, 182, 182, 1);
+    border-right: 8vh solid transparent;
+    height: 0;
+    margin-top: -12vh;
+    width: 10vw;
+    margin-right: -2vw;
+    z-index: 2;
+}
+
+.navbar-panel-greyButton-right-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 16vh solid rgba(144, 144, 144, 1);
+    border-right: 7vh solid transparent;
+    margin-top: -18vh;
+    width: 10vw;
+    margin-right: -3.3vw;
+}
+
+.navbar-panel-blackButton-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 15vh solid rgba(3, 3, 3, 1);
+    border-right: 13vh solid transparent;
+    height: 0;
+    margin-top: -9vh;
+    width: 25vw;
+    z-index: 1;
+}
+
+.navbar-panel-blackButton-right-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 13vh solid rgba(41, 41, 41, 1);
+    border-right: 11vh solid transparent;
+    height: 0;
+    margin-top: -15vh;
+    width: 13vw;
+    margin-right: -5vw;
+    margin-left: -7vw;
 }
 
 .navbar-play {
     display: flex;
-    align-items: center;
+    align-items: end;
     justify-content: center;
-    border-top: 25vh solid red;
-    border-left: 5vw solid transparent;
-    border-right: 5vw solid transparent;
-    height: 0;
-    width: 15vw;
-    margin-left: -2.5vw;
-    margin-right: -2.5vw;
+    background-color: rgba(238, 21, 21, 1);
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+    height: 20vh;
+    width: 47vw;
+    margin-left: -7.5vw;
+    margin-right: -7.5vw;
+    margin-top: -5vh;
+    z-index: 3;
+}
+
+.navbar-play-inner{
+    height: 85%;
+    width: 90%;
+    background-color: rgba(130, 26, 26, 1);
+    clip-path: polygon(100% 0, 82% 95%, 75% 100%, 25% 100%, 18% 95%, 0 0);
+    margin-bottom: 1vh;
 }
 
 .navbar-playButton {
     text-align: center;
-    margin-top: -15vh;
     overflow: hidden;
     width: 100%;
     color: white;
@@ -114,57 +242,61 @@ h1 {
     cursor: pointer;
 }
 
-.navbar-home {
-    width: 7vw;
-    height: 15vh;
-    display: inline-block;
-    background: rgba(216, 219, 200, 0.952);    
-    transform: skewX(-22deg);
+.navbar-special-panel {
+    display: flex;
+    width: 5vw;
+    height: 7vh;
+    justify-content: center;
+    margin-top: -12vh;
+    margin-left: -5vh;
 }
 
-.navbar-homeButton {
-    text-align:center;
+.navbar-grey-text-position-left {
+    margin: 0;
+    margin-top: -16vh;
+    margin-left: -12vh;
+}
+
+.navbar-grey-text-position-right {
+    margin: 0;
+    margin-top: -16vh;
+    margin-right: -12vh;
+}
+
+.navbar-grey-text {
+    text-align: center;
     overflow: hidden;
-    margin-top: 7vh;
     width: 100%;
     color: black;
-    font-size: 18px;
+    font-size: 30px;
     font-weight: bolder;
 }
 
-.navbar-resources {
-    width: 7vw;
-    height: 12vh;
-    display: inline-block;
-    background: black;    
-    border: 1px solid black;
-    transform: skewX(-22deg);
-}
-
-.navbar-aboutResources {
-    text-align:center;
+.navbar-black-text {
+    text-align: center;
     overflow: hidden;
-    margin-top: 5vh;
     width: 100%;
     color: white;
-    font-size: 18px;
-    font-weight: bolder;
+    font-size: 28px;
+    font-weight: bolder;   
 }
 
-.navbar-logIn {
-    display: flex;
-    width: 30vw;
-    height: 7vh;
-    justify-content: flex-end;
+.navbar-black-text-position-right {
+    margin: 0;
     margin-top: -12vh;
+    margin-right: -18vh;
 }
 
-.navbar-loginButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 3px solid black;
-    width: 14vw;
-    height: 6vh;
-    border-radius: 20px;
+.navbar-black-text-position-left {
+    margin: 0;
+    margin-top: -12vh;
+    margin-left: -18vh;
+}
+
+.test{
+    position: absolute;
+    top: 1000px;
+    width: 100px;
+    height: 100px;
+    background-color: greenyellow;
 }
