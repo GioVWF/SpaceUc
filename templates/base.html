@@ -74,7 +74,8 @@
                                 <rect width="166" height="86" fill="#4D5C7D"/>
                                 
                                 <path d="M8 9H83.5H121.25H140.125L150 18L159 25.75V42.5V76H83.5H45.75H26.875H17.4375L12.5 71.5L8 67.625V59.25V42.5V9Z" fill="#222757"/>
-                                <text x="19" y="50" font-family="Verdana" font-size="19" fill="white"> Iniciar Sesión </text>
+                                <a href="{% url 'login_page' %}"><text x="19" y="50" font-family="Verdana" font-size="19" fill="white"> Iniciar Sesión </text></a>
+                                
                                 <circle cx="2.5" cy="83.5" r="1.5" fill="#D9D2DA"/>
                                 <circle cx="2.5" cy="2.5" r="1.5" fill="#D9D2DA"/>
                                 <circle cx="162.5" cy="2.5" r="1.5" fill="#D9D2DA"/>
@@ -126,6 +127,19 @@
             </div>
         </div>
     </nav>
+
+    <div>
+        
+        {% if user.is_authenticated %}
+
+            <h1>WENA PO {{user.username}} </h1>
+            <a href="{% url 'log_out_' %}">cerrar sesion</a>
+        {% else %}
+            
+            <h1> NO ESTAS LOGEADO </h1>
+
+        {% endif %}
+    </div>
 {% block content %}
     
    
