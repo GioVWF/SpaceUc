@@ -133,6 +133,7 @@
             {% for x in users %}
                 {% if user.username == x.run_user %}
                     {{ x.first_name_user }}
+                    <a href="{% url 'log_out_' %}">cerrar sesion</a>
                 {% endif %}
         {% endfor %}
     {% else %}
