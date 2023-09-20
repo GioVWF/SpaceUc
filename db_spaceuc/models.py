@@ -1,9 +1,16 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class FollowUp(models.Model):
     id_follow = models.AutoField(primary_key=True)
+    name_follow = models.CharField(max_length = 100, null = True)
     last_date_follow = models.DateField()
     follow_up_points = models.IntegerField()
+
+    def __str__(self):
+
+        return self.name_follow
+    
 
 class Icon(models.Model):
     id_icon = models.AutoField(primary_key=True)
@@ -23,14 +30,24 @@ class TypePage(models.Model):
 class User_ours(models.Model):
     id_user_ours = models.AutoField(primary_key=True)
     run_user = models.CharField(max_length=30)
-    name_user = models.CharField(max_length=200)
-    last_name = models.CharField(max_length=200)
-    username_user = models.CharField(max_length=50)
+ 
+    alias_user = models.CharField(max_length = 50, blank = True)
+
+    first_name_user = models.CharField(max_length=200)
+    last_name_user = models.CharField(max_length=200)
+    
     password_user = models.CharField(max_length=10)
     point_user = models.IntegerField()
     grade_user = models.CharField(max_length=10)
     user_type = models.IntegerField()
+
     follow_up_id_follow = models.ForeignKey(FollowUp, on_delete=models.CASCADE)
+
+    user =  models.OneToOneField(User, on_delete=models.CASCADE, null = True) #For designate a user of our table to a user of django table.
+
+    def __str__(self):
+
+        return self.first_name_user
 
 class Page(models.Model):
     id_page = models.AutoField(primary_key=True)

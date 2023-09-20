@@ -23,5 +23,5 @@ urlpatterns = [
     path('', include('main.urls')),
     path('level/', include('levels.urls')),
     path('__debug__/', include(debug_toolbar.urls)),
-    path('login_page/', include('users.urls')),
+    path('users/', include('users.urls')),
 ]

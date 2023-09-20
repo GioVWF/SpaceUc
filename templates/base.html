@@ -129,16 +129,17 @@
     </nav>
 
     <div>
-        
         {% if user.is_authenticated %}
+            {% for x in users %}
+                {% if user.username == x.run_user %}
+                    {{ x.first_name_user }}
+                {% endif %}
+        {% endfor %}
+    {% else %}
+        <h1>No estás logeado</h1>
+    {% endif %}
 
-            <h1>WENA PO {{user.username}} </h1>
-            <a href="{% url 'log_out_' %}">cerrar sesion</a>
-        {% else %}
-            
-            <h1> NO ESTAS LOGEADO </h1>
-
-        {% endif %}
+    
     </div>
 {% block content %}
     
