@@ -4,13 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
     <link rel="stylesheet" href="{% static 'header.css' %}">
+    {% block extrahead %}{% endblock %}
 </head>
 <body>
     <nav id="navbar-area">
         <div class="navbar-background">
             <div class="navbar-logo">
-                <div class="navbar-logo-svg-position"><svg width="204" height="79" viewBox="0 0 204 79" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div class="navbar-logo-svg-position"><svg width="190" height="79" viewBox="0 0 204 79" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="204" height="79" fill="#4D5C7D"/>
                     <rect x="6" y="9" width="192" height="61" rx="10" fill="#222757"/>
                     <text x="32" y="50" font-family="Verdana" font-size="32" fill="white"> SpaceUc </text>
@@ -21,25 +26,13 @@
                     <div class="navbar-panel-inner">
                         <div class="navbar-panel-podium">
                             <div class="navbar-podium-position">
-                                <svg width="84" height="86" viewBox="0 0 84 86" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect width="84" height="86" fill="#4D5C7D"/>
-                                    <path d="M9 10H42.5H59.25H67.625L72 14.5L76 18.25V26.5V43V76H42.5H25.75H17.375H13.1875L11 74L9 71.875V67.75V59.5V43V10Z" fill="#222757"/>
-                                    <ellipse cx="42.5" cy="40" rx="10.5" ry="22" fill="#D9D9D9"/>
-                                    <circle cx="42.5" cy="38.5" r="3.5" fill="white"/>
-                                    <circle cx="42.5" cy="38.5" r="3.5" fill="white"/>
-                                    <circle cx="42.5" cy="28.5" r="3.5" fill="white"/>
-                                    <circle cx="42.5" cy="28.5" r="3.5" fill="white"/>
-                                    <circle cx="42.5" cy="48.5" r="3.5" fill="white"/>
-                                    <circle cx="42.5" cy="48.5" r="3.5" fill="white"/>
-                                    <path d="M38 56H47V67H38V56Z" fill="#D9D9D9"/>
-                                    <path d="M22.8684 69.9158L33.4892 50.1114L40.1895 55.5982L22.8684 69.9158Z" fill="#D9D9D9"/>
-                                    <path d="M62.5283 68.8917L45.1839 54.6024L51.8753 49.1046L62.5283 68.8917Z" fill="#D9D9D9"/>
-                                    <circle cx="79.5" cy="80.5" r="1.5" fill="#D9D2DA"/>
-                                    <circle cx="79.5" cy="80.5" r="1.5" fill="#D9D2DA"/>
-                                    <circle cx="4.5" cy="80.5" r="1.5" fill="#D9D2DA"/>
-                                    <circle cx="79.5" cy="4.5" r="1.5" fill="#D9D2DA"/>
-                                    <circle cx="4.5" cy="4.5" r="1.5" fill="#D9D2DA"/>
-                                    </svg>
+                                <svg width="64" height="86" viewBox="0 0 84 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill="#4D5C7D" d="M0 0h84v86H0z"/><path d="M9 10h58.625L72 14.5l4 3.75V76H13.187L11 74l-2-2.125V10Z" fill="#222757"/>
+                                    <ellipse cx="42.5" cy="40" rx="10.5" ry="22" fill="#D9D9D9"/><circle cx="42.5" cy="38.5" r="3.5" fill="#fff"/>
+                                    <circle cx="42.5" cy="38.5" r="3.5" fill="#fff"/><circle cx="42.5" cy="28.5" r="3.5" fill="#fff"/><circle cx="42.5" cy="28.5" r="3.5" fill="#fff"/>
+                                    <circle cx="42.5" cy="48.5" r="3.5" fill="#fff"/><circle cx="42.5" cy="48.5" r="3.5" fill="#fff"/><path d="M38 56h9v11h-9V56Z" fill="#D9D9D9"/>
+                                    <path d="M22.868 69.916 33.49 50.11l6.7 5.487-17.32 14.318Zm39.66-1.024-17.344-14.29 6.691-5.497 10.653 19.787Z" fill="#D9D9D9"/><circle cx="79.5" cy="80.5" r="1.5" fill="#D9D2DA"/>
+                                    <circle cx="79.5" cy="80.5" r="1.5" fill="#D9D2DA"/><circle cx="4.5" cy="80.5" r="1.5" fill="#D9D2DA"/><circle cx="79.5" cy="4.5" r="1.5" fill="#D9D2DA"/><circle cx="4.5" cy="4.5" r="1.5" fill="#D9D2DA"/></svg>
                             </div>
                             <div class="navbar-podium-text-position">
                                 <h1>PODIO</h1>
@@ -55,9 +48,8 @@
                                 </a>
                             </div>
                         </div>
-                        
                         <a href="http://google.com" class="navbar-play">
-                            <div class="navbar-play-inner"><h1 class="navbar-playButton">JUGAR !</h1></div>
+                            <div class="navbar-play-inner"><h1 class="navbar-playButton">JUGAR!</h1></div>
                         </a>
                         <div class="navbar-panel-blackButton-right">
                             <div class="navbar-panel-greyButton-right">
@@ -70,17 +62,43 @@
                             </a>
                         </div>
                         <div class="navbar-logIn-position" >
-                            <svg width="166" height="86" viewBox="0 0 166 86" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="166" height="86" fill="#4D5C7D"/>
-                                
-                                <path d="M8 9H83.5H121.25H140.125L150 18L159 25.75V42.5V76H83.5H45.75H26.875H17.4375L12.5 71.5L8 67.625V59.25V42.5V9Z" fill="#222757"/>
-                                <a href="{% url 'login_page' %}"><text x="19" y="50" font-family="Verdana" font-size="19" fill="white"> Iniciar Sesión </text></a>
-                                
-                                <circle cx="2.5" cy="83.5" r="1.5" fill="#D9D2DA"/>
-                                <circle cx="2.5" cy="2.5" r="1.5" fill="#D9D2DA"/>
-                                <circle cx="162.5" cy="2.5" r="1.5" fill="#D9D2DA"/>
-                                <circle cx="162.5" cy="83.5" r="1.5" fill="#D9D2DA"/>
-                                </svg>
+                                    {% if user.is_authenticated %}
+                                    {% for i in users %}
+                                        {% if user.username == i.run_user %}
+
+                                        <div class="navbar-logged-user">
+                                            <div class="navbar-logger-user-name">
+                                                <h1>{{ i.first_name_user }} {{i.last_name_user}}</h1>
+                                            </div>
+                                            <div class="navbar-logged-user-icon" >
+                                                <img src="{% static 'main/img/defaultIcon.png' %}" alt="">
+                                            </div>
+                                            <div class="navbar-logger-user-points">
+                                                <p>Puntos: {{i.point_user}} <a href="{% url 'log_out_' %}">cerrar sesion</a></p> 
+                                            </div>
+                                        </div>                         
+                                        {% endif %}
+                                {% endfor %}
+                            {% else %}
+                            <div class="navbar-unLogged">
+                                <svg width="166" height="86" viewBox="0 0 166 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="166" height="86" fill="#4D5C7D"/>
+                                    
+                                    <path d="M8 9H83.5H121.25H140.125L150 18L159 25.75V42.5V76H83.5H45.75H26.875H17.4375L12.5 71.5L8 67.625V59.25V42.5V9Z" fill="#222757"/>
+    
+                                                               
+                                        <a href="{% url 'login_page' %}"><text x="19" y="50" font-family="Verdana" font-size="19" fill="white"> Iniciar Sesión </text></a>        
+                                    
+                                    
+                                    
+                                    <circle cx="2.5" cy="83.5" r="1.5" fill="#D9D2DA"/>
+                                    <circle cx="2.5" cy="2.5" r="1.5" fill="#D9D2DA"/>
+                                    <circle cx="162.5" cy="2.5" r="1.5" fill="#D9D2DA"/>
+                                    <circle cx="162.5" cy="83.5" r="1.5" fill="#D9D2DA"/>
+                                    </svg>
+                            </div>
+                            
+                                {% endif %}
                         </div>
                     </div>
                 </div>
@@ -128,20 +146,6 @@
         </div>
     </nav>
 
-    <div>
-        {% if user.is_authenticated %}
-            {% for x in users %}
-                {% if user.username == x.run_user %}
-                    {{ x.first_name_user }}
-                    <a href="{% url 'log_out_' %}">cerrar sesion</a>
-                {% endif %}
-        {% endfor %}
-    {% else %}
-        <h1>No estás logeado</h1>
-    {% endif %}
-
-    
-    </div>
 {% block content %}
     
    

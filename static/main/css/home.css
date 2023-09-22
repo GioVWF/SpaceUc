@@ -1,0 +1,82 @@
+body {
+    background-color: rgba(0, 31, 63, 1);
+    overflow: hidden;
+}
+
+.welcome-text {
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 500;
+    letter-spacing: .2rem;
+}
+
+.universe-position {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin-top: -24vh;
+}
+
+.galaxy-dashed-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 75vw;
+    height: 125vh;
+    border-radius: 50%;
+    border: 5px dashed white;
+    padding-bottom: 100px;
+}
+
+.planets-position {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.two-planets {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: -15vw;
+    gap: 6vh;
+    margin-bottom: -5vh;
+    width: 26vw;
+}
+
+.one-planet {
+    display: flex;
+    align-items: center;
+    margin-left: -11vw;
+}
+
+.about-planet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.resources-planet {
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    z-index: 1;
+    margin-right: -2vw;
+}
+
+.levels-planet {
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    z-index: 1; 
+    margin-top: -11vh;  
+    margin-right: 1vw  
+}
