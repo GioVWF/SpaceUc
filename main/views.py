@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from db_spaceuc.models import User_ours
-
+import requests
+import json
+import time 
+import schedule
 
 
 def home(request):
@@ -22,8 +25,28 @@ def navbar(request):
 
 def resources_page(request):
     users = User_ours.objects.all()
+
+     
+    API_KEY = "qE5NtN0FYG428PJE1nu4ygkCkPEQMRHV0F33lwOp"
+    url = 'https://api.nasa.gov/planetary/apod/'
+
+    params = {
+        'api_key': API_KEY,
+    }
+
+    response = requests.get(url, params=params)
+    data = response.json()
+
     context = {
         'users': users,
+        'data': data,
         
     }
     return render(request, 'resources-page.html', context)
+
+
+
+
+
+        
+    

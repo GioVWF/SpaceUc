@@ -5,6 +5,7 @@ body, html {
     height: 100%;
     background-color: rgba(0, 31, 63, 1);
     z-index: -999;
+    font-family: monospace;
 }
 
 main {

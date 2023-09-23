@@ -4,5 +4,6 @@ from main.views import *
 urlpatterns = [
     path('', home), # endpoint and a views function.
     path('navbar/', navbar ),
-    path('resources-page/', resources_page, name = 'resources_page')
+    path('resources-page/', resources_page, name = 'resources_page'),
+   
 ]
