@@ -18,3 +18,12 @@ def navbar(request):
         
     }
     return render(request, 'base.html', context)
+
+
+def resources_page(request):
+    users = User_ours.objects.all()
+    context = {
+        'users': users,
+        
+    }
+    return render(request, 'resources-page.html', context)

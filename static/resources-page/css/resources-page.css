@@ -1,0 +1,182 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: rgba(0, 31, 63, 1);
+    z-index: -999;
+}
+
+main {
+    display: flex;
+    height: 100%; 
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+#navbar-area {    
+    width: 100%;
+    justify-content: center;
+    position: fixed;
+    z-index: 999;
+}
+
+
+.box_1 {
+   
+    flex-grow: 1; 
+    position: relative;
+    z-index: 4;
+    
+}
+
+
+.svg_star_resources{
+    
+    width: 200%;
+    height: 110%;
+    z-index: -3;
+    position: absolute;
+    left: -40%;
+
+}
+
+.text_photo_control{
+    display: flex;
+    position: fixed;
+    gap: 2%; 
+    margin: 13% 0 0 13%; 
+    width: auto; 
+    height: auto; 
+}
+
+.text_resource{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    color: rgb(0, 0, 0);
+    width: 30%;
+    
+    font-size: 24px;
+}
+
+.text_resource .title_resource,.paragraph_resource{
+    margin: 0 0 10px 0;
+}
+
+
+.photo_nasa {
+    position: relative; 
+    z-index: 1;
+   
+   
+    width: auto;
+    height: auto;
+    
+
+}
+
+.svg_photo_nasa{
+    
+    width: 511px;
+    height: 552px;
+
+
+    
+}
+
+.contet_photo_nasa{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    gap: 0.3vh;
+    top: 0;
+    left: 10px;
+    right: 0px;
+    width: auto;
+    height: auto;
+}
+
+.contet_photo_nasa img{
+    
+    width: 380px;
+    height: 360px;
+    margin-top: 2%;
+
+    
+    
+}
+
+
+
+
+
+
+.box_2 {
+    
+    display: flex;
+    flex-direction: column;
+    
+    gap: 17.5vh;
+    width: 25vh; 
+   
+    
+}
+
+
+.central-galaxy{
+    width: 200%;
+   
+    position: relative;
+    margin: 0 -230px;
+    top: 10px;
+    z-index: 1;
+
+}
+
+
+.box_2_1{
+    display: flex;
+    flex-direction: row-reverse;
+    z-index: 3;
+    
+}
+
+.levels{
+    position: absolute;
+    color: rgb(0, 0, 0);
+    writing-mode: vertical-lr;
+    z-index: 100;
+    top: 88.5%;
+    left: 98%;
+    transform: scale(-1);
+    font-size: 24px;
+
+}
+
+.pointer{
+    width: 15%;
+    height: 15%;
+    position: relative;
+    top: 60%;
+    animation: pointer 2s ease-in-out infinite; /* Duración de 2 segundos y función de temporización ease-in-out */
+}
+
+@keyframes pointer {
+    0% {
+        transform: translateX(-10px); /* Mover ligeramente hacia la izquierda */
+    }
+
+    50% {
+        transform: translateX(10px); /* Mover ligeramente hacia la derecha */
+    }
+
+    100% {
+        transform: translateX(-10px); /* Volver a la posición original */
+    }
+}
+
+
+
