@@ -16,6 +16,12 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    rutInput.addEventListener('blur', function() {
+        if (rutInput.value.trim() === '') {
+            rutLabel.style.opacity = 1;
+        }
+    });
+
     // Contraseña
     const passwordInput = document.getElementById('password');
     const passwordLabel = document.getElementById('label_password');
@@ -29,6 +35,12 @@ document.addEventListener("DOMContentLoaded", function() {
         if (passwordInput.value.trim() !== '') {
             passwordLabel.style.opacity = 0;
         } else {
+            passwordLabel.style.opacity = 1;
+        }
+    });
+
+    passwordInput.addEventListener('blur', function() {
+        if (passwordInput.value.trim() === '') {
             passwordLabel.style.opacity = 1;
         }
     });
