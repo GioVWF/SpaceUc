@@ -4,10 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Expires" content="0">
-    <meta http-equiv="Last-Modified" content="0">
-    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
-    <meta http-equiv="Pragma" content="no-cache">
     <link rel="stylesheet" href="{% static 'header.css' %}">
     {% block extrahead %}{% endblock %}
 </head>
@@ -38,8 +34,8 @@
                                 <h1>PODIO</h1>
                             </div>
                         </div>
-                        <div class="navbar-panel-blackButton-left">
-                            <a href="#" class="navbar-panel-blackButton-left-inner">
+                        <div class="navbar-panel-blackButton-left"> 
+                            <a href="{% url 'about_page' %}" class="navbar-panel-blackButton-left-inner">
                                 <div class="navbar-black-text-position-left"><h1 class="navbar-black-text">Quienes <br> Somos</h1></div>
                             </a>
                             <div class="navbar-panel-greyButton-left">
@@ -53,11 +49,11 @@
                         </a>
                         <div class="navbar-panel-blackButton-right">
                             <div class="navbar-panel-greyButton-right">
-                                <a href="#" class="navbar-panel-greyButton-right-inner">
+                                <a href="{% url 'home_page'%}" class="navbar-panel-greyButton-right-inner">
                                     <div class="navbar-grey-text-position-right"><h1 class="navbar-grey-text">Home</h1></div>
                                 </a>
                             </div>
-                            <a href="#" class="navbar-panel-blackButton-right-inner" >
+                            <a href="{% url 'resources_page' %}" class="navbar-panel-blackButton-right-inner" >
                                 <div class="navbar-black-text-position-right"><h1 class="navbar-black-text">Recursos</h1></div>
                             </a>
                         </div>
@@ -65,7 +61,6 @@
                                     {% if user.is_authenticated %}
                                     {% for i in users %}
                                         {% if user.username == i.run_user %}
-
                                         <div class="navbar-logged-user">
                                             <div class="navbar-logger-user-name">
                                                 <h1>{{ i.first_name_user }} {{i.last_name_user}}</h1>
@@ -82,15 +77,9 @@
                             {% else %}
                             <div class="navbar-unLogged">
                                 <svg width="166" height="86" viewBox="0 0 166 86" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect width="166" height="86" fill="#4D5C7D"/>
-                                    
-                                    <path d="M8 9H83.5H121.25H140.125L150 18L159 25.75V42.5V76H83.5H45.75H26.875H17.4375L12.5 71.5L8 67.625V59.25V42.5V9Z" fill="#222757"/>
-    
-                                                               
-                                        <a href="{% url 'login_page' %}"><text x="19" y="50" font-family="Verdana" font-size="19" fill="white"> Iniciar Sesión </text></a>        
-                                    
-                                    
-                                    
+                                    <rect width="166" height="86" fill="#4D5C7D"/>  
+                                    <path d="M8 9H83.5H121.25H140.125L150 18L159 25.75V42.5V76H83.5H45.75H26.875H17.4375L12.5 71.5L8 67.625V59.25V42.5V9Z" fill="#222757"/>                                             
+                                        <a href="{% url 'login_page' %}"><text x="19" y="50" font-family="Verdana" font-size="19" fill="white"> Iniciar Sesión </text></a>                                                                              
                                     <circle cx="2.5" cy="83.5" r="1.5" fill="#D9D2DA"/>
                                     <circle cx="2.5" cy="2.5" r="1.5" fill="#D9D2DA"/>
                                     <circle cx="162.5" cy="2.5" r="1.5" fill="#D9D2DA"/>

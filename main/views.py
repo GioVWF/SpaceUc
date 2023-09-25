@@ -23,24 +23,30 @@ def navbar(request):
     return render(request, 'base.html', context)
 
 
+def about(request):
+    users = User_ours.objects.all()
+    context = {
+        'users': users,
+        
+    }
+    return render(request, 'about.html', context)
+
 def resources_page(request):
     users = User_ours.objects.all()
 
      
-    API_KEY = "qE5NtN0FYG428PJE1nu4ygkCkPEQMRHV0F33lwOp"
-    url = 'https://api.nasa.gov/planetary/apod/'
+    # API_KEY = "qE5NtN0FYG428PJE1nu4ygkCkPEQMRHV0F33lwOp"
+    # url = 'https://api.nasa.gov/planetary/apod/'
 
-    params = {
-        'api_key': API_KEY,
-    }
+    # params = {
+    #     'api_key': API_KEY,
+    # }
 
-    response = requests.get(url, params=params)
-    data = response.json()
+    # response = requests.get(url, params=params)
+    # data = response.json()
 
     context = {
-        'users': users,
-        'data': data,
-        
+        'users': users
     }
     return render(request, 'resources-page.html', context)
 

@@ -13,7 +13,8 @@ h1 {
 #navbar-area {    
     width: 100%;
     justify-content: center;
-    
+    position: fixed;
+    z-index: 1;
 }
 
 .navbar-background {
