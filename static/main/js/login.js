@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // Contraseña
+    // Password
     const passwordInput = document.getElementById('password');
     const passwordLabel = document.getElementById('label_password');
 
