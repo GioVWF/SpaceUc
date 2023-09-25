@@ -4,26 +4,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="{% static 'main/css/login.css' %}">
+    <script src="{% static 'main/js/login.js' %}"></script>
     <title>Login</title>
 </head>
-<body>
+<body>  
     
-    <form action="{% url 'log_in_' %}" method = "POST" name = "login_form" id = "login_form" >
-        {% csrf_token %}
-        <h1>Login lol</h1>
+    <div class = "login_background">
+        <svg width="auto" height="auto" viewBox="0 0 1628 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="1050" cy="473" r="1050" fill="#BE4646"/>
+            <circle cx="1442" cy="173" r="100" fill="#943636"/>
+            <path d="M1125.82 73.0001C1336.05 73 1331.49 210 1127.54 210C954.247 210 327.809 200 36 200L55 135.5L78 75.0001C-95.2918 75.0001 692.818 73.0001 1125.82 73.0001Z" fill="#943636"/>
+            <path d="M1295.32 962.5C1505.55 962.5 1500.99 1099.5 1297.04 1099.5C1123.75 1099.5 493.309 1092 201.5 1092L164 1038L127.5 975C127.5 975 862.318 962.5 1295.32 962.5Z" fill="#943636"/>
+            <path d="M1181.71 731C1077.1 731 1079.37 594 1180.86 594C1267.09 594 1578.8 604 1724 604L1714.55 668.5L1703.1 729C1789.33 729 1397.17 731 1181.71 731Z" fill="#943636"/>
+            <circle cx="1089" cy="419" r="100" fill="#943636"/>
+            <circle cx="268" cy="699" r="100" fill="#943636"/>
+            <path d="M1399.2 181.214C1113.68 -262.851 682.296 -465.059 669 -485.739C1061.78 -738.277 1611.64 -583.015 1897.15 -138.95C2182.67 305.115 2095.72 869.823 1702.94 1122.36C1702.94 1122.36 1684.71 625.278 1399.2 181.214Z" fill="#8D3535"/>
+            <path d="M1454 272.5C1480 267.5 1490.3 263.5 1507.57 248.503C1519.99 237.72 1529.55 224.042 1535.42 208.679C1541.29 193.316 1543.27 176.744 1541.21 160.429C1539.14 144.114 1533.08 128.561 1523.57 115.148C1514.05 101.734 1501.38 90.8736 1486.66 83.5286C1471.95 76.1836 1455.65 72.5806 1439.21 73.0389C1422.77 73.4972 1406.7 78.0025 1392.42 86.1558C1378.14 94.3091 1366.09 105.859 1357.34 119.782L1404.5 188.5L1454 272.5Z" fill="#732A2A"/>
+            <path d="M1602 614L1598.5 602.5C1674 602.5 1748 602.5 1748 602.5C1782.5 725.966 1740.24 819.456 1634.5 849C1634.5 849 1636.5 737.466 1602 614Z" fill="#732A2A"/>
+            </svg>
+            
+    </div>
+
+    
+    <main>
+
+
+        <div class = "control_form_container">
+            <svg  viewBox="0 0 800 900" fill="none" xmlns="http://www.w3.org/2000/svg" class = "svg_form_control">
+                <path d="M0 0H400H600H700L748 53.5L800 112.5V225V450V900H400H200H100L49 845.5L0 787.5V675V450V0Z" fill="#454B78"/>
+                <circle cx="691.5" cy="12.5" r="7.5" fill="#D9D2DA"/>
+                <line x1="687.624" y1="16.6707" x2="694.624" y2="8.67075" stroke="#9C9C9C"/>
+                <circle cx="785.5" cy="116.5" r="7.5" fill="#D9D2DA"/>
+                <line x1="781.624" y1="120.671" x2="788.624" y2="112.671" stroke="#9C9C9C"/>
+                <circle cx="784.5" cy="886.5" r="7.5" fill="#D9D2DA"/>
+                <line x1="780.624" y1="890.671" x2="787.624" y2="882.671" stroke="#9C9C9C"/>
+                <circle cx="107.5" cy="884.5" r="7.5" fill="#D9D2DA"/>
+                <line x1="103.624" y1="888.671" x2="110.624" y2="880.671" stroke="#9C9C9C"/>
+                <circle cx="14.5" cy="778.5" r="7.5" fill="#D9D2DA"/>
+                <line x1="10.6237" y1="782.671" x2="17.6237" y2="774.671" stroke="#9C9C9C"/>
+                <circle cx="14.5" cy="12.5" r="7.5" fill="#D9D2DA"/>
+                <line x1="10.6237" y1="16.6707" x2="17.6237" y2="8.67075" stroke="#9C9C9C"/>
+                <path d="M111.5 113.5L152.25 66H233.5H396H721V441V628.5V722.25V769.125L701 792L680.375 816H639.75H558.5H396H71V441V253.5V159.75L111.5 113.5Z" fill="#6F7E9F"/>
+                </svg>
+
+                <form action="{% url 'log_in_' %}" method = "POST" name = "login_form" id = "login_form" class = "login_content">
+                    {% csrf_token %}
+                    <h1>Bienvenido Astronauta</h1>
+                    <h1>Inicia sesion</h1>
+                    
+                    <div class = "input_div">
+                        <label for="rut" id="label_rut"> Rut </label>
+                        <input type="text" name="rut" id="rut">
+                    </div>
+            
+                    <div class = "input_div">
+                        <label for="password" id="label_password"> Contraseña </label>
+                        <input type="password" name="password" id="password">
+                    </div>
+
+                    
+                    <a href="">Olvidaste tu contraseña?</a>
+                    
+            
+                    <button type= "submit"  class = "control_button">
+                        <svg width="120" height="110" viewBox="0 0 120 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0H60H90L105 14.2788L120 27.5V55V110H60H30H15L7.24138 103.125L0 96.25V82.5V55V0Z" fill="#E86030"/>
+                            <path d="M5 5H60H87.5L101.25 17.9808L115 30V55V105H60H32.5H18.75L11.6379 98.75L5 92.5V80V55V5Z" fill="#984223"/>
+                            <rect x="20" y="49" width="79" height="12" fill="#D9D9D9"/>
+                            <rect x="20" y="73" width="23" height="12" transform="rotate(-90 20 73)" fill="#D9D9D9"/>
+                            <rect x="35" y="68" width="19" height="12" transform="rotate(-90 35 68)" fill="#D9D9D9"/>
+                            <rect x="87" y="72" width="35" height="12" transform="rotate(-90 87 72)" fill="#D9D9D9"/>
+                            <rect x="69" y="37" width="28.4515" height="12" fill="#D9D9D9"/>
+                            <rect x="70" y="60" width="28.4515" height="12" fill="#D9D9D9"/>
+                            </svg>
+                            
+                    </button>
+                </form>
+        </div>
         
-        <div>
-            <label for="rut"> Rut </label>
-            <input type="text" name="rut" id="rut">
-        </div>
+      
+           
+    
+            
+      
+       
+        
 
-        <div>
-            <label for="password"> Contraseña </label>
-            <input type="password" name="password" id="password">
-        </div>
-
-        <button type= "submit" > Log in </button>
-    </form>
+    </main>
+    
 
     
 </body>
