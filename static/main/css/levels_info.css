@@ -1,0 +1,159 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: rgba(0, 31, 63, 1);
+    font-family: monospace;
+    overflow: hidden;
+}
+
+#navbar-area {
+    z-index: 2;
+}
+
+main {
+    display: flex;
+    height: 100%; 
+    width: 100%;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.box_1 {
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 100vh;
+    width: 19vw;
+    margin-right: -7vw;
+}
+
+.central_galaxy {
+    width: 100vw;
+    height: 100vh;
+}
+
+.box_2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    position: relative;
+    height: 100vh;
+    width: 14vw;
+}
+
+.about_box {
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    z-index: 1;
+}
+
+.about_planet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.svg_about_planet {
+    width: 30vw;
+    height: 30vh;
+}
+
+.svg_about_pointer {
+    height: 5vh;
+    width: 5vw;
+    animation:aboutUpAndDown 2s ease-in-out infinite;
+}
+
+@keyframes aboutUpAndDown {
+    0%{
+        transform: translateY(10px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+.about_pointer {
+    display: flex;
+    justify-content: center;
+}
+
+.resources_box {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.resources_pointer {
+    display: flex;
+    justify-content: center;
+    z-index: 0;
+}
+
+.svg_resources_pointer {
+    height: 5vh;
+    width: 5vw;      
+    animation: resourcesUpAndDown 2s ease-in-out infinite;  
+}
+
+@keyframes resourcesUpAndDown {
+    0%{
+        transform: translateY(-10px);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+.svg_resources_planet {
+    height: 25vh;
+    width: 25vw;
+}
+
+.resources_planet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box_3 {
+    position: relative;
+    height: 100vh;
+    width: 70vw;
+}
+
+.svg_yellow_planet {
+    width: 85vw;
+    height: 110vh;
+    margin-left: -14vw;
+}
+
+.levels_content {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    top: 26vh;
+    width: 37vw;
+    right: 15vw;
+    font-size: 24px;
+}
+
+.levels_content .text_levels,.paragraph_levels {
+    margin: 0 0 10px 0;
+}
+
+

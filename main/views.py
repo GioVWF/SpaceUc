@@ -31,6 +31,14 @@ def about(request):
     }
     return render(request, 'about.html', context)
 
+def levels_info(request):
+    users = User_ours.objects.all()
+    context = {
+        'users': users,
+        
+    }
+    return render(request, 'levels-info.html', context)
+
 def resources_page(request):
     users = User_ours.objects.all()
 
