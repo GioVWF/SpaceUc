@@ -78,10 +78,32 @@ def register_student_(request):
     return redirect(login_page)
 
    
- 
+#--------------------------------------------------------------------------------------------------------------------------------------
+
+def profile_page(request):
+    users = User_ours.objects.all()
+    context = {
+        'users': users,
+        
+    }
+    return render(request, 'profile-page.html',context)
+
+def update_profileStudent_(request):
+
+    id_student_form = request.POST['id_student']
+    name_student_form = request.POST['name_student']
+    last_name_form = request.POST['last_name'] 
+    alias_user_pref = request.POST['username']
     
 
-   
+    get_user_ours = User_ours.objects.get(id_user_ours = id_student_form)
+
+    get_user_ours.first_name_user = name_student_form
+    get_user_ours.last_name_user = last_name_form
+    get_user_ours.alias_user = alias_user_pref
+    get_user_ours.save()
+
+    return redirect(profile_page)
     
     
    

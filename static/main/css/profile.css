@@ -1,0 +1,207 @@
+html{
+    overflow: hidden;
+    background-color: #001F3F;
+    z-index: -3;
+    font-family: monospace;
+}
+
+main{
+    width: 100%;
+    height: 100vh;
+    
+}
+
+
+.profile_background{
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    width: 120%;
+    height: 100%;
+}
+
+/*father*/
+.container_profile{
+    position: relative;
+    display: flex;
+    width: 70%;
+    height: 75%;
+    top: 20vh;
+    left: 10vh;
+    align-items: center;
+    color: white;
+    
+}
+
+
+
+.svg_profile{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+/*First son*/
+.container_photo{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: 100%;
+    
+}
+
+.svg_photo{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 100%;
+    
+}
+
+/*Second son*/
+.container_form{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 100%;
+}
+
+.profile_form{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    
+    width: 90%;
+    height: 90%;
+    justify-content: center;
+    margin-top: -10vh;
+   
+}
+
+.profile_form h1{
+    text-align: center;
+   
+}
+
+.container_full_name{
+    display: flex;
+    gap: 7vh;
+    justify-content: center;
+    margin-right: 5vh;
+    margin-left: 5vh;
+}
+
+.input_full_name{
+    display: flex;
+    flex-direction: column;
+    width: 140%;
+}
+
+.username_control{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 8vh;
+}
+
+.button_control{
+    width: auto;
+    height: auto;
+    position: absolute;
+    display: flex;
+    bottom: -24vh;
+    right: -65vh;
+    z-index: 3;
+    
+}
+
+.button_control p{
+    position: relative;
+    color: white;
+    font-size: x-large;
+    z-index: 4;
+    top: -15vh;
+    
+    
+}
+
+.btn_form_save{
+    width: 60%;
+    position: relative;
+    left: 8vh;
+    
+
+}
+
+.text_save{
+    position: relative;
+    width: auto;
+    height: auto;
+    left: 13.5vh;
+    bottom: .5vh;
+    
+}
+
+.btn_form_discard{
+    width: 60%;
+    position: relative;
+    
+
+}
+
+.text_discard{
+    position: relative;
+    width: auto;
+    height: auto;
+    left: 4.5vh;
+    bottom: .5vh;
+}
+
+button{
+    all: unset;
+}
+
+
+
+form input{
+    position: relative;
+    background-color: #4D5C7D; 
+    border-radius: 1.5vh; 
+    width: 100%;
+    height: 5vh;
+    color: white; 
+    border: none;
+    padding: 5px; 
+    font-size: 16px; 
+    transition: 0.2s;
+   
+ 
+    
+    
+}
+
+input:focus {
+    outline: none; 
+    background-color: #657a9d;  
+    
+}
+
+label{
+
+    font-size: large;
+    padding: 5px;
+    
+    
+    
+
+
+}
+
