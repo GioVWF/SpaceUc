@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'main/css/podium.css' %}">
+{% endblock %}
+
+{% block content %}
+
+
+   
+
+<svg  viewBox="0 0 1920 951" fill="none" xmlns="http://www.w3.org/2000/svg" class = "svg_backgraund_podium">
+    <circle cx="953" cy="525" r="525" fill="#101C59"/>
+    <ellipse cx="953.5" cy="502.5" rx="1618.5" ry="357.5" fill="#101C59"/>
+    <circle cx="953" cy="525" r="500" fill="#83618B"/>
+    <ellipse cx="948.5" cy="504" rx="1745.5" ry="319" fill="#83618B"/>
+    <circle cx="958" cy="525" r="475" fill="#8E1C45"/>
+    <ellipse cx="959" cy="504.5" rx="1533" ry="298.5" fill="#8E1C45"/>
+     <circle cx="959" cy="525" r="450" fill="#FF5757"/>
+    <ellipse cx="982" cy="506" rx="1510" ry="272" fill="#FF5757"/>
+    <circle cx="960" cy="520" r="425" fill="#DB927B"/>
+    <ellipse cx="977.5" cy="507.5" rx="1466.5" ry="248.5" fill="#DB927B"/>
+    <circle cx="960" cy="520" r="400" fill="#FFF9DA"/>
+     <ellipse cx="976.5" cy="505.5" rx="1419.5" ry="230.5" fill="#FFF9DA"/>
+    <circle cx="960" cy="520" r="375" fill="#FFFEF9"/>
+    <ellipse cx="972" cy="505" rx="1378" ry="173" fill="#FFFEF9"/>
+    <circle cx="960" cy="520" r="349.5" fill="#0D061C" stroke="black"/>
+    <circle cx="958" cy="520" r="339.5" stroke="#FFFCEA"/>
+    <circle cx="958" cy="520" r="250" fill="#05000F"/>
+    <ellipse cx="1193.5" cy="327.5" rx="41.5" ry="40.5" fill="#0D061C"/>
+    <ellipse cx="950.088" cy="189.643" rx="22.9741" ry="16.4845" transform="rotate(0.396065 950.088 189.643)" fill="#0D061C"/>
+     <ellipse cx="925.088" cy="191.643" rx="22.9741" ry="16.4845" transform="rotate(0.396065 925.088 191.643)" fill="#070016"/>
+    <ellipse cx="902.088" cy="196.643" rx="22.9741" ry="16.4845" transform="rotate(0.396065 902.088 196.643)" fill="#0D061C"/>
+    <ellipse cx="879.088" cy="201.643" rx="22.9741" ry="16.4845" transform="rotate(0.396065 879.088 201.643)" fill="#0D061C"/>
+    <ellipse cx="629.734" cy="500.181" rx="22.9741" ry="16.4845" transform="rotate(-81.4006 629.734 500.181)" fill="#0D061C"/>
+    <ellipse cx="629.734" cy="520.181" rx="22.9741" ry="16.4845" transform="rotate(-81.4006 629.734 520.181)" fill="#0D061C"/>
+</svg>
+        
+
+    
+<main>
+    
+    <svg viewBox="0 0 670 643" fill="none" xmlns="http://www.w3.org/2000/svg" class = "svg_positions_podium">
+        <rect x="277" width="113" height="643" fill="#FFE13E"/>
+        <rect x="290" y="9" width="90" height="634" fill="#FFF1A4"/>
+        <rect x="235" y="491" width="200" height="152" fill="#6F7E9F"/>
+        <rect x="247" y="503" width="180" height="128" fill="#464B78"/>
+        <rect x="509" y="163" width="114" height="480" fill="#C0C0C0"/>
+        <rect x="524" y="175" width="84" height="468" fill="#EBEBEB"/>
+        <rect x="44" y="326" width="113" height="317" fill="#907142"/>
+        <rect x="59" y="339" width="83" height="304" fill="#ADA18E"/>
+        <rect x="470" y="491" width="200" height="152" fill="#6F7E9F"/>
+        <rect y="491" width="200" height="152" fill="#6F7E9F"/>
+        <rect x="482" y="503" width="180" height="128" fill="#464B78"/>
+        <rect x="8" y="503" width="180" height="128" fill="#464B78"/>
+        <path d="M570 512L583.505 548.495L620 562L583.505 575.505L570 612L556.495 575.505L520 562L556.495 548.495L570 512Z" fill="#C0C0C0"/>
+        <path d="M570 522L580.804 551.196L610 562L580.804 572.804L570 602L559.196 572.804L530 562L559.196 551.196L570 522Z" fill="#EBEBEB"/>
+        <path d="M333 515L344.226 549.549H380.553L351.164 570.902L362.389 605.451L333 584.098L303.611 605.451L314.836 570.902L285.447 549.549H321.774L333 515Z" fill="#FFE13E"/>
+        <path d="M333 525L341.981 552.639H371.042L347.531 569.721L356.511 597.361L333 580.279L309.489 597.361L318.469 569.721L294.958 552.639H324.019L333 525Z" fill="#FFF1A4"/>
+        <path d="M98 517L114.54 557.451L141.301 592L98 586.098L54.6987 592L81.4604 557.451L98 517Z" fill="#917142"/>
+        <path d="M98 527L111.232 559.361L132.641 587L98 582.279L63.359 587L84.7683 559.361L98 527Z" fill="#ADA18E"/>
+    </svg>
+
+    
+    <div class = "text_podium">
+        <h1>Podio</h1>
+        <div class = "control_text_user">
+            {% for x in first_places %}
+            <div class="text_user_podium{% if forloop.counter == 1 %}_middle{% elif forloop.counter == 2 %}_right{% endif %}">
+                <h2>{{x.alias_user}} </h2>
+                <p>{{x.point_user}}pts </p>
+            </div>
+            
+        {% endfor %}
+        </div>
+    </div>
+        
+
+</main>
+
+
+{%  endblock %}

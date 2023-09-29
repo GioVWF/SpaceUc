@@ -1,0 +1,134 @@
+html{
+    overflow: hidden;
+    background-color: #001F3F;
+    z-index: -2;
+    font-family: monospace;
+}
+
+main{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.svg_backgraund_podium{
+    
+        position: absolute;
+        z-index: -1;
+        
+       
+        width: 100%;
+        height: 90%;
+        bottom: 0;
+        left: 0;
+}
+
+.svg_positions_podium{
+    position: relative;
+    z-index: -1;
+        
+       
+    width: 31%;
+
+    bottom: 0;
+    left: 0;
+}
+
+.text_podium{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 17vh;
+    align-items: center;
+    width: 30%;
+    
+}
+
+.text_podium h1{
+    color: rgb(0, 0, 0);
+    font-size: 50px;
+    
+}
+
+.text_podium h2{
+    font-weight: 100;
+    margin-bottom: 20px;
+    
+}
+
+.text_podium p{
+    font-weight: 100;
+    margin-top: 1vh;
+    font-size: x-large;
+    
+}
+.control_text_user{
+    display: flex;
+    gap: 115px;
+}
+
+.text_user_podium{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    order: 0;
+    width: 100%;
+    position: relative;
+    top: 300px;
+    text-align: center;
+    
+}
+
+.text_user_podium p{
+    color: black;
+    
+}
+
+
+
+.text_user_podium_middle {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    order: 1;
+    width: 100%;
+    position: relative;
+    top: 20px;
+    text-align: center;
+}
+
+.text_user_podium_middle p {
+    
+    color: black;
+}
+
+.text_user_podium_right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    float: right;
+    order: 2;
+    width: 100%;
+    position: relative;
+    top: 170px;
+    right: 4px;
+    text-align: center;
+    
+}
+
+.text_user_podium_right p{
+    color: black;
+}
+

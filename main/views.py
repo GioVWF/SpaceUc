@@ -58,6 +58,17 @@ def resources_page(request):
     }
     return render(request, 'resources-page.html', context)
 
+def podium(request):
+
+    users = User_ours.objects.all()
+    first_palces = User_ours.objects.all().order_by('-point_user')[:3]
+
+    context = {
+        'first_places' : first_palces,
+        'users': users,
+    }
+
+    return render(request, 'podium.html', context)
 
 
 

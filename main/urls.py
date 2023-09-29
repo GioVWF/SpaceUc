@@ -6,5 +6,6 @@ urlpatterns = [
     path('navbar/', navbar ),
     path('resources-page/', resources_page, name = 'resources_page'),
     path('about-page/', about, name='about_page'),
-    path('levels-info/', levels_info, name="levels_info")
+    path('levels-info/', levels_info, name="levels_info"),
+    path('podium/', podium, name="podium"),
 ]
