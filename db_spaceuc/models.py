@@ -13,10 +13,15 @@ class FollowUp(models.Model):
     
 
 class Icon(models.Model):
-    id_icon = models.AutoField(primary_key=True)
-    name_icon = models.IntegerField()
-    svg_icon = models.BinaryField()
+    id_icon = models.AutoField(primary_key = True)
+    name_icon = models.CharField(max_length = 100)
+    svg_icon = models.TextField()
     type_icon = models.IntegerField()
+
+    def __str__(self):
+
+        return self.name_icon
+    
 
 class Level(models.Model):
     id_level = models.AutoField(primary_key=True)

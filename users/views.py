@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from main.views import home
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
-from db_spaceuc.models import User_ours, FollowUp
+from db_spaceuc.models import User_ours, FollowUp, Icon, PerIcon
 from datetime import datetime
 # Create your views here.
 
@@ -104,7 +104,22 @@ def update_profileStudent_(request):
     get_user_ours.save()
 
     return redirect(profile_page)
-    
+
+
+#--------------------------------------------------------------------------------------------------------------------------------------
+
+def custom_profile(request):
+    icon = Icon.objects.all()
+    perIcon = PerIcon.objects.all()
+    users = User_ours.objects.all()
+
+    context = {
+        'icon' : icon,
+        'perIcon': perIcon,
+        'users': users,
+    }
+
+    return render(request, 'custom-profile.html', context)
     
    
     
