@@ -1,3 +1,8 @@
+:root {
+    --accordion-bg: #222757;
+    --accordion-light-bg: #4D5C7D;
+}
+
 body, html {
     margin: 0;
     padding: 0;
@@ -6,6 +11,8 @@ body, html {
     font-family: monospace;
     overflow: hidden;
 }
+
+
 
 #navbar-area {
     z-index: 2;
@@ -154,6 +161,22 @@ main {
 
 .levels_content .text_levels,.paragraph_levels {
     margin: 0 0 10px 0;
+}
+
+.accordion a {
+    color: var(--accordion-light-bg);
+}
+
+.svg_accordion {
+    color: var(--accordion-bg);
+}
+
+.svg_paragraph {
+    color: white;
+    font-size: 20px;
+    opacity: 100%;
+    font-weight: 300;
+    text-align: start;
 }
 
 

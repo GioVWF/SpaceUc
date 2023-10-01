@@ -168,14 +168,129 @@
         <div class="levels_content">
             <h1 class="text_levels">Niveles</h1>
             <p class="paragraph_levels">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas officiis enim voluptate quidem numquam deleniti ea dignissimos exercitationem, repudiandae voluptatem modi illum nihil accusamus nisi, assumenda illo repellendus laboriosam omnis.</p>
-        
+    
             <!-- accordion -->
         
+            <div class="accordion">
+                <svg width="822" height="407" viewBox="0 0 822 407" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg_accordion">
+                    <path d="M0 0H411H616.5H719.25H770.625L795.5 25.5L822 50.875V101.75V203.5V407H411H205.5H102.75H51.375L25.5 382L0 356.125V305.25V203.5V0Z" fill="#454B78"/>
+                    <path d="M90.6685 64.3433L137.625 43H231.25H418.5H793V211.5V295.75V337.875V358.938L769.954 369.216L746.188 380H699.375H605.75H418.5H44V211.5V127.25V85.125L90.6685 64.3433Z" fill="#6F7E9F"/>
+                    <path d="M185 71H477.5H623.75H696.875L735 109.108L770 141.5V212V353H477.5H331.25H258.125H221.562L202.5 334.899L185 317.75V282.5V212V71Z" fill="currentColor"/>
+                    <a id="accordionBtn2">
+                            <rect id="myBtn2" x="76" y="117" width="109" height="46" fill="currentColor"/>
+                            <text x="85" y="147" font-family="monospace" font-size="20" font-weight="300" fill="black">Nivel 2</text>
+                    </a>
+                    <a id="accordionBtn5">
+                        <path id="myBtn5" d="M76 254H185V305H130.5H103.25H89.625L82.238 301.452L76 298.625V292.25V279.5V254Z" fill="currentColor"/>
+                        <text x="85" y="289" font-family="monospace" font-size="20" font-weight="300" fill="black">Nivel 5</text>
+                    </a>
+                    <a id="accordionBtn1">
+                        <path id="myBtn1" style="color: #222757;" d="M82.3188 76.8627L89.625 71H103.25H130.5H185V117H76V94V82.5L82.3188 76.8627Z" fill="currentColor"/>
+                        <text x="85" y="101" font-family="monospace" font-size="20" font-weight="300" fill="black">Nivel 1</text>
+
+                        <text id="myTitle" x="220" y="120" font-family="monospace" font-size="32" font-weight="900" fill="white">Nivel 1</text>
+                        <foreignObject id="myParagraph" x="220" y="120" width="9cm" height="5cm"><p class="svg_paragraph">Contenido Nivel 1</p></foreignObject>
+                    </a>
+                    <circle cx="13.5" cy="12.5" r="7.5" fill="#D9D2DA"/>
+                    <line x1="9.62371" y1="16.6707" x2="16.6237" y2="8.67075" stroke="#9C9C9C"/>
+                    <circle cx="762.5" cy="11.5" r="7.5" fill="#D9D2DA"/>
+                    <line x1="758.624" y1="15.6707" x2="765.624" y2="7.67075" stroke="#9C9C9C"/>
+                    <circle cx="810.5" cy="58.5" r="7.5" fill="#D9D2DA"/>
+                    <line x1="806.624" y1="62.6707" x2="813.624" y2="54.6707" stroke="#9C9C9C"/>
+                    <circle cx="806.5" cy="391.5" r="7.5" fill="#D9D2DA"/>
+                    <line x1="802.624" y1="395.671" x2="809.624" y2="387.671" stroke="#9C9C9C"/>
+                    <circle cx="60.5" cy="391.5" r="7.5" fill="#D9D2DA"/>
+                    <line x1="56.6237" y1="395.671" x2="63.6237" y2="387.671" stroke="#9C9C9C"/>
+                    <circle cx="13.5" cy="345.5" r="7.5" fill="#D9D2DA"/>
+                    <line x1="9.62371" y1="349.671" x2="16.6237" y2="341.671" stroke="#9C9C9C"/>
+                    <a id="accordionBtn4">
+                        <rect id="myBtn4" x="76" y="209" width="109" height="46" fill="currentColor"/>
+                        <text x="85" y="239" font-family="monospace" font-size="20" font-weight="300" fill="black">Nivel 4</text>
+                    </a>
+                    <a id="accordionBtn3">
+                        <rect id="myBtn3"  x="76" y="163" width="109" height="46" fill="currentColor"/>
+                        <text x="85" y="193" font-family="monospace" font-size="20" font-weight="300" fill="black">Nivel 3</text>
+                    </a>
+                    </svg>
+            </div>
+
         </div>
         <div class="animated">
             <!-- svg animation -->
         </div>
     </div>
 </main>
+
+<script>
+    var accordionBtn1 = document.getElementById('accordionBtn1');
+    var accordionBtn2 = document.getElementById('accordionBtn2');
+    var accordionBtn3 = document.getElementById('accordionBtn3');
+    var accordionBtn4 = document.getElementById('accordionBtn4');
+    var accordionBtn5 = document.getElementById('accordionBtn5');
+    var title = document.getElementById('myTitle');
+    var paragraph = document.getElementById('myParagraph');
+
+    accordionBtn1.addEventListener('click', function(){
+       accordionBtn1.querySelector('#myBtn1').style.color= '#222757';
+       accordionBtn2.querySelector('#myBtn2').style.color= '#4D5C7D';
+       accordionBtn3.querySelector('#myBtn3').style.color= '#4D5C7D';
+       accordionBtn4.querySelector('#myBtn4').style.color= '#4D5C7D';
+       accordionBtn5.querySelector('#myBtn5').style.color= '#4D5C7D';
+
+       title.textContent = 'Nivel 1';
+       paragraph.textContent = 'Contenido Nivel 1';
+       paragraph.classList.add('svg_paragraph');
+    });
+
+    accordionBtn2.addEventListener('click', function(){
+       accordionBtn1.querySelector('#myBtn1').style.color= '#4D5C7D';
+       accordionBtn2.querySelector('#myBtn2').style.color= '#222757';
+       accordionBtn3.querySelector('#myBtn3').style.color= '#4D5C7D';
+       accordionBtn4.querySelector('#myBtn4').style.color= '#4D5C7D';
+       accordionBtn5.querySelector('#myBtn5').style.color= '#4D5C7D';
+
+       title.textContent = 'Nivel 2';
+       paragraph.textContent = 'Contenido Nivel 2';
+       paragraph.classList.add('svg_paragraph');
+    });
+
+    accordionBtn3.addEventListener('click', function(){
+       accordionBtn1.querySelector('#myBtn1').style.color= '#4D5C7D';
+       accordionBtn2.querySelector('#myBtn2').style.color= '#4D5C7D';
+       accordionBtn3.querySelector('#myBtn3').style.color= '#222757';
+       accordionBtn4.querySelector('#myBtn4').style.color= '#4D5C7D';
+       accordionBtn5.querySelector('#myBtn5').style.color= '#4D5C7D';
+
+       title.textContent = 'Nivel 3';
+       paragraph.textContent = 'Contenido Nivel 3';
+       paragraph.classList.add('svg_paragraph');
+    });
+     
+    accordionBtn3.removeEventListener;
+
+    accordionBtn4.addEventListener('click', function(){
+       accordionBtn1.querySelector('#myBtn1').style.color= '#4D5C7D';
+       accordionBtn2.querySelector('#myBtn2').style.color= '#4D5C7D';
+       accordionBtn3.querySelector('#myBtn3').style.color= '#4D5C7D';
+       accordionBtn4.querySelector('#myBtn4').style.color= '#222757';
+       accordionBtn5.querySelector('#myBtn5').style.color= '#4D5C7D';
+
+       title.textContent = 'Nivel 4';
+       paragraph.textContent = 'Contenido Nivel 4';
+       paragraph.classList.add('svg_paragraph');
+    });
+
+    accordionBtn5.addEventListener('click', function(){
+       accordionBtn1.querySelector('#myBtn1').style.color= '#4D5C7D';
+       accordionBtn2.querySelector('#myBtn2').style.color= '#4D5C7D';
+       accordionBtn3.querySelector('#myBtn3').style.color= '#4D5C7D';
+       accordionBtn4.querySelector('#myBtn4').style.color= '#4D5C7D';
+       accordionBtn5.querySelector('#myBtn5').style.color= '#222757';
+
+       title.textContent = 'Nivel 5';
+       paragraph.textContent = 'Contenido Nivel 5';
+       paragraph.classList.add('svg_paragraph');
+    });
+</script>
 
 {% endblock %}

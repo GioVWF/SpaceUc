@@ -63,8 +63,19 @@ def podium(request):
     users = User_ours.objects.all()
     first_palces = User_ours.objects.all().order_by('-point_user')[:3]
 
+    for i in range(3):
+        if ( i == 0 ):
+            position_one = User_ours.objects.all().order_by('-point_user')[i]
+        if ( i == 1):
+            position_two = User_ours.objects.all().order_by('-point_user')[i]
+        if (i == 2 ):
+            position_three = User_ours.objects.all().order_by('-point_user')[i]
+            
     context = {
-        'first_places' : first_palces,
+        'first_palces': first_palces,
+        'position_one': position_one,
+        'position_two': position_two,
+        'position_three': position_three,
         'users': users,
     }
 
