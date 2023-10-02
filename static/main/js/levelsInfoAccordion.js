@@ -4,7 +4,7 @@ var accordionBtn1 = document.getElementById('accordionBtn1');
     var accordionBtn4 = document.getElementById('accordionBtn4');
     var accordionBtn5 = document.getElementById('accordionBtn5');
     var title = document.getElementById('myTitle');
-    var paragraph = document.getElementById('#paragraph');
+    var paragraph = document.getElementById('paragraph');
 
     accordionBtn1.addEventListener('click', function(){
        accordionBtn1.querySelector('#myBtn1').style.color= '#222757';
