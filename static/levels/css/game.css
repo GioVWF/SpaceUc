@@ -1,0 +1,36 @@
+body {
+    background:  url("/static/levels/img/gamebg.png") no-repeat center center fixed; 
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    font-family: monospace;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr 1fr;
+    height: 100%; 
+    width: 100%;
+}
+
+
+.game_grid {
+    display: inline-block;
+    margin: auto auto;
+}
+
+.game_grid:nth-child(n+2) {
+    grid-column: span 1;
+}
+
+.earth {
+    margin-right: -2vw;
+    margin-top: 35vh;
+}
+
+.star {
+    margin-top: 28vh;
+}
+
+
+

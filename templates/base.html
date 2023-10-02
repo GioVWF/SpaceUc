@@ -20,7 +20,7 @@
             <div class="navbar-main">
                 <div class="navbar-panel"> 
                     <div class="navbar-panel-inner">
-                        <div class="navbar-panel-podium">
+                        <a href="{% url 'podium_page' %}" class="navbar-panel-podium">
                             <div class="navbar-podium-position">
                                 <svg width="64" height="86" viewBox="0 0 84 86" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill="#4D5C7D" d="M0 0h84v86H0z"/><path d="M9 10h58.625L72 14.5l4 3.75V76H13.187L11 74l-2-2.125V10Z" fill="#222757"/>
@@ -33,7 +33,7 @@
                             <div class="navbar-podium-text-position">
                                 <h1>PODIO</h1>
                             </div>
-                        </div>
+                        </a>
                         <div class="navbar-panel-blackButton-left"> 
                             <a href="{% url 'about_page' %}" class="navbar-panel-blackButton-left-inner">
                                 <div class="navbar-black-text-position-left"><h1 class="navbar-black-text">Quienes <br> Somos</h1></div>
@@ -44,7 +44,7 @@
                                 </a>
                             </div>
                         </div>
-                        <a href="http://google.com" class="navbar-play">
+                        <a href="{% url 'game_page' %}" class="navbar-play">
                             <div class="navbar-play-inner"><h1 class="navbar-playButton">JUGAR!</h1></div>
                         </a>
                         <div class="navbar-panel-blackButton-right">
@@ -65,9 +65,9 @@
                                             <div class="navbar-logger-user-name">
                                                 <h1>{{ i.first_name_user }} {{i.last_name_user}}</h1>
                                             </div>
-                                            <div class="navbar-logged-user-icon" >
+                                            <a href="{% url 'profile_page' %}" class="navbar-logged-user-icon" >
                                                 <img src="{% static 'main/img/defaultIcon.png' %}" alt="">
-                                            </div>
+                                            </a>
                                             <div class="navbar-logger-user-points">
                                                 <p>Puntos: {{i.point_user}} <a href="{% url 'log_out_' %}">cerrar sesion</a></p> 
                                             </div>

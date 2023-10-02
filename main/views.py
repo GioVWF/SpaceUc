@@ -14,6 +14,13 @@ def home(request):
     }
     return render(request, 'home.html', context)
 
+def game(request):
+    users = User_ours.objects.all()
+    context = {
+        'users': users
+    }
+    return render(request, 'game.html', context)
+
 def navbar(request):
     users = User_ours.objects.all()
     context = {
