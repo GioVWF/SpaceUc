@@ -55,19 +55,12 @@ main{
     
 }
 
-.container_photo object{
-    
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-}
 
 .head_icon{
     width: 50%;
     z-index: 10;
     top: 14vh;
+    position: absolute;
     
 }
 
@@ -76,10 +69,12 @@ main{
     z-index: 9;
     top: 34.4vh;
     width: 80%;
+    position: absolute;
 }
 
 .background_icon{
     width: 95%;
+    position: relative;
 }
 
 
@@ -98,7 +93,7 @@ main{
 .profile_form{
     position: absolute;
     display: flex;
-    flex-direction: column;
+    gap: 30px;
     
     width: 90%;
     height: 90%;
@@ -107,32 +102,15 @@ main{
    
 }
 
+.pormientras{
+    width: 10%;
+}
 .profile_form h1{
     text-align: center;
    
 }
 
-.container_full_name{
-    display: flex;
-    gap: 7vh;
-    justify-content: center;
-    margin-right: 5vh;
-    margin-left: 5vh;
-}
 
-.input_full_name{
-    display: flex;
-    flex-direction: column;
-    width: 140%;
-}
-
-.username_control{
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 8vh;
-}
 
 .button_control{
     width: auto;

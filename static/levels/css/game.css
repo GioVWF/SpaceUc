@@ -24,12 +24,13 @@ main {
 }
 
 .earth {
-    margin-right: -2vw;
-    margin-top: 35vh;
+    margin: auto 0;
+    padding: 120px 0 0 370px;
 }
 
 .star {
-    margin-top: 28vh;
+    margin: auto 0;
+    padding-top: 120px;
 }
 
 

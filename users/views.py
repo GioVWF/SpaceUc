@@ -81,11 +81,16 @@ def register_student_(request):
 #--------------------------------------------------------------------------------------------------------------------------------------
 
 def profile_page(request):
+    icon = Icon.objects.all()
+    perIcon = PerIcon.objects.all()
     users = User_ours.objects.all()
+    
     context = {
+        'icon' : icon,
+        'perIcon': perIcon,
         'users': users,
-        
     }
+    
     return render(request, 'profile-page.html',context)
 
 def update_profileStudent_(request):
@@ -112,7 +117,7 @@ def custom_profile(request):
     icon = Icon.objects.all()
     perIcon = PerIcon.objects.all()
     users = User_ours.objects.all()
-
+    
     context = {
         'icon' : icon,
         'perIcon': perIcon,
@@ -120,7 +125,58 @@ def custom_profile(request):
     }
 
     return render(request, 'custom-profile.html', context)
+
+def update_profile_photo_(request):
+
+    head_icon_initial = request.POST['head_inital']
+    body_icon_initial = request.POST['body_initial']
+    backgraund_icon_initial = request.POST['backgraund_initial']
+
+    head_icon_form = request.POST['head_final_election']
+    body_icon_form = request.POST['body_final_election']
+    backgraund_icon_form = request.POST['backgraund_final_election']
+
+    icon_head = Icon.objects.get(id_icon = head_icon_initial )
+    icon_body = Icon.objects.get(id_icon = body_icon_initial)
+    icon_backgraund = Icon.objects.get(id_icon = backgraund_icon_initial)
     
+    
+    
+    id_user_icon = request.POST['id_user']
+
+
+    
+
+
+    oldIcon_head = PerIcon.objects.get( user_ours_id_user_ours = id_user_icon, icon_id_icon = icon_head )
+    oldIcon_body = PerIcon.objects.get( user_ours_id_user_ours = id_user_icon, icon_id_icon = icon_body )
+    oldIcon_backgraund = PerIcon.objects.get( user_ours_id_user_ours = id_user_icon, icon_id_icon = icon_backgraund )
+    
+
+    if oldIcon_head.icon_id_icon.type_icon == 0:
+
+        oldIcon_head.icon_id_icon = Icon.objects.get(id_icon = head_icon_form)
+        oldIcon_head.save()
+
+    if oldIcon_body.icon_id_icon.type_icon == 1:
+
+        oldIcon_body.icon_id_icon = Icon.objects.get(id_icon = body_icon_form)
+        oldIcon_body.save()
+
+    if oldIcon_backgraund.icon_id_icon.type_icon == 2:
+
+        oldIcon_backgraund.icon_id_icon = Icon.objects.get(id_icon = backgraund_icon_form)
+        oldIcon_backgraund.save()
+    
+        
+        
+        
+    
+    
+    
+
+
+    return redirect(custom_profile)
    
     
     

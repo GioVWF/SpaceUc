@@ -1,7 +1,7 @@
 html{
     overflow: hidden;
     background-color: #001F3F;
-    z-index: -3;
+    
     font-family: monospace;
 }
 
@@ -14,7 +14,7 @@ main{
 
 .profile_background{
     position: absolute;
-    z-index: -2;
+    
     top: 0;
     width: 120%;
     height: 100%;
@@ -37,7 +37,7 @@ main{
 
 .svg_profile{
     position: absolute;
-    z-index: -1;
+   
     width: 100%;
     height: 100%;
 }
@@ -53,15 +53,39 @@ main{
     
 }
 
-.svg_photo{
+.background_icon{
+    width: 95%;
+    position: relative;
+    z-index: 1;
+}
+
+.head_icon{
+    width: 50%;
+    z-index: 3;
+    top: 14vh;
     position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 90%;
-    height: 100%;
     
 }
+
+
+.body_icon{
+   
+    top: 34.4vh;
+    width: 80%;
+    position: absolute;
+    z-index: 2;
+}
+
+.btn_custom_profile{
+    width: 25%;
+    bottom: 8vh;
+    position: absolute;
+    z-index: 4;
+}
+
+
+
+
 
 /*Second son*/
 .container_form{
@@ -119,7 +143,7 @@ main{
     display: flex;
     bottom: -24vh;
     right: -65vh;
-    z-index: 3;
+    z-index: 6;
     
 }
 
@@ -127,7 +151,7 @@ main{
     position: relative;
     color: white;
     font-size: x-large;
-    z-index: 4;
+    z-index: 7;
     top: -15vh;
     
     

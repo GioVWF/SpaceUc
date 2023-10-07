@@ -1,4 +1,8 @@
-body, html {
+body{
+    margin: 0 !important;
+}
+
+html {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -19,7 +23,7 @@ h1 {
 #navbar-area {    
     width: 100%;
     justify-content: center;
-    position: sticky;
+    position: fixed;
     z-index: 1;
 }
 

@@ -40,10 +40,19 @@
                             <line x1="12.6237" y1="605.671" x2="19.6237" y2="597.671" stroke="#9C9C9C"/>
                             <circle cx="13.5" cy="13.5" r="7.5" fill="#D9D2DA"/>
                             <line x1="9.62371" y1="17.6707" x2="16.6237" y2="9.67075" stroke="#9C9C9C"/>
-                            <div class = "contet_photo_nasa">
+                            <div class = "contet_photo_nasa" id="data-container">
                                 <h1>Api Foto diaria Nasa</h1>
-                                <img src="{{ data.url }}" alt="photo">
-                                <h3>"{{ data.title }}"</h3>
+
+                                
+                                {% if data is None %}
+                                    <img src="https://static.wikia.nocookie.net/chainsaw-man/images/b/bf/Kobeni_anime_design.png/revision/latest/scale-to-width-down/299?cb=20220919121148" alt="photo">
+                                    <h3>"Imagen no encontrada"</h3>
+                                {% else %}
+                                    <img src="{{ data.url }}" alt="photo">
+                                    <h3>"{{ data.title }}"</h3>
+                                {% endif %}
+                                    
+                                
                             </div>
                             </svg> 
                     </div>

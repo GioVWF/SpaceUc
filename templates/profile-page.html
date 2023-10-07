@@ -55,19 +55,76 @@
                     <line x1="56.6237" y1="15.6707" x2="63.6237" y2="7.67075" stroke="#9C9C9C"/>
                 </svg>  
 
-                <div class = "container_photo">
-                    <svg viewBox="0 0 500 575" fill="none" xmlns="http://www.w3.org/2000/svg" class = "svg_photo">
-                        <circle cx="250" cy="250" r="249" fill="white" stroke="black" stroke-width="2"/>
-                        <path d="M439 375C439 409.073 418.007 440.049 383.801 462.553C349.603 485.052 302.3 499 250 499C197.7 499 150.397 485.052 116.199 462.553C81.993 440.049 61 409.073 61 375C61 340.927 81.993 309.951 116.199 287.447C150.397 264.948 197.7 251 250 251C302.3 251 349.603 264.948 383.801 287.447C418.007 309.951 439 340.927 439 375Z" fill="white" stroke="black" stroke-width="2"/>
-                        <circle cx="250" cy="188" r="124" fill="white" stroke="black" stroke-width="2"/>
-                        <circle cx="250" cy="500" r="74" fill="white" stroke="black" stroke-width="2"/>
-                        <rect x="195" y="463" width="109" height="73" fill="white" stroke="black" stroke-width="2"/>
-                        <circle cx="250" cy="500" r="24" fill="white" stroke="black" stroke-width="2"/>
-                        </svg>
-                        
-                </div>
+                
 
                 {% if user.is_authenticated %}
+                <div class = "container_photo">
+
+
+                    
+                    {% for us in users %}
+    
+                            
+                        {% if user.username == us.run_user %}
+    
+                            {% for x in perIcon %}
+                            
+                                {% for ic in icon%}
+    
+                                    {% if  x.icon_id_icon.id_icon == ic.id_icon and x.user_ours_id_user_ours.run_user == user.username %}
+    
+                                        
+                                        <div class="{% if ic.type_icon == 0 %}head_icon{% elif ic.type_icon == 1 %}body_icon{% elif ic.type_icon == 2 %}background_icon{% endif %}">
+                                            
+                                            {{ x.icon_id_icon.svg_icon|safe  }}
+    
+                                        </div>
+    
+    
+                                    {% endif %}
+                                
+                                
+                                {% endfor %}
+                                
+                            
+                            
+                       
+                       
+                      
+                
+                            
+                       
+                            {% endfor %}   
+                        {% endif %}
+                                
+                            
+                    {% endfor %}
+                    
+                    <div class = "btn_custom_profile">
+                        <a href="{% url 'custom_profile' %}">
+                            
+                                <svg viewBox="0 0 157 116" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="157" height="116" fill="#4D5C7D"/>
+                                    <rect x="6" y="6" width="144" height="103" fill="#222757"/>
+                                    <path d="M45.4658 75.412C49.0318 82.9395 55.0977 88.9977 62.6298 92.5539C70.162 96.1102 78.6943 96.9445 86.7726 94.9148C94.851 92.885 101.976 88.1167 106.932 81.4226C111.889 74.7284 114.371 66.5225 113.955 58.2034L106.301 58.5859C106.629 65.1341 104.675 71.5931 100.773 76.8623C96.8719 82.1315 91.2639 85.8847 84.9052 87.4824C78.5465 89.0801 71.8305 88.4234 65.9017 85.6241C59.9729 82.8249 55.1983 78.0564 52.3914 72.1312L45.4658 75.412Z" fill="#D9D9D9"/>
+                                    <circle cx="154" cy="4" r="2" fill="#D9D2DA"/>
+                                    <circle cx="153" cy="112" r="2" fill="#D9D2DA"/>
+                                    <circle cx="4" cy="112" r="2" fill="#D9D2DA"/>
+                                    <circle cx="4" cy="4" r="2" fill="#D9D2DA"/>
+                                    <path d="M44.185 63.058L56.9682 71.9788L42.7913 78.5041L44.185 63.058Z" fill="#D9D9D9"/>
+                                    <path d="M111.153 39.5034C107.53 32.0377 101.41 26.0498 93.8362 22.5602C86.2623 19.0705 77.7034 18.2951 69.6179 20.3659C61.5325 22.4368 54.4209 27.2259 49.495 33.9171C44.5692 40.6082 42.1339 48.7873 42.6042 57.0606L50.2747 56.6312C49.9045 50.1191 51.8213 43.6811 55.6986 38.4143C59.5759 33.1475 65.1736 29.3779 71.5379 27.7478C77.9022 26.1177 84.6392 26.7281 90.6008 29.4749C96.5624 32.2217 101.38 36.935 104.232 42.8114L111.153 39.5034Z" fill="#D9D9D9"/>
+                                    <path d="M112.84 51.9531L99.9989 43.114L114.133 36.4984L112.84 51.9531Z" fill="#D9D9D9"/>
+                                </svg>
+                            
+                        </a>
+                        
+                        
+                    </div>    
+                    
+                        
+                            
+                    </div>
+                    
                             {% for i in users %}
                                 {% if user.username == i.run_user %}
                                 <div class = "container_form">

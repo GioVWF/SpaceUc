@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 
-DB_PASSWORD = "Gl28112001..."
+DB_PASSWORD = "1234"
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -144,3 +144,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/staticfiles')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+ASGI_APPLICATION = 'SpaceUc.asgi.application'

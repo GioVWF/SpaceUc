@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import login_page, log_in_, log_out_, register_page, register_student_, profile_page,update_profileStudent_,custom_profile
+from .views import *
 # URLConf module
 urlpatterns = [
     # endpoint and a views function.
@@ -11,5 +11,6 @@ urlpatterns = [
     path('profile_page', profile_page, name = 'profile_page'),
     path('update_profileStudent_', update_profileStudent_, name = 'update_profileStudent_'),
     path('custom_profile', custom_profile, name = 'custom_profile'),
+    path('update_profile_photo_', update_profile_photo_, name = 'update_profile_photo_'),
       
 ]

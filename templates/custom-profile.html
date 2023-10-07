@@ -3,6 +3,8 @@
 
 {% block extrahead %}
 <link rel="stylesheet" href="{% static 'main/css/custom-profile.css' %}">
+<script src = "{% static 'main/js/custom-profile.js' %}" ></script>
+
 {% endblock %}
 
 {% block content %}
@@ -70,10 +72,16 @@
                         
                             {% for ic in icon%}
 
-                                {% if  x.icon_id_icon.id_icon == ic.id_icon and x.user_ours_id_user_ours.run_user == us.run_user %}
+                                {% if  x.icon_id_icon.id_icon == ic.id_icon and x.user_ours_id_user_ours.run_user == user.username %}
 
-                                    <object data="data:image/svg+xml;utf8,{{ ic.svg_icon }}" type="image/svg+xml" class="{% if ic.type_icon == 0 %}head_icon{% elif ic.type_icon == 1 %}body_icon{% elif ic.type_icon == 2 %}background_icon{% endif %}"></object>
-                            
+
+                                    <div class="{% if ic.type_icon == 0 %}head_icon{% elif ic.type_icon == 1 %}body_icon{% elif ic.type_icon == 2 %}background_icon{% endif %}">
+                                        
+                                        {{ x.icon_id_icon.svg_icon|safe  }}
+
+                                    </div>
+
+
                                 {% endif %}
                             
                             
@@ -101,36 +109,110 @@
                             {% for i in users %}
                                 {% if user.username == i.run_user %}
                                 <div class = "container_form">
-                                    <form action="{% url 'update_profileStudent_' %}" method = "POST" name = "profile_form" id = "profile_form" class = "profile_form">
+                                    <form action="{% url 'update_profile_photo_' %}" method = "POST" name = "profile_form" id = "profile_form" class = "profile_form">
                                         {% csrf_token %}
+
                                         <h1>Datos Cuenta</h1>
                                         
-                                        
-                                        <div class = "container_full_name">
-                
-                                            <div class = "input_full_name">
-                                                <label for="name_student" id="name_student"> Nombre Completo </label>
-                                                <input type="text" name="name_student" id="name_student" value = "{{ i.first_name_user }}" readonly>
-                                            </div>
-                                    
-                                            <div class = "input_full_name">
-                                                <label for="last_name" id="last_name"> Apellido Completo </label>
-                                                <input type="text" name="last_name" id="last_name" value = "{{i.last_name_user}}" readonly>
-                                            </div>
+                                        <div class = "pormientras">
 
+
+                                            <input type="text" name="id_user" id="id_user" value = "{{ i.id_user_ours }} ">
                                             
-                                            <input type="text" name="id_student" id="id_student" value = "{{i.id_user_ours}}" readonly hidden >
+
+                                            <p>seccion cabezas</p>
+                                            {% for ic in icon  %}
+                                                
+                                                {% if ic.type_icon == 0 %}
+                                                    
+                                                        <input type="checkbox" hidden name="head_election" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_head(this.value)"> 
+                                                        <label for=" {{ ic.id_icon }} ">
+                                                            {{ ic.svg_icon|safe }}
+                                                        </label>
+      
+                                                {% endif %}
+                                                    
+                                            {% endfor %}
                                         </div>
-                
+
+
+
+                                        <div class = "pormientras">
+                                            <p>seccion cuerpos</p>
+                                            {% for ic in icon  %}
+                                                
+                                                {% if ic.type_icon == 1 %}
+                                                    
+                                                    <input type="checkbox" hidden name="head_election" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_body(this.value)"> 
+                                                    <label for=" {{ ic.id_icon }} ">
+                                                        {{ ic.svg_icon|safe }}
+                                                    </label>
+                                                {% endif %}
+                                                    
+                                            {% endfor %}
+                                        </div>
                                         
-                                        <div class = "username_control">
-                                            <label for="username" id="username"> Nombre de usuario </label>
-                                        <input type="text" name="username" id="username" value = "{{i.alias_user}}" >
+
+
+                                        <div class = "pormientras">
+                                            <p>seccion fondos</p>
+                                            {% for ic in icon  %}
+                                                
+                                                {% if ic.type_icon == 2 %}
+                                                    
+                                                    <input type="checkbox" hidden name="head_election" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_backgraund(this.value)"> 
+                                                    <label for=" {{ ic.id_icon }} ">
+                                                        {{ ic.svg_icon|safe }}
+                                                    </label>
+
+                                                {% endif %}
+                                                    
+                                            {% endfor %}
                                         </div>
                                         
                                         
                                         
-                            
+                                            
+                        
+                                        
+                    
+                                            {% for x in perIcon %}
+
+                                                    
+              
+                                            
+                                                {% for ic in icon%}
+                    
+                                                    {% if  x.icon_id_icon.id_icon == ic.id_icon and x.user_ours_id_user_ours.run_user == user.username %}
+                    
+                    
+                                                        <input type="text" name="{% if ic.type_icon == 0 %}head_final_election{% elif ic.type_icon == 1 %}body_final_election{% elif ic.type_icon == 2 %}backgraund_final_election{% endif %}" id="{% if ic.type_icon == 0 %}head_final_election{% elif ic.type_icon == 1 %}body_final_election{% elif ic.type_icon == 2 %}backgraund_final_election{% endif %}" value = " {{x.icon_id_icon.id_icon}} ">
+                                                        
+                                                        <input type="text" name="{% if ic.type_icon == 0 %}head_inital{% elif ic.type_icon == 1 %}body_initial{% elif ic.type_icon == 2 %}backgraund_initial{% endif %}" id="{% if ic.type_icon == 0 %}head_inital{% elif ic.type_icon == 1 %}body_initial{% elif ic.type_icon == 2 %}backgraund_initial{% endif %}" value = " {{x.icon_id_icon.id_icon}} ">
+                    
+                                                    {% endif %}
+                                                
+                                                
+                                                {% endfor %}
+                                                
+                                            
+                                            
+                                       
+                                       
+                                      
+                                
+                                            
+                                       
+                                            {% endfor %}   
+                                       
+                                                
+                                            
+
+                                                    
+                                    
+                                        
+                                        
+                                        
                                         
                                         
                                         
