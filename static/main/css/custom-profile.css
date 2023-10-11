@@ -1,25 +1,29 @@
 
 
 html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: rgba(0, 31, 63, 1);
+    
     overflow: hidden;
-    background-color: #001F3F;
-    z-index: -3;
-    font-family: monospace;
 }
 
 main{
+    height: 100vh; 
     width: 100%;
-    height: 100vh;
-    
+    position: relative;
+    overflow: hidden;
 }
 
 
 .profile_background{
     position: absolute;
-    z-index: -2;
+   
     top: 0;
-    width: 120%;
-    height: 100%;
+    width: 90%;
+    height: 10%;
+    left: -10vh;
 }
 
 /*father*/
@@ -39,7 +43,7 @@ main{
 
 .svg_profile{
     position: absolute;
-    z-index: -1;
+  
     width: 100%;
     height: 100%;
 }
@@ -91,25 +95,183 @@ main{
 }
 
 .profile_form{
-    position: absolute;
+    
     display: flex;
-    gap: 30px;
+    
     
     width: 90%;
     height: 90%;
     justify-content: center;
+    align-items: center;
     margin-top: -10vh;
+    flex-direction: column;
    
 }
 
-.pormientras{
-    width: 10%;
+form h1{
+    position: absolute;
+    top: 10vh;
 }
-.profile_form h1{
-    text-align: center;
+
+
+.container_cat_color_svg{
+    display: flex;
+    
+    gap: 3vh;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    
+    
+}
+
+.container_father_cat{
+    width: 50%;
+    height: 60%;
+    position: relative;
+    top: 10vh;
+    
+}
+
+.container_father_color{
+    width: 40%;
+    height: 60%;
+    position: relative;
+    top: 8.5vh;
+}
+
+.svg_categorias{  
+    width: 100%;
+    position: absolute;
+}
+
+.svg_colores{
+    
+    width: 100%;
+    position: absolute;
+   
    
 }
 
+
+.container_category{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.container_category .ul{
+    position: relative;
+    width: 100%;
+   
+    display: flex;
+    
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.container_category .li{
+    padding: 1vh;
+    margin: 0 1vh 1vh 1vh;
+    
+    transition: all .5s ease;
+    color: white;
+    font-size: large;
+    
+}
+
+.container_category .li.active{
+    color: green;
+   
+}
+
+.container_category .sub_container{
+    width: 100%;
+    height: 100%;
+    
+    position: relative;
+}
+
+.container_category .block{
+    
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    transition: all .5s ease;
+}
+
+.container_category .block.active{
+    
+    opacity: 1;
+    width: 100%;
+    z-index: 1;
+    
+}
+
+.input_cat{
+    display: flex;
+}
+
+.input_cat div{
+   width: 30%;
+}
+
+
+.containter_colors{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+
+}
+
+.containter_colors h2{
+    margin: 0 0 4vh 0;
+    padding: 1vh ;
+    
+}
+
+
+.color_head {
+    opacity: 0;
+    transition: all .5s ease;
+    position: absolute;
+    width: 25%;
+}
+
+.color_head.active {
+    opacity: 1;
+    
+}
+
+.color_body{
+    opacity: 0;
+    transition: all .5s ease;
+    position: absolute;
+    width: 25%;
+}
+
+.color_body.active{
+    opacity: 1;
+    
+}
+
+.color_backgraund {
+    transition: all .5s ease;
+    opacity: 0;
+    position: absolute;
+    width: 25%;
+
+}
+
+.color_backgraund.active {
+    
+    opacity: 1;
+
+}
 
 
 .button_control{
@@ -117,8 +279,8 @@ main{
     height: auto;
     position: absolute;
     display: flex;
-    bottom: -24vh;
-    right: -65vh;
+    bottom: -14vh;
+    right: -58vh;
     z-index: 3;
     
 }
@@ -171,28 +333,6 @@ button{
 
 
 
-form input{
-    position: relative;
-    background-color: #4D5C7D; 
-    border-radius: 1.5vh; 
-    width: 100%;
-    height: 5vh;
-    color: white; 
-    border: none;
-    padding: 5px; 
-    font-size: 16px; 
-    transition: 0.2s;
-   
- 
-    
-    
-}
-
-input:focus {
-    outline: none; 
-    background-color: #657a9d;  
-    
-}
 
 label{
 

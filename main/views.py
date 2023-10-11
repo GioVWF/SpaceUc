@@ -2,8 +2,7 @@ from django.shortcuts import render
 from db_spaceuc.models import User_ours
 import requests
 import json
-import aiohttp
-from asgiref.sync import sync_to_async
+
 
 
 def home(request):
@@ -47,7 +46,11 @@ def levels_info(request):
     return render(request, 'levels-info.html', context)
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-async def fetch_apod_data():
+
+
+def resources_page(request):
+    users = User_ours.objects.all()
+    
     API_KEY = "qE5NtN0FYG428PJE1nu4ygkCkPEQMRHV0F33lwOp"
     url = 'https://api.nasa.gov/planetary/apod/'
 
@@ -56,19 +59,19 @@ async def fetch_apod_data():
     }
 
     
-    async with aiohttp.ClientSession() as session:
-        async with session.get(url, params=params) as response:
-            data = await response.json()
-
-    return data
-
-async def resources_page(request):
-    users = User_ours.objects.all()
-    data = await fetch_apod_data()
+    try:
+        response = requests.get(url, params=params)
+        response.raise_for_status() 
+        data = response.json()
+    except requests.exceptions.RequestException:
+    
+        
+        data = None
 
     context = {
         'users': users,
-        'data': data
+        'data' : data
+        
     }
     return render(request, 'resources-page.html', context)
 

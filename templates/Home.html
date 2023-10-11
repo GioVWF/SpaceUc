@@ -12,6 +12,7 @@
         <div class="planets_position">
             <div class="two_planets">
                 <div class="about_planet">
+                    <a href="{% url 'about_page' %}">
                     <svg width="318" height="375" viewBox="0 0 418 375" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0.854032 208.021L130.507 152.603L127.296 270.418L0.854032 208.021Z" fill="#4F6377"/>
                         <path d="M121.447 0.808882L199.224 126.785L167.524 141.507L121.447 0.808882Z" fill="#4F6377"/>
@@ -24,8 +25,10 @@
                         <circle cx="228" cy="226" r="50" fill="#B3D9FF"/>
                         <text x="120" y="240" font-family="monospace" font-size="30" font-weight="bolder" fill="black"> Quienes Somos </text>
                         </svg>
+                    </a>
                 </div>
                 <div class="resources_planet">
+                    <a href="{% url 'resources_page' %}">
                     <svg width="485" height="585" viewBox="0 0 585 585" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="315" cy="351" r="250" fill="#77655E"/>
                         <path d="M311 0L354.301 131.25H267.699L311 0Z" fill="#77655E"/>
@@ -37,10 +40,11 @@
                         <circle cx="315" cy="352" r="100" fill="#FDA281"/>
                         <text x="250" y="360" font-family="monospace" font-size="30" font-weight="bolder" fill="black"> Recursos </text>
                         </svg>
+                    </a>
                 </div>
             </div>
             <div class="galaxy_dashed_circle">
-                <H1 class="welcome_text">Bienvenido Astronauta</H1>
+                <a href="{% url 'register_page' %}"><H1 class="welcome_text">Bienvenido Astronauta</H1></a>
             <svg width="639" height="600" viewBox="0 0 639 600" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="323" cy="300" r="300" fill="#2B066D"/>
                     <circle cx="323" cy="300" r="225" fill="#7F217F"/>
@@ -215,6 +219,7 @@
             </div>  
             <div class="one_planet">
                 <div class="levels_planet">
+                    <a href = "{% url 'levels_info' %}"">
                     <svg width="386" height="486" viewBox="0 0 486 486" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6.01935 0.738163L183.448 131.432L134.917 179.476L6.01935 0.738163Z" fill="#8A8466"/>
                         <path d="M0.250732 243.73L218.136 210.745L217.772 279.033L0.250732 243.73Z" fill="#8A8466"/>
@@ -228,6 +233,7 @@
                         <circle cx="259" cy="259" r="50" fill="#FFFADC"/>
                         <text x="200" y="270" font-family="monospace" font-size="30" font-weight="bolder" fill="black"> Niveles </text>
                         </svg>
+                    </a>
                 </div>   
             </div>
         </div>

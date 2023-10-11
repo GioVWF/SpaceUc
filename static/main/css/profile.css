@@ -1,23 +1,26 @@
 html{
-    overflow: hidden;
-    background-color: #001F3F;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(0, 31, 63, 1);
     
-    font-family: monospace;
+    overflow: hidden;
 }
 
 main{
+    height: 100vh; 
     width: 100%;
-    height: 100vh;
-    
+    position: relative;
+    overflow: hidden;
 }
 
 
 .profile_background{
     position: absolute;
-    
+   
     top: 0;
-    width: 120%;
-    height: 100%;
+    width: 90%;
+    height: 10%;
+    left: -10vh;
 }
 
 /*father*/
@@ -142,8 +145,8 @@ main{
     position: absolute;
     display: flex;
     bottom: -24vh;
-    right: -65vh;
-    z-index: 6;
+    right: -62vh;
+    z-index: 3;
     
 }
 

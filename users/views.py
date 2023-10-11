@@ -70,7 +70,15 @@ def register_student_(request):
         newUserDjango.save()
 
         User_ours.objects.create(run_user = rut_form, alias_user = alias_user_pref, first_name_user = name_student_form, last_name_user = last_name_form, password_user = password_form, point_user = point_user_pref, grade_user = grade_user_pref, user_type = user_type_pref, follow_up_id_follow = followUp_student_form, user = newUserDjango)
+        
+        get_default_head = Icon.objects.get(id_icon = 1)
+        get_default_body = Icon.objects.get(id_icon = 2)
+        get_default_backgraund = Icon.objects.get(id_icon = 3)
+        get_new_user = User_ours.objects.get(run_user = rut_form)
 
+        PerIcon.objects.create(color_icon = 0, icon_id_icon = get_default_head , user_ours_id_user_ours = get_new_user )
+        PerIcon.objects.create(color_icon = 0, icon_id_icon = get_default_body , user_ours_id_user_ours = get_new_user )
+        PerIcon.objects.create(color_icon = 0, icon_id_icon = get_default_backgraund , user_ours_id_user_ours = get_new_user )
         
 
         return redirect(home)
@@ -114,14 +122,21 @@ def update_profileStudent_(request):
 #--------------------------------------------------------------------------------------------------------------------------------------
 
 def custom_profile(request):
+
     icon = Icon.objects.all()
     perIcon = PerIcon.objects.all()
     users = User_ours.objects.all()
     
+
+    
+
+
+
     context = {
         'icon' : icon,
         'perIcon': perIcon,
         'users': users,
+        
     }
 
     return render(request, 'custom-profile.html', context)
@@ -146,7 +161,7 @@ def update_profile_photo_(request):
 
 
     
-
+    
 
     oldIcon_head = PerIcon.objects.get( user_ours_id_user_ours = id_user_icon, icon_id_icon = icon_head )
     oldIcon_body = PerIcon.objects.get( user_ours_id_user_ours = id_user_icon, icon_id_icon = icon_body )
@@ -154,7 +169,7 @@ def update_profile_photo_(request):
     
 
     if oldIcon_head.icon_id_icon.type_icon == 0:
-
+        
         oldIcon_head.icon_id_icon = Icon.objects.get(id_icon = head_icon_form)
         oldIcon_head.save()
 

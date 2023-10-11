@@ -45,6 +45,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // Agrega otros campos de entrada (input) y sus etiquetas (label) aquí
+    
 
 });

@@ -44,7 +44,7 @@ class User_ours(models.Model):
     password_user = models.CharField(max_length=10)
     point_user = models.IntegerField()
     grade_user = models.CharField(max_length=10)
-    user_type = models.IntegerField()
+    user_type = models.IntegerField() 
 
     follow_up_id_follow = models.ForeignKey(FollowUp, on_delete=models.CASCADE)
 

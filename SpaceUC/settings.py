@@ -146,5 +146,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-
-ASGI_APPLICATION = 'SpaceUc.asgi.application'

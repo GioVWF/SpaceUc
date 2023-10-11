@@ -3,14 +3,14 @@
 
 {% block extrahead %}
 <link rel="stylesheet" href="{% static 'main/css/custom-profile.css' %}">
-<script src = "{% static 'main/js/custom-profile.js' %}" ></script>
+<script defer src = "{% static 'main/js/custom-profile.js' %}" ></script>
 
 {% endblock %}
 
 {% block content %}
 
     <div class = "profile_background">
-        <svg width="1550" height="1080" viewBox="0 0 1550 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg  viewBox="0 0 1550 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="550" cy="624" r="1000" fill="#C0C0C0"/>
             <path d="M241 501.5C241 952.44 494.5 1297 494.5 1318C27.5432 1318 -351 952.44 -351 501.5C-351 50.5595 27.5432 -315 494.5 -315C494.5 -315 241 50.5595 241 501.5Z" fill="#B5B0AC"/>
             <circle cx="303" cy="858" r="200" fill="#928E8A"/>
@@ -32,31 +32,33 @@
 
         <main>
             <div class = "container_profile">
-                <svg viewBox="0 0 1407 652" fill="none" xmlns="http://www.w3.org/2000/svg" class = "svg_profile">
-                    <path d="M0 0H703.5H1055.25H1231.12H1319.06H1363.03L1386.5 21.5L1407 40.75V81.5V163V326V652H703.5H351.75H175.875H87.9375H43.9688L21.5 632.5L0 611.25V570.5V489V326V0Z" fill="#454B78"/>
-                    <path d="M614 87L664 55H766H970H1378V328V464.5V532.75L1333 563.5L1276 601H1174H970H562V328V191.5V123.25L614 87Z" fill="#6F7E9F"/>
-                    <circle cx="12.5" cy="59.5" r="7.5" fill="#D9D2DA"/>
-                    <line x1="8.62371" y1="63.6707" x2="15.6237" y2="55.6707" stroke="#9C9C9C"/>
-                    <circle cx="10.5" cy="604.5" r="7.5" fill="#D9D2DA"/>
-                    <line x1="6.62371" y1="608.671" x2="13.6237" y2="600.671" stroke="#9C9C9C"/>
-                    <circle cx="49.5" cy="640.5" r="7.5" fill="#D9D2DA"/>
-                    <line x1="45.6237" y1="644.671" x2="52.6237" y2="636.671" stroke="#9C9C9C"/>
-                    <circle cx="1351.5" cy="637.5" r="7.5" fill="#D9D2DA"/>
-                    <line x1="1347.62" y1="641.671" x2="1354.62" y2="633.671" stroke="#9C9C9C"/>
-                    <circle cx="1395.5" cy="637.5" r="7.5" fill="#D9D2DA"/>
-                    <line x1="1391.62" y1="641.671" x2="1398.62" y2="633.671" stroke="#9C9C9C"/>
-                    <circle cx="1395.5" cy="590.5" r="7.5" fill="#D9D2DA"/>
-                    <line x1="1391.62" y1="594.671" x2="1398.62" y2="586.671" stroke="#9C9C9C"/>
-                    <circle cx="1394.5" cy="47.5" r="7.5" fill="#D9D2DA"/>
-                    <line x1="1390.62" y1="51.6707" x2="1397.62" y2="43.6707" stroke="#9C9C9C"/>
-                    <circle cx="1355.5" cy="13.5" r="7.5" fill="#D9D2DA"/>
-                    <line x1="1351.62" y1="17.6707" x2="1358.62" y2="9.67075" stroke="#9C9C9C"/>
-                    <circle cx="12.5" cy="11.5" r="7.5" fill="#D9D2DA"/>
-                    <line x1="8.62371" y1="15.6707" x2="15.6237" y2="7.67075" stroke="#9C9C9C"/>
-                    <circle cx="60.5" cy="11.5" r="7.5" fill="#D9D2DA"/>
-                    <line x1="56.6237" y1="15.6707" x2="63.6237" y2="7.67075" stroke="#9C9C9C"/>
-                </svg>  
                 
+                <svg  viewBox="0 0 1407 652" fill="none" xmlns="http://www.w3.org/2000/svg" class = "svg_profile">
+                    <path d="M0 0H703.5H1055.25H1231.12H1319.06H1363.03L1386.5 21.5L1407 40.75V81.5V163V326V652H703.5H351.75H175.875H87.9375H43.9688L21.5 632.5L0 611.25V570.5V489V326V0Z" fill="#454B78"/>
+                    <circle cx="1352.5" cy="16.5" r="7.5" fill="#D9D2DA"/>
+                    <path d="M553 45H961H1165H1267H1318L1344 80L1369 113.25V181.5V318V591H961H757H655H604L577 573L553 556.875V522.75V454.5V318V45Z" fill="#6F7E9F"/>
+                    <line x1="1348.62" y1="20.6707" x2="1355.62" y2="12.6707" stroke="#9C9C9C"/>
+                    <circle cx="1391.5" cy="50.5" r="7.5" fill="#D9D2DA"/>
+                    <line x1="1387.62" y1="54.6707" x2="1394.62" y2="46.6707" stroke="#9C9C9C"/>
+                    <circle cx="1392.5" cy="593.5" r="7.5" fill="#D9D2DA"/>
+                    <line x1="1388.62" y1="597.671" x2="1395.62" y2="589.671" stroke="#9C9C9C"/>
+                    <circle cx="1392.5" cy="640.5" r="7.5" fill="#D9D2DA"/>
+                    <line x1="1388.62" y1="644.671" x2="1395.62" y2="636.671" stroke="#9C9C9C"/>
+                    <circle cx="1348.5" cy="640.5" r="7.5" fill="#D9D2DA"/>
+                    <line x1="1344.62" y1="644.671" x2="1351.62" y2="636.671" stroke="#9C9C9C"/>
+                    <circle cx="46.5" cy="643.5" r="7.5" fill="#D9D2DA"/>
+                    <line x1="42.6237" y1="647.671" x2="49.6237" y2="639.671" stroke="#9C9C9C"/>
+                    <circle cx="7.5" cy="607.5" r="7.5" fill="#D9D2DA"/>
+                    <line x1="3.62371" y1="611.671" x2="10.6237" y2="603.671" stroke="#9C9C9C"/>
+                    <circle cx="9.5" cy="62.5" r="7.5" fill="#D9D2DA"/>
+                    <line x1="5.62371" y1="66.6707" x2="12.6237" y2="58.6707" stroke="#9C9C9C"/>
+                    <circle cx="9.5" cy="14.5" r="7.5" fill="#D9D2DA"/>
+                    <line x1="5.62371" y1="18.6707" x2="12.6237" y2="10.6707" stroke="#9C9C9C"/>
+                    <circle cx="57.5" cy="14.5" r="7.5" fill="#D9D2DA"/>
+                    <line x1="53.6237" y1="18.6707" x2="60.6237" y2="10.6707" stroke="#9C9C9C"/>
+                    </svg>
+                    
+                    
                
                 {% if user.is_authenticated %}
                 <div class = "container_photo">
@@ -103,72 +105,401 @@
                         
                     
                         
-                </div>
+            </div>
 
-                
+
+
+                            
+                            <div class = "container_form">
                             {% for i in users %}
                                 {% if user.username == i.run_user %}
-                                <div class = "container_form">
+                                
                                     <form action="{% url 'update_profile_photo_' %}" method = "POST" name = "profile_form" id = "profile_form" class = "profile_form">
                                         {% csrf_token %}
 
-                                        <h1>Datos Cuenta</h1>
-                                        
-                                        <div class = "pormientras">
+                                        <h1>Creacion de icono</h1>
 
-
-                                            <input type="text" name="id_user" id="id_user" value = "{{ i.id_user_ours }} ">
+                                        <div class = "container_cat_color_svg"> 
+                                            <div class = "container_father_cat">
+                                                
+                                                <div class = "svg_categorias">
+                                                    <svg  viewBox="0 0 409 401" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0 0H162.5H243.75H284.375L306.429 13.0341L325 23.875V47.75V95.5V191H0V0Z" fill="#093159"/>
+                                                        <path d="M0 41H204.5H306.75H357.875H383.438L396.556 64.1579L409 86V131V221V401H204.5H102.25H51.125H25.5625L12.4442 378.895L0 356V311V221V41Z" fill="#4D5C7D"/>
+                                                        </svg>
+                                                        
+                                                </div>
+    
+                                                <div class = "container_category">
+                                                    
+        
+        
+                                                    <ul class = "ul">
+                                                        <li class = "li active">Cabeza</li>
+                                                        <li class = "li">Cuerpo</li>
+                                                        <li class = "li">Fondo</li>
+                                                    </ul>
+        
+                                                    <div class="sub_container">
+                                                        <div class = "block active">
+                                                            <div class = "head_category input_cat">
+                                                                
+                                                            
+                                                                {% for ic in icon  %}
+                                                            
+                                                                    {% if ic.type_icon == 0 and ic.name_icon == "default_head" or ic.name_icon == "alien_default_head"%}
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                            <div>
+                                                                                <input type="checkbox" hidden name="head_election" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_head(this.value)"> 
+                                                                                <label for=" {{ ic.id_icon }} ">
+                                                                                {{ ic.svg_icon|safe }}
+                                                                                </label>
+                                                                            </div>
+                                                                           
+                                                                        
+                                                                    
+                                                                        
+                                                                    
+                  
+                                                                    {% endif %}
+                                                                
+                                                                {% endfor %}
+            
+                                                            </div>
+                                                        </div>
+                                                            
+                                                        <div class = "block">
+                                                            <div class = "body_category input_cat">
+                                                                
+                                                                {% for ic in icon %}
+                                                            
+                                                                    {% if ic.type_icon == 1 and ic.name_icon == "default_body" or ic.name_icon == "alien_default_body"%}
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                            <div>   
+                                                                                <input type="checkbox" hidden name="body_election" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_body(this.value)"> 
+                                                                                <label for=" {{ ic.id_icon }} ">
+                                                                                {{ ic.svg_icon|safe }}
+                                                                                </label>
+                                                                            </div>
+                                                                            
+                                                                        
+                                                                    
+                                                                        
+                                                                    
+                  
+                                                                    {% endif %}
+                  
+                                                                {% endfor %}
+                                                            </div>
+                                                        </div>
+            
+                                                            
+                                                        
+                                                        <div class = "block">
+                                                            <div class = "backgraund_category input_cat">
+                                                                
+                                                                {% for ic in icon %}
+                                                                
+                                                                    {% if ic.type_icon == 2 and ic.name_icon == "default_backgraund" or ic.name_icon == "alien_default_backgraund"%}
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                            <div>
+                                                                                <input type="checkbox" hidden name="body_election" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_backgraund(this.value)"> 
+                                                                                <label for=" {{ ic.id_icon }} ">
+                                                                                {{ ic.svg_icon|safe }}
+                                                                                </label>
+                                                                            </div>
+                                                                            
+                                                                            
+                                                                        
+                                                                            
+                                                                        
+                      
+                                                                    {% endif %}
+                      
+                                                                {% endfor %}
+                                                            </div>
+            
+                                                        </div>
+                                                        </div>
+            
+                                                            
+                                                </div>
+                                            </div> 
+                                            
                                             
 
-                                            <p>seccion cabezas</p>
-                                            {% for ic in icon  %}
+
+                                        
+                                            
+
+                                        <div class = "container_father_color">
+                                            
+                                            <div class = "svg_colores">
+                                                <svg  viewBox="0 0 313 401" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M313 0H219.5H172.75H149.375L136.686 13.0341L126 23.875V47.75V95.5V191H313V0Z" fill="#093159"/>
+                                                    <path d="M19.0036 63.9412L39.125 41H78.25H156.5H313V221V311V356L295.114 378.059L273.875 401H234.75H156.5H0V221V131V86L19.0036 63.9412Z" fill="#4D5C7D"/>
+                                                    </svg>
+                                                    
+                                            </div>
+
+
+                                            <div class = "containter_colors">
+
+                                                <h2>colores</h2>
+
+                                                <div>
+                                                    <div class = "color_head active" id = "color_head">
+                                                    
                                                 
-                                                {% if ic.type_icon == 0 %}
-                                                    
-                                                        <input type="checkbox" hidden name="head_election" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_head(this.value)"> 
-                                                        <label for=" {{ ic.id_icon }} ">
-                                                            {{ ic.svg_icon|safe }}
-                                                        </label>
-      
-                                                {% endif %}
-                                                    
-                                            {% endfor %}
-                                        </div>
-
-
-
-                                        <div class = "pormientras">
-                                            <p>seccion cuerpos</p>
-                                            {% for ic in icon  %}
+                                                 
                                                 
-                                                {% if ic.type_icon == 1 %}
+                                                        {% for users in  users %}
+                                                            
+                                                            {% if user.username == users.run_user %}
+                                                                
+                                                                {% for per in perIcon %} 
+                                                                
+                                                                    
+                                                                    {% if users.id_user_ours ==  per.user_ours_id_user_ours.id_user_ours %}
+                                                                    
+                                                                        
+                                                                        {% if "alien" in per.icon_id_icon.name_icon and per.icon_id_icon.type_icon == 0 %}
+                                                                        
+                                                                            {% for ic in icon %}
+                                                                
+                                                                                {% if  ic.type_icon == 0 and ic.name_icon != "default_head" and "alien" in ic.name_icon %}
+                                                                    
+                                                                    
+                                                                        
+                                                                                    <input type="checkbox" hidden name="head_election" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_head(this.value)"> 
+                                                                                    <label for=" {{ ic.id_icon }} ">
+                                                                                    {{ ic.svg_icon|safe }}
+                                                                                    </label>
+                                                                   
+                                                                                {% endif %}
+                                                                    
+                                                                        
+                                                            
+                                                                        {% endfor %}
+            
+                                                                        {% elif "default" in per.icon_id_icon.name_icon and per.icon_id_icon.type_icon == 0 %}
+            
+                                                                            {% for ic in icon %}
+                                                                
+                                                                                {% if  ic.type_icon == 0 and ic.name_icon != "alien_default_head" and "default" in ic.name_icon %}
+                                                                            
+                                                                            
+                                                                                
+                                                                                    <input type="checkbox" hidden name="head_election" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_head(this.value)"> 
+                                                                                    <label for=" {{ ic.id_icon }} ">
+                                                                                    {{ ic.svg_icon|safe }}
+                                                                                    </label>
+                                                                           
+                                                                                {% endif %}
+                                                                            
+                                                                                
+                                                                    
+                                                                            {% endfor %}
+                                                                            
+                                                                        {% endif %}
+                                                                            
+                                                                      
+            
+                                                                    {% endif %}
+                                                                        
+                                                                
+                                                                {% endfor %}
+            
+                                                            {% endif %}
+                                                                
+                                                        {% endfor %}
+                                                            
+                                                       
+            
+                                                    </div>
+        
+        
+                                                    <div class= "color_body" id = "color_body">
+                                                                    
                                                     
-                                                    <input type="checkbox" hidden name="head_election" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_body(this.value)"> 
-                                                    <label for=" {{ ic.id_icon }} ">
-                                                        {{ ic.svg_icon|safe }}
-                                                    </label>
-                                                {% endif %}
                                                     
-                                            {% endfor %}
+                                                     
+                                                    
+                                                    {% for users in  users %}
+                                                        
+                                                        {% if user.username == users.run_user %}
+                                                            
+                                                            {% for per in perIcon %} 
+                                                            
+                                                                
+                                                                {% if users.id_user_ours ==  per.user_ours_id_user_ours.id_user_ours %}
+                                                                
+                                                                    
+                                                                    {% if "alien" in per.icon_id_icon.name_icon and per.icon_id_icon.type_icon == 1 %}
+                                                                    
+                                                                        {% for ic in icon %}
+                                                            
+                                                                            {% if  ic.type_icon == 1 and ic.name_icon != "default_body" and "alien" in ic.name_icon %}
+                                                                
+                                                                
+                                                                    
+                                                                                <input type="checkbox" hidden name="body_election" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_body(this.value)"> 
+                                                                                <label for=" {{ ic.id_icon }} ">
+                                                                                {{ ic.svg_icon|safe }}
+                                                                                </label>
+                                                               
+                                                                            {% endif %}
+                                                                
+                                                                    
+                                                        
+                                                                        {% endfor %}
+        
+                                                                    {% elif "default" in per.icon_id_icon.name_icon and per.icon_id_icon.type_icon == 1 %}
+        
+                                                                        {% for ic in icon %}
+                                                            
+                                                                            {% if  ic.type_icon == 1 and ic.name_icon != "alien_default_body" and "default" in ic.name_icon %}
+                                                                        
+                                                                        
+                                                                            
+                                                                                <input type="checkbox" hidden name="body_election" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_body(this.value)"> 
+                                                                                <label for=" {{ ic.id_icon }} ">
+                                                                                {{ ic.svg_icon|safe }}
+                                                                                </label>
+                                                                       
+                                                                            {% endif %}
+                                                                        
+                                                                            
+                                                                
+                                                                        {% endfor %}
+                                                                        
+                                                                    {% endif %}
+                                                                        
+                                                                  
+        
+                                                                {% endif %}
+                                                                    
+                                                            
+                                                            {% endfor %}
+        
+                                                        {% endif %}
+                                                            
+                                                    {% endfor %}
+        
+        
+                                                    </div>
+        
+        
+                                                    <div class = "color_backgraund" id = "color_backgraund">
+                                                        
+                                                    
+                                                     
+                                                    
+                                                            {% for users in  users %}
+                                                        
+                                                                {% if user.username == users.run_user %}
+                                                            
+                                                                    {% for per in perIcon %} 
+                                                            
+                                                                
+                                                                        {% if users.id_user_ours ==  per.user_ours_id_user_ours.id_user_ours %}
+                                                                
+                                                                    
+                                                                            {% if "alien" in per.icon_id_icon.name_icon and per.icon_id_icon.type_icon == 2 %}
+                                                                    
+                                                                                {% for ic in icon %}
+                                                            
+                                                                                    {% if  ic.type_icon == 2 and ic.name_icon != "default_backgraund" and "alien" in ic.name_icon %}
+                                                                
+                                                                
+                                                                    
+                                                                                        <input type="checkbox" hidden name="head_election" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_backgraund(this.value)"> 
+                                                                                        <label for=" {{ ic.id_icon }} ">
+                                                                                        {{ ic.svg_icon|safe }}
+                                                                                        </label>
+                                                               
+                                                                                    {% endif %}
+                                                                
+                                                                    
+                                                        
+                                                                            {% endfor %}
+        
+                                                                            {% elif "default" in per.icon_id_icon.name_icon and per.icon_id_icon.type_icon == 2 %}
+        
+                                                                                {% for ic in icon %}
+                                                            
+                                                                                        {% if  ic.type_icon == 2 and ic.name_icon != "alien_default_backgraund" and "default" in ic.name_icon %}
+                                                                        
+                                                                        
+                                                                            
+                                                                                        <input type="checkbox" hidden name="head_election" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_backgraund(this.value)"> 
+                                                                                        <label for=" {{ ic.id_icon }} ">
+                                                                                        {{ ic.svg_icon|safe }}
+                                                                                        </label>
+                                                                       
+                                                                                    {% endif %}
+                                                                        
+                                                                            
+                                                                
+                                                                                {% endfor %}
+                                                                        
+                                                                            {% endif %}
+                                                                        
+                                                                  
+        
+                                                                        {% endif %}
+                                                                    
+                                                            
+                                                                    {% endfor %}
+        
+                                                                {% endif %}
+                                                            
+                                                            {% endfor %}
+                                                    </div>
+        
+                                                </div>
+        
+    
+                                            </div>
+                                                
                                         </div>
+                                                </div>
+                                                
+                                        
+
+                                        
+                                            
+
+                                        
+
+                                       
+
+
+                                            <input type="text" hidden name="id_user" id="id_user" value = "{{ i.id_user_ours }} ">
+                                            
+
+                                            
+
+                                            
+
+                                            
+                                                
+
                                         
 
 
-                                        <div class = "pormientras">
-                                            <p>seccion fondos</p>
-                                            {% for ic in icon  %}
-                                                
-                                                {% if ic.type_icon == 2 %}
-                                                    
-                                                    <input type="checkbox" hidden name="head_election" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_backgraund(this.value)"> 
-                                                    <label for=" {{ ic.id_icon }} ">
-                                                        {{ ic.svg_icon|safe }}
-                                                    </label>
 
-                                                {% endif %}
-                                                    
-                                            {% endfor %}
-                                        </div>
+                                        
+                                        
                                         
                                         
                                         
@@ -186,9 +517,9 @@
                                                     {% if  x.icon_id_icon.id_icon == ic.id_icon and x.user_ours_id_user_ours.run_user == user.username %}
                     
                     
-                                                        <input type="text" name="{% if ic.type_icon == 0 %}head_final_election{% elif ic.type_icon == 1 %}body_final_election{% elif ic.type_icon == 2 %}backgraund_final_election{% endif %}" id="{% if ic.type_icon == 0 %}head_final_election{% elif ic.type_icon == 1 %}body_final_election{% elif ic.type_icon == 2 %}backgraund_final_election{% endif %}" value = " {{x.icon_id_icon.id_icon}} ">
+                                                        <input type="text" hidden name="{% if ic.type_icon == 0 %}head_final_election{% elif ic.type_icon == 1 %}body_final_election{% elif ic.type_icon == 2 %}backgraund_final_election{% endif %}" id="{% if ic.type_icon == 0 %}head_final_election{% elif ic.type_icon == 1 %}body_final_election{% elif ic.type_icon == 2 %}backgraund_final_election{% endif %}" value = " {{x.icon_id_icon.id_icon}} ">
                                                         
-                                                        <input type="text" name="{% if ic.type_icon == 0 %}head_inital{% elif ic.type_icon == 1 %}body_initial{% elif ic.type_icon == 2 %}backgraund_initial{% endif %}" id="{% if ic.type_icon == 0 %}head_inital{% elif ic.type_icon == 1 %}body_initial{% elif ic.type_icon == 2 %}backgraund_initial{% endif %}" value = " {{x.icon_id_icon.id_icon}} ">
+                                                        <input type="text" hidden name="{% if ic.type_icon == 0 %}head_inital{% elif ic.type_icon == 1 %}body_initial{% elif ic.type_icon == 2 %}backgraund_initial{% endif %}" id="{% if ic.type_icon == 0 %}head_inital{% elif ic.type_icon == 1 %}body_initial{% elif ic.type_icon == 2 %}backgraund_initial{% endif %}" value = " {{x.icon_id_icon.id_icon}} ">
                     
                                                     {% endif %}
                                                 
@@ -208,6 +539,7 @@
                                                 
                                             
 
+                                            
                                                     
                                     
                                         
