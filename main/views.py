@@ -47,16 +47,10 @@ def levels_info(request):
 def resources_page(request):
     users = User_ours.objects.all()
     
-    API_KEY = "qE5NtN0FYG428PJE1nu4ygkCkPEQMRHV0F33lwOp"
-    url = 'https://api.nasa.gov/planetary/apod/'
-
-    params = {
-        'api_key': API_KEY,
-    }
-
+    url = 'https://api.nasa.gov/planetary/apod?api_key=qE5NtN0FYG428PJE1nu4ygkCkPEQMRHV0F33lwOp'
     
     try:
-        response = requests.get(url, params=params)
+        response = requests.get(url)
         response.raise_for_status() 
         data = response.json()
     except requests.exceptions.RequestException:
