@@ -4,19 +4,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Question</title>
+    <link rel="stylesheet" href="{% static 'levels/css/level-question.css' %}">
 </head>
 <body>
-    <div><H1>Bienvenido Astronauta</H1></div>
-    <div>
-        <div><h1>PREGUNTA</h1></div>
-        <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, sed? rum quis? Repellat esse minima sint soluta voluptas?</p></div>
-    </div>
+    <main>
+        <section>
+                <h1>Bienvenido Astronauta</h1>
+            <p class="subtitle">Nivel 1 - Leccion 1</p>
+            <div class="go-back">
+                <a href="">
+                    <svg viewBox="0 0 105 122" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 61L105 0.378265L90 61L105 121.622L0 61Z" fill="#E86030"/>
+                        <path d="M13 60.9803L98 12L74.5 60.9803L98 109L13 60.9803Z" fill="#984223"/>
+                    </svg>
+                    <p class="redir-btn">Volver</p>
+                </a>
+            </div>
+            <div class="counter-position">
+                <h2 class="counter" style="color: green"></h2>
+                <button id="resetCounter" data-timer-url="{% url 'get_timer' %}" style="text-decoration: none;">RESETEAR CONTADOR</button>
+            </div>
+        </section>
+        <section>
+            <div class="question">
+                <svg viewBox="0 0 1451 689" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 0H725.5H1088.25H1269.62H1360.31L1404.22 43.1683L1451 86.125V172.25V344.5V689H725.5H362.75H181.375H90.6875L45.0128 646.678L0 602.875V516.75V344.5V0Z" fill="#454B78"/>
+                    <ellipse cx="1430.5" cy="674" rx="11.5" ry="10" fill="#D9D2DA"/>
+                    <line y1="-0.5" x2="15.3495" y2="-0.5" transform="matrix(0.708475 -0.705736 0.79514 0.606425 1424.59 679.751)" stroke="#9C9C9C"/>
+                    <ellipse cx="1430.5" cy="97" rx="11.5" ry="10" fill="#D9D2DA"/>
+                    <line y1="-0.5" x2="15.3495" y2="-0.5" transform="matrix(0.708475 -0.705736 0.79514 0.606425 1424.59 102.91)" stroke="#9C9C9C"/>
+                    <ellipse cx="1344" cy="17" rx="12" ry="10" fill="#D9D2DA"/>
+                    <line y1="-0.5" x2="15.3495" y2="-0.5" transform="matrix(0.708475 -0.705736 0.79514 0.606425 1339.15 23.0195)" stroke="#9C9C9C"/>
+                    <ellipse cx="18" cy="15.5" rx="12" ry="10.5" fill="#D9D2DA"/>
+                    <line y1="-0.5" x2="15.3495" y2="-0.5" transform="matrix(0.708475 -0.705736 0.79514 0.606425 12.4281 21.6653)" stroke="#9C9C9C"/>
+                    <ellipse cx="22" cy="595" rx="12" ry="10" fill="#D9D2DA"/>
+                    <line y1="-0.5" x2="15.3495" y2="-0.5" transform="matrix(0.708475 -0.705736 0.79514 0.606425 17.0887 601.214)" stroke="#9C9C9C"/>
+                    <ellipse cx="107" cy="674" rx="12" ry="10" fill="#D9D2DA"/>
+                    <line y1="-0.5" x2="15.3495" y2="-0.5" transform="matrix(0.708475 -0.705736 0.79514 0.606425 100.98 679.751)" stroke="#9C9C9C"/>
+                    <path d="M168.315 83.67L249.125 47H410.25H732.5H1377V336.5V481.25V553.625V589.812L1337.34 607.472L1296.44 626H1215.88H1054.75H732.5H88V336.5V191.75V119.375L168.315 83.67Z" fill="#6F7E9F"/>
+                </svg>
+                <h3 class="question-title">¿This is an example of a question?</h3>
+                <p class="center ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum odio accusamus quidem nostrum quo unde commodi esse harum, ut iste debitis reprehenderit ducimus, sunt, sed fuga praesentium natus illo similique.</p>
+            </div>
+            <div class="Answer">
+                <p>1</p>
+            </div>
+            <div class="Answer">
+                <p>2</p>
+            </div>
+            <div class="Answer">
+                <p>3</p>
+            </div>
+        </section>
+        <div class="go-next">
+            <a href="">
 
-    <ul>
-        <li><h1 class="counter" style="color: green"></h1></li>
-        <li><button id="resetCounter" data-timer-url="{% url 'get_timer' %}" style="text-decoration: none;">RESETEAR CONTADOR</button></li>
-    </ul>
+            </a>
+        </div>
+
+    </main>
+
+
+
+
+
+   
     
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
