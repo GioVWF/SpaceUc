@@ -5,41 +5,96 @@ html {
 body {
     font-family: monospace, Courier;
     margin: 0;
-    background-color: rgb(249, 242, 221);
+    background:#000 url(http://1.bp.blogspot.com/-q7NYia_DjQI/U4t7_J4gwwI/AAAAAAAAMKo/nru4YxfjK6I/s1600/estrellas.png) repeat top center;
+}
+
+.estrellas {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    width:100%;
+    height:100%;
+    display:block;
+}
+
+.estrellas{
+    background:transparent url(http://3.bp.blogspot.com/-FwB8aSiMBmI/U4t9MkimRrI/AAAAAAAAMK0/FAlqX8ZFyu8/s1600/twinkling.png) repeat top center;
+    z-index:-2;
+    -moz-animation:move-twink-back 100s linear infinite;
+    -ms-animation:move-twink-back 100s linear infinite;
+    -o-animation:move-twink-back 100s linear infinite;
+    -webkit-animation:move-twink-back 100s linear infinite;
+    animation:move-twink-back 100s linear infinite;
+}
+
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-webkit-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-moz-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-ms-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
 }
 
 section {
     margin: 0;
     padding: 0;
+    text-align: center;
+    width: 100%;
 }
 
 h1 {
     margin: 50px 0 0 0;
     font-weight: normal;
     text-align: center;
+    color: white;
 }
 
 .subtitle {
     text-align: center;
     font-size: 2rem;
     margin: 0 0 100px 0;
+    color: white;
 }
 
 .question {
+    display: block;
     margin: 0 auto;
     width: 70vw;
+    height: auto;
+    text-align: center;
+}
+
+.question > svg {
+    width: 60vw;
+    max-width: 1000px;
+    min-width: 300px;
+    height: auto;
 }
 
 .question-title {
-    display: block;
-    font-size: 1.5rem;
-    text-align: center;
-    padding-top: 1%;
+    font-weight: bolder;
+    font-size: 2.5rem;
+    color: white;
 }
 
-p[class~="center"]{ 
-    text-align: center;
-    font-size: .7rem;
+.question-content {
+    color: white;
+}
+
+p[class~="center"] { 
+    text-align: start;
+    font-size: 2rem;
 }
 
 .go-back {
@@ -51,7 +106,7 @@ p[class~="center"]{
 
 .go-back a {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 .go-back a > svg {
@@ -72,6 +127,37 @@ p[class~="center"]{
     }
 }
 
+.go-next {
+    position: absolute;
+    bottom: 6vh;
+    right: 5vw;
+    width: 60px;
+}
+
+.go-next a {
+    text-decoration: none;
+    color: white;
+}
+
+.go-next a > svg {
+    width: auto;
+    height: auto;
+    animation: nextbtn 3s ease-in-out infinite;
+}
+
+
+@keyframes nextbtn {
+    0% {
+        transform: translateX(5px);
+    }
+    50% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(5px);
+    }
+}
+
 p[class="redir-btn"] {
     font-size: .7rem;
     text-align: center;
@@ -84,3 +170,30 @@ p[class="redir-btn"] {
     right: 5vw;
     width: 100px;
 }
+
+form {
+    display: block;
+    margin: -50px auto 0 auto;
+}
+
+fieldset {
+    display: flex;
+    width: 60vw;
+    max-width: 900px;
+    min-width: 300px;
+    border: 0;
+    margin: 0 auto;
+    justify-content: space-evenly;
+}
+
+fieldset svg {
+    width: 80%;
+    height: auto;
+}
+
+input[type="button"] {
+    display: none;
+}
+
+
+

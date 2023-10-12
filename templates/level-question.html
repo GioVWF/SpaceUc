@@ -9,8 +9,9 @@
 </head>
 <body>
     <main>
+        <div class="estrellas"></div>
         <section>
-                <h1>Bienvenido Astronauta</h1>
+            <h1>Bienvenido Astronauta</h1>
             <p class="subtitle">Nivel 1 - Leccion 1</p>
             <div class="go-back">
                 <a href="">
@@ -43,34 +44,49 @@
                     <ellipse cx="107" cy="674" rx="12" ry="10" fill="#D9D2DA"/>
                     <line y1="-0.5" x2="15.3495" y2="-0.5" transform="matrix(0.708475 -0.705736 0.79514 0.606425 100.98 679.751)" stroke="#9C9C9C"/>
                     <path d="M168.315 83.67L249.125 47H410.25H732.5H1377V336.5V481.25V553.625V589.812L1337.34 607.472L1296.44 626H1215.88H1054.75H732.5H88V336.5V191.75V119.375L168.315 83.67Z" fill="#6F7E9F"/>
-                </svg>
-                <h3 class="question-title">¿This is an example of a question?</h3>
-                <p class="center ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum odio accusamus quidem nostrum quo unde commodi esse harum, ut iste debitis reprehenderit ducimus, sunt, sed fuga praesentium natus illo similique.</p>
+                    <foreignObject x="10%" y="50" width="80%" height="10cm">
+                        <h3 class="question-title">¿This is an example of a question?aaaaaaa<a href=""></a></h3>
+                    </foreignObject>
+                    <foreignObject x="12%" y="220" width="80%" height="10cm">
+                        <p class="center question-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur veniam commodi nesciunt obcaecati aperiam distinctio possimus ipsam optio eligendi error ab sit, fugiat aliquam aliquid iure. Nulla, asperiores reprehenderit? Error.</p>
+                      </foreignObject>
+                </svg> 
             </div>
-            <div class="Answer">
-                <p>1</p>
-            </div>
-            <div class="Answer">
-                <p>2</p>
-            </div>
-            <div class="Answer">
-                <p>3</p>
-            </div>
+            <form action="">
+                <fieldset>
+                    <label for="Answer-1">
+                        <input id="Answer-1" type="button" class="Answer">
+                        <svg viewBox="0 0 311 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0H77.75H155.5H233.25L275.837 34.375L311 62.5V125V187.5V250H155.5H77.75L40.6332 220L0 187.5V125V62.5V0Z" fill="#25B5C1"/>
+                        </svg>
+                    </label>  
+                    <label for="Answer-2">
+                        <input id="Answer-2" type="button" class="Answer">
+                        <svg viewBox="0 0 311 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0H77.75H155.5H233.25L275.837 34.375L311 62.5V125V187.5V250H155.5H77.75L40.6332 220L0 187.5V125V62.5V0Z" fill="#25B5C1"/>
+                        </svg>
+                    </label>
+                    <label for="Answer-3">
+                        <input id="Answer-3" type="button" class="Answer">
+                        <svg viewBox="0 0 311 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0H77.75H155.5H233.25L275.837 34.375L311 62.5V125V187.5V250H155.5H77.75L40.6332 220L0 187.5V125V62.5V0Z" fill="#25B5C1"/>
+                        </svg>
+                    </label>
+                </fieldset>
+            </form>
         </section>
         <div class="go-next">
             <a href="">
-
+                <svg viewBox="0 0 105 122" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M105 60.6218L0 121.244L15 60.6218L0 0L105 60.6218Z" fill="#E86030"/>
+                    <path d="M92.0239 60.7682L7.02393 109.749L30.5239 60.7682L7.02393 12.7485L92.0239 60.7682Z" fill="#984223"/>
+                </svg>
+                <p class="redir-btn">Siguiente parte</p>
             </a>
         </div>
 
     </main>
 
-
-
-
-
-   
-    
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
