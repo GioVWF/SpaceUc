@@ -2,6 +2,8 @@ from django.shortcuts import render
 from db_spaceuc.models import User_ours
 import requests
 import json
+from django.http import JsonResponse
+
 
 def home(request):
     users = User_ours.objects.all()
@@ -90,7 +92,30 @@ def podium(request):
     return render(request, 'podium.html', context)
 
 
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        
+def teacher_follow(request):
+
+    users = User_ours.objects.all()
+    students = User_ours.objects.filter(user_type = 2)
+    context = {
+        'users': users,
+        'students' : students,
+    }
+
+    return render(request, 'teacher-follow.html', context)
+
+
+def get_info_student_(request, id_student):
+    get_student =  User_ours.objects.filter(id_user_ours = id_student)
+
+    if (len(get_student) > 0):
+
+        data = [{'message' : "Found it", 'first_name_user': item.first_name_user, 'last_name_user': item.last_name_user, 'run_user' : item.run_user, 'alias_user' : item.alias_user, 'grade_user' : item.grade_user, 'point_user' : item.point_user} for item in get_student]
+
+    else:
+        data = {'message' : "Not Found"}
+
+    return JsonResponse(data, safe=False)        
     

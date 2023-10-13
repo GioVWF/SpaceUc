@@ -1,0 +1,14 @@
+table{
+    position: relative;
+    top: 400px;
+    color: white;
+}
+
+.info_student_view{
+    color: white;
+    display: inline;
+}
+
+.info_student_view p{
+    display: inline;
+}

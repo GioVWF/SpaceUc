@@ -8,5 +8,7 @@ urlpatterns = [
     path('about-page/', about, name='about_page'),
     path('levels-info/', levels_info, name="levels_info"),
     path('podium/', podium, name="podium_page"),
-    path('game/', game, name="game_page")
+    path('game/', game, name="game_page"),
+    path('teacher_follow/', teacher_follow, name="teacher_follow"),
+    path('get_info_student_/<int:id_student>', get_info_student_, name="get_info_student_"),
 ]

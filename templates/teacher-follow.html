@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'main/css/teacher-follow.css' %}">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+{% endblock %}
+
+{% block content %}
+
+
+<table>
+    <tr>
+        <td>Nombre</td>
+        <td>Apellido</td>
+        <td>Rut</td>
+        <td>Nombre de usuario</td>
+        <td>Curso</td>
+        <td>Puntos</td>
+        <td>Botones</td>
+    </tr>
+
+
+    
+    {% for std in students %}
+        <tr>
+            <td>{{std.first_name_user}}</td>
+            <td>{{std.last_name_user}}</td>
+            <td>{{std.run_user}}</td>
+            <td>{{std.alias_user}}</td>
+            <td>{{std.grade_user}}</td>
+            <td>{{std.point_user}}</td>
+            <td> 
+                <a href="#" class="get-student-info" data-student-id="{{ std.id_user_ours }}" onclick="viewStudent({{ std.id_user_ours }})">VER</a>
+                <button>ELIMINAR</button>
+            </td>
+        </tr>
+    {% endfor %}
+        
+    
+</table>
+
+
+<div id = "info_specific" class = "info_student_view">
+
+</div>
+              
+
+<script src = "{% static 'main/js/teacher-follow.js' %}" ></script>
+{%  endblock %}
