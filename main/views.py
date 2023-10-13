@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from db_spaceuc.models import User_ours
 import requests
 import json
@@ -119,3 +119,9 @@ def get_info_student_(request, id_student):
 
     return JsonResponse(data, safe=False)        
     
+
+def delete_student_(request, id_student):
+    get_student =  User_ours.objects.get(id_user_ours = id_student)
+    get_student.delete()
+
+    return redirect(teacher_follow)

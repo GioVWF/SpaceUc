@@ -33,8 +33,13 @@
             <td>{{std.grade_user}}</td>
             <td>{{std.point_user}}</td>
             <td> 
-                <a href="#" class="get-student-info" data-student-id="{{ std.id_user_ours }}" onclick="viewStudent({{ std.id_user_ours }})">VER</a>
-                <button>ELIMINAR</button>
+                <a href="#" class="get-student-info" onclick="viewStudent( {{ std.id_user_ours }} )">
+                    <button>Ver</button>
+                </a>
+
+                <a href="{% url 'delete_student_' std.id_user_ours %}">
+                    <button>Eliminar</button>
+                </a>
             </td>
         </tr>
     {% endfor %}

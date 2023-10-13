@@ -11,4 +11,5 @@ urlpatterns = [
     path('game/', game, name="game_page"),
     path('teacher_follow/', teacher_follow, name="teacher_follow"),
     path('get_info_student_/<int:id_student>', get_info_student_, name="get_info_student_"),
+    path('delete_student_/<int:id_student>', delete_student_, name="delete_student_"),
 ]
