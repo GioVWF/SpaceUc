@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
-from db_spaceuc.models import User_ours
+from db_spaceuc.models import User_ours,PerIcon,Icon
 import requests
 import json
 from django.http import JsonResponse
+from django.contrib.auth.models import User
 
 
 def home(request):
@@ -109,10 +110,38 @@ def teacher_follow(request):
 
 def get_info_student_(request, id_student):
     get_student =  User_ours.objects.filter(id_user_ours = id_student)
+    
+
+    get_student_icon =  User_ours.objects.get(id_user_ours = id_student)
+    get_per_icon = PerIcon.objects.filter(user_ours_id_user_ours = get_student_icon)
+    
+    object1 = get_per_icon[0].icon_id_icon.id_icon
+    object2 = get_per_icon[1].icon_id_icon.id_icon
+    object3 = get_per_icon[2].icon_id_icon.id_icon
+
+    head_query = Icon.objects.get(id_icon = object1)
+    body_query = Icon.objects.get(id_icon = object2)
+    background_query = Icon.objects.get(id_icon = object3)
+
+    head_svg = head_query.svg_icon
+    body_svg = body_query.svg_icon
+    background_svg = background_query.svg_icon
 
     if (len(get_student) > 0):
 
-        data = [{'message' : "Found it", 'first_name_user': item.first_name_user, 'last_name_user': item.last_name_user, 'run_user' : item.run_user, 'alias_user' : item.alias_user, 'grade_user' : item.grade_user, 'point_user' : item.point_user} for item in get_student]
+        data = {
+            'message': "Found it",
+            'first_name_user': get_student[0].first_name_user,
+            'last_name_user': get_student[0].last_name_user,
+            'run_user': get_student[0].run_user,
+            'alias_user': get_student[0].alias_user,
+            'grade_user': get_student[0].grade_user,
+            'point_user': get_student[0].point_user,
+            'head_svg' : head_svg,
+            'body_svg' : body_svg, 
+            'background_svg' : background_svg
+
+        }
 
     else:
         data = {'message' : "Not Found"}
@@ -122,6 +151,10 @@ def get_info_student_(request, id_student):
 
 def delete_student_(request, id_student):
     get_student =  User_ours.objects.get(id_user_ours = id_student)
+    run = get_student.run_user
+    get_user_django = User.objects.get(username = run)
+
     get_student.delete()
+    get_user_django.delete()
 
     return redirect(teacher_follow)

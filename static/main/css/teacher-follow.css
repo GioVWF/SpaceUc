@@ -1,14 +1,128 @@
-table{
+html{
+    background-image: url('/static/main/img/backgraund_teacher.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+
+}
+
+main{
+    
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.father_container{
     position: relative;
-    top: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 85%;
+    height: 77.5%;
+    background-color: red;
+    margin-top: 20vh;
+    z-index: 1;
+    
+}
+
+.svg_container{
+    position: absolute;
+    background-color: orange;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.svg_control{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.first_son{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.filters_container{
+    
+    width: 100%;
+    height: 17.1%;
+}
+
+.students_container{
+    display: flex;
+   
+    justify-content: center;
+    align-items: center;
+    width: 92.5%;
+    height: 82.9%;
+    margin: 0 0.6vh 2.7vh 0vh;
+
+    
+}
+
+.student_control_table{
+    width: 100%;
+    height: 100%;
+    padding: 3vh 2vh 5vh 2vh;
+
+ 
+    overflow: auto;
+    
+}
+
+.second_son{
+    position: relative;
+    display: flex;
+    width: 50%;
+    height: 100%;
+    z-index: 2;
+    justify-content: left;
+    align-items: flex-end;
+    
+}
+
+
+.specific_student{
+    width: 93.2%;
+    height: 83.8%;
+    margin: 0 0 2.7vh 0.6vh;
+    background-color: red;
+
+}
+
+table{
+
     color: white;
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    
+}
+
+td {
+    border-bottom: 1px solid white; 
+    padding: 0;
 }
 
 .info_student_view{
+    width: 100%;
+    height: 100%;
     color: white;
-    display: inline;
+    
 }
 
-.info_student_view p{
-    display: inline;
-}
+

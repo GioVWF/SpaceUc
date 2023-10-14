@@ -11,47 +11,113 @@
 {% block content %}
 
 
-<table>
-    <tr>
-        <td>Nombre</td>
-        <td>Apellido</td>
-        <td>Rut</td>
-        <td>Nombre de usuario</td>
-        <td>Curso</td>
-        <td>Puntos</td>
-        <td>Botones</td>
-    </tr>
 
 
-    
-    {% for std in students %}
-        <tr>
-            <td>{{std.first_name_user}}</td>
-            <td>{{std.last_name_user}}</td>
-            <td>{{std.run_user}}</td>
-            <td>{{std.alias_user}}</td>
-            <td>{{std.grade_user}}</td>
-            <td>{{std.point_user}}</td>
-            <td> 
-                <a href="#" class="get-student-info" onclick="viewStudent( {{ std.id_user_ours }} )">
-                    <button>Ver</button>
-                </a>
 
-                <a href="{% url 'delete_student_' std.id_user_ours %}">
-                    <button>Eliminar</button>
-                </a>
-            </td>
-        </tr>
-    {% endfor %}
+<main>
+    <section class = "father_container">
+
+        <section class = "first_son">
+
+            <div class = "filters_container">
+
+            </div>
+
+            <div class = "students_container">
+
+                <div class = "student_control_table">
+                    <table>
+                        <tr>
+                            <td>Nombre</td>
+                            <td>Apellido</td>
+                            <td>Rut</td>
+                            <td>Nombre de usuario</td>
+                            <td>Curso</td>
+                            <td>Puntos</td>
+                            <td>Botones</td>
+                        </tr>
+                    
+                    
+                        
+                        {% for std in students %}
+                            <tr>
+                                <td>{{std.first_name_user}}</td>
+                                <td>{{std.last_name_user}}</td>
+                                <td>{{std.run_user}}</td>
+                                <td>{{std.alias_user}}</td>
+                                <td>{{std.grade_user}}</td>
+                                <td>{{std.point_user}}</td>
+                                <td> 
+                                    <a href="#" class="get-student-info" onclick="viewStudent( {{ std.id_user_ours }} )">
+                                        <button>Ver</button>
+                                    </a>
+                    
+                                    <a href="{% url 'delete_student_' std.id_user_ours %}">
+                                        <button>Eliminar</button>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                            
+                        
+                    </table>
+                </div>
+                
+            </div>
+
+        </section>
+           
+        <section class = "second_son">
+            
+            <div class = "specific_student">
+                
+                <div id = "info_specific" class = "info_student_view">
+
+                </div>
+            </div>
+
+        </section>
+
+        <figure class = "svg_container">
+            
+            <svg viewBox="0 0 1700 800" fill="none" xmlns="http://www.w3.org/2000/svg" class = "svg_control">
+                <path d="M0 0H850H1275H1487.5H1593.75L1653 55L1700 100V200V400V800H0V0Z" fill="#00304E"/>
+                <circle cx="1585.5" cy="13.5" r="7.5" fill="#D9D2DA"/>
+                <line x1="1581.62" y1="17.6707" x2="1588.62" y2="9.67075" stroke="#9C9C9C"/>
+                <circle cx="1687.5" cy="110.5" r="7.5" fill="#D9D2DA"/>
+                <line x1="1683.62" y1="113.671" x2="1690.62" y2="105.671" stroke="#9C9C9C"/>
+                <circle cx="1685.5" cy="786.5" r="7.5" fill="#D9D2DA"/>
+                <line x1="1681.62" y1="790.671" x2="1688.62" y2="782.671" stroke="#9C9C9C"/>
+                <circle cx="11.5" cy="786.5" r="7.5" fill="#D9D2DA"/>
+                <line x1="7.62371" y1="790.671" x2="14.6237" y2="782.671" stroke="#9C9C9C"/>
+                <circle cx="8.5" cy="10.5" r="7.5" fill="#D9D2DA"/>
+                <line x1="4.62371" y1="14.6707" x2="11.6237" y2="6.67075" stroke="#9C9C9C"/>
+                <path d="M29 103H422H618.5H716.75H765.875L792.5 126L815 144.875V186.75V270.5V438V773H29V103Z" fill="#005488"/>
+                <path d="M857 103H1250H1446.5H1544.75L1597.5 147L1643 186.75V270.5V438V773H857V103Z" fill="#005488"/>
+            </svg>
+                
+        </figure>
+
         
+
+
+    </section>
     
-</table>
+</main>
 
 
-<div id = "info_specific" class = "info_student_view">
 
-</div>
+
+
+
+
+
+
+
+
+
+
               
 
-<script src = "{% static 'main/js/teacher-follow.js' %}" ></script>
+<script src = "{% static 'main/js/teacher-follow.js' %}" ></script> 
 {%  endblock %}
