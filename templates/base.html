@@ -44,9 +44,40 @@
                                 </a>
                             </div>
                         </div>
-                        <a href="{% url 'game_page' %}" class="navbar-play">
-                            <div class="navbar-play-inner"><h1 class="navbar-playButton">JUGAR!</h1></div>
-                        </a>
+
+                        
+                        {% if user.is_authenticated %}
+                            
+                            {% for x in users%}
+                                
+                                
+                                {% if user.username == x.run_user  %}
+
+                                        {% if x.user_type == 1 %}
+                                            <a href="{% url 'teacher_follow' %}" class="navbar-follow">
+                                                <div class="navbar-follow-inner"><h1 class="navbar-followButton-follow">Seguimiento</h1></div>
+                                            </a>
+                                        {% else %}
+                                            <a href="{% url 'game_page' %}" class="navbar-play">
+                                                <div class="navbar-play-inner"><h1 class="navbar-playButton">JUGAR!</h1></div>
+                                            </a>
+                                        {% endif %}
+                                
+                               
+
+                                {% endif %}
+                                    
+                                
+                                    
+                            {% endfor %}
+                        {% else %}
+
+                            <a href="{% url 'game_page' %}" class="navbar-play">
+                                <div class="navbar-play-inner"><h1 class="navbar-playButton">JUGAR!</h1></div>
+                            </a>       
+                        {% endif %}
+                            
+                        
                         <div class="navbar-panel-blackButton-right">
                             <div class="navbar-panel-greyButton-right">
                                 <a href="{% url 'home_page'%}" class="navbar-panel-greyButton-right-inner">

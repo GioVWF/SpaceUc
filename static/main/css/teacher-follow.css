@@ -84,26 +84,6 @@ main{
     
 }
 
-.second_son{
-    position: relative;
-    display: flex;
-    width: 50%;
-    height: 100%;
-    z-index: 2;
-    justify-content: left;
-    align-items: flex-end;
-    
-}
-
-
-.specific_student{
-    width: 93.2%;
-    height: 83.8%;
-    margin: 0 0 2.7vh 0.6vh;
-    background-color: red;
-
-}
-
 table{
 
     color: white;
@@ -118,11 +98,96 @@ td {
     padding: 0;
 }
 
+.second_son{
+    position: relative;
+    display: flex;
+    width: 50%;
+    height: 100%;
+    z-index: 2;
+    justify-content: left;
+    align-items: flex-end;
+    
+    
+}
+
+
+.specific_student{
+    width: 93.2%;
+    height: 83.8%;
+    margin: 0 0 2.7vh 0.6vh;
+    
+
+}
+
 .info_student_view{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
     color: white;
     
 }
 
+.svg_icon_container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+}
 
+.head_icon{
+    position: relative;
+    width: 50%;
+    z-index: 3;
+    top: 2.5vh;
+}
+
+.body_icon{
+    position: relative;
+    width: 80%;
+    z-index: 2;
+    bottom: .3vh;
+}
+
+
+.background_icon{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+}
+
+.title_student{
+ 
+    font-size: x-large;
+    
+}
+
+.container_text{
+    background-color: #013657;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: auto;
+    margin-top: 10px;
+    
+}
+
+.container_text p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+    margin: 1vh 1vh 1vh 1vh;
+    padding: .3vh;
+    background-color: #0081D0;
+    width: 100%;
+    height: auto;
+
+}

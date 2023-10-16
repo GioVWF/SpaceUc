@@ -186,6 +186,7 @@ form h1{
    
 }
 
+
 .container_category .sub_container{
     width: 100%;
     height: 100%;
@@ -244,6 +245,7 @@ form h1{
 
 .color_head.active {
     opacity: 1;
+    z-index: 20;
     
 }
 
@@ -256,6 +258,7 @@ form h1{
 
 .color_body.active{
     opacity: 1;
+    z-index: 20;
     
 }
 
@@ -270,7 +273,7 @@ form h1{
 .color_backgraund.active {
     
     opacity: 1;
-
+    z-index: 20;
 }
 
 
@@ -343,6 +346,10 @@ label{
     
 
 
+}
+
+.content_father_colors{
+    height: 100%;
 }
 
 

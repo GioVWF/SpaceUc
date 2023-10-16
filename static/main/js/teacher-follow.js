@@ -9,16 +9,43 @@ const viewStudent = async (id_student) => {
     console.log(details)
     if (details.message == "Found it") {
         const detailsHtml = `
-            <p>Nombre: ${details.first_name_user} ${details.last_name_user}</p>
-            <p>RUN: ${details.run_user}</p>
-            <p>Alias: ${details.alias_user}</p>
-            <p>Grado: ${details.grade_user}</p>
-            <p>Puntos: ${details.point_user}</p>
-            <div class = "chiquito">
-                ${details.head_svg}
-                ${details.body_svg}
-                ${details.background_svg}
+            
+            <p class = "title_student" >Estudiante ${details.first_name_user} ${details.last_name_user}</p>
+            <div class = "svg_icon_container">
+
+                <div class = "head_icon" >
+                    ${details.head_svg} 
+        
+                </div>
+
+                <div class = "body_icon" >
+                    ${details.body_svg}
+                </div>
+
+                <div class = "background_icon" >
+                    ${details.background_svg}
+                </div>
             </div>
+
+            <div class = "container_text">
+                <p class = "text_student" >RUN: ${details.run_user}</p>
+            </div>
+            
+            <div class = "container_text">
+                <p class = "text_student">Nombre de usuario: ${details.alias_user}</p>
+            </div>
+                
+            <div class = "container_text">
+                <p class = "text_student">Grado: ${details.grade_user}</p>
+            </div>
+
+            <div class = "container_text">   
+                <p class = "text_student">Puntos: ${details.point_user}</p>
+            </div>
+            
+            
+            
+            
             
         `;
         // Insertar la información en el div "info_specific"
