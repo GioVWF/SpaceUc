@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nivel</title>
+    <link rel="stylesheet" href="{% static 'levels/css/levels.css' %}">
+</head>
+<body>
+    <h1>Bienvenido Astronauta</h1>
+    <ol>
+        <li><a href="{% url 'question' level first %}">Lección 1</a></li>
+        <li><a href="{% url 'question' level second %}">Lección 2</a></li>
+        <li><a href="{% url 'question' level third %}">Lección 3</a></li>
+    </ol>
+</body>
+</html>

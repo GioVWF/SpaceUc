@@ -76,14 +76,10 @@ class Podium(models.Model):
 
 class Question(models.Model):
     id_question = models.AutoField(primary_key=True)
+    number_question = models.IntegerField(default=0)
     title_question = models.CharField(max_length=200)
     description_question = models.CharField(max_length=400)
-    title_lesson = models.CharField(max_length=200)
     level_id_level = models.ForeignKey(Level, on_delete=models.CASCADE)
-    description_lesson = models.CharField(max_length=1000)
-    user_ours_id_user_ours = models.ForeignKey(User_ours, on_delete=models.CASCADE, null=True)
-
-
 
 class Answer(models.Model):
     id_answer = models.AutoField(primary_key=True)

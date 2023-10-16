@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Question</title>
+    <title>Pregunta</title>
     <link rel="stylesheet" href="{% static 'levels/css/level-question.css' %}">
 </head>
 <body>
@@ -12,7 +12,7 @@
         <div class="estrellas"></div>
         <section>
             <h1>Bienvenido Astronauta</h1>
-            <p class="subtitle">Nivel 1 - Leccion 1</p>
+            <p class="subtitle">Nivel {{level}} - Lección {{lesson}}</p>
             <div class="go-back">
                 <a href="">
                     <svg viewBox="0 0 105 122" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -44,11 +44,11 @@
                     <ellipse cx="107" cy="674" rx="12" ry="10" fill="#D9D2DA"/>
                     <line y1="-0.5" x2="15.3495" y2="-0.5" transform="matrix(0.708475 -0.705736 0.79514 0.606425 100.98 679.751)" stroke="#9C9C9C"/>
                     <path d="M168.315 83.67L249.125 47H410.25H732.5H1377V336.5V481.25V553.625V589.812L1337.34 607.472L1296.44 626H1215.88H1054.75H732.5H88V336.5V191.75V119.375L168.315 83.67Z" fill="#6F7E9F"/>
-                    <foreignObject x="10%" y="50" width="80%" height="10cm">
-                        <h3 class="question-title">¿This is an example of a question?aaaaaaa<a href=""></a></h3>
+                    <foreignObject x="10%" y="50" width="80%" height="6cm">
+                        <h3 class="question-title">{{title}}</h3>
                     </foreignObject>
                     <foreignObject x="12%" y="220" width="80%" height="10cm">
-                        <p class="center question-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur veniam commodi nesciunt obcaecati aperiam distinctio possimus ipsam optio eligendi error ab sit, fugiat aliquam aliquid iure. Nulla, asperiores reprehenderit? Error.</p>
+                        <p class="center question-content">{{content}}</p>
                       </foreignObject>
                 </svg> 
             </div>
