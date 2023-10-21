@@ -17,6 +17,7 @@ class Icon(models.Model):
     name_icon = models.CharField(max_length = 100)
     svg_icon = models.TextField()
     type_icon = models.IntegerField()
+    color = models.IntegerField(default = 0)
 
     def __str__(self):
 

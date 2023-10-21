@@ -118,7 +118,7 @@
                                         {% csrf_token %}
 
                                         <h1>Creacion de icono</h1>
-
+                                        
                                         <div class = "container_cat_color_svg"> 
                                             <div class = "container_father_cat">
                                                 
@@ -153,7 +153,7 @@
                                                                     
                                                                     
                                                                             <div>
-                                                                                <input type="checkbox" hidden name="head_election" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_head(this.value)"> 
+                                                                                <input type="checkbox" hidden name="head_election" data-new-value="{{ ic.color }}" data-new-name="{{ ic.name_icon }}" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_head(this.value, this.getAttribute('data-new-value'), this.getAttribute('data-new-name'))"> 
                                                                                 <label for=" {{ ic.id_icon }} ">
                                                                                 {{ ic.svg_icon|safe }}
                                                                                 </label>
@@ -182,7 +182,7 @@
                                                                     
                                                                     
                                                                             <div>   
-                                                                                <input type="checkbox" hidden name="body_election" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_body(this.value)"> 
+                                                                                <input type="checkbox" hidden name="body_election" data-new-value="{{ ic.color }}" data-new-name="{{ ic.name_icon }}" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_body(this.value, this.getAttribute('data-new-value'), this.getAttribute('data-new-name'))"> 
                                                                                 <label for=" {{ ic.id_icon }} ">
                                                                                 {{ ic.svg_icon|safe }}
                                                                                 </label>
@@ -206,13 +206,13 @@
                                                                 
                                                                 {% for ic in icon %}
                                                                 
-                                                                    {% if ic.type_icon == 2 and ic.name_icon == "default_backgraund" or ic.name_icon == "alien_default_backgraund"%}
+                                                                    {% if ic.type_icon == 2 and ic.name_icon == "default_background" or ic.name_icon == "alien_default_background"%}
                                                                         
                                                                         
                                                                         
                                                                         
                                                                             <div>
-                                                                                <input type="checkbox" hidden name="body_election" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_backgraund(this.value)"> 
+                                                                                <input type="checkbox" hidden name="body_election" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " data-new-value="{{ ic.color }}" data-new-name="{{ ic.name_icon }}" onclick = "selection_backgraund(this.value, this.getAttribute('data-new-value'), this.getAttribute('data-new-name'))"> 
                                                                                 <label for=" {{ ic.id_icon }} ">
                                                                                 {{ ic.svg_icon|safe }}
                                                                                 </label>
@@ -280,7 +280,7 @@
                                                                     
                                                                     
                                                                         
-                                                                                    <input type="checkbox" hidden name="head_election" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_head(this.value)"> 
+                                                                                    <input type="checkbox" hidden name="head_election" data-new-value="{{ ic.color }}" data-new-name="{{ ic.name_icon }}"  id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_head(this.value, this.getAttribute('data-new-value'), this.getAttribute('data-new-name'))"> 
                                                                                     <label for=" {{ ic.id_icon }} ">
                                                                                     {{ ic.svg_icon|safe }}
                                                                                     </label>
@@ -299,7 +299,7 @@
                                                                             
                                                                             
                                                                                 
-                                                                                    <input type="checkbox" hidden name="head_election" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_head(this.value)"> 
+                                                                                    <input type="checkbox" hidden name="head_election" data-new-value=" {{ic.color}} " data-new-name="{{ ic.name_icon }}" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_head(this.value, this.getAttribute('data-new-value'), this.getAttribute('data-new-name'))"> 
                                                                                     <label for=" {{ ic.id_icon }} ">
                                                                                     {{ ic.svg_icon|safe }}
                                                                                     </label>
@@ -352,7 +352,7 @@
                                                                 
                                                                 
                                                                     
-                                                                                <input type="checkbox" hidden name="body_election" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_body(this.value)"> 
+                                                                                <input type="checkbox" hidden  data-new-value=" {{ic.color}} " name="body_election" id=" {{ ic.id_icon }} " data-new-name="{{ ic.name_icon }}" value = " {{ ic.id_icon }} " onclick = "selection_body(this.value, this.getAttribute('data-new-value'), this.getAttribute('data-new-name'))"> 
                                                                                 <label for=" {{ ic.id_icon }} ">
                                                                                 {{ ic.svg_icon|safe }}
                                                                                 </label>
@@ -371,7 +371,7 @@
                                                                         
                                                                         
                                                                             
-                                                                                <input type="checkbox" hidden name="body_election" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_body(this.value)"> 
+                                                                                <input type="checkbox" hidden name="body_election" data-new-value=" {{ic.color}} " data-new-name="{{ ic.name_icon }}" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_body(this.value, this.getAttribute('data-new-value'), this.getAttribute('data-new-name'))"> 
                                                                                 <label for=" {{ ic.id_icon }} ">
                                                                                 {{ ic.svg_icon|safe }}
                                                                                 </label>
@@ -418,11 +418,11 @@
                                                                     
                                                                                 {% for ic in icon %}
                                                             
-                                                                                    {% if  ic.type_icon == 2 and ic.name_icon != "default_backgraund" and "alien" in ic.name_icon %}
+                                                                                    {% if  ic.type_icon == 2 and ic.name_icon != "default_background" and "alien" in ic.name_icon %}
                                                                 
                                                                 
                                                                     
-                                                                                        <input type="checkbox" hidden name="head_election" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_backgraund(this.value)"> 
+                                                                                        <input type="checkbox" hidden name="head_election" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " data-new-value="{{ ic.color }}" data-new-name="{{ ic.name_icon }}" onclick = "selection_backgraund(this.value, this.getAttribute('data-new-value'), this.getAttribute('data-new-name'))"> 
                                                                                         <label for=" {{ ic.id_icon }} ">
                                                                                         {{ ic.svg_icon|safe }}
                                                                                         </label>
@@ -437,11 +437,11 @@
         
                                                                                 {% for ic in icon %}
                                                             
-                                                                                        {% if  ic.type_icon == 2 and ic.name_icon != "alien_default_backgraund" and "default" in ic.name_icon %}
+                                                                                        {% if  ic.type_icon == 2 and ic.name_icon != "alien_default_background" and "default" in ic.name_icon %}
                                                                         
                                                                         
                                                                             
-                                                                                        <input type="checkbox" hidden name="head_election" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_backgraund(this.value)"> 
+                                                                                        <input type="checkbox" hidden name="head_election" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " data-new-value="{{ ic.color }}" data-new-name="{{ ic.name_icon }}" onclick = "selection_backgraund(this.value, this.getAttribute('data-new-value'), this.getAttribute('data-new-name'))"> 
                                                                                         <label for=" {{ ic.id_icon }} ">
                                                                                         {{ ic.svg_icon|safe }}
                                                                                         </label>
@@ -561,7 +561,7 @@
                                                 
                                             </button>
                             
-                                            <button type= "reset"  class = "control_button">
+                                            <button type= "reset"  class = "control_button" onclick = "customReset()" >
                                                 <svg  viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" class = "btn_form_discard">
                                                     <path d="M0 0H50H100H150L177.387 27.5L200 50V100V150V200H100H50L26.1307 176L0 150V100V50V0Z" fill="#25B5C1"/>
                                                     <path d="M10 11H55H100H145L169.648 35.75L190 56V101V146V191H100H55L33.5176 169.4L10 146V101V56V11Z" fill="#1F9DA8"/>
@@ -578,6 +578,7 @@
                                     </form>
                     
                                 </div>
+                                
                                 {% endif %}
                             {% endfor %}
                 {% endif %}                

@@ -65,6 +65,7 @@ main{
     z-index: 10;
     top: 14vh;
     position: absolute;
+    pointer-events: none;
     
 }
 
@@ -73,12 +74,15 @@ main{
     z-index: 9;
     top: 34.4vh;
     width: 80%;
+    pointer-events: none;
     position: absolute;
+   
 }
 
 .background_icon{
     width: 95%;
     position: relative;
+    pointer-events: none;
 }
 
 
@@ -353,3 +357,14 @@ label{
 }
 
 
+.head_hover:hover{
+    stroke: white;
+}
+
+.body_hover:hover{
+    stroke: white;
+}
+
+.background_hover:hover{
+    stroke: white;
+}
