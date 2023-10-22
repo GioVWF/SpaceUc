@@ -1,0 +1,145 @@
+html {
+    font-size: 24px;
+}
+
+body {
+    font-family: monospace, Courier;
+    margin: 0;
+    background:#000 url(http://1.bp.blogspot.com/-q7NYia_DjQI/U4t7_J4gwwI/AAAAAAAAMKo/nru4YxfjK6I/s1600/estrellas.png) repeat top center;
+}
+
+.stars {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    width:100%;
+    height:100%;
+    display:block;
+}
+
+.stars{
+    background:transparent url(http://3.bp.blogspot.com/-FwB8aSiMBmI/U4t9MkimRrI/AAAAAAAAMK0/FAlqX8ZFyu8/s1600/twinkling.png) repeat top center;
+    z-index:-2;
+    -moz-animation:move-twink-back 100s linear infinite;
+    -ms-animation:move-twink-back 100s linear infinite;
+    -o-animation:move-twink-back 100s linear infinite;
+    -webkit-animation:move-twink-back 100s linear infinite;
+    animation:move-twink-back 100s linear infinite;
+}
+
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-webkit-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-moz-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-ms-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+section {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 50px 0 0 0;
+    font-weight: normal;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 2rem;
+    margin: 0 0 50px 0;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+}
+
+.go-back {
+    position: absolute;
+    top: 6vh;
+    left: 5vw;
+    width: 60px;
+}
+
+.go-back a {
+    text-decoration: none;
+    color: white;
+}
+
+.go-back a > svg {
+    width: auto;
+    height: auto;
+    animation: backbtn 3s ease-in-out infinite;
+}
+
+@keyframes backbtn {
+    0% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    100% {
+        transform: translateX(-5px);
+    }
+}
+
+p[class="redir-btn"] {
+    font-size: .7rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.level_content {
+    position: relative;
+    margin: -70px 0 auto;
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+}
+
+ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    width: 300px;
+    margin: 50px auto 50px auto;
+    padding: 0;
+    background-color: white;
+}
+
+.svg_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+.svg_container svg {
+    position: absolute;
+    width: 1000px;
+    z-index: -1;
+}
+
+.svg_container > ol {
+    position: relative;
+}

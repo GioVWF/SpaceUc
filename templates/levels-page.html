@@ -8,11 +8,32 @@
     <link rel="stylesheet" href="{% static 'levels/css/levels.css' %}">
 </head>
 <body>
-    <h1>Bienvenido Astronauta</h1>
-    <ol>
-        <li><a href="{% url 'question' level first %}">Lección 1</a></li>
-        <li><a href="{% url 'question' level second %}">Lección 2</a></li>
-        <li><a href="{% url 'question' level third %}">Lección 3</a></li>
-    </ol>
+    <div class="stars"></div>
+    <main>
+        <section>
+            <h1>Bienvenido Astronauta</h1>
+            <p class="subtitle">{{subtitle}}</p>
+            <div class="go-back">
+                <a href="{% url 'game_page' %}">
+                    <svg viewBox="0 0 105 122" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 61L105 0.378265L90 61L105 121.622L0 61Z" fill="#E86030"/>
+                        <path d="M13 60.9803L98 12L74.5 60.9803L98 109L13 60.9803Z" fill="#984223"/>
+                    </svg>
+                    <p class="redir-btn">Volver</p>
+                </a>
+            </div>
+        </section>
+        <section class="level_content"> 
+            <div class="svg_container">
+                {{svg|safe}}
+                <ol>
+                    <li><a href="{% url 'question' level first %}">Lección 1</a></li>
+                    <li><a href="{% url 'question' level second %}">Lección 2</a></li>
+                    <li><a href="{% url 'question' level third %}">Lección 3</a></li>
+                </ol>
+            </div>
+        </section>
+    </main>
 </body>
+
 </html>

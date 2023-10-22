@@ -14,7 +14,7 @@
             <h1>Bienvenido Astronauta</h1>
             <p class="subtitle">Nivel {{level}} - Lección {{lesson}}</p>
             <div class="go-back">
-                <a href="">
+                <a href="{% url 'levels' level %}">
                     <svg viewBox="0 0 105 122" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 61L105 0.378265L90 61L105 121.622L0 61Z" fill="#E86030"/>
                         <path d="M13 60.9803L98 12L74.5 60.9803L98 109L13 60.9803Z" fill="#984223"/>

@@ -7,12 +7,18 @@ body {
 }
 
 main {
+    position: absolute;
+    bottom: 0;
     display: grid;
-    grid-template-columns: 2fr 2fr 1fr 1fr 1fr;
-    height: 100%; 
+    grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr 1fr;
+    height: 85%;
     width: 100%;
 }
 
+svg {
+    display: block;
+    margin: 0 auto;
+}
 
 .game_grid {
     display: inline-block;
@@ -25,13 +31,12 @@ main {
 
 .earth {
     margin: auto 0;
-    padding: 120px 0 0 370px;
 }
 
 .star {
     margin: auto 0;
-    padding-top: 120px;
 }
+
 
 
 

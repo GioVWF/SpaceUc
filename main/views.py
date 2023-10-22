@@ -4,7 +4,7 @@ import requests
 import json
 from django.http import JsonResponse
 from django.contrib.auth.models import User
-
+from db_spaceuc.models import Level
 
 def home(request):
     users = User_ours.objects.all()
@@ -15,10 +15,22 @@ def home(request):
     return render(request, 'home.html', context)
 
 def game(request):
+    level_info = Level.objects.all().order_by('name_level')
     users = User_ours.objects.all()
+    
+    level_1 = level_info[0].id_level
+    level_2 = level_info[1].id_level
+    # level_3 = level_info[2].id_level
+    # level_4 = level_info[3].id_level
+    # level_5 = level_info[4].id_level
+    
     context = {
-        'users': users
+        'users': users,
+        'level_1': level_1,
+        'level_2': level_2
     }
+    
+    
     return render(request, 'game.html', context)
 
 def navbar(request):
