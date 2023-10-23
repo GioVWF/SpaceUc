@@ -55,7 +55,7 @@
             <form action="">
                 <fieldset>
                     <label for="Answer-1">
-                        <input id="Answer-1" type="button" class="Answer">
+                        <input id="Answer-1" type="checkbox" class="Answer">
                         <div class="answer_box">
                             <div class="img_box">
                                 <img src="https://img.freepik.com/premium-photo/serene-mountain-lake-surrounded-by-pine-trees-realistic-hyperdetailed-rendering_899449-32271.jpg" alt="">
@@ -63,7 +63,7 @@
                         </div>
                     </label>  
                     <label for="Answer-2">
-                        <input id="Answer-2" type="button" class="Answer">
+                        <input id="Answer-2" type="checkbox" class="Answer">
                         <div class="answer_box">
                             <div class="img_box">
                                 <img src="https://img.freepik.com/premium-photo/serene-mountain-lake-surrounded-by-pine-trees-realistic-hyperdetailed-rendering_899449-32271.jpg" alt="">
@@ -71,7 +71,7 @@
                         </div>
                     </label>
                     <label for="Answer-3">
-                        <input id="Answer-3" type="button" class="Answer">
+                        <input id="Answer-3" type="checkbox" class="Answer">
                         <div class="answer_box">
                             <div class="img_box">
                                 <img src="https://img.freepik.com/premium-photo/serene-mountain-lake-surrounded-by-pine-trees-realistic-hyperdetailed-rendering_899449-32271.jpg" alt="">
@@ -92,11 +92,42 @@
         </div>
     </main>
 
+    <!-- Modal Oculto Pa -->
+    <section id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Respondiste Pa</p>
+        </div>
+    </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         var csrfToken = "{{ csrf_token }}";
     </script>
     <script src="{% static 'questionTimer.js' %}"></script>
+    <script>
+        $(document).ready(function() {
+            $('.Answer').click(function() {
+                let checkbox = $(this).siblings('input[type="checkbox"]');
+                checkbox.prop('checked', true);
+                openModal();
+            });     
+
+            $('.close').click(function() {
+                closeModal();
+            });
+
+            function openModal() {
+                $('#myModal').css('display', 'block');
+            }
+
+            function closeModal() {
+                $('#myModal').css('display', 'none');
+
+                let checkbox = $('.modal-content').find('input[type="checkbox"]');
+                checkbox.prop('checked', false);
+            }
+        })
+    </script>
 </body>
 </html>
