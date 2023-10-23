@@ -196,5 +196,45 @@ input[type="button"] {
     display: none;
 }
 
+input[type="button"]:hover {
+    cursor: pointer;
+}
 
+.answer_box {
+    position: relative;
+    width: 250px;
+    height: 200px;
+    background-color: transparent;
+    overflow: hidden;
+}
 
+.answer_box:hover {
+    cursor: pointer;
+}
+
+.answer_box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70px;
+    height: 50px;
+    margin: -20px -30px 0 0;
+    transform: rotate(45deg);
+    box-shadow: 0 0 0 250px #2db5c2;
+}
+
+.img_box {
+    position: absolute;
+    width: 230px;
+    height: 180px;
+    left: 10.5px;
+    top: 10.5px;
+    z-index: 1;
+}
+
+.img_box img {
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0 0, 82% 0, 100% 22.7%, 100% 100%, 20.2% 100%, 0 74.7%);
+}
