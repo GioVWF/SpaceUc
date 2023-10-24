@@ -82,7 +82,14 @@
                                         {{ x.icon_id_icon.svg_icon|safe  }}
 
                                     </div>
-
+                                    <div class = "hidden_icon">
+                                        <div class="{% if ic.type_icon == 0 %}head_icon_hiden{% elif ic.type_icon == 1 %}body_icon_hiden{% elif ic.type_icon == 2 %}background_icon_hiden{% endif %}">
+                                        
+                                            {{ x.icon_id_icon.svg_icon|safe  }}
+    
+                                        </div>
+                                    </div>
+                                    
 
                                 {% endif %}
                             
@@ -365,7 +372,7 @@
         
                                                                     {% elif "default" in per.icon_id_icon.name_icon and per.icon_id_icon.type_icon == 1 %}
         
-                                                                        {% for ic in icon %}
+                                                                        {% for ic in icon %} 
                                                             
                                                                             {% if  ic.type_icon == 1 and ic.name_icon != "alien_default_body" and "default" in ic.name_icon %}
                                                                         

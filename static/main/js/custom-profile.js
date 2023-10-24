@@ -1,3 +1,14 @@
+var head_base = document.querySelector(".head_icon_hiden");
+var head_base_svg = head_base.querySelector("svg");
+var original = head_base_svg.outerHTML;
+
+var body_base = document.querySelector(".body_icon_hiden");
+var body_base_svg = body_base.querySelector("svg");
+var body_base_c = body_base_svg.querySelector("path");
+
+var background_base = document.querySelector(".background_icon_hiden");
+var background_base_svg = background_base.querySelector("svg");
+var background_base_c = background_base_svg.querySelector("circle");
 
 
 function selection_head(option, color, name) {
@@ -23,22 +34,53 @@ function selection_head(option, color, name) {
 </svg>
 `;
     document.getElementById("head_final_election").value = option;
-    if (color == 3) {
+
+    //DEFAULT
+    if (color == 3 && name.includes("default_head")) {
+        
+        svg.innerHTML = svgdefault_head;
+        c = svg.querySelector("circle"); 
         c.style.fill = "yellow";
     }
-    if (color == 2) {
+    if (color == 2 && name.includes("default_head")) {
+        console.log(svg)
+        svg.innerHTML = svgdefault_head;
+        c = svg.querySelector("circle"); 
         c.style.fill = "blue";
     }
-    if (color == 1) {
+    if (color == 1 && name.includes("default_head")) {
+        
+        svg.innerHTML = svgdefault_head;
+        c = svg.querySelector("circle");  
         c.style.fill = "red";
-    }
-    if (color == 0 && name.includes("alien")) {
-        svg.innerHTML = svgalien_head;
-        c.style.fill = "#577556";
+        
     }
     if (color == 0 && name == "default_head") {
         svg.innerHTML = svgdefault_head;
-        c.style.fill = "white";
+        
+    }
+
+    //ALIEN
+    if (color == 3&& name.includes("alien")) {
+        svg.innerHTML = svgalien_head;
+        c = svg.querySelector("circle"); 
+        c.style.fill = "yellow";
+    }
+    if (color == 2 && name.includes("alien")) {
+        svg.innerHTML = svgalien_head;
+        c = svg.querySelector("circle"); 
+        c.style.fill = "blue";
+    }
+    if (color == 1 && name.includes("alien")) {
+        
+        svg.innerHTML = svgalien_head;
+        c = svg.querySelector("circle");  
+        c.style.fill = "red";
+        
+    }
+    if (color == 0 && name.includes("alien")) {
+        svg.innerHTML = svgalien_head;
+       
     }
 };
 
@@ -108,23 +150,50 @@ function selection_body(option, color, name) {
 `;
 
     document.getElementById("body_final_election").value = option;
-    console.log(name)
-    if (color == 3) {
+    //Default
+    if (color == 3 && name.includes("default_body")) {
+        
+        svg.innerHTML = svgdefault_body;
+        c = svg.querySelector("path"); 
         c.style.fill = "yellow";
     }
-    if (color == 2) {
+    if (color == 2 && name.includes("default_body")) {
+        svg.innerHTML = svgdefault_body;
+        c = svg.querySelector("path"); 
         c.style.fill = "blue";
     }
-    if (color == 1) {
+    if (color == 1 && name.includes("default_body")) {
+        svg.innerHTML = svgdefault_body;
+        c = svg.querySelector("path"); 
         c.style.fill = "red";
     }
-    if (color == 0 && name == "alien_default_body") {
-        svg.innerHTML = svgalien_body;
-        c.style.fill = "#577556";
-    }
+    
     if (color == 0 && name == "default_body") {
         svg.innerHTML = svgdefault_body;
         c.style.fill = "white";
+    }
+
+    //Alien
+    if (color == 3 && name.includes("alien")) {
+        
+        svg.innerHTML = svgalien_body;
+        c = svg.querySelector("path"); 
+        c.style.fill = "yellow";
+    }
+    if (color == 2 && name.includes("alien")) {
+        svg.innerHTML = svgalien_body;
+        c = svg.querySelector("path"); 
+        c.style.fill = "blue";
+    }
+    if (color == 1 && name.includes("alien")) {
+        svg.innerHTML = svgalien_body;
+        c = svg.querySelector("path"); 
+        c.style.fill = "red";
+    }
+
+    if (color == 0 && name == "alien_default_body") {
+        svg.innerHTML = svgalien_body;
+        c.style.fill = "#577556";
     }
 };
 
@@ -169,23 +238,49 @@ function selection_backgraund(option, color, name) {
 `;
     document.getElementById("backgraund_final_election").value = option;
 
-    
-    if (color == 3) {
+    //Default 
+    if (color == 3 && name.includes("default_background")) {
+        svg.innerHTML = svgdefault_background;
+        c = svg.querySelector("circle"); 
         c.style.fill = "yellow";
     }
-    if (color == 2) {
+    if (color == 2 && name.includes("default_background")) {
+        svg.innerHTML = svgdefault_background;
+        c = svg.querySelector("circle"); 
         c.style.fill = "blue";
     }
-    if (color == 1) {
+    if (color == 1 && name.includes("default_background")) {
+        svg.innerHTML = svgdefault_background;
+        c = svg.querySelector("circle"); 
+        c.style.fill = "red";
+    }
+    
+    if (color == 0 && name == "default_background") {
+        svg.innerHTML = svgdefault_background;
+        c = svg.querySelector("circle"); 
+        svg.innerHTML = svgdefault_background;
+        c.style.fill = "white";
+    }
+
+    //Alien
+    if (color == 3 && name.includes("alien")) {
+        svg.innerHTML = svgalien_background;
+        c = svg.querySelector("circle"); 
+        c.style.fill = "yellow";
+    }
+    if (color == 2 && name.includes("alien")) {
+        svg.innerHTML = svgalien_background;
+        c = svg.querySelector("circle"); 
+        c.style.fill = "blue";
+    }
+    if (color == 1 && name.includes("alien")) {
+        svg.innerHTML = svgalien_background;
+        c = svg.querySelector("circle"); 
         c.style.fill = "red";
     }
     if (color == 0 && name.includes("alien")) {
         svg.innerHTML = svgalien_background;
         c.style.fill = "#577556";
-    }
-    if (color == 0 && name == "default_background") {
-        svg.innerHTML = svgdefault_background;
-        c.style.fill = "white";
     }
 };
 
@@ -194,20 +289,8 @@ function customReset(){
     h = document.querySelector(".head_icon");
     svg = h.querySelector("svg")
     c = svg.querySelector("circle")
-
-    h2 = document.querySelector(".background_icon");
-    svg2 = h2.querySelector("svg")
-    c2 = svg2.querySelector("circle")
-
-    h3 = document.querySelector(".body_icon");
-    svg3 = h3.querySelector("svg")
-    c3 = svg3.querySelector("path")
-    
-    c.style.cssText = "";
-    console.log(c2)
-    c2.style.cssText = "";
-   
-    c3.style.cssText = "";
+    console.log(svg)
+    svg.outerHTML = original;
 }
 
 

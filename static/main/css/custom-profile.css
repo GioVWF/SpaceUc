@@ -368,3 +368,7 @@ label{
 .background_hover:hover{
     stroke: white;
 }
+
+.hidden_icon{
+    display: none;
+}
