@@ -113,9 +113,11 @@ def teacher_follow(request):
 
     users = User_ours.objects.all()
     students = User_ours.objects.filter(user_type = 2)
+    teacher = User_ours.objects.filter(user_type = 1)
     context = {
         'users': users,
         'students' : students,
+        'teacher' : teacher
     }
 
     return render(request, 'teacher-follow.html', context)

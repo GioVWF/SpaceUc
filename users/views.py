@@ -41,21 +41,50 @@ def log_out_(request):
 #--------------------------------------------------------------------------------------------------------------------------------------
 
 def register_page(request):
-    return render(request, 'register-page.html')
+    users = User_ours.objects.all()
+    data = {
+        'users' : users,
+    }
+    return render(request, 'register-page.html',data)
 
-def register_student_(request):
+def register_student_(request, id):
+
+    teacher = User_ours.objects.get(id_user_ours = id)
+
+    if teacher.grade_user == '5A':
+        name_student_form = request.POST['name_student']
+        last_name_form = request.POST['last_name']
+        rut_form = request.POST['rut'] #Remmember our user to log in is the RUT of the student
+        password_form = rut_form[:4] 
+        alias_user_pref = ''
+        point_user_pref = 0
+        grade_user_pref = '5A'
+        user_type_pref = 2
+        email_user_pref = ''
+
+    elif teacher.grade_user == '5B':
+        name_student_form = request.POST['name_student']
+        last_name_form = request.POST['last_name']
+        rut_form = request.POST['rut'] #Remmember our user to log in is the RUT of the student
+        password_form = rut_form[:4] 
+        alias_user_pref = ''
+        point_user_pref = 0
+        grade_user_pref = '5B'
+        user_type_pref = 2
+        email_user_pref = ''
+        
+    elif teacher.grade_user == '5C':
+        name_student_form = request.POST['name_student']
+        last_name_form = request.POST['last_name']
+        rut_form = request.POST['rut'] #Remmember our user to log in is the RUT of the student
+        password_form = rut_form[:4] 
+        alias_user_pref = ''
+        point_user_pref = 0
+        grade_user_pref = '5C'
+        user_type_pref = 2
+        email_user_pref = ''
 
     
-
-    name_student_form = request.POST['name_student']
-    last_name_form = request.POST['last_name']
-    rut_form = request.POST['rut'] #Remmember our user to log in is the RUT of the student
-    password_form = rut_form[:4] 
-    alias_user_pref = ''
-    point_user_pref = 0
-    grade_user_pref = '5A'
-    user_type_pref = 2
-    email_user_pref = ''
 
     try:
 
