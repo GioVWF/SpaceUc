@@ -12,5 +12,9 @@ urlpatterns = [
     path('update_profileStudent_', update_profileStudent_, name = 'update_profileStudent_'),
     path('custom_profile', custom_profile, name = 'custom_profile'),
     path('update_profile_photo_', update_profile_photo_, name = 'update_profile_photo_'),
+    path('get_color_head/<int:id>', get_color_head, name = 'get_color_head'),
+    path('get_color_body/<int:id>', get_color_body, name = 'get_color_body'),
+    path('get_color_background/<int:id>', get_color_background, name = 'get_color_background'),
+    
       
 ]

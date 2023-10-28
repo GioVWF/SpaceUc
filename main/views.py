@@ -5,6 +5,7 @@ import json
 from django.http import JsonResponse
 from django.contrib.auth.models import User
 from db_spaceuc.models import Level
+from django.db.models import Q
 
 def home(request):
     users = User_ours.objects.all()
@@ -170,3 +171,15 @@ def delete_student_(request, id_student):
     get_user_django.delete()
 
     return redirect(teacher_follow)
+
+
+
+def searcher_student_(request):
+    return redirect(teacher_follow)
+
+
+
+
+
+
+

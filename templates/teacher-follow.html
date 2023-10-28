@@ -20,21 +20,35 @@
         <section class = "first_son">
 
             <div class = "filters_container">
+                <form method = "GET" name = "searcher_form" id = "searcher_form">
+                    
+                    <input type="text" name="searcher" id="searcher" placeholder="Buscar estudiantes...">
+                    <button type = "submit">Buscar</button>
+
+                </form>
+                
+
+                <label for="filter_combobox">Ordenar por...</label>
+
+                <select name="filter_combobox" id="filter_combobox">
+                    <option value="firstName">Nombre</option>
+                    <option value="lastName">Apellido</option>
+                </select>
 
             </div>
 
             <div class = "students_container">
 
                 <div class = "student_control_table">
-                    <table>
+                    <table id="students_table">
                         <tr>
-                            <td>Nombre</td>
-                            <td>Apellido</td>
-                            <td>Rut</td>
-                            <td>Nombre de usuario</td>
-                            <td>Curso</td>
-                            <td>Puntos</td>
-                            <td>Botones</td>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Rut</th>
+                            <th>Nombre de usuario</th>
+                            <th>Curso</th>
+                            <th>Puntos</th>
+                            <th>Botones</th>
                         </tr>
                     
                     

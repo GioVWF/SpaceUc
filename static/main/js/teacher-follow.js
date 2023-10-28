@@ -67,6 +67,39 @@ const viewStudent = async (id_student) => {
 
 
 };
+$(document).ready(function() {
+    $('#searcher_form').submit(function(e) {
+        e.preventDefault();
+
+        var searchTerm = $('#searcher').val().toLowerCase();
+
+        $('#students_table tr:has(td)').each(function() {
+            var row = $(this);
+            var rowText = row.text().toLowerCase();
+
+            var searchTerms = searchTerm.split(' ');
+
+            var found = false;
+
+            for (var i = 0; i < searchTerms.length; i++) {
+                if (rowText.indexOf(searchTerms[i]) !== -1) {
+                    found = true;
+                    break;
+                }
+            }
+
+            if (found) {
+                row.show();
+            } else {
+                row.hide();
+            }
+        });
+    });
+});
+
+
+
+
 
 
 

@@ -1,18 +1,18 @@
 var head_base = document.querySelector(".head_icon_hiden");
 var head_base_svg = head_base.querySelector("svg");
-var original = head_base_svg.outerHTML;
+var original_head = head_base_svg.outerHTML;
 
 var body_base = document.querySelector(".body_icon_hiden");
 var body_base_svg = body_base.querySelector("svg");
-var body_base_c = body_base_svg.querySelector("path");
+var original_body = body_base_svg.outerHTML;
 
 var background_base = document.querySelector(".background_icon_hiden");
 var background_base_svg = background_base.querySelector("svg");
-var background_base_c = background_base_svg.querySelector("circle");
+var original_background = background_base_svg.outerHTML;
 
 
 function selection_head(option, color, name) {
-
+   
     h = document.querySelector(".head_icon");
     svg = h.querySelector("svg")
     c = svg.querySelector("circle")
@@ -36,6 +36,12 @@ function selection_head(option, color, name) {
     document.getElementById("head_final_election").value = option;
 
     //DEFAULT
+    if (color == 4 && name.includes("default_head")) {
+        
+        svg.innerHTML = svgdefault_head;
+        c = svg.querySelector("circle"); 
+        c.style.fill = "purple";
+    }
     if (color == 3 && name.includes("default_head")) {
         
         svg.innerHTML = svgdefault_head;
@@ -43,7 +49,7 @@ function selection_head(option, color, name) {
         c.style.fill = "yellow";
     }
     if (color == 2 && name.includes("default_head")) {
-        console.log(svg)
+        
         svg.innerHTML = svgdefault_head;
         c = svg.querySelector("circle"); 
         c.style.fill = "blue";
@@ -82,6 +88,7 @@ function selection_head(option, color, name) {
         svg.innerHTML = svgalien_head;
        
     }
+
 };
 
 
@@ -286,14 +293,374 @@ function selection_backgraund(option, color, name) {
 
 
 function customReset(){
-    h = document.querySelector(".head_icon");
-    svg = h.querySelector("svg")
-    c = svg.querySelector("circle")
-    console.log(svg)
-    svg.outerHTML = original;
+    head = document.querySelector(".head_icon");
+    svg_head = head.querySelector("svg");
+    
+    
+    body = document.querySelector(".body_icon");
+    svg_body = body.querySelector("svg");
+    
+
+    backgraund = document.querySelector(".background_icon");
+    svg_backgraund = backgraund.querySelector("svg");
+    
+
+    svg_head.outerHTML = original_head;
+    svg_body.outerHTML = original_body;
+    svg_backgraund.outerHTML = original_background;
+}
+
+const get_color_head = async (id,color,name,points) =>{
+    const response = await fetch(`get_color_head/${id}`);
+    const data = await response.json();
+    const iconContainer = document.getElementById("color_head");
+   
+    selection_head(id,color,name);
+    if (data.message === "Found it" && data.array_colors) {
+        const responseArray = JSON.parse(data.array_colors); //of json to object
+        
+        const svgIconsWithPK = responseArray.map(icon => ({
+            pk: icon.pk,
+            name_icon: icon.fields.name_icon,
+            svg_icon: icon.fields.svg_icon,
+            color: icon.fields.color,
+          }));
+
+        while (iconContainer.firstChild) {
+            iconContainer.removeChild(iconContainer.firstChild);
+
+        }
+
+        svgIconsWithPK.forEach(icon => {
+            
+            const iconDiv = document.createElement("div");
+            
+
+            //DEFAULT
+            if(icon.name_icon.includes("default_head") && !icon.name_icon.includes("alien") && icon.color == 0  && points >= 0 && points <= 3000){
+                iconDiv.className = "color_avaible";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_head(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>default</label>
+            `;
+            }
+            else if(icon.name_icon.includes("default_head") && !icon.name_icon.includes("alien") && icon.color == 1  && points >= 50 && points <= 3000){
+                iconDiv.className = "color_avaible";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_head(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>red</label>
+            `;
+            }
+            else if(icon.name_icon.includes("default_head") && !icon.name_icon.includes("alien") && icon.color == 2  && points >= 100 && points <= 3000){
+                iconDiv.className = "color_avaible";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_head(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>blue</label>
+            `;
+            }
+            else if(icon.name_icon.includes("default_head") && !icon.name_icon.includes("alien") && icon.color == 3  && points >= 150 && points <= 3000){
+                iconDiv.className = "color_avaible";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_head(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>yellow</label>
+            `;
+            }
+            else if(icon.name_icon.includes("default_head") && !icon.name_icon.includes("alien") && icon.color == 4  && points >= 500 && points <= 3000){
+                iconDiv.className = "color_avaible";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_head(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>PURPLE</label>
+            `;
+            }
+            //ALIEN
+            else if(icon.name_icon.includes("alien_default_head") && icon.color == 0  && points >= 200 && points <= 3000){
+                iconDiv.className = "color_avaible";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_head(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>default alien</label>
+            `;
+            }
+
+            else if(icon.name_icon.includes("alien_default_head") && icon.color == 1  && points >= 250 && points <= 3000){
+                iconDiv.className = "color_avaible";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_head(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>alien red</label>
+            `;
+            }
+
+            else if(icon.name_icon.includes("alien_default_head") && icon.color == 2  && points >= 300 && points <= 3000){
+                iconDiv.className = "color_avaible";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_head(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>alien blue</label>
+            `;
+            }
+            else if(icon.name_icon.includes("alien_default_head") && icon.color == 3  && points >= 350 && points <= 3000){
+                iconDiv.className = "color_avaible";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_head(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>alien yellow</label>
+            `;
+            }
+
+            else{
+                iconDiv.className = "unlock";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_head(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>Nep</label>
+            `;
+            }
+            
+           
+
+            
+            iconContainer.appendChild(iconDiv);
+
+          });
+    } else {
+        console.log("No se encontró ningún ícono.");
+    }
 }
 
 
+const get_color_body = async(id, color, name, points) =>{
+    const response = await fetch(`get_color_body/${id}`);
+    const data = await response.json();
+    const iconContainer = document.getElementById("color_body");
+    
+    selection_body(id,color,name);
+
+    if (data.message === "Found it" && data.array_colors) {
+        const responseArray = JSON.parse(data.array_colors); //of json to object
+        const svgIconsWithPK = responseArray.map(icon => ({
+            pk: icon.pk,
+            name_icon: icon.fields.name_icon,
+            svg_icon: icon.fields.svg_icon,
+            color: icon.fields.color,
+          }));
+        
+        while (iconContainer.firstChild) {
+            iconContainer.removeChild(iconContainer.firstChild);
+
+        }
+
+        svgIconsWithPK.forEach(icon => {
+            
+            const iconDiv = document.createElement("div");
+            
+             //DEFAULT
+             if(icon.name_icon.includes("default_body") && !icon.name_icon.includes("alien") && icon.color == 0  && points >= 0 && points <= 3000){
+                iconDiv.className = "color_avaible";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_body(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>default</label>
+            `;
+            }
+            else if(icon.name_icon.includes("default_body") && !icon.name_icon.includes("alien") && icon.color == 1  && points >= 50 && points <= 3000){
+                iconDiv.className = "color_avaible";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_body(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>red</label>
+            `;
+            }
+            else if(icon.name_icon.includes("default_body") && !icon.name_icon.includes("alien") && icon.color == 2  && points >= 100 && points <= 3000){
+                iconDiv.className = "color_avaible";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_body(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>blue</label>
+            `;
+            }
+            else if(icon.name_icon.includes("default_body") && !icon.name_icon.includes("alien") && icon.color == 3  && points >= 150 && points <= 3000){
+                iconDiv.className = "color_avaible";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_body(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>yellow</label>
+            `;
+            }
+            //Alien
+            else if(icon.name_icon.includes("alien_default_body") && icon.color == 0  && points >= 200 && points <= 3000){
+                iconDiv.className = "color_avaible";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_body(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>default alien</label>
+            `;
+            }
+
+            else if(icon.name_icon.includes("alien_default_body") && icon.color == 1  && points >= 250 && points <= 3000){
+                iconDiv.className = "color_avaible";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_body(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>alien red</label>
+            `;
+            }
+
+            else if(icon.name_icon.includes("alien_default_body") && icon.color == 2  && points >= 300 && points <= 3000){
+                iconDiv.className = "color_avaible";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_body(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>alien blue</label>
+            `;
+            }
+            else if(icon.name_icon.includes("alien_default_body") && icon.color == 3  && points >= 350 && points <= 3000){
+                iconDiv.className = "color_avaible";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_body(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>alien yellow</label>
+            `;
+            }
+
+            else{
+                iconDiv.className = "unlock";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_body(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>Nep</label>
+            `;
+            }
+
+            
+            iconContainer.appendChild(iconDiv);
+
+          });
+    } else {
+        console.log("No se encontró ningún ícono.");
+    }
+
+}
+
+
+
+const get_color_background = async(id, color, name, points) =>{
+    const response = await fetch(`get_color_background/${id}`);
+    const data = await response.json();
+    const iconContainer = document.getElementById("color_backgraund");
+    
+    selection_backgraund(id,color,name);
+
+    if (data.message === "Found it" && data.array_colors) {
+        const responseArray = JSON.parse(data.array_colors); //of json to object
+        const svgIconsWithPK = responseArray.map(icon => ({
+            pk: icon.pk,
+            name_icon: icon.fields.name_icon,
+            svg_icon: icon.fields.svg_icon,
+            color: icon.fields.color,
+          }));
+          console.log(svgIconsWithPK);
+        while (iconContainer.firstChild) {
+            iconContainer.removeChild(iconContainer.firstChild);
+
+        }
+
+        svgIconsWithPK.forEach(icon => {
+            
+            const iconDiv = document.createElement("div");
+
+            //DEFAULT
+            if(icon.name_icon.includes("default_background") && !icon.name_icon.includes("alien") && icon.color == 0  && points >= 0 && points <= 3000){
+                iconDiv.className = "color_avaible";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_backgraund(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>default</label>
+            `;
+            }
+            else if(icon.name_icon.includes("default_background") && !icon.name_icon.includes("alien") && icon.color == 1  && points >= 50 && points <= 3000){
+                iconDiv.className = "color_avaible";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_backgraund(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>red</label>
+            `;
+            }
+            else if(icon.name_icon.includes("default_background") && !icon.name_icon.includes("alien") && icon.color == 2  && points >= 100 && points <= 3000){
+                iconDiv.className = "color_avaible";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_backgraund(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>blue</label>
+            `;
+            }
+            else if(icon.name_icon.includes("default_background") && !icon.name_icon.includes("alien") && icon.color == 3  && points >= 150 && points <= 3000){
+                iconDiv.className = "color_avaible";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_backgraund(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>yellow</label>
+            `;
+            }
+            //Alien
+            else if(icon.name_icon.includes("alien_default_background") && icon.color == 0  && points >= 200 && points <= 3000){
+                iconDiv.className = "color_avaible";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_backgraund(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>default alien</label>
+            `;
+            }
+
+            else if(icon.name_icon.includes("alien_default_background") && icon.color == 1  && points >= 250 && points <= 3000){
+                iconDiv.className = "color_avaible";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_backgraund(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>alien red</label>
+            `;
+            }
+
+            else if(icon.name_icon.includes("alien_default_background") && icon.color == 2  && points >= 300 && points <= 3000){
+                iconDiv.className = "color_avaible";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_backgraund(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>alien blue</label>
+            `;
+            }
+            else if(icon.name_icon.includes("alien_default_background") && icon.color == 3  && points >= 350 && points <= 3000){
+                iconDiv.className = "color_avaible";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_backgraund(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>alien yellow</label>
+            `;
+            }
+
+            else{
+                iconDiv.className = "unlock";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_backgraund(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>Nep</label>
+            `;
+            }
+
+            // Agrega el elemento al contenedor
+            iconContainer.appendChild(iconDiv);
+
+          });
+    } else {
+        console.log("No se encontró ningún ícono.");
+    }
+
+}
 
 const li = document.querySelectorAll('.li')
 const block = document.querySelectorAll('.block')

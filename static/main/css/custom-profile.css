@@ -372,3 +372,42 @@ label{
 .hidden_icon{
     display: none;
 }
+
+.no-clickable{
+    pointer-events: none; 
+    cursor: not-allowed;
+}
+
+.no-clickable_body{
+    pointer-events: none; 
+    cursor: not-allowed;
+}
+.no-clickable_background{
+    pointer-events: none; 
+    cursor: not-allowed;
+}
+
+.unlock{
+    pointer-events: none; 
+    cursor: not-allowed;
+}
+
+
+
+.no-clickable label svg circle {
+    pointer-events: none; 
+    fill: rgb(76, 76, 76); 
+    cursor: not-allowed;
+  }
+
+.no-clickable_body label svg .body_hover{
+    pointer-events: none; 
+    fill: rgb(76, 76, 76); 
+    cursor: not-allowed;
+}
+
+.no-clickable_background label svg .background_hover{
+    pointer-events: none; 
+    fill: rgb(76, 76, 76);
+    cursor: not-allowed;
+}

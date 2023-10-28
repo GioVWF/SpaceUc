@@ -4,6 +4,9 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from db_spaceuc.models import User_ours, FollowUp, Icon, PerIcon
 from datetime import datetime
+from django.http import JsonResponse
+from django.core import serializers
+from django.db.models import Q
 # Create your views here.
 
 def login_page(request):
@@ -150,22 +153,17 @@ def update_profile_photo_(request):
     head_icon_form = request.POST['head_final_election']
     body_icon_form = request.POST['body_final_election']
     backgraund_icon_form = request.POST['backgraund_final_election']
-
-    icon_head = Icon.objects.get(id_icon = head_icon_initial )
-    icon_body = Icon.objects.get(id_icon = body_icon_initial)
-    icon_backgraund = Icon.objects.get(id_icon = backgraund_icon_initial)
     
-    
-    
+     
     id_user_icon = request.POST['id_user']
 
 
     
     
 
-    oldIcon_head = PerIcon.objects.get( user_ours_id_user_ours = id_user_icon, icon_id_icon = icon_head )
-    oldIcon_body = PerIcon.objects.get( user_ours_id_user_ours = id_user_icon, icon_id_icon = icon_body )
-    oldIcon_backgraund = PerIcon.objects.get( user_ours_id_user_ours = id_user_icon, icon_id_icon = icon_backgraund )
+    oldIcon_head = PerIcon.objects.get( user_ours_id_user_ours = id_user_icon, icon_id_icon = head_icon_initial )
+    oldIcon_body = PerIcon.objects.get( user_ours_id_user_ours = id_user_icon, icon_id_icon = body_icon_initial )
+    oldIcon_backgraund = PerIcon.objects.get( user_ours_id_user_ours = id_user_icon, icon_id_icon = backgraund_icon_initial )
     
 
     if oldIcon_head.icon_id_icon.type_icon == 0:
@@ -194,6 +192,112 @@ def update_profile_photo_(request):
     return redirect(custom_profile)
    
     
-    
 
+def get_color_head(request, id):
+    
+    icon_selected = Icon.objects.get(id_icon = id)
+    data = {}
+
+    if "alien_default_head" in icon_selected.name_icon:
+        color_alien = Icon.objects.filter(name_icon__contains =  "alien_default_head") 
+
+        if (color_alien.exists()):
+            color_alien_data = serializers.serialize('json', color_alien)
+            data = {
+                'message': "Found it",
+                'array_colors' : color_alien_data,
+
+            }
+
+        else:
+            data = {'message' : "Not Found"}
+
+    elif "default_head" in icon_selected.name_icon and "alien" not in icon_selected.name_icon:
+        color_default = Icon.objects.filter(Q(name_icon__contains="default_head") & ~Q(name_icon__contains="alien"))
+        if (color_default.exists()):
+            color_default_data = serializers.serialize('json', color_default)
+            data = {
+                'message': "Found it",
+                'array_colors' : color_default_data,
+
+            }
+
+        else:
+            data = {'message' : "Not Found"}
+   
+    
+    return JsonResponse(data, safe=False)      
+    
+def get_color_body(request, id):
+    
+    icon_selected = Icon.objects.get(id_icon = id)
+    data = {}
+
+    if "alien_default_body" in icon_selected.name_icon:
+        color_alien = Icon.objects.filter(name_icon__contains =  "alien_default_body") 
+
+        if (color_alien.exists()):
+            color_alien_data = serializers.serialize('json', color_alien)
+            
+            data = {
+                'message': "Found it",
+                'array_colors' : color_alien_data,
+
+            }
+
+        else:
+            data = {'message' : "Not Found"}
+
+    elif "default_body" in icon_selected.name_icon and "alien" not in icon_selected.name_icon:
+
+        color_default = Icon.objects.filter(Q(name_icon__contains="default_body") & ~Q(name_icon__contains="alien"))
+
+        if (color_default.exists()):
+            color_default_data = serializers.serialize('json', color_default)
+            data = {
+                'message': "Found it",
+                'array_colors' : color_default_data,
+
+            }
+
+        else:
+            data = {'message' : "Not Found"}
+   
+    
+    return JsonResponse(data, safe=False)  
+    
+def get_color_background(request, id):
+    
+    icon_selected = Icon.objects.get(id_icon = id)
+    data = {}
+
+    if "alien_default_background" in icon_selected.name_icon:
+        color_alien = Icon.objects.filter(name_icon__contains =  "alien_default_background") 
+
+        if (color_alien.exists()):
+            color_alien_data = serializers.serialize('json', color_alien)
+            data = {
+                'message': "Found it",
+                'array_colors' : color_alien_data,
+
+            }
+
+        else:
+            data = {'message' : "Not Found"}
+
+    elif "default_background" in icon_selected.name_icon and "alien" not in icon_selected.name_icon:
+        color_default = Icon.objects.filter(Q(name_icon__contains="default_backgroun") & ~Q(name_icon__contains="alien"))
+        if (color_default.exists()):
+            color_default_data = serializers.serialize('json', color_default)
+            data = {
+                'message': "Found it",
+                'array_colors' : color_default_data,
+
+            }
+
+        else:
+            data = {'message' : "Not Found"}
+   
+    
+    return JsonResponse(data, safe=False)  
     
