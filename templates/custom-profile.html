@@ -160,7 +160,7 @@
                                                                             {% if ic.name_icon == "default_head" %}
                                                                                 
                                                                                 {% if i.point_user > 0 or i.point_user == 0 and i.point_user < 3000 or i.point_user == 3000 %}
-                                                                                    <div>
+                                                                                    <div class = "available" id = "default_head_available">
                                                                                         
                                                                                         {% comment %} <input type="checkbox" hidden name="head_election" data-new-value="{{ ic.color }}" data-new-name="{{ ic.name_icon }}" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_head(this.value, this.getAttribute('data-new-value'), this.getAttribute('data-new-name'))">  {% endcomment %}
                                                                                         <input type="checkbox" hidden name="head_election" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" data-name="{{ ic.name_icon }}" data-color="{{ ic.color }}" data-points = "{{ i.point_user }}" onclick = "get_color_head(this.value, this.getAttribute('data-color'),this.getAttribute('data-name'),this.getAttribute('data-points'))"> 
@@ -178,7 +178,7 @@
                                                                                     
                                                                                     {% if ic.name_icon == "alien_default_head" %}
                                                                                         
-                                                                                        <div>
+                                                                                        <div class = "available" id = "alien_default_head_available">
                                                                                             {% comment %} <input type="checkbox" hidden name="head_election" data-new-value="{{ ic.color }}" data-new-name="{{ ic.name_icon }}" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_head(this.value, this.getAttribute('data-new-value'), this.getAttribute('data-new-name'))">  {% endcomment %}
                                                                                             <input type="checkbox" hidden name="head_election" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" data-name="{{ ic.name_icon }}" data-color="{{ ic.color }}" data-points = "{{ i.point_user }}" onclick = "get_color_head(this.value, this.getAttribute('data-color'),this.getAttribute('data-name'),this.getAttribute('data-points'))"> 
                                                                                             <label for="{{ ic.id_icon }}">
@@ -230,7 +230,7 @@
                                                                         {% if ic.name_icon == "default_body" %}
                                                                             
                                                                             {% if i.point_user > 0 or i.point_user == 0 and i.point_user < 3000 or i.point_user == 3000 %}
-                                                                            <div class ="1">   
+                                                                            <div class ="available">   
                                                                                 <input type="checkbox" hidden name="body_election" data-new-value="{{ ic.color }}" data-new-name="{{ ic.name_icon }}" data-points="{{ i.point_user }}" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" onclick = "get_color_body(this.value, this.getAttribute('data-new-value'), this.getAttribute('data-new-name'), this.getAttribute('data-points'))"> 
                                                                                 <label for="{{ ic.id_icon }}">
                                                                                 {{ ic.svg_icon|safe }}
@@ -245,7 +245,7 @@
                                                                         {% elif i.point_user > 200 or i.point_user == 200 and i.point_user < 3000 or i.point_user == 3000 %}
                                                                         
                                                                             {% if ic.name_icon == "alien_default_body" %}
-                                                                            <div class = "2">   
+                                                                            <div class = "available">   
                                                                                 <input type="checkbox" hidden name="body_election" data-new-value="{{ ic.color }}" data-new-name="{{ ic.name_icon }}" data-points="{{ i.point_user }}" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" onclick = "get_color_body(this.value, this.getAttribute('data-new-value'), this.getAttribute('data-new-name'), this.getAttribute('data-points'))"> 
                                                                                 <label for="{{ ic.id_icon }}">
                                                                                 {{ ic.svg_icon|safe }}
@@ -293,7 +293,7 @@
                                                                         {% if ic.name_icon == "default_background" %}
                                                                             
                                                                             {% if i.point_user > 0 or i.point_user == 0 and i.point_user < 3000 or i.point_user == 3000 %}
-                                                                                <div>
+                                                                                <div class = "available" >
                                                                                     <input type="checkbox" hidden name="body_election" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" data-new-value="{{ ic.color }}" data-new-name="{{ ic.name_icon }}" data-points = "{{ i.point_user }}" onclick = "get_color_background(this.value, this.getAttribute('data-new-value'), this.getAttribute('data-new-name'), this.getAttribute('data-points'))"> 
                                                                                     <label for="{{ ic.id_icon }}">
                                                                                     {{ ic.svg_icon|safe }}
@@ -306,7 +306,7 @@
                                                                         {% elif i.point_user > 200 or i.point_user == 200 and i.point_user < 3000 or i.point_user == 3000%}
                                                                                 
                                                                                 {% if ic.name_icon == "alien_default_background" %}
-                                                                                    <div>
+                                                                                    <div class = "available">
                                                                                         <input type="checkbox" hidden name="body_election" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" data-new-value="{{ ic.color }}" data-new-name="{{ ic.name_icon }}" data-points = "{{ i.point_user }}" onclick = "get_color_background(this.value, this.getAttribute('data-new-value'), this.getAttribute('data-new-name'), this.getAttribute('data-points'))"> 
                                                                                         <label for="{{ ic.id_icon }}">
                                                                                         {{ ic.svg_icon|safe }}
@@ -430,7 +430,7 @@
                                                                 
                                                                 {% endfor %} {% endcomment %}
 
-
+                                                               
             
                                                             {% endif %}
                                                                 
@@ -503,7 +503,7 @@
                                                                     
                                                             
                                                             {% endfor %} {% endcomment %}
-        
+                                                           
                                                         {% endif %}
                                                             
                                                     {% endfor %}
@@ -573,7 +573,7 @@
                                                                     
                                                             
                                                                     {% endfor %} {% endcomment %}
-        
+                                                                        
                                                                 {% endif %}
                                                             
                                                             {% endfor %}
@@ -632,7 +632,7 @@
                     
                                                         <input type="text" hidden name="{% if ic.type_icon == 0 %}head_final_election{% elif ic.type_icon == 1 %}body_final_election{% elif ic.type_icon == 2 %}backgraund_final_election{% endif %}" id="{% if ic.type_icon == 0 %}head_final_election{% elif ic.type_icon == 1 %}body_final_election{% elif ic.type_icon == 2 %}backgraund_final_election{% endif %}" value = " {{x.icon_id_icon.id_icon}} ">
                                                         
-                                                        <input type="text" hidden name="{% if ic.type_icon == 0 %}head_inital{% elif ic.type_icon == 1 %}body_initial{% elif ic.type_icon == 2 %}backgraund_initial{% endif %}" id="{% if ic.type_icon == 0 %}head_inital{% elif ic.type_icon == 1 %}body_initial{% elif ic.type_icon == 2 %}backgraund_initial{% endif %}" value = " {{x.icon_id_icon.id_icon}} ">
+                                                        <input type="text" hidden name="{% if ic.type_icon == 0 %}head_inital{% elif ic.type_icon == 1 %}body_initial{% elif ic.type_icon == 2 %}backgraund_initial{% endif %}" id="{% if ic.type_icon == 0 %}head_inital{% elif ic.type_icon == 1 %}body_initial{% elif ic.type_icon == 2 %}backgraund_initial{% endif %}" value = "{{x.icon_id_icon.id_icon}}"  data-name = "{{ ic.name_icon }}" data-color = "{{ ic.color }}" data-points = "{{i.point_user}}">
                     
                                                     {% endif %}
                                                 

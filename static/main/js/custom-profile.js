@@ -564,12 +564,13 @@ const get_color_background = async(id, color, name, points) =>{
             svg_icon: icon.fields.svg_icon,
             color: icon.fields.color,
           }));
-          console.log(svgIconsWithPK);
+          
+
         while (iconContainer.firstChild) {
             iconContainer.removeChild(iconContainer.firstChild);
 
         }
-
+        
         svgIconsWithPK.forEach(icon => {
             
             const iconDiv = document.createElement("div");
@@ -651,8 +652,8 @@ const get_color_background = async(id, color, name, points) =>{
                 <label for = ${icon.pk}>Nep</label>
             `;
             }
-
-            // Agrega el elemento al contenedor
+            
+            //ADD an element in the container
             iconContainer.appendChild(iconDiv);
 
           });
@@ -661,6 +662,58 @@ const get_color_background = async(id, color, name, points) =>{
     }
 
 }
+
+document.addEventListener("DOMContentLoaded", function(){
+    //VALUES HEAD
+    var head_initial = document.getElementById("head_inital");
+    var name_head_initial = head_initial.getAttribute("data-name");
+    var id_head_initial  = head_initial.getAttribute("value");
+    var color_head_initial = head_initial.getAttribute("data-color");
+    var points_user = head_initial.getAttribute("data-points");
+
+    //VALUE BODY
+    var body_initial = document.getElementById("body_initial");
+    var name_body_initial = body_initial.getAttribute("data-name");
+    var id_body_initial  = body_initial.getAttribute("value");
+    var color_body_initial = body_initial.getAttribute("data-color");
+    
+
+    //VALUE BACKGROUND
+    var background_initial = document.getElementById("backgraund_initial");
+    var name_background_initial = background_initial.getAttribute("data-name");
+    var id_background_initial  = background_initial.getAttribute("value");
+    var color_background_initial = background_initial.getAttribute("data-color");
+    
+    
+    
+    if(name_head_initial.includes("default_head")){
+        
+        get_color_head(id_head_initial, color_head_initial, name_head_initial, points_user);
+    }
+    else if(name_head_initial.includes("alien_default_head")){
+        get_color_head(id_head_initial, color_head_initial, name_head_initial, points_user);
+    }
+
+
+    if(name_body_initial.includes("default_body")){
+        
+        get_color_body(id_body_initial, name_body_initial, color_body_initial, points_user);
+    }
+    else if(name_body_initial.includes("alien_default_head")){
+        
+        get_color_body(id_body_initial, name_body_initial, color_body_initial, points_user);
+    }
+
+    if(name_background_initial.includes("default_background")){
+        
+        get_color_background(id_background_initial, name_background_initial, color_background_initial, points_user);
+    }
+    else if(name_background_initial.includes("alien_default_background")){
+        
+        get_color_background(id_background_initial, name_background_initial, color_background_initial, points_user);
+    }
+});
+
 
 const li = document.querySelectorAll('.li')
 const block = document.querySelectorAll('.block')
