@@ -251,21 +251,40 @@ input[type="checkbox"]:hover {
 }
 
 .modal-content {
-    background-color: #fff;
+    background-color: #454B78;
     max-width: 80%;
-    margin: 10% auto;
+    height: 50%;
+    margin: 20vh auto;
     padding: 20px;
-    border: 1px solid #ccc;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
     position: relative;
+    clip-path: polygon(0 0, 91% 0, 100% 18%, 100% 100%, 5% 100%, 0 80%);
+}
+
+.modal-content-bg {
+    position: relative;
+    background-color: #6F7E9F;
+    height: 90%;
+    width: 90%;
+    margin: auto;
 }
 
 .close {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
+    top: 0;
+    right: 0;
+    font-size: 50px;
     cursor: pointer;
-    color: #555;
+    color: #fff;    
+    margin-top: -16px;
+}
+
+.Incorrect {
+    box-shadow: 0 1px 8px 2px red;
+    color: red;
+}
+
+.Correct {
+    box-shadow: 0 1px 8px 2px greenyellow;
+    color: greenyellow;
 }

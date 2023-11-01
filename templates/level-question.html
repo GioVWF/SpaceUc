@@ -15,7 +15,7 @@
             <p class="subtitle">Nivel {{level}} - Lección {{lesson}}</p>
             <div class="go-back">
                 <a href="{% url 'levels' level %}">
-                    <svg viewBox="0 0 105 122" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg viewBox="0 0 105 122" fill="none">
                         <path d="M0 61L105 0.378265L90 61L105 121.622L0 61Z" fill="#E86030"/>
                         <path d="M13 60.9803L98 12L74.5 60.9803L98 109L13 60.9803Z" fill="#984223"/>
                     </svg>
@@ -29,7 +29,7 @@
         </section>
         <section>
             <div class="question">
-                <svg viewBox="0 0 1451 689" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 1451 689" fill="none">
                     <path d="M0 0H725.5H1088.25H1269.62H1360.31L1404.22 43.1683L1451 86.125V172.25V344.5V689H725.5H362.75H181.375H90.6875L45.0128 646.678L0 602.875V516.75V344.5V0Z" fill="#454B78"/>
                     <ellipse cx="1430.5" cy="674" rx="11.5" ry="10" fill="#D9D2DA"/>
                     <line y1="-0.5" x2="15.3495" y2="-0.5" transform="matrix(0.708475 -0.705736 0.79514 0.606425 1424.59 679.751)" stroke="#9C9C9C"/>
@@ -52,29 +52,29 @@
                       </foreignObject>
                 </svg> 
             </div>
-            <form action="">
+            <form action="" enctype="multipart/form-data">
                 <fieldset>
                     <label for="Answer-1">
-                        <input id="Answer-1" type="checkbox" class="Answer">
+                        <input id="Answer-1" data-is-correct="{{check_1}}" type="checkbox" class="Answer">
                         <div class="answer_box">
                             <div class="img_box">
-                                <img src="https://img.freepik.com/premium-photo/serene-mountain-lake-surrounded-by-pine-trees-realistic-hyperdetailed-rendering_899449-32271.jpg" alt="">
+                                <img src="{{anwser_1}}">
                             </div>
                         </div>
                     </label>  
                     <label for="Answer-2">
-                        <input id="Answer-2" type="checkbox" class="Answer">
+                        <input id="Answer-2" data-is-correct="{{check_2}}" type="checkbox" class="Answer">
                         <div class="answer_box">
                             <div class="img_box">
-                                <img src="https://img.freepik.com/premium-photo/serene-mountain-lake-surrounded-by-pine-trees-realistic-hyperdetailed-rendering_899449-32271.jpg" alt="">
+                                <img src="{{anwser_2}}">
                             </div>
                         </div>
                     </label>
                     <label for="Answer-3">
-                        <input id="Answer-3" type="checkbox" class="Answer">
+                        <input id="Answer-3" data-is-correct="{{check_3}}" type="checkbox" class="Answer">
                         <div class="answer_box">
                             <div class="img_box">
-                                <img src="https://img.freepik.com/premium-photo/serene-mountain-lake-surrounded-by-pine-trees-realistic-hyperdetailed-rendering_899449-32271.jpg" alt="">
+                                <img src="{{anwser_3}}">
                             </div>
                         </div>
                     </label>
@@ -83,7 +83,7 @@
         </section>
         <div class="go-next">
             <a href="">
-                <svg viewBox="0 0 105 122" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 105 122" fill="none">
                     <path d="M105 60.6218L0 121.244L15 60.6218L0 0L105 60.6218Z" fill="#E86030"/>
                     <path d="M92.0239 60.7682L7.02393 109.749L30.5239 60.7682L7.02393 12.7485L92.0239 60.7682Z" fill="#984223"/>
                 </svg>
@@ -95,8 +95,10 @@
     <!-- Modal Oculto Pa -->
     <section id="myModal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>Respondiste Pa</p>
+            <div id="modalstyles" class="modal-content-bg">
+                <span class="close">&times;</span>
+                <p>Respondiste Pa</p>
+            </div>
         </div>
     </section>
 
@@ -110,20 +112,22 @@
             $('.Answer').click(function() {
                 let checkbox = $(this).siblings('input[type="checkbox"]');
                 checkbox.prop('checked', true);
-                openModal();
+                
+                openModal($(this).data('is-correct'));
             });     
 
             $('.close').click(function() {
                 closeModal();
             });
 
-            function openModal() {
+            function openModal(boolean) {
+                $('#myModal #modalstyles').removeClass(boolean == 'True' ? 'Incorrect' : 'Correct').addClass(boolean == 'True' ? 'Correct' : 'Incorrect')
+                $('#myModal p').text(boolean == 'True' ? 'Correcto!' : 'Incorrecto!');
                 $('#myModal').css('display', 'block');
             }
 
             function closeModal() {
                 $('#myModal').css('display', 'none');
-
                 let checkbox = $('.modal-content').find('input[type="checkbox"]');
                 checkbox.prop('checked', false);
             }

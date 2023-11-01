@@ -1,18 +1,45 @@
-from django.shortcuts import render
-from db_spaceuc.models import Level, Question
+from django.shortcuts import render, get_object_or_404
+from db_spaceuc.models import Level, Question, Answer
 from . models import Timer
 from django.http import JsonResponse
+import random
 
 def level_question(request, level,id):
-    question_title = Question.objects.filter(id_question = id)[0].title_question
-    question_content = Question.objects.filter(id_question = id)[0].description_question
-    lesson_number = Question.objects.filter(id_question = id)[0].number_question
+    question = get_object_or_404(Question, id_question=id)
 
+    question_title = question.title_question
+    question_content = question.description_question
+    lesson_number = question.number_question
+    answer_info = Answer.objects.filter(question_id_question=id)
+
+    anwser_urls = [answer.img_answer.url for answer in answer_info if answer.img_answer]
+    random.shuffle(anwser_urls)
+    
+    anwser_1 = anwser_urls[0]
+    anwser_2 = anwser_urls[1]
+    anwser_3 = anwser_urls[2]
+    
+    for i in answer_info:
+        if anwser_urls[0] == i.img_answer.url:
+            check_1 = i.option_answer
+        if anwser_urls[1] == i.img_answer.url:
+            check_2 = i.option_answer
+        if anwser_urls[2] == i.img_answer.url:
+            check_3 = i.option_answer
+    
+    print(anwser_2)
+    
     question_context = {
         'level': level,
         'lesson': lesson_number, 
         'title': question_title,
-        'content': question_content
+        'content': question_content,
+        'anwser_1': anwser_1,
+        'anwser_2': anwser_2,
+        'anwser_3': anwser_3,
+        'check_1': check_1,
+        'check_2':check_2,
+        'check_3': check_3
     }
 
     return render(request, 'level-question.html', question_context)

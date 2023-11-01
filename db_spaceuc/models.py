@@ -85,8 +85,7 @@ class Question(models.Model):
 
 class Answer(models.Model):
     id_answer = models.AutoField(primary_key=True)
-    content_answer = models.CharField(max_length=100)
-    option_answer = models.CharField(max_length=1)
+    title_answer = models.CharField(max_length=50, default='')
+    img_answer = models.ImageField(blank=True, null=True, upload_to="answers")
+    option_answer = models.BooleanField(default=False)
     question_id_question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    svg_content_answer = models.BinaryField()
-    follow_up_id_follow = models.ForeignKey(FollowUp, on_delete=models.CASCADE)
