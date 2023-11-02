@@ -11,7 +11,6 @@ def home(request):
     users = User_ours.objects.all()
     context = {
         'users': users,
-        
     }
     return render(request, 'home.html', context)
 
@@ -38,7 +37,6 @@ def navbar(request):
     users = User_ours.objects.all()
     context = {
         'users': users,
-        
     }
     return render(request, 'base.html', context)
 
@@ -47,7 +45,6 @@ def about(request):
     users = User_ours.objects.all()
     context = {
         'users': users,
-        
     }
     return render(request, 'about.html', context)
 

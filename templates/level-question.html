@@ -23,8 +23,7 @@
                 </a>
             </div>
             <div class="counter-position">
-                <h2 class="counter" style="color: green"></h2>
-                <button id="resetCounter" data-timer-url="{% url 'get_timer' %}" style="text-decoration: none;">RESETEAR CONTADOR</button>
+                <h2 id="Counter" class="counter" data-limitator="{{limitator}}" data-progress="{{progress}}" data-timer-url="{% url 'get_timer' %}" style="color: green"></h2>
             </div>
         </section>
         <section>
@@ -81,7 +80,8 @@
                 </fieldset>
             </form>
         </section>
-        <div class="go-next">
+        
+        <div class="{% if progress > limitator %} go-next {% elif progress <= limitator %} hide {% endif %}">
             <a href="">
                 <svg viewBox="0 0 105 122" fill="none">
                     <path d="M105 60.6218L0 121.244L15 60.6218L0 0L105 60.6218Z" fill="#E86030"/>
@@ -90,6 +90,7 @@
                 <p class="redir-btn">Siguiente parte</p>
             </a>
         </div>
+        
     </main>
 
     <!-- Modal Oculto Pa -->
@@ -106,32 +107,6 @@
     <script>
         var csrfToken = "{{ csrf_token }}";
     </script>
-    <script src="{% static 'questionTimer.js' %}"></script>
-    <script>
-        $(document).ready(function() {
-            $('.Answer').click(function() {
-                let checkbox = $(this).siblings('input[type="checkbox"]');
-                checkbox.prop('checked', true);
-                
-                openModal($(this).data('is-correct'));
-            });     
-
-            $('.close').click(function() {
-                closeModal();
-            });
-
-            function openModal(boolean) {
-                $('#myModal #modalstyles').removeClass(boolean == 'True' ? 'Incorrect' : 'Correct').addClass(boolean == 'True' ? 'Correct' : 'Incorrect')
-                $('#myModal p').text(boolean == 'True' ? 'Correcto!' : 'Incorrecto!');
-                $('#myModal').css('display', 'block');
-            }
-
-            function closeModal() {
-                $('#myModal').css('display', 'none');
-                let checkbox = $('.modal-content').find('input[type="checkbox"]');
-                checkbox.prop('checked', false);
-            }
-        })
-    </script>
+    <script src="{% static 'levelLogic.js' %}"></script>
 </body>
 </html>

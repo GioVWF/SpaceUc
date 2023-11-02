@@ -47,6 +47,8 @@ class User_ours(models.Model):
     point_user = models.IntegerField()
     grade_user = models.CharField(max_length=10)
     user_type = models.IntegerField() 
+    
+    progress_user = models.IntegerField(default=1)
 
     follow_up_id_follow = models.ForeignKey(FollowUp, on_delete=models.CASCADE)
 
