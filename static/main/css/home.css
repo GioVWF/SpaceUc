@@ -86,12 +86,15 @@ body {
 
 
 .alert_msg{
-    width: 10vw;
+    width: 20vw;
     height: 10vh;
-    background-color: #dfe3eb;
-    display: hidden;
+    background-color: rgb(255, 190, 190);
+    transition: opacity 1s;
     border-radius: 10px;
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 999;
 }
 
@@ -101,5 +104,6 @@ body {
     color: rgb(0, 0, 0);
     font-size: large;
     margin: 0;
+    text-align: center;
    
 }

@@ -30,9 +30,13 @@ def log_in_(request):
         
         else:
 
-            return render(request, 'level-question.html')
+            messages.error(request, 'Usuario baneado')
+            return redirect(home)
+        
+        
+
     else:
-        messages.error(request, 'Rut o contraseña invalidos')
+        messages.error(request, 'Error en el rut o contraseña.')
         return redirect(login_page) 
 
 def log_out_(request):

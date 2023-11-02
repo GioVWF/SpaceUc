@@ -3,11 +3,24 @@
 
 {% block extrahead %}
 <link rel="stylesheet" href="{% static 'main/css/home.css' %}">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 {% endblock %}
 
 {% block content %}
 
 <main>
+    {% if messages %}
+                <div id = "alert_msg" class = "alert_msg">
+                    {% for message in messages %}
+                    
+                    {% if message.tags == "success" %}
+                        <p>{{ message }}</p>
+                    {% endif %}
+                        
+                        
+                    {% endfor %}
+                </div>
+    {% endif %}
     <div class="universe_position">
         <div class="planets_position">
             <div class="two_planets">
@@ -239,5 +252,21 @@
         </div>
     </div>    
 </main>
+<script>
+    $(document).ready(function() {
+        var msg_div = document.getElementById('alert_msg');
+        msg_div.style.display = 'flex';
+        msg_div.style.opacity = 1;
+        
+        setTimeout(function() {
+            msg_div.style.opacity = 0;
+            setTimeout(function() {
+                msg_div.style.display = 'none';
+            }, 1000);
+          }, 2000);
 
+
+
+    });
+</script>
 {%  endblock %}
