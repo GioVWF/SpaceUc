@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"  href="{% static 'main/css/login.css' %}">
-    <script src="{% static 'main/js/login.js' %}"></script>
     <title>Login</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{% static 'main/js/login.js' %}"></script>
 </head>
 <body>  
     
@@ -47,27 +48,40 @@
                 <line x1="10.6237" y1="16.6707" x2="17.6237" y2="8.67075" stroke="#9C9C9C"/>
                 <path d="M111.5 113.5L152.25 66H233.5H396H721V441V628.5V722.25V769.125L701 792L680.375 816H639.75H558.5H396H71V441V253.5V159.75L111.5 113.5Z" fill="#6F7E9F"/>
                 </svg>
+                
+                {% if messages %}
+                <div id = "alert_msg" class = "alert_msg">
+                    {% for message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                    
+                
+                
 
                 <form action="{% url 'log_in_' %}" method = "POST" name = "login_form" id = "login_form" class = "login_content">
                     {% csrf_token %}
                     <h1>Bienvenido Astronauta</h1>
-                    <h1>Inicia sesion</h1>
-                    
+                    <h1>Inicia sesión</h1>
+                    <div id = "error_msg" class = "error_msg">
+
+                    </div>
                     <div class = "input_div">
                         <label for="rut" id="label_rut"> Rut </label>
-                        <input type="text" name="rut" id="rut">
+                        <input type="text" name="rut" id="rut" required  maxlength="10">
                     </div>
             
                     <div class = "input_div">
                         <label for="password" id="label_password"> Contraseña </label>
-                        <input type="password" name="password" id="password">
+                        <input type="password" name="password" id="password" required  maxlength="4">
                     </div>
 
                     
-                    <a href="">¿Olvidaste tu contraseña?</a>
+                    <p id = "forgot_pass" class = "link_forgott">¿Olvidaste tu contraseña?</p>
                     
             
-                    <button type= "submit"  class = "control_button">
+                    <button type= "submit"  class = "control_button" id = "control_button">
                         <svg width="120" height="110" viewBox="0 0 120 110" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0 0H60H90L105 14.2788L120 27.5V55V110H60H30H15L7.24138 103.125L0 96.25V82.5V55V0Z" fill="#E86030"/>
                             <path d="M5 5H60H87.5L101.25 17.9808L115 30V55V105H60H32.5H18.75L11.6379 98.75L5 92.5V80V55V5Z" fill="#984223"/>
@@ -83,7 +97,18 @@
                 </form>
         </div>
         
-      
+      <!-- Modal Oculto Pa -->
+        <section id="myModal" class="modal">
+            <div class="modal-content">
+                <div id="modalstyles" class="modal-content-bg">
+                    <span class="close">&times;</span>
+                    <p class = "title_modal">Recordatorio</p>
+                    <p>Recuerda que para iniciar sesión debes ingresar tu RUT con el guion y sin el punto (12345678-9).</p><br>
+                    <p>Tu contraseña son los primeros 4 dígitos de tu RUT (En este caso con el rut de arriba la contraseña seria: 1234)..</p>
+                  
+                </div>
+            </div>
+        </section>
            
     
             
@@ -93,7 +118,79 @@
 
     </main>
     
+    <script>
+        $(document).ready(function() {
 
+            setTimeout(function() {
+                var msgDiv = document.getElementById('alert_msg');
+                msgDiv.style.display = 'none';
+              }, 5000); 
+
+
+            //---------------------------------------------------------
+            $('#forgot_pass').click(function() {
+                
+                
+                openModal($(this).data('is-correct'));
+            });     
+
+            $('.close').click(function() {
+                closeModal();
+            });
+
+            function openModal(boolean) {
+               
+                $('#myModal').css('display', 'block');
+            }
+
+            function closeModal() {
+                $('#myModal').css('display', 'none');
+                
+            }
+            //---------------------------------
+
+            $('#login_form').submit(function(event){
+                event.preventDefault();
+               
+                var msg = "<p class = 'error_text'>Valores ingresados invalidos, vuelva a intentar</p>"
+                const rut_camp = $('#rut').val();
+                const password_camp = $('#password').val();
+
+                if(!rut_camp.includes("-") || rut_camp.includes(".")){
+                    
+                    msg += "<br><em class = 'error_sub_text'>El rut debe contener guion pero no sus puntos (ej: 12345678-9)</em>"
+                   
+                }
+
+                if(rut_camp.length < 9){
+                    msg += "<br><em class = 'error_sub_text'>El rut debe contener 9 digitos (ej: 12345678-9).</em>" 
+                }
+
+                if (password_camp.length < 4){
+                    msg += "<br><em class = 'error_sub_text'>La contraseña debe contener 4 digitos.</em>" 
+                } 
+
+                if( msg != "<p class = 'error_text'>Valores ingresados invalidos, vuelva a intentar</p>" ){
+                    $("#error_msg").html(msg);
+                    $("#error_msg").css('display', 'block');
+                    $("#control_button").css('margin', '2vh')
+                    event.preventDefault();
+                    
+                    return
+                   
+                }else{
+                    
+                    $("#login_form")[0].submit();
+                }
+
+                
+                
+            });
+
+
+
+        })
+    </script>
     
 </body>
 </html>

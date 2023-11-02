@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from db_spaceuc.models import User_ours,PerIcon,Icon
+from db_spaceuc.models import User_ours,PerIcon,Icon,FollowUp
 import requests
 import json
 from django.http import JsonResponse
@@ -9,14 +9,21 @@ from django.db.models import Q
 
 def home(request):
     users = User_ours.objects.all()
+    icon = Icon.objects.all()
+    perIcon = PerIcon.objects.all()
     context = {
         'users': users,
+        'icon' : icon,
+        'perIcon' : perIcon,
+        
     }
     return render(request, 'home.html', context)
 
 def game(request):
     level_info = Level.objects.all().order_by('name_level')
     users = User_ours.objects.all()
+    icon = Icon.objects.all()
+    perIcon = PerIcon.objects.all()
     
     level_1 = level_info[0].id_level
     level_2 = level_info[1].id_level
@@ -26,6 +33,8 @@ def game(request):
     
     context = {
         'users': users,
+        'icon' : icon,
+        'perIcon' : perIcon,
         'level_1': level_1,
         'level_2': level_2
     }
@@ -35,23 +44,37 @@ def game(request):
 
 def navbar(request):
     users = User_ours.objects.all()
+    icon = Icon.objects.all()
+    perIcon = PerIcon.objects.all()
     context = {
         'users': users,
+        'icon' : icon,
+        'perIcon' : perIcon,
+        
     }
     return render(request, 'base.html', context)
 
 
 def about(request):
     users = User_ours.objects.all()
+    icon = Icon.objects.all()
+    perIcon = PerIcon.objects.all()
     context = {
         'users': users,
+        'icon' : icon,
+        'perIcon' : perIcon,
+        
     }
     return render(request, 'about.html', context)
 
 def levels_info(request):
     users = User_ours.objects.all()
+    icon = Icon.objects.all()
+    perIcon = PerIcon.objects.all()
     context = {
         'users': users,
+        'icon' : icon,
+        'perIcon' : perIcon,
         
     }
     return render(request, 'levels-info.html', context)
@@ -59,7 +82,8 @@ def levels_info(request):
 
 def resources_page(request):
     users = User_ours.objects.all()
-    
+    icon = Icon.objects.all()
+    perIcon = PerIcon.objects.all()
     url = 'https://api.nasa.gov/planetary/apod?api_key=qE5NtN0FYG428PJE1nu4ygkCkPEQMRHV0F33lwOp'
     
     try:
@@ -73,7 +97,9 @@ def resources_page(request):
 
     context = {
         'users': users,
-        'data' : data
+        'data' : data,
+        'icon' : icon,
+        'perIcon' : perIcon,
         
     }
     return render(request, 'resources-page.html', context)
@@ -82,6 +108,8 @@ def resources_page(request):
 def podium(request):
 
     users = User_ours.objects.all()
+    icon = Icon.objects.all()
+    perIcon = PerIcon.objects.all()
     first_palces = User_ours.objects.all().order_by('-point_user')[:3]
 
     for i in range(3):
@@ -98,6 +126,8 @@ def podium(request):
         'position_two': position_two,
         'position_three': position_three,
         'users': users,
+        'icon' : icon,
+        'perIcon' : perIcon,
     }
 
     return render(request, 'podium.html', context)
@@ -164,17 +194,18 @@ def get_info_student_(request, id_student):
 def delete_student_(request, id_student):
     get_student =  User_ours.objects.get(id_user_ours = id_student)
     run = get_student.run_user
+    follow = get_student.follow_up_id_follow.id_follow
     get_user_django = User.objects.get(username = run)
+    get_follow = FollowUp.objects.get(id_follow = follow)
 
     get_student.delete()
     get_user_django.delete()
+    get_follow.delete()
 
     return redirect(teacher_follow)
 
 
 
-def searcher_student_(request):
-    return redirect(teacher_follow)
 
 
 

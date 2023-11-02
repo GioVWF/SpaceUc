@@ -82,3 +82,24 @@ body {
     margin-top: -11vh;  
     margin-right: 1vw  
 }
+
+
+
+.alert_msg{
+    width: 10vw;
+    height: 10vh;
+    background-color: #dfe3eb;
+    display: hidden;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 999;
+}
+
+.alert_msg p{ 
+   
+   
+    color: rgb(0, 0, 0);
+    font-size: large;
+    margin: 0;
+   
+}

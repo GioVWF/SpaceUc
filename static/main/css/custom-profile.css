@@ -245,11 +245,13 @@ form h1{
     transition: all .5s ease;
     position: absolute;
     width: 25%;
+    display: none;
 }
 
 .color_head.active {
     opacity: 1;
     z-index: 20;
+    display: block;
     
 }
 
@@ -258,11 +260,13 @@ form h1{
     transition: all .5s ease;
     position: absolute;
     width: 25%;
+    display: none;
 }
 
 .color_body.active{
     opacity: 1;
     z-index: 20;
+    display: block;
     
 }
 
@@ -271,6 +275,7 @@ form h1{
     opacity: 0;
     position: absolute;
     width: 25%;
+    display: none;
 
 }
 
@@ -278,6 +283,7 @@ form h1{
     
     opacity: 1;
     z-index: 20;
+    display: block;
 }
 
 

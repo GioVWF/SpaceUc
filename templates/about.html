@@ -26,8 +26,9 @@
                 </div>
             </div>                
     </div>
+    <a href="{% url 'levels_info' %}" class="levels">
     <div class="box_2">
-        <a href="{% url 'levels_info' %}" class="levels">
+        
         <div class="levels_planet">
             <div class="pointer">
                 <svg viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg_pointer">
@@ -44,7 +45,7 @@
                     <circle cx="259" cy="260" r="125" fill="#FFD700"/>
                     <circle cx="259" cy="259" r="100" fill="#FFEF99"/>
                     <circle cx="259" cy="259" r="50" fill="#FFFADC"/>
-                    <text x="-230" y="-305" font-family="monospace" font-size="24" font-weight="bolder" fill="black" writing-mode="vertical-lr" transform="rotate(180)"> Niveles </text>
+                    <text x="-230" y="-305" font-family="monospace" font-size="24" font-weight="bolder" fill="black" writing-mode="vertical-lr" transform="rotate(180)"> <a href="{% url 'levels_info' %}">Niveles</a> </text>
                     </svg>
             </div>
         </div>

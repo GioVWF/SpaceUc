@@ -1,0 +1,160 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="{% static 'main/css/register.css' %}">
+    <script src="{% static 'main/js/register.js' %}"></script>
+    <title>Login</title>
+</head>
+<body>  
+    
+    <div class = "register_background">
+        <svg width="auto" height="auto" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1456.94 174.609L1476.33 91.8488L1476.33 91.8488L1456.94 174.609ZM900.859 106.346L903.495 21.3868L900.859 106.346ZM310.092 139.025L322.496 223.115L310.092 139.025ZM-432.999 453.386L-506.168 410.128L-432.999 453.386ZM-150.782 934.461C-106.267 949.367 -58.0973 925.364 -43.1914 880.85C-28.2854 836.335 -52.2882 788.165 -96.803 773.259L-150.782 934.461ZM1892.78 257.366C1790.92 187.297 1646.3 131.662 1476.33 91.8488L1437.56 257.369C1597.1 294.738 1718.94 344.119 1796.43 397.427L1892.78 257.366ZM1476.33 91.8488C1305.18 51.7614 1108.36 27.7431 903.495 21.3868L898.222 191.305C1093.79 197.373 1279.19 220.274 1437.56 257.369L1476.33 91.8488ZM903.495 21.3868C698.532 15.0273 490.461 26.4998 297.688 54.9349L322.496 223.115C504.768 196.229 702.751 185.24 898.222 191.305L903.495 21.3868ZM297.688 54.9349C105.324 83.3096 -68.2034 128.043 -206.395 186.504L-140.16 343.07C-18.8944 291.769 139.815 250.062 322.496 223.115L297.688 54.9349ZM-206.395 186.504C-341.585 243.695 -451.442 317.559 -506.168 410.128L-359.829 496.643C-333.086 451.407 -264.428 395.641 -140.16 343.07L-206.395 186.504ZM-506.168 410.128C-534.459 457.982 -548.671 511.563 -542.596 567.449C-536.554 623.04 -511.252 673.559 -473.067 717.201L-345.126 605.258C-364.998 582.547 -372.014 563.595 -373.592 549.078C-375.138 534.856 -372.273 517.692 -359.829 496.643L-506.168 410.128ZM-473.067 717.201C-408.867 790.576 -312.565 880.288 -150.782 934.461L-96.803 773.259C-220.788 731.742 -293.215 664.588 -345.126 605.258L-473.067 717.201Z" fill="#85541B"/>
+            <circle cx="652" cy="502" r="1050" fill="#DCAB71"/>
+            <path d="M-18 97L1621 99.5L1629.5 120.5L1638.5 144.5L1646 166.5L1654.5 191.5L-18 197V97Z" fill="#B98D59"/>
+            <path d="M0 311L1684.5 313.5L1688.5 335L1692.5 362L1695 383L1697.5 406L0 411V311Z" fill="#B98D59"/>
+            <path d="M-18 525L1701.85 527.5L1701 549L1700 571L1698 595L1696 617.5L-18 625V525Z" fill="#B98D59"/>
+            <path d="M-18 739L1675.39 741.5L1670 764L1663 790L1656.5 811.5L1650.5 831.5L-18 839V739Z" fill="#B98D59"/>
+            <path d="M-18 953L1600.5 956L1591.5 974.5L1579.5 998L1569 1017L1553 1044.5L-18 1053V953Z" fill="#B98D59"/>
+            <path d="M315.111 226.397C59.2132 673.196 83.276 1140.36 71.359 1161.17C-333.138 929.496 -453.601 379.489 -197.703 -67.3102C58.1945 -514.109 593.55 -688.506 998.047 -456.836C998.047 -456.836 571.009 -220.402 315.111 226.397Z" fill="#C79B67"/>
+            <path d="M-146 311L270 311.5L257.5 336.5L247 359.5L233.5 390L225 410.5L-146 411V311Z" fill="#9A7446"/>
+            <path d="M-146 311L270 311.5L257.5 336.5L247 359.5L233.5 390L225 410.5L-146 411V311Z" fill="#9A7446"/>
+            <path d="M-146 311L270 311.5L257.5 336.5L247 359.5L233.5 390L225 410.5L-146 411V311Z" fill="#9A7446"/>
+            <path d="M-292 739L124 739.5L117 767.5L111.5 796.5L106.5 825.5L104 838.5L-292 839V739Z" fill="#9A7446"/>
+            <path d="M-328 953H88.4999L85.4999 982.5L82.4999 1014L79.9999 1043L79.4999 1052.5L-328 1053V953Z" fill="#9A7446"/>
+            <path d="M-234 525L182 525.5L172.5 552.5L164 579.5L155.5 607.5L151 624L-234 625V525Z" fill="#9A7446"/>
+            <path d="M-18 97L397 97.5L381.5 120.5L366.5 142.5L348.5 170.5L332 197H-18V97Z" fill="#9A7446"/>
+            <path d="M-277 758.587C-188.062 821.334 -55.4672 875.418 108.823 915.96C273.112 956.502 463.928 982.226 664.058 990.812C864.187 999.398 1067.33 990.575 1255.17 965.14C1443.01 939.705 1609.63 898.457 1740 845.118C1870.37 791.78 1960.39 728.027 2001.94 659.613C2043.49 591.198 2039.27 520.536 1982 453.5C1924.74 386.464 1915.5 367 1787 292" stroke="#85541B" stroke-width="170"/>
+            </svg>
+            
+            
+    </div>
+
+    
+    <main>
+
+
+        <div class = "control_form_container">
+            <svg  viewBox="0 0 800 900" fill="none" xmlns="http://www.w3.org/2000/svg" class = "svg_form_control">
+                <path d="M0 0H400H600H700L748 53.5L800 112.5V225V450V900H400H200H100L49 845.5L0 787.5V675V450V0Z" fill="#454B78"/>
+                <circle cx="691.5" cy="12.5" r="7.5" fill="#D9D2DA"/>
+                <line x1="687.624" y1="16.6707" x2="694.624" y2="8.67075" stroke="#9C9C9C"/>
+                <circle cx="785.5" cy="116.5" r="7.5" fill="#D9D2DA"/>
+                <line x1="781.624" y1="120.671" x2="788.624" y2="112.671" stroke="#9C9C9C"/>
+                <circle cx="784.5" cy="886.5" r="7.5" fill="#D9D2DA"/>
+                <line x1="780.624" y1="890.671" x2="787.624" y2="882.671" stroke="#9C9C9C"/>
+                <circle cx="107.5" cy="884.5" r="7.5" fill="#D9D2DA"/>
+                <line x1="103.624" y1="888.671" x2="110.624" y2="880.671" stroke="#9C9C9C"/>
+                <circle cx="14.5" cy="778.5" r="7.5" fill="#D9D2DA"/>
+                <line x1="10.6237" y1="782.671" x2="17.6237" y2="774.671" stroke="#9C9C9C"/>
+                <circle cx="14.5" cy="12.5" r="7.5" fill="#D9D2DA"/>
+                <line x1="10.6237" y1="16.6707" x2="17.6237" y2="8.67075" stroke="#9C9C9C"/>
+                <path d="M111.5 113.5L152.25 66H233.5H396H721V441V628.5V722.25V769.125L701 792L680.375 816H639.75H558.5H396H71V441V253.5V159.75L111.5 113.5Z" fill="#6F7E9F"/>
+                </svg>
+
+                
+              
+                        
+                       
+                        <form action="{% url 'register_teacher_' %}" method = "POST" name = "register_form_t" id = "register_form_t" class = "register_content">
+                            {% csrf_token %}
+                              <h1>Bienvenido Admin</h1>
+                              <h1>Registro Profesores</h1>
+                
+                            <div class = "register_input_div">
+                                <label for="name_student" id = "label_name_student"> Nombres Profesor </label>
+                                <input type="text" name="name_student" id="name_student">
+                            </div>
+        
+                            <div class = "register_input_div">
+                                <label for="last_name" id = "label_last_name"> Apellidos Profesor </label>
+                                <input type="text" name="last_name" id="last_name">
+                            </div>
+                          
+                            <div class = "register_input_div">
+                                <label for="rut" id = "label_rut"> Rut Profesor </label>
+                                <input type="text" name="rut" id="rut">
+                              </div>
+
+                            <div class = "register_input_div_radio">
+                                <div class = "first_son">
+                                    <label>Curso Profesor</label>
+                                </div>
+                                
+                                <div class = "second_son">
+                                    <div>
+                                        <input class ="input_radio" type="radio" id="5A" name="grade" value="5A">
+                                        <label class ="label_radio" for="5A">5A</label>
+                                    </div>
+                                    
+                                    <div>
+                                        <input class ="input_radio" type="radio" id="5B" name="grade" value="5B">
+                                        <label class ="label_radio" for="5B">5B</label>
+                                    </div>
+
+                                    <div>
+                                        <input class ="input_radio" type="radio" id="5C" name="grade" value="5C">
+                                        <label class ="label_radio" for="5C">5C</label>
+                                    </div>
+
+                                    
+
+                                    
+                                </div>
+                                
+
+
+                            </div>
+        
+        
+                       
+                            
+                    
+                            <button type= "submit"  class = "control_button">
+                                <svg width="120" height="110" viewBox="0 0 120 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 0H60H90L105 14.2788L120 27.5V55V110H60H30H15L7.24138 103.125L0 96.25V82.5V55V0Z" fill="#E86030"/>
+                                    <path d="M5 5H60H87.5L101.25 17.9808L115 30V55V105H60H32.5H18.75L11.6379 98.75L5 92.5V80V55V5Z" fill="#984223"/>
+                                    <rect x="20" y="49" width="79" height="12" fill="#D9D9D9"/>
+                                    <rect x="20" y="73" width="23" height="12" transform="rotate(-90 20 73)" fill="#D9D9D9"/>
+                                    <rect x="35" y="68" width="19" height="12" transform="rotate(-90 35 68)" fill="#D9D9D9"/>
+                                    <rect x="87" y="72" width="35" height="12" transform="rotate(-90 87 72)" fill="#D9D9D9"/>
+                                    <rect x="69" y="37" width="28.4515" height="12" fill="#D9D9D9"/>
+                                    <rect x="70" y="60" width="28.4515" height="12" fill="#D9D9D9"/>
+                                    </svg>
+                                    
+                            </button>
+        
+                        </form>
+                        
+                    
+                
+                    
+                
+        </div>
+        
+      
+           
+    
+            
+      
+       
+        
+
+    </main>
+    
+
+    
+</body>
+</html>

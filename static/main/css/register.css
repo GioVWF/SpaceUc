@@ -64,7 +64,7 @@ button{
     padding: 5px;
 }
 
-input{
+.register_input_div input{
     position: relative;
     background-color: #4D5C7D; 
     border-radius: 1.5vh; 
@@ -86,7 +86,7 @@ input:focus {
     
 }
 
-label{
+.register_input_div label{
 
     position: absolute;
     z-index: 3;
@@ -107,4 +107,25 @@ a{
     display: block;
     padding-right: 25vh;
     padding-top: 1vh;
+}
+
+.register_input_div_radio{
+ 
+    position: relative;
+    padding: 5px;
+    display: flex;
+    gap: 3vw;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+
+.register_input_div_radio .first_son{
+    font-size: large;
+    
+}
+
+.register_input_div_radio .second_son{
+    font-size: large;
 }

@@ -7,6 +7,8 @@ from datetime import datetime
 from django.http import JsonResponse
 from django.core import serializers
 from django.db.models import Q
+from django.contrib import messages
+from django.template import RequestContext
 # Create your views here.
 
 def login_page(request):
@@ -23,14 +25,14 @@ def log_in_(request):
         if user.is_active:
 
             login(request, user)
-
+            messages.success(request, 'Inicio de sesión exitoso')
             return redirect(home)
         
         else:
 
             return render(request, 'level-question.html')
     else:
-        
+        messages.error(request, 'Rut o contraseña invalidos')
         return redirect(login_page) 
 
 def log_out_(request):
@@ -56,7 +58,7 @@ def register_student_(request, id):
         last_name_form = request.POST['last_name']
         rut_form = request.POST['rut'] #Remmember our user to log in is the RUT of the student
         password_form = rut_form[:4] 
-        alias_user_pref = ''
+        alias_user_pref = f"{last_name_form} {name_student_form}"
         point_user_pref = 0
         grade_user_pref = '5A'
         user_type_pref = 2
@@ -67,7 +69,7 @@ def register_student_(request, id):
         last_name_form = request.POST['last_name']
         rut_form = request.POST['rut'] #Remmember our user to log in is the RUT of the student
         password_form = rut_form[:4] 
-        alias_user_pref = ''
+        alias_user_pref = f"{last_name_form} {name_student_form}"
         point_user_pref = 0
         grade_user_pref = '5B'
         user_type_pref = 2
@@ -78,12 +80,12 @@ def register_student_(request, id):
         last_name_form = request.POST['last_name']
         rut_form = request.POST['rut'] #Remmember our user to log in is the RUT of the student
         password_form = rut_form[:4] 
-        alias_user_pref = ''
+        alias_user_pref = f"{last_name_form} {name_student_form}"
         point_user_pref = 0
         grade_user_pref = '5C'
         user_type_pref = 2
         email_user_pref = ''
-
+        
     
 
     try:
@@ -220,7 +222,7 @@ def update_profile_photo_(request):
 
     return redirect(custom_profile)
    
-    
+#----------------------------------------------------------------
 
 def get_color_head(request, id):
     
@@ -329,4 +331,52 @@ def get_color_background(request, id):
    
     
     return JsonResponse(data, safe=False)  
+#----------------------------------------------------------------
+
+
+def register_teacher(request):
+    return render(request, 'register_teacher.html')
+
+
+def register_teacher_(request):
+
+    name_teacher_form = request.POST['name_student']
+    last_name_form = request.POST['last_name']
+    rut_form = request.POST['rut'] #Remmember our user to log in is the RUT of the teacher
+    password_form = rut_form[:4] 
+    alias_user_pref = 'teacher'
+    point_user_pref = -1
+    grade_user_pref = request.POST['grade']
+    user_type_pref = 1
+    email_user_pref = ''
+
+    try:
+
+        User.objects.get( username = rut_form )
+        print('This user already exist')
+
+    except User.DoesNotExist:
+        followUp_student_form = FollowUp.objects.create(name_follow = name_teacher_form, last_date_follow = datetime.now(), follow_up_points = 0)
+        newUserDjango = User.objects.create_user(rut_form, email_user_pref, password_form)
+        newUserDjango.first_name = name_teacher_form
+        newUserDjango.last_name = last_name_form
+        newUserDjango.is_staff = 0
+        newUserDjango.is_superuser = 0
+
+        newUserDjango.save()
+
+        User_ours.objects.create(run_user = rut_form, alias_user = alias_user_pref, first_name_user = name_teacher_form, last_name_user = last_name_form, password_user = password_form, point_user = point_user_pref, grade_user = grade_user_pref, user_type = user_type_pref, follow_up_id_follow = followUp_student_form, user = newUserDjango)
+        
+        get_default_head = Icon.objects.get(id_icon = 1)
+        get_default_body = Icon.objects.get(id_icon = 2)
+        get_default_backgraund = Icon.objects.get(id_icon = 3)
+        get_new_user = User_ours.objects.get(run_user = rut_form)
+
+        PerIcon.objects.create(color_icon = 0, icon_id_icon = get_default_head , user_ours_id_user_ours = get_new_user )
+        PerIcon.objects.create(color_icon = 0, icon_id_icon = get_default_body , user_ours_id_user_ours = get_new_user )
+        PerIcon.objects.create(color_icon = 0, icon_id_icon = get_default_backgraund , user_ours_id_user_ours = get_new_user )
+        
+
+        return redirect(home)
     
+    return redirect(register_teacher)

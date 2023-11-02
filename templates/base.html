@@ -5,21 +5,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'header.css' %}">
+    <script>
+    
+        document.addEventListener("DOMContentLoaded", function() {
+            
+            const miDiv = document.getElementById("log_out");
+            const icon = document.getElementById("icon_container_id");
+            const logo = document.getElementById("navbar_logo_id");
+
+            miDiv.addEventListener("click", function() {
+                
+            window.location.href = "/users/log_out_";
+            });
+
+            icon.addEventListener("click", function() {
+                
+                window.location.href = "/users/profile_page";
+            });
+
+            logo.addEventListener("click", function() {
+                
+                window.location.href = "/";
+            });
+        });
+    </script>
     {% block extrahead %}{% endblock %}
 </head>
 <body>
     <header id="navbar-area">
         <div class="navbar-background">
-            <div class="navbar-logo">
-                <div class="navbar-logo-svg-position"><svg width="190" height="79" viewBox="0 0 204 79" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div class="navbar-logo" >
+                <div class="navbar-logo-svg-position" id = "navbar_logo_id"><svg width="190" height="79" viewBox="0 0 204 79" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="204" height="79" fill="#4D5C7D"/>
                     <rect x="6" y="9" width="192" height="61" rx="10" fill="#222757"/>
                     <text x="32" y="50" font-family="Verdana" font-size="32" fill="white"> SpaceUc </text>
                     </svg></div>
             </div>
             <div class="navbar-main">
+                
+                
+                    
                 <div class="navbar-panel"> 
                     <div class="navbar-panel-inner">
+                        {% if user.is_authenticated %}
                         <a href="{% url 'podium_page' %}" class="navbar-panel-podium">
                             <div class="navbar-podium-position">
                                 <svg width="64" height="86" viewBox="0 0 84 86" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -34,6 +62,23 @@
                                 <h1>PODIO</h1>
                             </div>
                         </a>
+                        {% else %}
+                        <a href="{% url 'login_page' %}" class="navbar-panel-podium">
+                            <div class="navbar-podium-position">
+                                <svg width="64" height="86" viewBox="0 0 84 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill="#4D5C7D" d="M0 0h84v86H0z"/><path d="M9 10h58.625L72 14.5l4 3.75V76H13.187L11 74l-2-2.125V10Z" fill="#222757"/>
+                                    <ellipse cx="42.5" cy="40" rx="10.5" ry="22" fill="#D9D9D9"/><circle cx="42.5" cy="38.5" r="3.5" fill="#fff"/>
+                                    <circle cx="42.5" cy="38.5" r="3.5" fill="#fff"/><circle cx="42.5" cy="28.5" r="3.5" fill="#fff"/><circle cx="42.5" cy="28.5" r="3.5" fill="#fff"/>
+                                    <circle cx="42.5" cy="48.5" r="3.5" fill="#fff"/><circle cx="42.5" cy="48.5" r="3.5" fill="#fff"/><path d="M38 56h9v11h-9V56Z" fill="#D9D9D9"/>
+                                    <path d="M22.868 69.916 33.49 50.11l6.7 5.487-17.32 14.318Zm39.66-1.024-17.344-14.29 6.691-5.497 10.653 19.787Z" fill="#D9D9D9"/><circle cx="79.5" cy="80.5" r="1.5" fill="#D9D2DA"/>
+                                    <circle cx="79.5" cy="80.5" r="1.5" fill="#D9D2DA"/><circle cx="4.5" cy="80.5" r="1.5" fill="#D9D2DA"/><circle cx="79.5" cy="4.5" r="1.5" fill="#D9D2DA"/><circle cx="4.5" cy="4.5" r="1.5" fill="#D9D2DA"/></svg>
+                            </div>
+                            <div class="navbar-podium-text-position">
+                                <h1>PODIO</h1>
+                            </div>
+                        </a>
+                        {% endif %}
+                        
                         <div class="navbar-panel-blackButton-left"> 
                             <a href="{% url 'about_page' %}" class="navbar-panel-blackButton-left-inner">
                                 <div class="navbar-black-text-position-left"><h1 class="navbar-black-text">Quienes <br> Somos</h1></div>
@@ -48,31 +93,39 @@
                         
                         {% if user.is_authenticated %}
                             
-                            {% for x in users%}
+                            {% if user.is_staff %}
+                                <a href="https://www.youtube.com/watch?v=dcguMplEl1c&ab_channel=StevenLin" class="navbar-admin">
+                                    <div class="navbar-admin-inner"><h1 class="navbar-playButton">ADMIN</h1></div>
+                                </a>
+                            {% else %}
+                                {% for x in users%}
                                 
                                 
-                                {% if user.username == x.run_user  %}
+                                    {% if user.username == x.run_user  %}
 
-                                        {% if x.user_type == 1 %}
-                                            <a href="{% url 'teacher_follow' %}" class="navbar-follow">
-                                                <div class="navbar-follow-inner"><h1 class="navbar-followButton-follow">Seguimiento</h1></div>
-                                            </a>
-                                        {% else %}
-                                            <a href="{% url 'game_page' %}" class="navbar-play">
-                                                <div class="navbar-play-inner"><h1 class="navbar-playButton">JUGAR!</h1></div>
-                                            </a>
-                                        {% endif %}
-                                
-                               
+                                            {% if x.user_type == 1 %}
+                                                <a href="{% url 'teacher_follow' %}" class="navbar-follow">
+                                                    <div class="navbar-follow-inner"><h1 class="navbar-followButton-follow">Seguimiento</h1></div>
+                                                </a>
+                                            {% else %}
+                                                <a href="{% url 'game_page' %}" class="navbar-play">
+                                                    <div class="navbar-play-inner"><h1 class="navbar-playButton">¡JUGAR!</h1></div>
+                                                </a>
+                                            {% endif %}
+                            
+                           
 
-                                {% endif %}
-                                    
+                                    {% endif %}
                                 
-                                    
-                            {% endfor %}
+                            
+                                
+                                {% endfor %}
+                            {% endif %}
+                                
+                            
                         {% else %}
 
-                            <a href="{% url 'game_page' %}" class="navbar-play">
+                            <a href="{% url 'login_page' %}" class="navbar-play">
                                 <div class="navbar-play-inner"><h1 class="navbar-playButton">¡JUGAR!</h1></div>
                             </a>       
                         {% endif %}
@@ -90,33 +143,124 @@
                         </div>
                         <div class="navbar-logIn-position" >
                                 {% if user.is_authenticated %}
-                                    {% for i in users %}
-                                        {% if user.username == i.run_user %}
-                                            
-
+                                
+                                    {% if user.is_staff %}
+                                    <div class="navbar-unLogged">
+                                        <svg width="166" height="86" viewBox="0 0 166 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="166" height="86" fill="#4D5C7D"/>  
+                                            <path d="M8 9H83.5H121.25H140.125L150 18L159 25.75V42.5V76H83.5H45.75H26.875H17.4375L12.5 71.5L8 67.625V59.25V42.5V9Z" fill="#222757"/>                                             
+                                                <a href="{% url 'register_teacher' %}"><text x="19" y="50" font-family="Verdana" font-size="19" fill="white"> R.Profesor </text></a>                                                                              
+                                            <circle cx="2.5" cy="83.5" r="1.5" fill="#D9D2DA"/>
+                                            <circle cx="2.5" cy="2.5" r="1.5" fill="#D9D2DA"/>
+                                            <circle cx="162.5" cy="2.5" r="1.5" fill="#D9D2DA"/>
+                                            <circle cx="162.5" cy="83.5" r="1.5" fill="#D9D2DA"/>
+                                            </svg>
+                                    </div>
+                                    {% else %}
+                                        {% for i in users %}
+                                            {% if user.username == i.run_user %}
                                         
-                                            {% if i.user_type == 1 %}
-                                                <a href="{% url 'register_page' %}">AGREGAR NUEVO ESTUDIANTE</a>
-                                                <div class="navbar-logger-user-points">
-                                                    <p><a href="{% url 'log_out_' %}">cerrar sesion</a></p> 
-                                                </div>
-                                            {% else %}
-                                            <div class="navbar-logged-user">
-                                                <div class="navbar-logger-user-name">
-                                                    <h1>{{ i.first_name_user }} {{i.last_name_user}}</h1>
-                                                </div>
-                                                <a href="{% url 'profile_page' %}" class="navbar-logged-user-icon" >
-                                                    <img src="{% static 'main/img/defaultIcon.png' %}" alt="">
-                                                </a>
-                                                <div class="navbar-logger-user-points">
-                                                    <p>Puntos: {{i.point_user}} <a href="{% url 'log_out_' %}">cerrar sesion</a></p> 
-                                                </div>
-                                            </div> 
-                                            {% endif %}
-                                                
+
+                                    
+                                                {% if i.user_type == 1 %}
+                                                <div class="navbar-Logged-teacher">
+                                                    <svg width="166" height="86" viewBox="0 0 166 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <rect width="166" height="86" fill="#4D5C7D"/>  
+                                                        <path d="M8 9H83.5H121.25H140.125L150 18L159 25.75V42.5V76H83.5H45.75H26.875H17.4375L12.5 71.5L8 67.625V59.25V42.5V9Z" fill="#222757"/>                                             
+                                                            <a href="{% url 'register_page' %}"><text x="19" y="50" font-family="Verdana" font-size="19" fill="white"> A.Estudiante </text></a>                                                                              
+                                                        <circle cx="2.5" cy="83.5" r="1.5" fill="#D9D2DA"/>
+                                                        <circle cx="2.5" cy="2.5" r="1.5" fill="#D9D2DA"/>
+                                                        <circle cx="162.5" cy="2.5" r="1.5" fill="#D9D2DA"/>
+                                                        <circle cx="162.5" cy="83.5" r="1.5" fill="#D9D2DA"/>
+                                                        </svg>
+
+                                                        <div id = "log_out" class = "button_container">
+                                                            <svg viewBox="0 0 51 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M0 0H12.75H25.5H38.25L45.2337 5.9125L51 10.75V21.5V32.25V43H25.5H12.75L6.66332 37.84L0 32.25V21.5V10.75V0Z" fill="#E86030"/>
+                                                                <path d="M4 2H14.75H25.5H36.25L42.1382 7.0875L47 11.25V20.5V29.75V39H25.5H14.75L9.61809 34.56L4 29.75V20.5V11.25V2Z" fill="#984223"/>
+                                                                <mask id="path-3-inside-1_806_2" fill="white">
+                                                                <path d="M39.2719 23.9972C39.422 31.1753 33.7234 36.9943 26.5437 36.9943C19.364 36.9943 13.422 31.1753 13.2719 23.9972C13.1217 16.819 18.8203 11 26 11C33.1797 11 39.1217 16.819 39.2719 23.9972ZM20.8019 23.9972C20.865 27.0175 23.3653 29.4659 26.3862 29.4659C29.4072 29.4659 31.805 27.0175 31.7418 23.9972C31.6787 20.9768 29.1785 18.5284 26.1575 18.5284C23.1365 18.5284 20.7387 20.9768 20.8019 23.9972Z"/>
+                                                                </mask>
+                                                                <path d="M39.2719 23.9972C39.422 31.1753 33.7234 36.9943 26.5437 36.9943C19.364 36.9943 13.422 31.1753 13.2719 23.9972C13.1217 16.819 18.8203 11 26 11C33.1797 11 39.1217 16.819 39.2719 23.9972ZM20.8019 23.9972C20.865 27.0175 23.3653 29.4659 26.3862 29.4659C29.4072 29.4659 31.805 27.0175 31.7418 23.9972C31.6787 20.9768 29.1785 18.5284 26.1575 18.5284C23.1365 18.5284 20.7387 20.9768 20.8019 23.9972Z" stroke="white" stroke-width="2" mask="url(#path-3-inside-1_806_2)"/>
+                                                                <rect x="24.5" y="7.5" width="4" height="16" fill="white" stroke="#984223"/>
+                                                                </svg>
                                                                 
-                                        {% endif %}
-                                {% endfor %}
+                                                        </div>
+                                                </div>
+                                                    
+                                                    
+                                                {% else %}
+                                                <div class="navbar-logged-user">
+                                                    <div class = "data_user">
+                                                        <div class="navbar-logger-user-name">
+                                                            <h1>{{ i.first_name_user }} {{i.last_name_user}}</h1>
+                                                        </div>
+                                                        
+                                                        <div class = "icon_container" id = "icon_container_id">
+                                                            {% for i in users %}
+                                                            
+                                                            {% if user.username == i.run_user %}
+                                                            
+                                                                {% for x in perIcon %}
+                                                                    
+                                                                
+                                                                {% for ic in icon %}
+                                                                    
+                                                                    {% if  x.icon_id_icon.id_icon == ic.id_icon and x.user_ours_id_user_ours.run_user == user.username %}
+                                                                    
+                                                                        <div class="{% if ic.type_icon == 0 %}head_icon_mini{% elif ic.type_icon == 1 %}body_icon_mini{% elif ic.type_icon == 2 %}background_icon_mini{% endif %}">
+                                            
+                                                                            {{ x.icon_id_icon.svg_icon|safe  }}
+                                
+                                                                        </div>
+                                                                    {% endif %}
+                                                                        
+                                                                {% endfor %}
+                                                                    
+                                                                    
+                                                                {% endfor %}
+                                                                    
+                                                            {% endif %}
+                                                                
+                                                            
+                                                        {% endfor %}
+                                                        </div>
+                                                        
+                                                            
+                                                        
+                                                    
+                                                        
+                                                        <div class="navbar-logger-user-points">
+    
+                                                            <p>Puntos: {{i.point_user}} </p> 
+                                                        </div>
+                                                    </div>
+
+                                                    
+                                                        <div id = "log_out" class = "button_container">
+                                                            <svg viewBox="0 0 51 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M0 0H12.75H25.5H38.25L45.2337 5.9125L51 10.75V21.5V32.25V43H25.5H12.75L6.66332 37.84L0 32.25V21.5V10.75V0Z" fill="#E86030"/>
+                                                                <path d="M4 2H14.75H25.5H36.25L42.1382 7.0875L47 11.25V20.5V29.75V39H25.5H14.75L9.61809 34.56L4 29.75V20.5V11.25V2Z" fill="#984223"/>
+                                                                <mask id="path-3-inside-1_806_2" fill="white">
+                                                                <path d="M39.2719 23.9972C39.422 31.1753 33.7234 36.9943 26.5437 36.9943C19.364 36.9943 13.422 31.1753 13.2719 23.9972C13.1217 16.819 18.8203 11 26 11C33.1797 11 39.1217 16.819 39.2719 23.9972ZM20.8019 23.9972C20.865 27.0175 23.3653 29.4659 26.3862 29.4659C29.4072 29.4659 31.805 27.0175 31.7418 23.9972C31.6787 20.9768 29.1785 18.5284 26.1575 18.5284C23.1365 18.5284 20.7387 20.9768 20.8019 23.9972Z"/>
+                                                                </mask>
+                                                                <path d="M39.2719 23.9972C39.422 31.1753 33.7234 36.9943 26.5437 36.9943C19.364 36.9943 13.422 31.1753 13.2719 23.9972C13.1217 16.819 18.8203 11 26 11C33.1797 11 39.1217 16.819 39.2719 23.9972ZM20.8019 23.9972C20.865 27.0175 23.3653 29.4659 26.3862 29.4659C29.4072 29.4659 31.805 27.0175 31.7418 23.9972C31.6787 20.9768 29.1785 18.5284 26.1575 18.5284C23.1365 18.5284 20.7387 20.9768 20.8019 23.9972Z" stroke="white" stroke-width="2" mask="url(#path-3-inside-1_806_2)"/>
+                                                                <rect x="24.5" y="7.5" width="4" height="16" fill="white" stroke="#984223"/>
+                                                                </svg>
+                                                                
+                                                        </div>
+                                                    
+                                                    
+                                                    
+                                                </div> 
+                                                {% endif %}
+                                            
+                                                            
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endif %}
+                                    
+                                    
                             {% else %}
                             <div class="navbar-unLogged">
                                 <svg width="166" height="86" viewBox="0 0 166 86" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -15,6 +15,7 @@ urlpatterns = [
     path('get_color_head/<int:id>', get_color_head, name = 'get_color_head'),
     path('get_color_body/<int:id>', get_color_body, name = 'get_color_body'),
     path('get_color_background/<int:id>', get_color_background, name = 'get_color_background'),
-    
+    path('register_teacher', register_teacher, name = 'register_teacher'),
+    path('register_teacher_', register_teacher_, name = 'register_teacher_'),
       
 ]
