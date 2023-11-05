@@ -26,11 +26,11 @@
         <section class="level_content"> 
             <div class="svg_container">
                 {{svg|safe}}
-                <ol>
-                    <li><a href="{% url 'question' level first %}">Lección 1</a></li>
-                    <li><a href="{% url 'question' level second %}">Lección 2</a></li>
-                    <li><a href="{% url 'question' level third %}">Lección 3</a></li>
-                </ol>
+                <div class="lessons-container">
+                    <div class="lesson"><a href="{% url 'question' level first %}">Lección 1</a></div>
+                    <div class="lesson"><a href="{% url 'question' level second %}">Lección 2</a></div>
+                    <div class="lesson"><a href="{% url 'question' level third %}">Lección 3</a></div>
+                </div>
             </div>
         </section>
     </main>

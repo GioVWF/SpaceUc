@@ -36,13 +36,18 @@ def level_question(request, level,id):
     anwser_2 = anwser_urls[1]
     anwser_3 = anwser_urls[2]
     
+   
+    
     for i in answer_info:
         if anwser_urls[0] == i.img_answer.url:
             check_1 = i.option_answer
+            content_anwser_1 = i.content_answer
         if anwser_urls[1] == i.img_answer.url:
             check_2 = i.option_answer
+            content_anwser_2 = i.content_answer
         if anwser_urls[2] == i.img_answer.url:
             check_3 = i.option_answer
+            content_anwser_3 = i.content_answer
     
     question_context = {
         'level': level,
@@ -55,6 +60,9 @@ def level_question(request, level,id):
         'check_1': check_1,
         'check_2':check_2,
         'check_3': check_3,
+        'content_anwser_1': content_anwser_1,
+        'content_anwser_2': content_anwser_2,
+        'content_anwser_3': content_anwser_3,
         'progress': progress,
         'limitator': limitator
     }

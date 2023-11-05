@@ -6,7 +6,10 @@ $(document).ready(function(){
     let temp;
     let initTemp;
     let points;
-    
+    let iscorrect;
+
+    const retryButton = document.getElementById('modalButton');
+
     $.ajax({
         type: 'GET',
         url: timerUrl,
@@ -81,24 +84,44 @@ $(document).ready(function(){
         let checkbox = $(this).siblings('input[type="checkbox"]');
         checkbox.prop('checked', true);
         
-        openModal($(this).data('is-correct'));
+        openModal($(this).data('is-correct'), $(this).data('content-answer'));
     });     
 
     $('.close').click(function() {
         closeModal();
     });
 
-    function openModal(boolean) {
+    function openModal(boolean, content) {
         $('#myModal #modalstyles').removeClass(boolean == 'True' ? 'Incorrect' : 'Correct').addClass(boolean == 'True' ? 'Correct' : 'Incorrect')
-        $('#myModal p').text(boolean == 'True' ? 'Correcto!' : 'Incorrecto!');
-        $('#myModal').css('display', 'block');
+        $('#myModal #answerIsCorrect').text(boolean == 'True' ? 'Correcto!' : 'Incorrecto!');
+        $('#myModal p').text(content);
+       
+        if (boolean != 'True'){
+            $('#myModal #modalButton').text("REINTENTAR").removeClass('hide').removeClass('correct-button').addClass('incorrect-button');
+            $('#myModal #grid-stats').removeClass('stats-grid');
+            $('#myModal h3').addClass('hide').removeClass('stats-text');
+            
+            iscorrect = false;
+        } else if (boolean == 'True') {
+            $('#myModal #modalButton').text("SIGUIENTE").removeClass('hide').addClass('correct-button');
+            $('#myModal #grid-stats').addClass('stats-grid');
+            $('#myModal h3').removeClass('hide').addClass('stats-text');
+            iscorrect = true;
+        }
+
+        $('#myModal #Time').text('Tiempo: ' + temp + ' segundos.');
+        
 
         if (boolean == 'True' && progress == limitator){
             addPoints();
+            $('#myModal #Points').text('Puntos: ' + points + ' puntos.');
             console.log('puntos añadidos');
         } else if (boolean =='True' && progress != limitator) {
             clearInterval(timerInterval);
+            $('#myModal #Points').text('No puedes ganar más puntos.');
         }
+
+        $('#myModal').css('display', 'block');
 
     }
 
@@ -107,4 +130,13 @@ $(document).ready(function(){
         let checkbox = $('.modal-content').find('input[type="checkbox"]');
         checkbox.prop('checked', false);
     }
+
+    retryButton.onclick = function(){
+        if (iscorrect){
+            console.log('BOTON SIGUIENTE PRESIONADO!');
+        } else if (!iscorrect) {
+            location.reload();
+        }
+    };
+    
 });

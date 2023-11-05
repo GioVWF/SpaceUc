@@ -88,6 +88,7 @@ class Question(models.Model):
 class Answer(models.Model):
     id_answer = models.AutoField(primary_key=True)
     title_answer = models.CharField(max_length=50, default='')
+    content_answer = models.CharField(max_length=200, default='')
     img_answer = models.ImageField(blank=True, null=True, upload_to="answers")
     option_answer = models.BooleanField(default=False)
     question_id_question = models.ForeignKey(Question, on_delete=models.CASCADE)

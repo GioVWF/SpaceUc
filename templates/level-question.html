@@ -46,7 +46,7 @@
                     <foreignObject x="10%" y="50" width="80%" height="6cm">
                         <h3 class="question-title">{{title}}</h3>
                     </foreignObject>
-                    <foreignObject x="12%" y="220" width="80%" height="10cm">
+                    <foreignObject x="12%" y="280" width="80%" height="10cm">
                         <p class="center question-content">{{content}}</p>
                       </foreignObject>
                 </svg> 
@@ -54,7 +54,7 @@
             <form action="" enctype="multipart/form-data">
                 <fieldset>
                     <label for="Answer-1">
-                        <input id="Answer-1" data-is-correct="{{check_1}}" type="checkbox" class="Answer">
+                        <input id="Answer-1" data-content-answer="{{content_anwser_1}}" data-is-correct="{{check_1}}" type="checkbox" class="Answer">
                         <div class="answer_box">
                             <div class="img_box">
                                 <img src="{{anwser_1}}">
@@ -62,7 +62,7 @@
                         </div>
                     </label>  
                     <label for="Answer-2">
-                        <input id="Answer-2" data-is-correct="{{check_2}}" type="checkbox" class="Answer">
+                        <input id="Answer-2" data-content-answer="{{content_anwser_2}}" data-is-correct="{{check_2}}" type="checkbox" class="Answer">
                         <div class="answer_box">
                             <div class="img_box">
                                 <img src="{{anwser_2}}">
@@ -70,7 +70,7 @@
                         </div>
                     </label>
                     <label for="Answer-3">
-                        <input id="Answer-3" data-is-correct="{{check_3}}" type="checkbox" class="Answer">
+                        <input id="Answer-3" data-content-answer="{{content_anwser_3}}" data-is-correct="{{check_3}}" type="checkbox" class="Answer">
                         <div class="answer_box">
                             <div class="img_box">
                                 <img src="{{anwser_3}}">
@@ -81,7 +81,7 @@
             </form>
         </section>
         
-        <div class="{% if progress > limitator %} go-next {% elif progress <= limitator %} hide {% endif %}">
+        <div class="{% if progress >= limitator %} go-next {% elif progress <= limitator %} hide {% endif %}">
             <a href="">
                 <svg viewBox="0 0 105 122" fill="none">
                     <path d="M105 60.6218L0 121.244L15 60.6218L0 0L105 60.6218Z" fill="#E86030"/>
@@ -90,7 +90,6 @@
                 <p class="redir-btn">Siguiente parte</p>
             </a>
         </div>
-        
     </main>
 
     <!-- Modal Oculto Pa -->
@@ -98,7 +97,13 @@
         <div class="modal-content">
             <div id="modalstyles" class="modal-content-bg">
                 <span class="close">&times;</span>
-                <p>Respondiste Pa</p>
+                <H2 id="answerIsCorrect"></H2>
+                <p></p>
+                <div id="grid-stats">
+                    <h3 id="Time" class="hide"></h3>
+                    <h3 id="Points" class="hide"></h3>
+                    <button id="modalButton" class="hide"></button>
+                </div>
             </div>
         </div>
     </section>
