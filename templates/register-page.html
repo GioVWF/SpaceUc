@@ -5,19 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-</head>
-
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet"  href="{% static 'main/css/register.css' %}">
     <script src="{% static 'main/js/register.js' %}"></script>
-    <title>Login</title>
 </head>
-<body>  
+
     
     <div class = "register_background">
         <svg width="auto" height="auto" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,9 +34,9 @@
             
     </div>
 
-    
-    <main>
 
+    <main>
+           
 
         <div class = "control_form_container">
             <svg  viewBox="0 0 800 900" fill="none" xmlns="http://www.w3.org/2000/svg" class = "svg_form_control">
@@ -64,16 +56,32 @@
                 <path d="M111.5 113.5L152.25 66H233.5H396H721V441V628.5V722.25V769.125L701 792L680.375 816H639.75H558.5H396H71V441V253.5V159.75L111.5 113.5Z" fill="#6F7E9F"/>
                 </svg>
 
+                {% if messages %}
+                    <div id = "alert_msg" class = "alert_msg">
+                        {% for message in messages %}
+            
+                            {% if message.tags == "error" %}
+                                <p>{{ message }}</p>
+                            {% endif %}
                 
+                
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                
+
                 {% if user.is_authenticated %}
                     {% for teacher in users %}
                         
                         {% if teacher.run_user == user.username %}
                         <form action="{% url 'register_student_' teacher.id_user_ours %}" method = "POST" name = "register_form" id = "register_form" class = "register_content">
                             {% csrf_token %}
-                              <h1>Bienvenido Profesor</h1>
-                              <h1>Registro alumnos</h1>
-                
+                              <h1 id = "title">Bienvenido Profesor</h1>
+                              <h1 id = "title2">Registro alumnos</h1>
+                              <div id = "error_msg" class = "error_msg">
+
+                              </div>
                               <div class = "register_input_div">
                                     <label for="name_student" id = "label_name_student"> Nombres alumno </label>
                                     <input type="text" name="name_student" id="name_student">
@@ -81,12 +89,12 @@
         
                               <div class = "register_input_div">
                                   <label for="last_name" id = "label_last_name"> Apellidos alumno </label>
-                                  <input type="text" name="last_name" id="last_name">
+                                  <input type="text" name="last_name" id="last_name" >
                               </div>
                           
                               <div class = "register_input_div">
                                   <label for="rut" id = "label_rut"> Rut alumno </label>
-                                  <input type="text" name="rut" id="rut">
+                                  <input type="text" name="rut" id="rut" maxlength = "10" >
                               </div>
         
         
@@ -127,7 +135,77 @@
         
 
     </main>
-    
+
+    <script>
+        $(document).ready(function() {
+
+            
+
+            $('#register_form').submit(function(event){
+                event.preventDefault();
+                
+                var msg = "<p class = 'error_text'>Valores ingresados invalidos, vuelva a intentar</p>"
+                const rut_camp = $('#rut').val();
+                const name_camp = $('#name_student').val();
+                const lastName_camp = $('#last_name').val();
+                const first_sven_rut = rut_camp.slice(0,7);
+                const guion = rut_camp[8];
+                
+                
+                if(!rut_camp.includes("-") || rut_camp.includes(".")){
+                    
+                    msg += "<br><em class = 'error_sub_text'>El rut debe contener guion pero no sus puntos (ej: 12345678-9)</em>"
+                   
+                }
+
+                if(/[a-zA-Z]/.test(first_sven_rut) || guion != "-"){
+                    msg += "<br><em class = 'error_sub_text'>Error en la estructura del rut. (ej: 12345678-9)</em>"
+                }
+
+
+
+                if(rut_camp.length < 9){
+                    msg += "<br><em class = 'error_sub_text'>El rut debe contener 9 digitos (ej: 12345678-9).</em>" 
+                }
+
+                if(name_camp <= 0 || lastName_camp <= 0 || rut_camp <= 0){
+                    msg += "<br><em class = 'error_sub_text'>Uno o mas campos estan vacios, favor de rellenar.</em>" 
+                }
+
+                if( msg != "<p class = 'error_text'>Valores ingresados invalidos, vuelva a intentar</p>" ){
+                    $("#error_msg").html(msg);
+                    $("#error_msg").css('display', 'block');
+                    $("#control_button").css('margin', '2vh');
+                    $("#title").css('margin-top','5px');
+                    $("#title").css('margin-bottom','5px');
+                    $("#title2").css('margin-top','5px');
+                    $("#title2").css('margin-bottom','5px');
+                    event.preventDefault();
+                    
+                    return
+                   
+                }else{
+                    
+                    $("#register_form")[0].submit();
+                }
+            });
+
+            //---------------------------------------------------------
+            
+            var msg_div = document.getElementById('alert_msg');
+            msg_div.style.display = 'flex';
+            msg_div.style.opacity = 1;
+            console.log(msg_div)
+            setTimeout(function() {
+                msg_div.style.opacity = 0;
+                setTimeout(function() {
+                    msg_div.style.display = 'none';
+                }, 1000);
+              }, 4000);
+                
+        });
+         
+    </script>
 
     
 </body>

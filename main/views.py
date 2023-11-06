@@ -6,6 +6,8 @@ from django.http import JsonResponse
 from django.contrib.auth.models import User
 from db_spaceuc.models import Level
 from django.db.models import Q
+from django.contrib import messages
+from django.template import RequestContext
 
 def home(request):
     users = User_ours.objects.all()
@@ -201,7 +203,7 @@ def delete_student_(request, id_student):
     get_student.delete()
     get_user_django.delete()
     get_follow.delete()
-
+    messages.success(request, "Estudiante eliminado")
     return redirect(teacher_follow)
 
 

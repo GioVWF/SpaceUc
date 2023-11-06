@@ -42,7 +42,7 @@ def log_in_(request):
 def log_out_(request):
 
     logout(request)
-
+    messages.success(request, 'Cerraste sesión')
     return redirect(home)
 #--------------------------------------------------------------------------------------------------------------------------------------
 
@@ -95,7 +95,7 @@ def register_student_(request, id):
     try:
 
         User.objects.get( username = rut_form )
-        print('This user already exist')
+        messages.error(request, "Este usuario ya existe")
 
     except User.DoesNotExist:
         followUp_student_form = FollowUp.objects.create(name_follow = name_student_form, last_date_follow = datetime.now(), follow_up_points = 0)
@@ -118,10 +118,10 @@ def register_student_(request, id):
         PerIcon.objects.create(color_icon = 0, icon_id_icon = get_default_body , user_ours_id_user_ours = get_new_user )
         PerIcon.objects.create(color_icon = 0, icon_id_icon = get_default_backgraund , user_ours_id_user_ours = get_new_user )
         
-
+        messages.success(request, "Usuario creado")
         return redirect(home)
 
-    return redirect(login_page)
+    return redirect(register_page)
 
    
 #--------------------------------------------------------------------------------------------------------------------------------------

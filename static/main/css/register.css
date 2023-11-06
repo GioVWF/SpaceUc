@@ -99,8 +99,14 @@ input:focus {
 
 }
 
+
 .control_button{
     margin: 5vh 0 0 0;
+    
+}
+
+.control_button:hover{
+    cursor: pointer;
 }
 
 a{
@@ -129,3 +135,50 @@ a{
 .register_input_div_radio .second_son{
     font-size: large;
 }
+
+.error_msg{
+    display: none;
+    background-color: rgba(255, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 1vh;
+    width: 70%;
+    margin: auto;
+}
+
+.error_text{
+    margin: 0;
+    font-size: small;
+}
+
+.error_sub_text{
+    font-size: x-small;
+    font-weight: bold;
+}
+
+
+.alert_msg{
+    width: 20vw;
+    height: 10vh;
+    background-color: rgb(255, 190, 190);
+    transition: opacity 1s;
+    border-radius: 10px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.alert_msg p{ 
+   
+   
+    color: rgb(0, 0, 0);
+    font-size: large;
+    margin: 0;
+    text-align: center;
+   
+}
+
+
+
+

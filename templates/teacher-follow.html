@@ -3,7 +3,8 @@
 
 {% block extrahead %}
 <link rel="stylesheet" href="{% static 'main/css/teacher-follow.css' %}">
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
 {% endblock %}
@@ -12,9 +13,21 @@
 
 
 
-
+{% if messages %}
+        <div id = "alert_msg" class = "alert_msg">
+            {% for message in messages %}
+                    
+                {% if message.tags == "success" %}
+                    <p>{{ message }}</p>
+                {% endif %}
+                        
+                        
+            {% endfor %}
+        </div>
+    {% endif %}
 
 <main>
+    
     <section class = "father_container">
 
         <section class = "first_son">
@@ -83,7 +96,7 @@
                                             
                                                             </a>
                     
-                                                            <a href="{% url 'delete_student_' std.id_user_ours %}">
+                                                            <a  class = "delete_student" data-student-id="{{ std.id_user_ours }}">
                                                                 <svg viewBox="0 0 39 35" fill="none" xmlns="http://www.w3.org/2000/svg" class = "svg_buttons" >
                                                                     <path d="M0 0H9.75H19.5H29.25L34.5905 4.8125L39 8.75V17.5V26.25V35H19.5H9.75L5.09548 30.8L0 26.25V17.5V8.75V0Z" fill="#E86030"/>
                                                                     <path d="M2 2H10.75H19.5H28.25L33.0427 6.2625L37 9.75V17.5V25.25V33H19.5H10.75L6.57286 29.28L2 25.25V17.5V9.75V2Z" fill="#984223"/>
@@ -96,7 +109,23 @@
                                                         </div>
                                 
                                                     </td>
+                                                    <!-- Modal Oculto Pa -->
+                                                <section id="myModal{{ std.id_user_ours }}" class="modal">
+                                                    <div class="modal-content">
+                                                        <div id="modalstyles" class="modal-content-bg">
+                                                            <span class="close">&times;</span>
+                                                            <p class = "title_modal">¿Estas seguro de eliminar a este estudiante?</p>
+                                                            <div class = "container_bottons_modal">
+                                                                <button class = "btn_yes"><a href="{% url 'delete_student_' std.id_user_ours %}" >Si</a></button>
+                                                                <button class = "btn_no"><a class = "close2">No</a></button>
+                                                            </div>
+                                                            
+              
+                                                        </div>
+                                                    </div>
+                                                </section>
                                                 </tr>
+                                                
                                             {% endif %}
                                         
                                     
@@ -125,7 +154,7 @@
                                             
                                                             </a>
                     
-                                                            <a href="{% url 'delete_student_' std.id_user_ours %}">
+                                                            <a  class = "delete_student" data-student-id="{{ std.id_user_ours }}">
                                                                 <svg viewBox="0 0 39 35" fill="none" xmlns="http://www.w3.org/2000/svg" class = "svg_buttons" >
                                                                     <path d="M0 0H9.75H19.5H29.25L34.5905 4.8125L39 8.75V17.5V26.25V35H19.5H9.75L5.09548 30.8L0 26.25V17.5V8.75V0Z" fill="#E86030"/>
                                                                     <path d="M2 2H10.75H19.5H28.25L33.0427 6.2625L37 9.75V17.5V25.25V33H19.5H10.75L6.57286 29.28L2 25.25V17.5V9.75V2Z" fill="#984223"/>
@@ -138,7 +167,20 @@
                                                         </div>
                                 
                                                     </td>
+                                                    <!-- Modal Oculto Pa -->
+                                                <section id="myModal{{ std.id_user_ours }}" class="modal">
+                                                    <div class="modal-content">
+                                                        <div id="modalstyles" class="modal-content-bg">
+                                                            <span class="close">&times;</span>
+                                                            <p>¿Estas seguro de eliminar a este estudiante?</p>
+                                                            <button class = "btn_yes"><a href="{% url 'delete_student_' std.id_user_ours %}" >Si</a></button>
+                                                            <button class = "btn_no"> <a class = "close2" >No</a></button>
+              
+                                                        </div>
+                                                    </div>
+                                                </section>
                                                 </tr>
+                                               
                                             {% endif %}
                                         
                                     
@@ -166,7 +208,7 @@
                                             
                                                             </a>
                     
-                                                            <a href="{% url 'delete_student_' std.id_user_ours %}">
+                                                            <a class = "delete_student" data-student-id="{{ std.id_user_ours }}">
                                                                 <svg viewBox="0 0 39 35" fill="none" xmlns="http://www.w3.org/2000/svg" class = "svg_buttons" >
                                                                     <path d="M0 0H9.75H19.5H29.25L34.5905 4.8125L39 8.75V17.5V26.25V35H19.5H9.75L5.09548 30.8L0 26.25V17.5V8.75V0Z" fill="#E86030"/>
                                                                     <path d="M2 2H10.75H19.5H28.25L33.0427 6.2625L37 9.75V17.5V25.25V33H19.5H10.75L6.57286 29.28L2 25.25V17.5V9.75V2Z" fill="#984223"/>
@@ -179,7 +221,21 @@
                                                         </div>
                                 
                                                     </td>
+                                                    <!-- Modal Oculto Pa -->
+                                                <section id="myModal{{ std.id_user_ours }}" class="modal">
+                                                    <div class="modal-content">
+                                                        <div id="modalstyles" class="modal-content-bg">
+                                                            <span class="close">&times;</span>
+                                                            <p>¿Estas seguro de eliminar a este estudiante?</p>
+                                                            <button class = "btn_yes"><a href="{% url 'delete_student_' std.id_user_ours %}" >Si</a></button>
+                                                            <button class = "btn_no"><a class = "close2">No</a></button>
+              
+                                                        </div>
+                                                    </div>
+                                                </section>
                                                 </tr>
+
+                                               
                                             {% endif %}
                                         
                                     
@@ -239,7 +295,9 @@
 
 
     </section>
+
     
+
 </main>
 
 
@@ -257,4 +315,54 @@
               
 
 <script src = "{% static 'main/js/teacher-follow.js' %}" ></script> 
+
+<script>
+    $(document).ready(function() {
+        
+
+        $('.delete_student').click(function() {
+            
+            
+            var studentId = $(this).data('student-id');
+            openModal(studentId);
+        });     
+
+        $('.close').click(function() {
+            closeModal();
+        });
+
+        $('.close2').click(function() {
+            closeModal();
+        }); 
+
+        function openModal(studentId) {
+           
+            $('#myModal' + studentId).css('display', 'block');
+            $('.second_son').css('z-index', '-1');
+            
+        }
+
+        function closeModal() {
+            $('.modal').css('display', 'none');
+            $('.second_son').css('z-index', '2');
+            
+            
+        }
+
+
+        //---------------------------------------------------------
+
+        var msg_div = document.getElementById('alert_msg');
+        msg_div.style.display = 'flex';
+        msg_div.style.opacity = 1;
+        
+        setTimeout(function() {
+            msg_div.style.opacity = 0;
+            setTimeout(function() {
+                msg_div.style.display = 'none';
+            }, 1000);
+          }, 4000);
+
+    });
+</script>
 {%  endblock %}

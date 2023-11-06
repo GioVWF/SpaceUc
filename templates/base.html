@@ -12,20 +12,29 @@
             const miDiv = document.getElementById("log_out");
             const icon = document.getElementById("icon_container_id");
             const logo = document.getElementById("navbar_logo_id");
+            const btn_add_stdt = document.getElementById("navbar-Logged-teacher");
 
             miDiv.addEventListener("click", function() {
                 
             window.location.href = "/users/log_out_";
             });
 
-            icon.addEventListener("click", function() {
-                
-                window.location.href = "/users/profile_page";
-            });
+            
 
             logo.addEventListener("click", function() {
                 
                 window.location.href = "/";
+            });
+
+            btn_add_stdt.addEventListener("click", function(){
+               
+                window.location.href = "/users/register_page";
+
+            });
+
+            icon.addEventListener("click", function() {
+                
+                window.location.href = "/users/profile_page";
             });
         });
     </script>
@@ -163,8 +172,8 @@
 
                                     
                                                 {% if i.user_type == 1 %}
-                                                <div class="navbar-Logged-teacher">
-                                                    <svg width="166" height="86" viewBox="0 0 166 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <div  class="navbar-Logged-teacher" >
+                                                    <svg width="166" height="86" viewBox="0 0 166 86" fill="none" xmlns="http://www.w3.org/2000/svg" id= "navbar-Logged-teacher">
                                                         <rect width="166" height="86" fill="#4D5C7D"/>  
                                                         <path d="M8 9H83.5H121.25H140.125L150 18L159 25.75V42.5V76H83.5H45.75H26.875H17.4375L12.5 71.5L8 67.625V59.25V42.5V9Z" fill="#222757"/>                                             
                                                             <a href="{% url 'register_page' %}"><text x="19" y="50" font-family="Verdana" font-size="19" fill="white"> A.Estudiante </text></a>                                                                              

@@ -116,6 +116,7 @@ h1 {
     margin-right: -5vw;
 }
 
+
 .navbar-logged-user {
     display: flex;
     flex-direction: row;
@@ -470,6 +471,10 @@ h1 {
     gap: 1vw;
 }
 
+.navbar-Logged-teacher:hover{
+    cursor: pointer;
+}
+
 
 .data_user{
     display: flex;
@@ -511,3 +516,6 @@ h1 {
     position: relative;
     pointer-events: none;
 }
+
+
+
