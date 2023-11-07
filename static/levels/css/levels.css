@@ -114,19 +114,6 @@ p[class="redir-btn"] {
     height: 80vh;
 }
 
-ol {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-li {
-    width: 300px;
-    margin: 50px auto 50px auto;
-    padding: 0;
-    background-color: white;
-}
-
 .svg_container {
     display: flex;
     justify-content: center;
@@ -142,4 +129,76 @@ li {
 
 .svg_container > ol {
     position: relative;
+}
+
+.lessons-container {
+    height: 300px;
+    width: 300px;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: 1px;
+    justify-content: center;
+}
+
+.lesson {
+    position: relative;
+    border-radius: 250px;
+    height: 60px;
+    width: 120px;
+    appearance: button;
+    background-color: green;
+    border: solid transparent;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    font-family: din-round,sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 20px;
+    margin: 25px 0 0 0;
+    outline: none;
+    overflow: visible;
+    padding: 13px 16px;
+    text-align: center;
+    touch-action: manipulation;
+    transform: translateZ(0);
+    transition: filter .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.lesson > a {
+    font-size: .9rem;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: #EAEAEA;  
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.842);
+    display: flex;
+    align-items: center;
+    margin-left: -7px;
+}
+
+.lesson::after {
+    background-clip: padding-box;
+    border-radius: 250px;
+    background-color: greenyellow;
+    border: solid transparent;
+    border-width: 0 0 4px;
+    bottom: -4px;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.lesson:active {
+    border-width: 4px 0 0;
+    background: none;
 }

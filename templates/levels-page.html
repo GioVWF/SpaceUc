@@ -27,13 +27,22 @@
             <div class="svg_container">
                 {{svg|safe}}
                 <div class="lessons-container">
-                    <div class="lesson"><a href="{% url 'question' level first %}">Lección 1</a></div>
-                    <div class="lesson"><a href="{% url 'question' level second %}">Lección 2</a></div>
-                    <div class="lesson"><a href="{% url 'question' level third %}">Lección 3</a></div>
+                    <div class="lesson" onclick="redirectToLink()"><a href="{% url 'question' level first %}">Lección 1</a></div>
+                    <div class="lesson" onclick="redirectToLink()"><a href="{% url 'question' level second %}">Lección 2</a></div>
+                    <div class="lesson" onclick="redirectToLink()"><a href="{% url 'question' level third %}">Lección 3</a></div>
                 </div>
             </div>
         </section>
     </main>
 </body>
 
+<script>
+    function redirectToLink() {
+        var link = document.querySelector('.lesson a');
+    
+        if (link) {
+            link.click();
+        }
+    }
+</script>
 </html>
