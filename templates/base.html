@@ -14,28 +14,29 @@
             const logo = document.getElementById("navbar_logo_id");
             const btn_add_stdt = document.getElementById("navbar-Logged-teacher");
 
-            miDiv.addEventListener("click", function() {
-                
-            window.location.href = "/users/log_out_";
-            });
-
-            
-
-            logo.addEventListener("click", function() {
-                
-                window.location.href = "/";
-            });
-
-            btn_add_stdt.addEventListener("click", function(){
-               
-                window.location.href = "/users/register_page";
-
-            });
-
-            icon.addEventListener("click", function() {
-                
-                window.location.href = "/users/profile_page";
-            });
+            if (miDiv) {
+                miDiv.addEventListener("click", function() {
+                    window.location.href = "/users/log_out_";
+                });
+            }
+        
+            if (logo) {
+                logo.addEventListener("click", function() {
+                    window.location.href = "/";
+                });
+            }
+        
+            if (btn_add_stdt) {
+                btn_add_stdt.addEventListener("click", function() {
+                    window.location.href = "/users/register_page";
+                });
+            }
+        
+            if (icon) {
+                icon.addEventListener("click", function() {
+                    window.location.href = "/users/profile_page";
+                });
+            }
         });
     </script>
     {% block extrahead %}{% endblock %}

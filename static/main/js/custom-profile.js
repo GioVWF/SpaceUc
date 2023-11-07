@@ -33,28 +33,39 @@ function selection_head(option, color, name) {
 <circle cx="125" cy="125" r="124" fill="white" stroke="black" stroke-width="2" class = "head_hover"/>
 </svg>
 `;
+
+
+    svgdefault_armor = `
+    <svg  viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M249.5 125.51C249.5 192.851 193.769 247.459 125 247.459C56.2308 247.459 0.5 192.851 0.5 125.51C0.5 58.1694 56.2308 3.56128 125 3.56128C193.769 3.56128 249.5 58.1694 249.5 125.51Z" fill="#875A41" stroke="black"/>
+<path d="M222.642 80.556C225.649 90.0825 223.429 104.327 217.897 116.996C215.137 123.318 211.565 129.217 207.442 133.907C203.316 138.601 198.662 142.059 193.742 143.549C183.662 146.602 172.946 149.327 164.006 148.898C159.544 148.683 155.56 147.684 152.327 145.578C149.103 143.478 146.584 140.252 145.086 135.505C142.075 125.966 143.782 112.164 148.786 99.9547C153.795 87.7343 162.028 77.2986 171.889 74.312C181.977 71.2566 193.223 68.0798 202.698 68.0641C207.43 68.0562 211.675 68.8377 215.1 70.7804C218.51 72.7147 221.148 75.8228 222.642 80.556Z" fill="#603C34" stroke="black"/>
+<path d="M24.4491 80.5712C21.4689 90.1056 23.7286 104.344 29.2952 116.999C32.073 123.313 35.6613 129.202 39.7973 133.882C43.9362 138.564 48.6003 142.01 53.5246 143.487C63.6132 146.513 74.3362 149.209 83.2753 148.756C87.7367 148.53 91.7173 147.52 94.9449 145.405C98.1633 143.297 100.673 140.064 102.158 135.313C105.142 125.766 103.397 111.969 98.3587 99.7725C93.3158 87.5655 85.054 77.1519 75.1847 74.1916C65.088 71.1631 53.8334 68.0164 44.3579 68.026C39.6264 68.0308 35.3837 68.8236 31.9642 70.7754C28.5595 72.7188 25.9298 75.834 24.4491 80.5712Z" fill="#603C34" stroke="black"/>
+<path d="M141.262 88.481L141.218 88.5422L141.193 88.6138L134.016 109.609L125 124.543L115.983 109.609L108.806 88.6138L108.782 88.5422L108.737 88.481L98.3205 74.1953L98.2543 74.1044L98.1555 74.0507L79.6409 63.9747L78.1371 47.0222L78.1268 46.907L78.0671 46.8079L68.6371 31.1891L65.1398 15.5052L75.2181 7.60711L93.828 3.55604L125.003 0.502159L160.335 3.5561L176.794 7.58667L182.817 15.4546L181.346 31.2172L171.933 46.8079L171.873 46.907L171.863 47.0222L170.359 63.9747L151.844 74.0507L151.745 74.1044L151.679 74.1953L141.262 88.481Z" fill="#2F221F" stroke="black"/>
+<path d="M73.4125 190.753L73.4034 190.682L73.3746 190.616L67.2139 176.534L75.381 158.533L91.7824 150.5H122.917H154.051L170.474 158.544L180.691 176.56L174.542 190.616L174.5 190.712V190.816V207.111L172.443 223.234L164.233 231.275L155.987 239.353L122.921 249.476L91.9497 239.362L77.5595 223.252L75.4958 207.08L73.4125 190.753Z" fill="#2F221F" stroke="black"/>
+</svg>
+`;
     document.getElementById("head_final_election").value = option;
 
     //DEFAULT
-    if (color == 4 && name.includes("default_head")) {
+    if (color == 4 && name.includes("default_head") && !name.includes("armor")) {
         
         svg.innerHTML = svgdefault_head;
         c = svg.querySelector("circle"); 
         c.style.fill = "purple";
     }
-    if (color == 3 && name.includes("default_head")) {
+    if (color == 3 && name.includes("default_head") && !name.includes("armor")) {
         
         svg.innerHTML = svgdefault_head;
         c = svg.querySelector("circle"); 
         c.style.fill = "yellow";
     }
-    if (color == 2 && name.includes("default_head")) {
+    if (color == 2 && name.includes("default_head") && !name.includes("armor")) {
         
         svg.innerHTML = svgdefault_head;
         c = svg.querySelector("circle"); 
         c.style.fill = "blue";
     }
-    if (color == 1 && name.includes("default_head")) {
+    if (color == 1 && name.includes("default_head") && !name.includes("armor")) {
         
         svg.innerHTML = svgdefault_head;
         c = svg.querySelector("circle");  
@@ -67,7 +78,7 @@ function selection_head(option, color, name) {
     }
 
     //ALIEN
-    if (color == 3&& name.includes("alien")) {
+    if (color == 3 && name.includes("alien")) {
         svg.innerHTML = svgalien_head;
         c = svg.querySelector("circle"); 
         c.style.fill = "yellow";
@@ -87,6 +98,12 @@ function selection_head(option, color, name) {
     if (color == 0 && name.includes("alien")) {
         svg.innerHTML = svgalien_head;
        
+    }
+
+    //ARMOR
+    if (color == 0 && name.includes("armor")) {
+        svg.innerHTML = svgdefault_armor;
+        
     }
 
 };
@@ -156,6 +173,15 @@ function selection_body(option, color, name) {
 </svg>
 `;
 
+    svgarmor_body =  `
+    <svg viewBox="0 0 380 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M352.113 125C352.113 159.33 334.012 190.445 304.68 212.992C275.347 235.54 234.804 249.5 190 249.5C145.196 249.5 104.653 235.54 75.3203 212.992C45.9884 190.445 27.8875 159.33 27.8875 125C27.8875 90.6696 45.9884 59.5554 75.3203 37.0081C104.653 14.4603 145.196 0.5 190 0.5C234.804 0.5 275.347 14.4603 304.68 37.0081C334.012 59.5554 352.113 90.6696 352.113 125Z" fill="#875A41" stroke="black" class = "body_hover"/>
+    <path d="M0.500092 97.0151V78.4821L8.8749 62.586L17.2915 53.8034L25.6699 45.0605L59.2513 34.1099L90.7064 45.051L105.413 62.5899L115.896 78.5083V97.0151V112.981L107.541 132.597L90.8783 141.291L59.2564 141.291H27.6346L10.9502 132.586L0.500092 112.958V97.0151Z" fill="#2F221F" stroke="black"/>
+    <path d="M264.104 97.0151V78.4821L272.478 62.586L280.895 53.8034L289.273 45.0605L322.855 34.1099L354.31 45.051L369.017 62.5899L379.5 78.5083V97.0151V112.981L371.145 132.597L354.482 141.291L322.86 141.291H291.238L274.554 132.586L264.104 112.958V97.0151Z" fill="#2F221F" stroke="black"/>
+    </svg>
+`;
+
+
     document.getElementById("body_final_election").value = option;
     //Default
     if (color == 3 && name.includes("default_body")) {
@@ -202,6 +228,13 @@ function selection_body(option, color, name) {
         svg.innerHTML = svgalien_body;
         c.style.fill = "#577556";
     }
+
+
+    //ARMOR
+    if (color == 0 && name.includes("armor")) {
+        svg.innerHTML = svgarmor_body;
+        
+    }
 };
 
 
@@ -241,6 +274,14 @@ function selection_backgraund(option, color, name) {
     svgdefault_background = `
     <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle cx="250" cy="250" r="249" fill="currentColor" stroke="black" stroke-width="2" class = "background_hover"/>
+</svg>
+`;
+
+    svgarmor_background = `
+<svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="100" cy="100" r="99.5" fill="#968763" stroke="black"  class = "background_hover"/>
+<path d="M194 129.5C188.5 158 150.825 199 102.5 199C54.1751 199 18 170 5.5 130C5.5 84.1604 49.1751 47 97.5 47C145.825 47 194 83.6604 194 129.5Z" fill="#9F770F"/>
+<circle cx="144" cy="30" r="10" fill="#E1CE20"/>
 </svg>
 `;
     document.getElementById("backgraund_final_election").value = option;
@@ -289,6 +330,12 @@ function selection_backgraund(option, color, name) {
         svg.innerHTML = svgalien_background;
         c.style.fill = "#577556";
     }
+
+    //ARMOR
+    if (color == 0 && name.includes("armor")) {
+        svg.innerHTML = svgarmor_background;
+        
+    }
 };
 
 
@@ -330,14 +377,17 @@ const get_color_head = async (id,color,name,points) =>{
             iconContainer.removeChild(iconContainer.firstChild);
 
         }
-
+        
         svgIconsWithPK.forEach(icon => {
             
             const iconDiv = document.createElement("div");
             
+            
+
 
             //DEFAULT
-            if(icon.name_icon.includes("default_head") && !icon.name_icon.includes("alien") && icon.color == 0  && points >= 0 && points <= 3000){
+            if(icon.name_icon.startsWith("default_head") && !icon.name_icon.includes("armor_default_head") && !icon.name_icon.includes("alien") && icon.color == 0  && points >= 0 && points <= 3000){
+                console.log("icon.name_icon1:", icon.name_icon);
                 iconDiv.className = "color_avaible";
                 iconDiv.innerHTML = `
                 
@@ -345,7 +395,8 @@ const get_color_head = async (id,color,name,points) =>{
                 <label for = ${icon.pk}>default</label>
             `;
             }
-            else if(icon.name_icon.includes("default_head") && !icon.name_icon.includes("alien") && icon.color == 1  && points >= 50 && points <= 3000){
+            else if(icon.name_icon.startsWith("default_head") && !icon.name_icon.includes("armor_default_head") && !icon.name_icon.includes("alien") && icon.color == 1  && points >= 50 && points <= 3000){
+                console.log("icon.name_icon2:", icon.name_icon);
                 iconDiv.className = "color_avaible";
                 iconDiv.innerHTML = `
                 
@@ -353,7 +404,8 @@ const get_color_head = async (id,color,name,points) =>{
                 <label for = ${icon.pk}>red</label>
             `;
             }
-            else if(icon.name_icon.includes("default_head") && !icon.name_icon.includes("alien") && icon.color == 2  && points >= 100 && points <= 3000){
+            else if(icon.name_icon.startsWith("default_head") && !icon.name_icon.includes("armor_default_head") && !icon.name_icon.includes("alien") && icon.color == 2  && points >= 100 && points <= 3000){
+                console.log("icon.name_icon3:", icon.name_icon);
                 iconDiv.className = "color_avaible";
                 iconDiv.innerHTML = `
                 
@@ -361,7 +413,8 @@ const get_color_head = async (id,color,name,points) =>{
                 <label for = ${icon.pk}>blue</label>
             `;
             }
-            else if(icon.name_icon.includes("default_head") && !icon.name_icon.includes("alien") && icon.color == 3  && points >= 150 && points <= 3000){
+            else if(icon.name_icon.startsWith("default_head") && !icon.name_icon.includes("armor_default_head") && !icon.name_icon.includes("alien") && icon.color == 3  && points >= 150 && points <= 3000){
+                console.log("icon.name_icon4:", icon.name_icon);
                 iconDiv.className = "color_avaible";
                 iconDiv.innerHTML = `
                 
@@ -369,7 +422,8 @@ const get_color_head = async (id,color,name,points) =>{
                 <label for = ${icon.pk}>yellow</label>
             `;
             }
-            else if(icon.name_icon.includes("default_head") && !icon.name_icon.includes("alien") && icon.color == 4  && points >= 500 && points <= 3000){
+            else if(icon.name_icon.startsWith("default_head") && !icon.name_icon.includes("armor_default_head") && !icon.name_icon.includes("alien") && icon.color == 4  && points >= 500 && points <= 3000){
+                console.log("icon.name_icon5:", icon.name_icon);
                 iconDiv.className = "color_avaible";
                 iconDiv.innerHTML = `
                 
@@ -378,7 +432,7 @@ const get_color_head = async (id,color,name,points) =>{
             `;
             }
             //ALIEN
-            else if(icon.name_icon.includes("alien_default_head") && icon.color == 0  && points >= 200 && points <= 3000){
+            else if(icon.name_icon.includes("alien_default_head")  && icon.color == 0  && points >= 200 && points <= 3000){
                 iconDiv.className = "color_avaible";
                 iconDiv.innerHTML = `
                 
@@ -412,6 +466,17 @@ const get_color_head = async (id,color,name,points) =>{
                 <label for = ${icon.pk}>alien yellow</label>
             `;
             }
+            //ARMOR
+            else if(icon.name_icon == "armor_default_head" && icon.color == 0  && points >= 450 && points <= 3000){
+                console.log("icon.name_icon6:", icon.name_icon);
+                iconDiv.className = "color_avaible";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_head(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>armor default</label>
+            `;
+            }
+            
 
             else{
                 iconDiv.className = "unlock";
@@ -460,7 +525,7 @@ const get_color_body = async(id, color, name, points) =>{
             const iconDiv = document.createElement("div");
             
              //DEFAULT
-             if(icon.name_icon.includes("default_body") && !icon.name_icon.includes("alien") && icon.color == 0  && points >= 0 && points <= 3000){
+             if(icon.name_icon.includes("default_body") && !icon.name_icon.includes("armor") && !icon.name_icon.includes("alien") && icon.color == 0  && points >= 0 && points <= 3000){
                 iconDiv.className = "color_avaible";
                 iconDiv.innerHTML = `
                 
@@ -468,7 +533,7 @@ const get_color_body = async(id, color, name, points) =>{
                 <label for = ${icon.pk}>default</label>
             `;
             }
-            else if(icon.name_icon.includes("default_body") && !icon.name_icon.includes("alien") && icon.color == 1  && points >= 50 && points <= 3000){
+            else if(icon.name_icon.includes("default_body") && !icon.name_icon.includes("armor") && !icon.name_icon.includes("alien") && icon.color == 1  && points >= 50 && points <= 3000){
                 iconDiv.className = "color_avaible";
                 iconDiv.innerHTML = `
                 
@@ -476,7 +541,7 @@ const get_color_body = async(id, color, name, points) =>{
                 <label for = ${icon.pk}>red</label>
             `;
             }
-            else if(icon.name_icon.includes("default_body") && !icon.name_icon.includes("alien") && icon.color == 2  && points >= 100 && points <= 3000){
+            else if(icon.name_icon.includes("default_body") && !icon.name_icon.includes("armor") && !icon.name_icon.includes("alien") && icon.color == 2  && points >= 100 && points <= 3000){
                 iconDiv.className = "color_avaible";
                 iconDiv.innerHTML = `
                 
@@ -484,7 +549,7 @@ const get_color_body = async(id, color, name, points) =>{
                 <label for = ${icon.pk}>blue</label>
             `;
             }
-            else if(icon.name_icon.includes("default_body") && !icon.name_icon.includes("alien") && icon.color == 3  && points >= 150 && points <= 3000){
+            else if(icon.name_icon.includes("default_body") && !icon.name_icon.includes("armor") && !icon.name_icon.includes("alien") && icon.color == 3  && points >= 150 && points <= 3000){
                 iconDiv.className = "color_avaible";
                 iconDiv.innerHTML = `
                 
@@ -525,6 +590,31 @@ const get_color_body = async(id, color, name, points) =>{
                 
                 <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_body(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
                 <label for = ${icon.pk}>alien yellow</label>
+            `;
+            }
+            //ARMOR
+            else if(icon.name_icon.includes("armor_default_body") && icon.color == 0  && points >= 350 && points <= 3000){
+                iconDiv.className = "color_avaible";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_body(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>default</label>
+            `;
+            }
+            else if(icon.name_icon.includes("armor_default_body") && icon.color == 1  && points >= 350 && points <= 3000){
+                iconDiv.className = "color_avaible";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_body(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>armor fury</label>
+            `;
+            }
+            else if(icon.name_icon.includes("armor_default_body") && icon.color == 2  && points >= 350 && points <= 3000){
+                iconDiv.className = "color_avaible";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_body(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>armor peace</label>
             `;
             }
 
@@ -576,7 +666,7 @@ const get_color_background = async(id, color, name, points) =>{
             const iconDiv = document.createElement("div");
 
             //DEFAULT
-            if(icon.name_icon.includes("default_background") && !icon.name_icon.includes("alien") && icon.color == 0  && points >= 0 && points <= 3000){
+            if(icon.name_icon.includes("default_background") && !icon.name_icon.includes("armor") && !icon.name_icon.includes("alien") && icon.color == 0  && points >= 0 && points <= 3000){
                 iconDiv.className = "color_avaible";
                 iconDiv.innerHTML = `
                 
@@ -584,7 +674,7 @@ const get_color_background = async(id, color, name, points) =>{
                 <label for = ${icon.pk}>default</label>
             `;
             }
-            else if(icon.name_icon.includes("default_background") && !icon.name_icon.includes("alien") && icon.color == 1  && points >= 50 && points <= 3000){
+            else if(icon.name_icon.includes("default_background") && !icon.name_icon.includes("armor") && !icon.name_icon.includes("alien") && icon.color == 1  && points >= 50 && points <= 3000){
                 iconDiv.className = "color_avaible";
                 iconDiv.innerHTML = `
                 
@@ -592,7 +682,7 @@ const get_color_background = async(id, color, name, points) =>{
                 <label for = ${icon.pk}>red</label>
             `;
             }
-            else if(icon.name_icon.includes("default_background") && !icon.name_icon.includes("alien") && icon.color == 2  && points >= 100 && points <= 3000){
+            else if(icon.name_icon.includes("default_background") && !icon.name_icon.includes("armor") && !icon.name_icon.includes("alien") && icon.color == 2  && points >= 100 && points <= 3000){
                 iconDiv.className = "color_avaible";
                 iconDiv.innerHTML = `
                 
@@ -600,7 +690,7 @@ const get_color_background = async(id, color, name, points) =>{
                 <label for = ${icon.pk}>blue</label>
             `;
             }
-            else if(icon.name_icon.includes("default_background") && !icon.name_icon.includes("alien") && icon.color == 3  && points >= 150 && points <= 3000){
+            else if(icon.name_icon.includes("default_background") && !icon.name_icon.includes("armor") && !icon.name_icon.includes("alien") && icon.color == 3  && points >= 150 && points <= 3000){
                 iconDiv.className = "color_avaible";
                 iconDiv.innerHTML = `
                 
@@ -643,7 +733,31 @@ const get_color_background = async(id, color, name, points) =>{
                 <label for = ${icon.pk}>alien yellow</label>
             `;
             }
-
+            //ARMOR
+            else if(icon.name_icon.includes("armor_default_background") && icon.color == 0  && points >= 350 && points <= 3000){
+                iconDiv.className = "color_avaible";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_backgraund(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>default</label>
+            `;
+            }
+            else if(icon.name_icon.includes("armor_default_background") && icon.color == 1  && points >= 350 && points <= 3000){
+                iconDiv.className = "color_avaible";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_backgraund(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>armor fury</label>
+            `;
+            }
+            else if(icon.name_icon.includes("armor_default_background") && icon.color == 2  && points >= 350 && points <= 3000){
+                iconDiv.className = "color_avaible";
+                iconDiv.innerHTML = `
+                
+                <input type="checkbox" hidden id = ${icon.pk} name = ${icon.pk} value = ${icon.pk} data-new-color = ${icon.color} data-new-name = ${icon.name_icon} onclick = "selection_backgraund(this.value,this.getAttribute('data-new-color'),this.getAttribute('data-new-name'))">
+                <label for = ${icon.pk}>armor peace</label>
+            `;
+            }
             else{
                 iconDiv.className = "unlock";
                 iconDiv.innerHTML = `
@@ -663,6 +777,8 @@ const get_color_background = async(id, color, name, points) =>{
 
 }
 
+
+//SHOWS THE COLORS OF THE DEFAULT ICON FROM USER
 document.addEventListener("DOMContentLoaded", function(){
     //VALUES HEAD
     var head_initial = document.getElementById("head_inital");
@@ -686,30 +802,40 @@ document.addEventListener("DOMContentLoaded", function(){
     
     
     
-    if(name_head_initial.includes("default_head")){
+    if(name_head_initial.includes("default_head") && !name_head_initial.includes("armor")){
         
         get_color_head(id_head_initial, color_head_initial, name_head_initial, points_user);
     }
     else if(name_head_initial.includes("alien_default_head")){
         get_color_head(id_head_initial, color_head_initial, name_head_initial, points_user);
     }
+    else if(name_head_initial.includes("armor_default_head")){
+        get_color_head(id_head_initial, color_head_initial, name_head_initial, points_user);
+    }
+    
 
 
-    if(name_body_initial.includes("default_body")){
+    if(name_body_initial.includes("default_body" && !name_body_initial.includes("armor"))){
         
         get_color_body(id_body_initial, name_body_initial, color_body_initial, points_user);
     }
-    else if(name_body_initial.includes("alien_default_head")){
+    else if(name_body_initial.includes("alien_default_body")){
         
         get_color_body(id_body_initial, name_body_initial, color_body_initial, points_user);
     }
+    else if(name_body_initial.includes("armor_default_body")){
+        get_color_body(id_body_initial, name_body_initial, color_body_initial, points_user);
+    }
 
-    if(name_background_initial.includes("default_background")){
+    if(name_background_initial.includes("default_background") && !name_background_initial.includes("armor")){
         
         get_color_background(id_background_initial, name_background_initial, color_background_initial, points_user);
     }
     else if(name_background_initial.includes("alien_default_background")){
         
+        get_color_background(id_background_initial, name_background_initial, color_background_initial, points_user);
+    }
+    else if(name_background_initial.includes("armor_default_background")){
         get_color_background(id_background_initial, name_background_initial, color_background_initial, points_user);
     }
 });

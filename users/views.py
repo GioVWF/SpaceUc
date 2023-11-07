@@ -247,8 +247,23 @@ def get_color_head(request, id):
         else:
             data = {'message' : "Not Found"}
 
-    elif "default_head" in icon_selected.name_icon and "alien" not in icon_selected.name_icon:
-        color_default = Icon.objects.filter(Q(name_icon__contains="default_head") & ~Q(name_icon__contains="alien"))
+
+    elif "armor_default_head" in icon_selected.name_icon:
+        color_armor = Icon.objects.filter(name_icon__contains =  "armor_default_head") 
+
+        if (color_armor.exists()):
+            color_armor_data = serializers.serialize('json', color_armor)
+            data = {
+                'message': "Found it",
+                'array_colors' : color_armor_data,
+
+            }
+
+        else:
+            data = {'message' : "Not Found"}
+
+    elif "default_head" in icon_selected.name_icon and "alien" not in icon_selected.name_icon and "armor" not in icon_selected.name_icon:
+        color_default = Icon.objects.filter(Q(name_icon__contains="default_head") & ~Q(name_icon__contains="alien") & ~Q(name_icon__contains="armor"))
         if (color_default.exists()):
             color_default_data = serializers.serialize('json', color_default)
             data = {
@@ -283,9 +298,24 @@ def get_color_body(request, id):
         else:
             data = {'message' : "Not Found"}
 
-    elif "default_body" in icon_selected.name_icon and "alien" not in icon_selected.name_icon:
+    elif "armor_default_body" in icon_selected.name_icon:
+        color_armor = Icon.objects.filter(name_icon__contains =  "armor_default_body") 
 
-        color_default = Icon.objects.filter(Q(name_icon__contains="default_body") & ~Q(name_icon__contains="alien"))
+        if (color_armor.exists()):
+            color_armor_data = serializers.serialize('json', color_armor)
+            
+            data = {
+                'message': "Found it",
+                'array_colors' : color_armor_data,
+
+            }
+
+        else:
+            data = {'message' : "Not Found"}
+
+    elif "default_body" in icon_selected.name_icon and "alien" not in icon_selected.name_icon and "armor" not in icon_selected.name_icon:
+
+        color_default = Icon.objects.filter(Q(name_icon__contains="default_body") & ~Q(name_icon__contains="alien") & ~Q(name_icon__contains="armor"))
 
         if (color_default.exists()):
             color_default_data = serializers.serialize('json', color_default)
@@ -320,8 +350,23 @@ def get_color_background(request, id):
         else:
             data = {'message' : "Not Found"}
 
-    elif "default_background" in icon_selected.name_icon and "alien" not in icon_selected.name_icon:
-        color_default = Icon.objects.filter(Q(name_icon__contains="default_backgroun") & ~Q(name_icon__contains="alien"))
+
+    elif "armor_default_background" in icon_selected.name_icon:
+        color_armor = Icon.objects.filter(name_icon__contains =  "armor_default_background") 
+
+        if (color_armor.exists()):
+            color_armor_data = serializers.serialize('json', color_armor)
+            data = {
+                'message': "Found it",
+                'array_colors' : color_armor_data,
+
+            }
+
+        else:
+            data = {'message' : "Not Found"}
+
+    elif "default_background" in icon_selected.name_icon and "alien" not in icon_selected.name_icon and "armor" not in icon_selected.name_icon:
+        color_default = Icon.objects.filter(Q(name_icon__contains="default_backgroun") & ~Q(name_icon__contains="alien") & ~Q(name_icon__contains="armor"))
         if (color_default.exists()):
             color_default_data = serializers.serialize('json', color_default)
             data = {
