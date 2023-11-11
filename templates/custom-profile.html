@@ -4,6 +4,7 @@
 {% block extrahead %}
 <link rel="stylesheet" href="{% static 'main/css/custom-profile.css' %}">
 <script defer src = "{% static 'main/js/custom-profile.js' %}" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 {% endblock %}
 
@@ -84,7 +85,7 @@
                                     </div>
                                     <div class = "hidden_icon">
                                         <div class="{% if ic.type_icon == 0 %}head_icon_hiden{% elif ic.type_icon == 1 %}body_icon_hiden{% elif ic.type_icon == 2 %}background_icon_hiden{% endif %}">
-                                        
+                                            <input type="checkbox" hidden id="{% if ic.type_icon == 0 %}head_icon_hiden_input{% elif ic.type_icon == 1 %}body_icon_hiden_input{% elif ic.type_icon == 2 %}background_icon_hiden_input{% endif %}" value = "{{ ic.id_icon }}" data-new-value="{{ ic.color }}" data-new-name="{{ ic.name_icon }}" data-points = "{{ i.point_user }}" > 
                                             {{ x.icon_id_icon.svg_icon|safe  }}
     
                                         </div>
@@ -201,10 +202,10 @@
 
                                                                                             </div>
                                                                                      {% else %}
-                                                                                            <div class ="no-clickable ">
+                                                                                            <div class ="no-clickable" id = "no-clickable">
                                                                             
                                                                                         
-                                                                                                <input type="checkbox" hidden name="head_election" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" data-name="{{ ic.name_icon }}" data-color="{{ ic.color }}" data-points = "{{ i.point_user }}" onclick = "get_color_head(this.value, this.getAttribute('data-color'),this.getAttribute('data-name'),this.getAttribute('data-points'))"> 
+                                                                                                <input type="checkbox" hidden name="head_election" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" data-name="{{ ic.name_icon }}" data-color="{{ ic.color }}" data-points = "{{ i.point_user }}" > 
                                                                                                 <label for="{{ ic.id_icon }}">
                                                                                                 {{ ic.svg_icon|safe }}
                                                                                                 </label>
@@ -212,10 +213,10 @@
                                                                                      {% endif %}
 
                                                                                 {% else %}
-                                                                                    <div class ="no-clickable ">
+                                                                                    <div class ="no-clickable" id = "no-clickable">
                                                                             
                                                                                     
-                                                                                        <input type="checkbox" hidden name="head_election" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" data-name="{{ ic.name_icon }}" data-color="{{ ic.color }}" data-points = "{{ i.point_user }}" onclick = "get_color_head(this.value, this.getAttribute('data-color'),this.getAttribute('data-name'),this.getAttribute('data-points'))"> 
+                                                                                        <input type="checkbox" hidden name="head_election" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" data-name="{{ ic.name_icon }}" data-color="{{ ic.color }}" data-points = "{{ i.point_user }}" > 
                                                                                         <label for="{{ ic.id_icon }}">
                                                                                         {{ ic.svg_icon|safe }}
                                                                                         </label>
@@ -237,10 +238,10 @@
 
                                                                             {% else %}
 
-                                                                                <div class ="no-clickable ">
+                                                                                <div class ="no-clickable" id = "no-clickable">
                                                                             
                                                                                     {% comment %} <input type="checkbox" hidden name="head_election" data-new-value="{{ ic.color }}" data-new-name="{{ ic.name_icon }}" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_head(this.value, this.getAttribute('data-new-value'), this.getAttribute('data-new-name'))">  {% endcomment %}
-                                                                                    <input type="checkbox" hidden name="head_election" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" data-name="{{ ic.name_icon }}" data-color="{{ ic.color }}" data-points = "{{ i.point_user }}" onclick = "get_color_head(this.value, this.getAttribute('data-color'),this.getAttribute('data-name'),this.getAttribute('data-points'))"> 
+                                                                                    <input type="checkbox" hidden name="head_election" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" data-name="{{ ic.name_icon }}" data-color="{{ ic.color }}" data-points = "{{ i.point_user }}"> 
                                                                                     <label for="{{ ic.id_icon }}">
                                                                                     {{ ic.svg_icon|safe }}
                                                                                     </label>
@@ -319,7 +320,7 @@
                                                                                     <div class ="no-clickable">
                                                                                     
                                                                                         {% comment %} <input type="checkbox" hidden name="head_election" data-new-value="{{ ic.color }}" data-new-name="{{ ic.name_icon }}" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_head(this.value, this.getAttribute('data-new-value'), this.getAttribute('data-new-name'))">  {% endcomment %}
-                                                                                        <input type="checkbox" hidden name="head_election" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" data-name="{{ ic.name_icon }}" data-color="{{ ic.color }}" data-points = "{{ i.point_user }}" onclick = "get_color_body(this.value, this.getAttribute('data-color'),this.getAttribute('data-name'),this.getAttribute('data-points'))"> 
+                                                                                        <input type="checkbox" hidden name="head_election" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" data-name="{{ ic.name_icon }}" data-color="{{ ic.color }}" data-points = "{{ i.point_user }}" > 
                                                                                         <label for="{{ ic.id_icon }}">
                                                                                         {{ ic.svg_icon|safe }}
                                                                                         </label>
@@ -332,7 +333,7 @@
                                                                                 <div class ="no-clickable">
                                                                                     
                                                                                     {% comment %} <input type="checkbox" hidden name="head_election" data-new-value="{{ ic.color }}" data-new-name="{{ ic.name_icon }}" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_head(this.value, this.getAttribute('data-new-value'), this.getAttribute('data-new-name'))">  {% endcomment %}
-                                                                                    <input type="checkbox" hidden name="head_election" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" data-name="{{ ic.name_icon }}" data-color="{{ ic.color }}" data-points = "{{ i.point_user }}" onclick = "get_color_body(this.value, this.getAttribute('data-color'),this.getAttribute('data-name'),this.getAttribute('data-points'))"> 
+                                                                                    <input type="checkbox" hidden name="head_election" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" data-name="{{ ic.name_icon }}" data-color="{{ ic.color }}" data-points = "{{ i.point_user }}"> 
                                                                                     <label for="{{ ic.id_icon }}">
                                                                                     {{ ic.svg_icon|safe }}
                                                                                     </label>
@@ -404,7 +405,7 @@
                                                                                                 </div>
                                                                                             {% else %}
                                                                                                 <div class ="no-clickable">                                                                                      
-                                                                                                    <input type="checkbox" hidden name="head_election" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" data-name="{{ ic.name_icon }}" data-color="{{ ic.color }}" data-points = "{{ i.point_user }}" onclick = "get_color_body(this.value, this.getAttribute('data-color'),this.getAttribute('data-name'),this.getAttribute('data-points'))"> 
+                                                                                                    <input type="checkbox" hidden name="head_election" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" data-name="{{ ic.name_icon }}" data-color="{{ ic.color }}" data-points = "{{ i.point_user }}"> 
                                                                                                     <label for="{{ ic.id_icon }}">
                                                                                                     {{ ic.svg_icon|safe }}
                                                                                                     </label>
@@ -416,7 +417,7 @@
                                                                                 <div class ="no-clickable">
                                                                                         
                                                                                     
-                                                                                    <input type="checkbox" hidden name="head_election" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" data-name="{{ ic.name_icon }}" data-color="{{ ic.color }}" data-points = "{{ i.point_user }}" onclick = "get_color_body(this.value, this.getAttribute('data-color'),this.getAttribute('data-name'),this.getAttribute('data-points'))"> 
+                                                                                    <input type="checkbox" hidden name="head_election" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" data-name="{{ ic.name_icon }}" data-color="{{ ic.color }}" data-points = "{{ i.point_user }}" > 
                                                                                     <label for="{{ ic.id_icon }}">
                                                                                     {{ ic.svg_icon|safe }}
                                                                                     </label>
@@ -636,11 +637,46 @@
                 
             </div>
             
+
+  <!-- Modal Oculto Pa -->
+  <section id="myModal" class="modal">
+    <div class="modal-content">
+        <div id="modalstyles" class="modal-content-bg">
+            <span class="close">&times;</span>
+            <p class = "title_modal">No tienes los puntos suficientes para usar este icono.</p>
+            <p>Recuerda que para poder utilizar los iconos de alien debes tener mas de <strong>500 puntos.</strong></p><br>
+            <p>Para los iconos de armadura debes tener mas de <strong>1000 puntos, ¡completa niveles para ganar mas puntos!</strong></p>
+          
+        </div>
+    </div>
+</section>
+
         </main>
             
             
             
-            
+        <script>
+            $('.no-clickable').click(function() {
+                
+                
+                openModal();
+            });     
+
+            $('.close').click(function() {
+                closeModal();
+            });
+
+            function openModal() {
+               
+                $('#myModal').css('display', 'block');
+            }
+
+            function closeModal() {
+                $('#myModal').css('display', 'none');
+                
+            }
+            //---------------------------------
+        </script>
                 
         
            

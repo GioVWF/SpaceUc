@@ -147,11 +147,11 @@ a{
 
 .error_text{
     margin: 0;
-    font-size: small;
+    font-size: medium;
 }
 
 .error_sub_text{
-    font-size: x-small;
+    font-size: small;
     font-weight: bold;
 }
 

@@ -1,14 +1,22 @@
-var head_base = document.querySelector(".head_icon_hiden");
-var head_base_svg = head_base.querySelector("svg");
-var original_head = head_base_svg.outerHTML;
+var checkbox_head = document.getElementById("head_icon_hiden_input");
+var color_head_ch = checkbox_head.getAttribute('data-new-value');
+var name_head_ch = checkbox_head.getAttribute('data-new-name');
+var points_head_ch = checkbox_head.getAttribute('data-points');
+var id_head_base_ch = checkbox_head.getAttribute('value');
 
-var body_base = document.querySelector(".body_icon_hiden");
-var body_base_svg = body_base.querySelector("svg");
-var original_body = body_base_svg.outerHTML;
+var checkbox_body = document.getElementById("body_icon_hiden_input");
+var color_body_ch = checkbox_body.getAttribute('data-new-value');
+var name_body_ch = checkbox_body.getAttribute('data-new-name');
+var points_body_ch = checkbox_body.getAttribute('data-points');
+var id_body_base_ch = checkbox_body.getAttribute('value');
 
-var background_base = document.querySelector(".background_icon_hiden");
-var background_base_svg = background_base.querySelector("svg");
-var original_background = background_base_svg.outerHTML;
+var checkbox_background = document.getElementById("background_icon_hiden_input");
+var color_background_ch = checkbox_background.getAttribute('data-new-value');
+var name_background_ch = checkbox_background.getAttribute('data-new-name');
+var points_background_ch = checkbox_background.getAttribute('data-points');
+var id_background_base_ch = checkbox_background.getAttribute('value');
+
+
 //If you want to add another icon you have to do the logic of the database extraction en the view, not here, remmember xD. 
 
 function selection_head(option, color, name) {
@@ -341,24 +349,12 @@ function selection_backgraund(option, color, name) {
 
 
 function customReset(){
-    head = document.querySelector(".head_icon");
-    svg_head = head.querySelector("svg");
-    
-    
-    body = document.querySelector(".body_icon");
-    svg_body = body.querySelector("svg");
-    
-
-    backgraund = document.querySelector(".background_icon");
-    svg_backgraund = backgraund.querySelector("svg");
-    
-
-    svg_head.outerHTML = original_head;
-    svg_body.outerHTML = original_body;
-    svg_backgraund.outerHTML = original_background;
+    get_color_background(id_background_base_ch, color_background_ch,name_background_ch);
+    get_color_body(id_body_base_ch, color_body_ch, name_body_ch);
+    get_color_head(id_head_base_ch, color_head_ch, name_head_ch);
 }
 
-const get_color_head = async (id,color,name,points) =>{
+const get_color_head = async (id,color,name) =>{
     const response = await fetch(`get_color_head/${id}`);
     const data = await response.json();
     const iconContainer = document.getElementById("color_head");
@@ -388,7 +384,7 @@ const get_color_head = async (id,color,name,points) =>{
 
             //DEFAULT
             if(icon.name_icon.startsWith("default_head") && !icon.name_icon.includes("armor_default_head") && !icon.name_icon.includes("alien") && icon.color == 0 ){
-                console.log("icon.name_icon1:", icon.name_icon);
+                
                 iconDiv.classList.add("color_avaible", "color_grid_size","white");
                 iconDiv.innerHTML = `
 
@@ -398,7 +394,7 @@ const get_color_head = async (id,color,name,points) =>{
             `;
             }
             else if(icon.name_icon.startsWith("default_head") && !icon.name_icon.includes("armor_default_head") && !icon.name_icon.includes("alien") && icon.color == 1 ){
-                console.log("icon.name_icon2:", icon.name_icon);
+                
                 iconDiv.classList.add("color_avaible", "color_grid_size", "red");
                 iconDiv.innerHTML = `
 
@@ -408,7 +404,7 @@ const get_color_head = async (id,color,name,points) =>{
             `;
             }
             else if(icon.name_icon.startsWith("default_head") && !icon.name_icon.includes("armor_default_head") && !icon.name_icon.includes("alien") && icon.color == 2  ){
-                console.log("icon.name_icon3:", icon.name_icon);
+                
                 iconDiv.classList.add("color_avaible", "color_grid_size", "blue");
                 iconDiv.innerHTML = `
                 
@@ -418,7 +414,7 @@ const get_color_head = async (id,color,name,points) =>{
             `;
             }
             else if(icon.name_icon.startsWith("default_head") && !icon.name_icon.includes("armor_default_head") && !icon.name_icon.includes("alien") && icon.color == 3  ){
-                console.log("icon.name_icon4:", icon.name_icon);
+                
                 iconDiv.classList.add("color_avaible", "color_grid_size", "yellow");
                 iconDiv.innerHTML = `
                 
@@ -428,7 +424,7 @@ const get_color_head = async (id,color,name,points) =>{
             `;
             }
             else if(icon.name_icon.startsWith("default_head") && !icon.name_icon.includes("armor_default_head") && !icon.name_icon.includes("alien") && icon.color == 4 ){
-                console.log("icon.name_icon5:", icon.name_icon);
+                
                 iconDiv.classList.add("color_avaible", "color_grid_size", "purple");
                 iconDiv.innerHTML = `
                 
@@ -477,7 +473,7 @@ const get_color_head = async (id,color,name,points) =>{
             }
             //ARMOR
             else if(icon.name_icon == "armor_default_head" && icon.color == 0 ){
-                console.log("icon.name_icon6:", icon.name_icon);
+                
                 iconDiv.classList.add("color_avaible", "color_grid_size","armor");
                 iconDiv.innerHTML = `
                 
@@ -511,7 +507,7 @@ const get_color_head = async (id,color,name,points) =>{
 }
 
 
-const get_color_body = async(id, color, name, points) =>{
+const get_color_body = async(id, color, name) =>{
     const response = await fetch(`get_color_body/${id}`);
     const data = await response.json();
     const iconContainer = document.getElementById("color_body");
@@ -647,7 +643,7 @@ const get_color_body = async(id, color, name, points) =>{
 
 
 
-const get_color_background = async(id, color, name, points) =>{
+const get_color_background = async(id, color, name) =>{
     const response = await fetch(`get_color_background/${id}`);
     const data = await response.json();
     const iconContainer = document.getElementById("color_backgraund");

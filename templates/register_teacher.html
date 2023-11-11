@@ -4,18 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-</head>
-
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"  href="{% static 'main/css/register.css' %}">
     <script src="{% static 'main/js/register.js' %}"></script>
-    <title>Login</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Register</title>
 </head>
 <body>  
     
@@ -70,8 +62,12 @@
                        
                         <form action="{% url 'register_teacher_' %}" method = "POST" name = "register_form_t" id = "register_form_t" class = "register_content">
                             {% csrf_token %}
-                              <h1>Bienvenido Admin</h1>
-                              <h1>Registro Profesores</h1>
+                              <h1 id ="title" >Bienvenido Admin</h1>
+                              <h1 id ="title2">Registro Profesores</h1>
+
+                              <div id = "error_msg" class = "error_msg">
+
+                              </div>
                 
                             <div class = "register_input_div">
                                 <label for="name_student" id = "label_name_student"> Nombres Profesor </label>
@@ -85,7 +81,7 @@
                           
                             <div class = "register_input_div">
                                 <label for="rut" id = "label_rut"> Rut Profesor </label>
-                                <input type="text" name="rut" id="rut">
+                                <input type="text" name="rut" id="rut" maxlength="10">
                               </div>
 
                             <div class = "register_input_div_radio">
@@ -95,7 +91,7 @@
                                 
                                 <div class = "second_son">
                                     <div>
-                                        <input class ="input_radio" type="radio" id="5A" name="grade" value="5A">
+                                        <input class ="input_radio" type="radio" id="5A" name="grade" value="5A" checked>
                                         <label class ="label_radio" for="5A">5A</label>
                                     </div>
                                     
@@ -122,7 +118,7 @@
                        
                             
                     
-                            <button type= "submit"  class = "control_button">
+                            <button type= "submit"  class = "control_button" id = "btn_submit">
                                 <svg width="120" height="110" viewBox="0 0 120 110" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0 0H60H90L105 14.2788L120 27.5V55V110H60H30H15L7.24138 103.125L0 96.25V82.5V55V0Z" fill="#E86030"/>
                                     <path d="M5 5H60H87.5L101.25 17.9808L115 30V55V105H60H32.5H18.75L11.6379 98.75L5 92.5V80V55V5Z" fill="#984223"/>
@@ -155,6 +151,61 @@
     </main>
     
 
-    
+    <script>
+        $('#register_form_t').submit(function(event){
+            event.preventDefault();
+           
+            var msg = "<p class = 'error_text'>Valores ingresados invalidos, vuelva a intentar</p>"
+            const rut_camp = $('#rut').val();
+            const name_teacher = $('#name_student').val();
+            const last_name_teacher = $('#last_name').val();
+            const first_sven_rut = rut_camp.slice(0,7);
+            const guion = rut_camp[8];
+            
+
+            if(!rut_camp.includes("-") || rut_camp.includes(".")){
+                
+                msg += "<br><em class = 'error_sub_text'>El rut debe contener guion pero no sus puntos (ej: 12345678-9)</em>"
+               
+            }
+
+            if(/[a-zA-Z]/.test(first_sven_rut) || guion != "-"){
+                msg += "<br><em class = 'error_sub_text'>Error en la estructura del rut. (ej: 12345678-9)</em>"
+            }
+
+            if(rut_camp.length < 9){
+                msg += "<br><em class = 'error_sub_text'>El rut debe contener 9 digitos (ej: 12345678-9).</em>" 
+            }
+
+            if(name_teacher.length <= 0 || rut_camp.length <= 0 || last_name_teacher.length <= 0){
+                msg += "<br><em class = 'error_sub_text'>Uno o mas campos estan vacios, favor de rellenar.</em>" 
+                console.log("1")
+            }
+
+            if( msg != "<p class = 'error_text'>Valores ingresados invalidos, vuelva a intentar</p>" ){
+                console.log("2")
+                $("#error_msg").html(msg);
+                $("#error_msg").css('display', 'block');
+                $("#control_button").css('margin', '2vh')
+                $("#title").css('margin-top','5px');
+                $("#title").css('margin-bottom','5px');
+                $("#title2").css('margin-top','5px');
+                $("#title2").css('margin-bottom','5px');
+                $("#btn_submit").css('margin-top', '1vh')
+                $("#register_form_t").css('margin-top','-2em')
+                event.preventDefault();
+                
+                return
+               
+            }else{
+                
+                $("#register_form_t")[0].submit();
+            }
+
+            
+            
+        });
+    </script>
+
 </body>
 </html>

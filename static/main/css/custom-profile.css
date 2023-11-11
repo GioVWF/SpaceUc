@@ -371,8 +371,7 @@ label{
 }
 
 .no-clickable{
-    pointer-events: none; 
-    cursor: not-allowed;
+    
 }
 
 .no-clickable_body{
@@ -460,4 +459,70 @@ label{
 
 .hide {
     display: none;
+}
+
+
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #454B78;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 80%;
+    height: 50%;
+    margin: 20vh auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    clip-path: polygon(0 0, 91% 0, 100% 18%, 100% 100%, 5% 100%, 0 80%);
+}
+
+.modal-content-bg {
+    position: relative;
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: center;
+    background-color: #6F7E9F;
+    height: 80%;
+    width: 80%;
+    margin: auto;
+}
+
+.modal-content-bg p{
+    font-size: x-large;
+    color: white;
+    padding: 0 5% 0 5%;
+    
+    
+    
+}
+
+.modal-content-bg .title_modal{
+    font-size: 5vh;
+    color: white;
+    padding: 0 5% 0 5%;
+    margin: 0;
+    
+    
+}
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 50px;
+    cursor: pointer;
+    color: #fff;    
+    margin-top: -16px;
 }
