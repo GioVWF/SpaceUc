@@ -95,6 +95,33 @@ $(document).ready(function() {
             }
         });
     });
+
+
+    $("#filter_combobox").change(function () {
+        var selectedValue = $(this).val();
+    
+        // Obtener las filas y filtrar solo las visibles
+        var rows = $(".student-row:visible");
+    
+        // Ordenar las filas basándonos en el contenido de las celdas correspondientes
+        if (selectedValue === 'firstName') {
+            rows.sort(function (a, b) {
+                var nameA = $(a).find(".first-name").text().toUpperCase();
+                var nameB = $(b).find(".first-name").text().toUpperCase();
+                return nameA.localeCompare(nameB);
+            });
+        } else if (selectedValue === 'lastName') {
+            rows.sort(function (a, b) {
+                var lastNameA = $(a).find(".last-name").text().toUpperCase();
+                var lastNameB = $(b).find(".last-name").text().toUpperCase();
+                return lastNameA.localeCompare(lastNameB);
+            });
+        }
+    
+        // Mostrar las filas ordenadas
+        rows.detach().appendTo("#students_table tbody").show();
+    });
+    
 });
 
 

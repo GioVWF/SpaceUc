@@ -40,10 +40,8 @@
 
                 </form>
                 
-
-                <label for="filter_combobox">Ordenar por...</label>
-
                 <select name="filter_combobox" id="filter_combobox">
+                    <option value="none">Ordenar por...</option>
                     <option value="firstName">Nombre</option>
                     <option value="lastName">Apellido</option>
                 </select>
@@ -58,10 +56,10 @@
                             <th>Nombre</th>
                             <th>Apellido</th>
                             <th>Rut</th>
-                            <th>Nombre de usuario</th>
+                            <th>Usuario</th>
                             <th>Curso</th>
                             <th>Puntos</th>
-                            <th>Botones</th>
+                            <th>Ultimo movimiento</th>
                         </tr>
                     
                     
@@ -77,14 +75,15 @@
                                         {% for std in students %}
                                     
                                             {% if std.grade_user == '5A' %}
-                                                <tr>
-                                                    <td>{{std.first_name_user}}</td>
-                                                    <td>{{std.last_name_user}}</td>
+                                                <tr id="student_row" class="student-row" >
+                                                    <td class="first-name">{{std.first_name_user}}</td>
+                                                    <td class="last-name">{{std.last_name_user}}</td>
                                                     <td>{{std.run_user}}</td>
                                                     <td>{{std.alias_user}}</td>
                                                     <td>{{std.grade_user}}</td>
                                                     <td>{{std.point_user}}</td>
-                                                    <td> 
+                                                    <td> {{std.follow_up_id_follow.last_date_follow}} </td>
+                                                    <td class = "container_buttons_d_v"> 
                                                         <div class = "control_buttons">
                                                             <a href="#" class="get-student-info" onclick="viewStudent( {{ std.id_user_ours }} )">
                                                                 <svg viewBox="0 0 39 35" fill="none" xmlns="http://www.w3.org/2000/svg" class = "svg_buttons">
@@ -135,14 +134,15 @@
                                         {% for std in students %}
                                     
                                             {% if std.grade_user == '5B' %}
-                                                <tr>
-                                                    <td>{{std.first_name_user}}</td>
-                                                    <td>{{std.last_name_user}}</td>
+                                                <tr id="student_row" class="student-row">
+                                                    <td class="first-name">{{std.first_name_user}}</td>
+                                                    <td class="last-name">{{std.last_name_user}}</td>
                                                     <td>{{std.run_user}}</td>
                                                     <td>{{std.alias_user}}</td>
                                                     <td>{{std.grade_user}}</td>
                                                     <td>{{std.point_user}}</td>
-                                                    <td> 
+                                                    <td> {{std.follow_up_id_follow.last_date_follow}} </td>
+                                                    <td class = "container_buttons_d_v"> 
                                                         <div class = "control_buttons">
                                                             <a href="#" class="get-student-info" onclick="viewStudent( {{ std.id_user_ours }} )">
                                                                 <svg viewBox="0 0 39 35" fill="none" xmlns="http://www.w3.org/2000/svg" class = "svg_buttons">
@@ -189,14 +189,15 @@
                                         {% for std in students %}
                                     
                                             {% if std.grade_user == '5C' %}
-                                                <tr>
-                                                    <td>{{std.first_name_user}}</td>
-                                                    <td>{{std.last_name_user}}</td>
+                                                <tr id="student_row" class="student-row">
+                                                    <td class="first-name">{{std.first_name_user}}</td>
+                                                    <td class="last-name">{{std.last_name_user}}</td>
                                                     <td>{{std.run_user}}</td>
                                                     <td>{{std.alias_user}}</td>
                                                     <td>{{std.grade_user}}</td>
                                                     <td>{{std.point_user}}</td>
-                                                    <td> 
+                                                    <td> {{std.follow_up_id_follow.last_date_follow}} </td>
+                                                    <td class = "container_buttons_d_v"> 
                                                         <div class = "control_buttons">
                                                             <a href="#" class="get-student-info" onclick="viewStudent( {{ std.id_user_ours }} )">
                                                                 <svg viewBox="0 0 39 35" fill="none" xmlns="http://www.w3.org/2000/svg" class = "svg_buttons">
