@@ -139,6 +139,7 @@ h1 {
     width: 100%;
     max-width: 155px;
     max-height: 86px;
+    
 }
 
 .navbar-logger-user-name {
@@ -737,16 +738,19 @@ h1 {
         width: 100%;
         max-width: 130px;
         max-height: 86px;
+        
     }
 
     .navbar-unLogged, .navbar-RTeacher {
         position: relative;
         right: -10px;
         width: 30vw;
+        
     }
 
     .navbar-RTeacher {
         top: -6px;
+        
     }
 
     .navbar-Logged-teacher {
@@ -875,16 +879,21 @@ h1 {
         width: 100%;
         max-width: 130px;
         max-height: 86px;
+        
     }
 
     .navbar-unLogged, .navbar-RTeacher {
         position: relative;
         top: -10px;
         right: 2px;
+        
+        
+       
     }
 
     .navbar-RTeacher {
         top: -20px;
+        
     }
 
     .navbar-Logged-teacher {
@@ -1001,12 +1010,14 @@ h1 {
         width: 100%;
         max-width: 130px;
         max-height: 86px;
+        
     }
 
     .navbar-unLogged, .navbar-RTeacher {
         position: relative;
         top: -10px;
         right: 2px;
+        
     }
 
     .navbar-unLogged {
@@ -1133,6 +1144,7 @@ h1 {
 
     .navbar-unLogged, .navbar-RTeacher {
         margin-left: 0vw;
+        
     }
 
     .navbar-main {
@@ -1153,6 +1165,7 @@ h1 {
     .navbar-unLogged > svg, .navbar-RTeacher > svg {
         max-width: 135px;
         max-height: 86px;
+        
     }
 
     .navbar-logIn-position {
@@ -1243,6 +1256,7 @@ h1 {
     .navbar-unLogged, .navbar-RTeacher {
         margin-left: 0vw;
         scale: .8;
+        
     }
 
     .navbar-main {
@@ -1264,6 +1278,7 @@ h1 {
     .navbar-unLogged > svg, .navbar-RTeacher > svg {
         max-width: 166px;
         max-height: 86px;
+        
     }
 
     .navbar-Logged-teacher {
@@ -1323,6 +1338,7 @@ h1 {
 
     .navbar-unLogged, .navbar-RTeacher {
         margin-left: 0vw;
+       
     }
 
     .navbar-main {
@@ -1344,6 +1360,7 @@ h1 {
     .navbar-unLogged > svg, .navbar-RTeacher > svg {
         max-width: 166px;
         max-height: 86px;
+        
     }
 
     .navbar-logIn-position {
@@ -1433,5 +1450,7 @@ h1 {
         right: -31px;
     }
 }
+
+
 
 

@@ -110,7 +110,7 @@
                             {% if user.is_authenticated %}
                                 
                                 {% if user.is_staff %}
-                                    <a href="" class="navbar-admin">
+                                    <a href="{% url 'admin:index' %}" class="navbar-admin">
                                         <div class="navbar-admin-inner"><h1 class="navbar-playButton">ADMIN</h1></div>
                                     </a>
                                 {% else %}
@@ -163,8 +163,8 @@
                             {% if user.is_authenticated %}
                             
                             {% if user.is_staff %}
-                            <div class="navbar-RTeacher">
-                                <svg width="166" height="86" viewBox="0 0 166 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <div class="navbar-RTeacher" style = "display:flex; align-items:center; justify-content:center; gap: 10px;">
+                                <svg width="140" height="86" viewBox="0 0 166 86" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect width="166" height="86" fill="#4D5C7D"/>  
                                     <path d="M8 9H83.5H121.25H140.125L150 18L159 25.75V42.5V76H83.5H45.75H26.875H17.4375L12.5 71.5L8 67.625V59.25V42.5V9Z" fill="#222757"/>                                             
                                         <a href="{% url 'register_teacher' %}"><text x="19" y="50" font-family="Verdana" font-size="19" fill="white"> R.Profesor </text></a>                                                                              
@@ -173,7 +173,20 @@
                                     <circle cx="162.5" cy="2.5" r="1.5" fill="#D9D2DA"/>
                                     <circle cx="162.5" cy="83.5" r="1.5" fill="#D9D2DA"/>
                                     </svg>
+                                    <div id = "log_out" class = "button_container">
+                                        <svg viewBox="0 0 51 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0 0H12.75H25.5H38.25L45.2337 5.9125L51 10.75V21.5V32.25V43H25.5H12.75L6.66332 37.84L0 32.25V21.5V10.75V0Z" fill="#E86030"/>
+                                            <path d="M4 2H14.75H25.5H36.25L42.1382 7.0875L47 11.25V20.5V29.75V39H25.5H14.75L9.61809 34.56L4 29.75V20.5V11.25V2Z" fill="#984223"/>
+                                            <mask id="path-3-inside-1_806_2" fill="white">
+                                            <path d="M39.2719 23.9972C39.422 31.1753 33.7234 36.9943 26.5437 36.9943C19.364 36.9943 13.422 31.1753 13.2719 23.9972C13.1217 16.819 18.8203 11 26 11C33.1797 11 39.1217 16.819 39.2719 23.9972ZM20.8019 23.9972C20.865 27.0175 23.3653 29.4659 26.3862 29.4659C29.4072 29.4659 31.805 27.0175 31.7418 23.9972C31.6787 20.9768 29.1785 18.5284 26.1575 18.5284C23.1365 18.5284 20.7387 20.9768 20.8019 23.9972Z"/>
+                                            </mask>
+                                            <path d="M39.2719 23.9972C39.422 31.1753 33.7234 36.9943 26.5437 36.9943C19.364 36.9943 13.422 31.1753 13.2719 23.9972C13.1217 16.819 18.8203 11 26 11C33.1797 11 39.1217 16.819 39.2719 23.9972ZM20.8019 23.9972C20.865 27.0175 23.3653 29.4659 26.3862 29.4659C29.4072 29.4659 31.805 27.0175 31.7418 23.9972C31.6787 20.9768 29.1785 18.5284 26.1575 18.5284C23.1365 18.5284 20.7387 20.9768 20.8019 23.9972Z" stroke="white" stroke-width="2" mask="url(#path-3-inside-1_806_2)"/>
+                                            <rect x="24.5" y="7.5" width="4" height="16" fill="white" stroke="#984223"/>
+                                            </svg>
+                                            
+                                    </div>
                             </div>
+                            
                             {% else %}
                                 {% for i in users %}
                                     {% if user.username == i.run_user %}
