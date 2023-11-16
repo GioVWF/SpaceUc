@@ -17,10 +17,18 @@ main{
 .register_background{
     position: absolute;
     z-index: -1;
-    left: -44vh;
+    left: 0;
     top: 0;
-    width: 120%;
-    height: 100%;
+    
+    width: 100vw;
+    
+}
+
+.register_background > svg{
+    
+    height: 100vh;
+    width: 100vw;
+    
 }
 
 .control_form_container{

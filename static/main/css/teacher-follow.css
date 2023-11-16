@@ -1,3 +1,5 @@
+
+
 html{
     background-image: url('/static/main/img/backgraund_teacher.png');
     background-repeat: no-repeat;
@@ -171,8 +173,8 @@ td {
 
 .title_student{
  
-    font-size: x-large;
-    
+    font-size: clamp(1rem, 1vw, 5rem);
+
 }
 
 .container_text{
@@ -440,3 +442,71 @@ td {
     width: 100px;
 }
 
+.modal-content-bg-searcher{
+    position: relative;
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #6F7E9F;
+    height: 80%;
+    width: 80%;
+    margin: auto;
+}
+
+.modal-content-bg-searcher p{
+    padding: 20px;
+    font-size: xx-large;
+}
+
+input{
+    position: relative;
+    background-color: #4D5C7D; 
+    border-radius: 1.5vh; 
+    width: 70%;
+    height: 3vh;
+    color: white; 
+    border: none;
+    padding: 5px; 
+    font-size: 16px; 
+    transition: 0.2s;
+    display: inline;
+ 
+    
+    
+}
+
+input:focus {
+    outline: none; 
+    background-color: #657a9d;  
+    
+}
+
+input::placeholder{
+    color: rgb(188, 188, 188);
+}
+
+button[type = "submit"]{
+    background-color: rgb(152, 66, 35);
+    border: none;
+    outline: none;
+    transition: background-color,color 0.3s ease;
+    border-radius: 10px;
+    height: 3vh;
+}
+
+button[type = "submit"]:hover{
+    background-color: rgb(145, 88, 67);
+    color: white;
+    
+}
+
+select{
+    border: none;
+    outline: none;
+    background-color: #4D5C7D; 
+    color: white;
+    border-radius: 10px;
+    height: 3vh;
+}

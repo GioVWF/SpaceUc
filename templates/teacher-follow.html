@@ -115,8 +115,8 @@
                                                             <span class="close">&times;</span>
                                                             <p class = "title_modal">¿Estas seguro de eliminar a este estudiante?</p>
                                                             <div class = "container_buttons_modal">
-                                                                <button class = "btn_yes"><a href="{% url 'delete_student_' std.id_user_ours %}" >Si</a></button>
-                                                                <button class = "btn_no"><a class = "close2">No</a></button>
+                                                                <button class = "btn_yes" onclick = "deleteStudent({{std.id_user_ours}})">Si</button>
+                                                                <button class = "btn_no close2"><a class = "close2">No</a></button>
                                                             </div>
                                                             
               
@@ -173,8 +173,8 @@
                                                         <div id="modalstyles" class="modal-content-bg">
                                                             <span class="close">&times;</span>
                                                             <p>¿Estas seguro de eliminar a este estudiante?</p>
-                                                            <button class = "btn_yes"><a href="{% url 'delete_student_' std.id_user_ours %}" >Si</a></button>
-                                                            <button class = "btn_no"> <a class = "close2" >No</a></button>
+                                                            <button class = "btn_yes" onclick = "deleteStudent({{std.id_user_ours}})"></button>
+                                                            <button class = "btn_no close2"> <a class = "close2" >No</a></button>
               
                                                         </div>
                                                     </div>
@@ -228,8 +228,8 @@
                                                         <div id="modalstyles" class="modal-content-bg">
                                                             <span class="close">&times;</span>
                                                             <p>¿Estas seguro de eliminar a este estudiante?</p>
-                                                            <button class = "btn_yes"><a href="{% url 'delete_student_' std.id_user_ours %}" >Si</a></button>
-                                                            <button class = "btn_no"><a class = "close2">No</a></button>
+                                                            <button class = "btn_yes" onclick = "deleteStudent({{std.id_user_ours}})" >Si</button>
+                                                            <button class = "btn_no close2"><a class = "close2">No</a></button>
                                                         </div>
                                                     </div>
                                                 </section>
@@ -303,7 +303,17 @@
 
 
 
-
+  <!-- Modal Oculto Pa -->
+  <section id="myModal_nofinded" class="modal">
+    <div class="modal-content">
+        <div id="modalstyles" class="modal-content-bg-searcher">
+            <span class="close">&times;</span>
+            <p>No se ha encontrado ningún resultado con la búsqueda realizada.</p>
+            
+            <button class = "btn_no close2"><a class = "close2">Cerrar</a></button>
+        </div>
+    </div>
+</section>
 
 
 
@@ -329,10 +339,12 @@
 
         $('.close').click(function() {
             closeModal();
+            location.reload();
         });
 
         $('.close2').click(function() {
             closeModal();
+            location.reload();
         }); 
 
         function openModal(studentId) {

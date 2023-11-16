@@ -67,34 +67,91 @@ const viewStudent = async (id_student) => {
 
 
 };
+
+const deleteStudent = async (id_student) => {
+    const response = await fetch(`/delete_student_/${id_student}`);
+    if (response.ok) {
+        
+        console.log('Estudiante eliminado exitosamente');
+        location.reload();
+        
+    } else {
+        
+        console.error('Error al eliminar estudiante');
+    }
+}
+
+
+
+
+
 $(document).ready(function() {
+
+    
+    
+
     $('#searcher_form').submit(function(e) {
         e.preventDefault();
+    
+       
+        var studentsTableDiv = $('#students_table');
+        var mensajeDiv = studentsTableDiv.find('#mensajeDiv');
+    
+        if (!mensajeDiv.length) {
+            mensajeDiv = $('<div>').attr('id', 'mensajeDiv');
+            studentsTableDiv.append(mensajeDiv);
+        }
+    
+        function openModal() {
+           
+            $('#myModal_nofinded').css('display', 'block');
+            $('.second_son').css('z-index', '-1');
+            
+        }
 
+        function closeModal() {
+            $('.modal').css('display', 'none');
+            $('.second_son').css('z-index', '2');
+            
+            
+            
+        }
         var searchTerm = $('#searcher').val().toLowerCase();
-
+        var anyRowShown = false;
+    
         $('#students_table tr:has(td)').each(function() {
             var row = $(this);
             var rowText = row.text().toLowerCase();
-
+    
             var searchTerms = searchTerm.split(' ');
-
+    
             var found = false;
-
+    
             for (var i = 0; i < searchTerms.length; i++) {
                 if (rowText.indexOf(searchTerms[i]) !== -1) {
                     found = true;
                     break;
                 }
             }
-
+    
             if (found) {
                 row.show();
+                anyRowShown = true;
             } else {
                 row.hide();
             }
         });
+    
+       
+        if (!anyRowShown) {
+            openModal();
+            
+        } else {
+            
+        }
     });
+    
+    
 
 
     $("#filter_combobox").change(function () {
