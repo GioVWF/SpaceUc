@@ -176,7 +176,7 @@
                                                                 
                                                     
                                                                                
-                                                                            {% elif  i.point_user > 200 or i.point_user == 200 and i.point_user < 3000 or i.point_user == 3000 %}
+                                                                            {% elif  i.point_user > 500 or i.point_user == 500 and i.point_user < 3000 or i.point_user == 3000 %}
                                                                     
                                                                 
                                                                         
@@ -191,7 +191,7 @@
 
                                                                                     </div>
                                                                                 {% elif ic.name_icon == "armor_default_head" %}
-                                                                                    {% if i.point_user > 200 or i.point_user == 200 and i.point_user < 3000 or i.point_user == 3000 %}
+                                                                                    {% if i.point_user > 1000 or i.point_user == 1000 and i.point_user < 3000 or i.point_user == 3000 %}
                                                                             
                                                                                             <div class = "available" id = "alien_default_head_available">
                                                                                                 {% comment %} <input type="checkbox" hidden name="head_election" data-new-value="{{ ic.color }}" data-new-name="{{ ic.name_icon }}" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_head(this.value, this.getAttribute('data-new-value'), this.getAttribute('data-new-name'))">  {% endcomment %}
@@ -296,7 +296,7 @@
                                                                                    
                                                                                 
 
-                                                                            {% elif  i.point_user > 200 or i.point_user == 200 and i.point_user < 3000 or i.point_user == 3000 %}
+                                                                            {% elif  i.point_user > 500 or i.point_user == 500 and i.point_user < 3000 or i.point_user == 3000 %}
                                                                              
                                                                                 {% if ic.name_icon == "alien_default_body" %}
                                                                                     <div class = "available">   
@@ -309,7 +309,7 @@
                                                                             
                                                                                 {% elif ic.name_icon == "armor_default_body" %}
                                                                              
-                                                                                    {% if i.point_user > 200 or i.point_user == 200 and i.point_user < 3000 or i.point_user == 3000 %}
+                                                                                    {% if i.point_user > 1000 or i.point_user == 1000 and i.point_user < 3000 or i.point_user == 3000 %}
                                                                                         <div class = "available">   
                                                                                             <input type="checkbox" hidden name="body_election" data-new-value="{{ ic.color }}" data-new-name="{{ ic.name_icon }}" data-points="{{ i.point_user }}" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" onclick = "get_color_body(this.value, this.getAttribute('data-new-value'), this.getAttribute('data-new-name'), this.getAttribute('data-points'))"> 
                                                                                             <label for="{{ ic.id_icon }}">
@@ -383,7 +383,7 @@
 
 
                                                                                 
-                                                                            {% elif i.point_user > 200 or i.point_user == 200 and i.point_user < 3000 or i.point_user == 3000 %}
+                                                                            {% elif i.point_user > 500 or i.point_user == 500 and i.point_user < 3000 or i.point_user == 3000 %}
                                                                             
                                                                                     {% if ic.name_icon == "alien_default_background" %}
                                                                                         <div class = "available">
@@ -396,7 +396,7 @@
                                                                             
                                                                                     {% elif ic.name_icon == "armor_default_background" %}
                                                                             
-                                                                                            {% if i.point_user > 200 or i.point_user == 200 and i.point_user < 3000 or i.point_user == 3000 %}
+                                                                                            {% if i.point_user > 1000 or i.point_user == 1000 and i.point_user < 3000 or i.point_user == 3000 %}
                                                                                                 <div class = "available">
                                                                                                     <input type="checkbox" hidden name="body_election" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" data-new-value="{{ ic.color }}" data-new-name="{{ ic.name_icon }}" data-points = "{{ i.point_user }}" onclick = "get_color_background(this.value, this.getAttribute('data-new-value'), this.getAttribute('data-new-name'), this.getAttribute('data-points'))"> 
                                                                                                     <label for="{{ ic.id_icon }}">
