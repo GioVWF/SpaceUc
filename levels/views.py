@@ -13,6 +13,7 @@ def level_question(request, level,id):
 
     question_title = question.title_question
     question_content = question.description_question
+    question_audio = question.audio_question.url
     lesson_number = question.number_question
     answer_info = Answer.objects.filter(question_id_question=id)
 
@@ -36,8 +37,6 @@ def level_question(request, level,id):
     anwser_2 = anwser_urls[1]
     anwser_3 = anwser_urls[2]
     
-   
-    
     for i in answer_info:
         if anwser_urls[0] == i.img_answer.url:
             check_1 = i.option_answer
@@ -54,6 +53,7 @@ def level_question(request, level,id):
         'lesson': lesson_number, 
         'title': question_title,
         'content': question_content,
+        'audio': question_audio,
         'anwser_1': anwser_1,
         'anwser_2': anwser_2,
         'anwser_3': anwser_3,
@@ -103,6 +103,10 @@ def questionTimer(request):
         user_ours.save()
         return JsonResponse({'success': True})
     
+    minutes = count.time_left // 60;
+    seconds = count.time_left % 60;
+    
+    crono = f"{minutes}:{seconds:02d}"
     #     count = User_ours.objects.first()
     #     seconds =  120 - count.time_left 
     #     count.time_left = 120 
@@ -111,4 +115,4 @@ def questionTimer(request):
     # if count.time_left >= 0:
     #     count.time_left -=1
     #     count.save()
-    return JsonResponse({'live_counter':count.time_left})
+    return JsonResponse({'live_counter':count.time_left, 'cronometer':crono})

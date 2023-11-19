@@ -53,6 +53,79 @@ section {
     width: 100%;
 }
 
+#box1 {
+    display: flex;
+    width: 920px;
+    height: 520px;
+    position: relative;
+    background-color: rgba(69, 75, 120, 1);
+    -webkit-clip-path: polygon(0 0, 92% 0, 100% 18%, 100% 100%, 25% 100%, 0 74%);
+    clip-path: polygon(0 0, 92% 0, 100% 18%, 100% 100%, 8% 100%, 0 80%);
+    text-align: center;
+    margin: 0 auto;
+}
+  
+#content {
+    display: flex;
+    background-color: rgba(111, 126, 159, 1);
+    width: 90%;
+    height: 80%;
+    margin: 5% auto;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Tuerca {
+    width: 15px;
+    height: 15px;
+    background-color: rgba(217, 210, 218, 1);
+    border: 1px solid rgba(156, 156, 156, 1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+}
+
+.linea {
+    height: 1px;
+    width: 90%;
+    background-color: rgba(156, 156, 156, 1);
+    margin: auto;
+    rotate: -45deg;
+    transform: translateX(-.5px);
+}
+
+.pos1 {
+    top: 1%;
+    left: .5%;
+}
+
+.pos2 {
+    top: 1%;
+    left: 89.6%;
+}
+
+.pos3 {
+    top: 18%;
+    left: 97%;
+}
+
+.pos4 {
+    top: 77%;
+    left: .5%;
+}
+
+.pos5 {
+    top: 95%;
+    left: 8%;
+}
+
+.pos6 {
+    top: 94%;
+    left: 97%;
+}
+
+
 h1 {
     font-size: 2rem;
     margin: 50px 0 0 0;
@@ -64,16 +137,12 @@ h1 {
 .subtitle {
     text-align: center;
     font-size: 2rem;
-    margin: 0 0 50px 0;
+    margin: 0 0 30px 0;
     color: white;
 }
 
 .question {
     display: block;
-    margin: 0 auto;
-    width: 70vw;
-    height: auto;
-    text-align: center;
 }
 
 .question > svg {
@@ -85,12 +154,14 @@ h1 {
 
 .question-title {
     font-weight: bolder;
-    font-size: 2.5rem;
-    color: white;
+    font-size: 1.6rem;
+    margin: 10px 0 0 0;
 }
 
 .question-content {
     color: white;
+    margin: 10px 30px 10px 30px;
+    text-align: justify;
 }
 
 p[class~="center"] { 
@@ -165,11 +236,113 @@ p[class="redir-btn"] {
     font-weight: 600;
 }
 
-.counter-position{
+.box_timer{
+    width: 400px;
+    height: 200px;
+    background-color: rgba(69, 75, 120, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: 5px solid rgba(111, 126, 159, 1);
     position: absolute;
-    top: 6vh;
-    right: 5vw;
-    width: 100px;
+    top: 30px;
+    right: 0;
+}
+
+.inner_timer {
+    width: 90%;
+    height: 85%;
+    background-color: rgba(0, 100, 0, 1);
+    border-radius: 10px;
+    border: 4px solid black;
+}
+
+.clock_icon {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid greenyellow;
+  top: 40px;
+  left: 25px;
+}
+
+.clock_lines {
+   position: absolute;
+   width: 18px;
+   height: 18px;
+   border-left: 2px solid greenyellow;
+   border-bottom: 2px solid greenyellow;
+   top: 2px;
+   right: 2px;
+}
+
+.text_timer {
+    color: greenyellow;
+    font-size: 100px;
+    text-align: center;
+    margin: 0 0 0 30px;
+}
+
+.paragraph_timer {
+  color: greenyellow;
+  border-top: 1px solid greenyellow;
+  border-bottom: 1px solid greenyellow;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bolder;
+  margin: 0;
+}
+
+.button {
+    width: 11px;
+    height: 2px;
+    background-color: rgba(111, 126, 159, 1);
+    border-top: 2px solid rgba(69, 75, 120, 1);
+    border-left: 2px solid rgba(69, 75, 120, 1);
+    border-right: 2px solid rgba(69, 75, 120, 1);
+    border-bottom: .5px solid rgba(69, 75, 120, 1);
+}
+
+.bigButton {
+    width: 250px;
+    height: 3px;
+    background-color: rgba(111, 126, 159, 1);
+    border-top: 2px solid rgba(69, 75, 120, 1);
+    border-left: 2px solid rgba(69, 75, 120, 1);
+    border-right: 2px solid rgba(69, 75, 120, 1);
+    border-bottom: .5px solid rgba(69, 75, 120, 1);
+}
+
+.posT1 {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+}
+
+.posT2 {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+}
+
+.posT3 {
+    position: absolute;
+    top: -10px;
+    left: 40px;
+}
+
+.posT4 {
+    position: absolute;
+    top: -10px;
+    right: 40px;
+}
+
+.posT5 {
+  position: absolute;
+  top: -11px;
+  right: 18%;
 }
 
 form {
@@ -433,4 +606,59 @@ input[type="checkbox"]:hover {
 
 .stats-text {
     font-size: .8em;
+}
+
+.progress-bar {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #ddd;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .progress {
+    width: 0;
+    height: 100%;
+    background-color: #3498db;
+  }
+
+#progress {
+    appearance: none;
+    width: 50%;
+    height: 6px;
+    background-color: rgba(69, 75, 120, 1);
+    border-radius: 4px;
+    margin: 30px auto;
+}
+
+#progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: rgba(69, 75, 120, 1);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 5px 10px rgba(69, 75, 120, 1);
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls div {
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: rgba(69, 75, 120, 1);
+    box-shadow: 0 5px 10px rgba(69, 75, 120, 1);
+    cursor: pointer;
+    scale: 1.1;
+    margin: 0 0 15px 0;
 }

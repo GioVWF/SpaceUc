@@ -6,112 +6,182 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pregunta</title>
     <link rel="stylesheet" href="{% static 'levels/css/level-question.css' %}">
+    <script src="https://kit.fontawesome.com/47e19b30ed.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <main>
-        <div class="estrellas"></div>
-        <section>
-            <h1>Bienvenido Astronauta</h1>
-            <p class="subtitle">Nivel {{level}} - Lección {{lesson}}</p>
-            <div class="go-back">
-                <a href="{% url 'levels' level %}">
+    <body>
+        <main>
+            <div class="estrellas"></div>
+            <section>
+                <h1>Bienvenido Astronauta</h1>
+                <p class="subtitle">Nivel {{level}} - Lección {{lesson}}</p>
+                <div class="go-back">
+                    <a href="{% url 'levels' level %}">
+                        <svg viewBox="0 0 105 122" fill="none">
+                            <path d="M0 61L105 0.378265L90 61L105 121.622L0 61Z" fill="#E86030"/>
+                            <path d="M13 60.9803L98 12L74.5 60.9803L98 109L13 60.9803Z" fill="#984223"/>
+                        </svg>
+                        <p class="redir-btn">Volver</p>
+                    </a>
+                </div>
+                <div class="box_timer">
+                    <div class="button posT1"></div>
+                    <div class="button posT2"></div>
+                    <div class="button posT3"></div>
+                    <div class="button posT4"></div>
+                    <div class="inner_timer">
+                        <div class="clock_icon" >
+                            <div class="clock_lines"></div>
+                        </div>
+                        <h2 id="Counter" class="counter text_timer" data-limitator="{{limitator}}" data-progress="{{progress}}" data-timer-url="{% url 'get_timer' %}"></h2>
+                        <p class="paragraph_timer">WED 12/ 1</p>  
+                        <div class="bigButton posT5"></div>  
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="question">
+                    <div id="box1">
+                        <div class="Tuerca pos1">
+                        <div class="linea"></div>
+                        </div>
+                        <div class="Tuerca pos2">
+                        <div class="linea"></div>
+                        </div>
+                        <div class="Tuerca pos3">
+                        <div class="linea"></div>
+                        </div>
+                        <div id="content">
+                            
+                            <h1 class="question-title">{{title}}</h1>
+                            <p class="question-content ">{{content}}</p>
+
+                            <div class="controls">
+                                <div onclick="playPause()"><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
+                            </div>
+
+                            <audio id="song">
+                                <source src="{{audio}}" type="audio/mpeg"> 
+                            </audio>
+
+                        </div>
+                        <div class="Tuerca pos4">
+                        <div class="linea"></div>
+                        </div>
+                        <div class="Tuerca pos5">
+                        <div class="linea"></div>
+                        </div>
+                        <div class="Tuerca pos6">
+                        <div class="linea"></div>
+                        </div>
+                    </div>
+                </div>
+                <form action="" enctype="multipart/form-data">
+                    <fieldset>
+                        <label for="Answer-1">
+                            <input id="Answer-1" data-content-answer="{{content_anwser_1}}" data-is-correct="{{check_1}}" type="checkbox" class="Answer">
+                            <div class="answer_box">
+                                <div class="img_box">
+                                    <img src="{{anwser_1}}">
+                                </div>
+                            </div>
+                        </label>  
+                        <label for="Answer-2">
+                            <input id="Answer-2" data-content-answer="{{content_anwser_2}}" data-is-correct="{{check_2}}" type="checkbox" class="Answer">
+                            <div class="answer_box">
+                                <div class="img_box">
+                                    <img src="{{anwser_2}}">
+                                </div>
+                            </div>
+                        </label>
+                        <label for="Answer-3">
+                            <input id="Answer-3" data-content-answer="{{content_anwser_3}}" data-is-correct="{{check_3}}" type="checkbox" class="Answer">
+                            <div class="answer_box">
+                                <div class="img_box">
+                                    <img src="{{anwser_3}}">
+                                </div>
+                            </div>
+                        </label>
+                    </fieldset>
+                </form>
+            </section>
+            
+            <div class="{% if progress >= limitator %} go-next {% elif progress <= limitator %} hide {% endif %}">
+                <a href="">
                     <svg viewBox="0 0 105 122" fill="none">
-                        <path d="M0 61L105 0.378265L90 61L105 121.622L0 61Z" fill="#E86030"/>
-                        <path d="M13 60.9803L98 12L74.5 60.9803L98 109L13 60.9803Z" fill="#984223"/>
+                        <path d="M105 60.6218L0 121.244L15 60.6218L0 0L105 60.6218Z" fill="#E86030"/>
+                        <path d="M92.0239 60.7682L7.02393 109.749L30.5239 60.7682L7.02393 12.7485L92.0239 60.7682Z" fill="#984223"/>
                     </svg>
-                    <p class="redir-btn">Volver</p>
+                    <p class="redir-btn">Siguiente parte</p>
                 </a>
             </div>
-            <div class="counter-position">
-                <h2 id="Counter" class="counter" data-limitator="{{limitator}}" data-progress="{{progress}}" data-timer-url="{% url 'get_timer' %}" style="color: green"></h2>
-            </div>
-        </section>
-        <section>
-            <div class="question">
-                <svg viewBox="0 0 1451 689" fill="none">
-                    <path d="M0 0H725.5H1088.25H1269.62H1360.31L1404.22 43.1683L1451 86.125V172.25V344.5V689H725.5H362.75H181.375H90.6875L45.0128 646.678L0 602.875V516.75V344.5V0Z" fill="#454B78"/>
-                    <ellipse cx="1430.5" cy="674" rx="11.5" ry="10" fill="#D9D2DA"/>
-                    <line y1="-0.5" x2="15.3495" y2="-0.5" transform="matrix(0.708475 -0.705736 0.79514 0.606425 1424.59 679.751)" stroke="#9C9C9C"/>
-                    <ellipse cx="1430.5" cy="97" rx="11.5" ry="10" fill="#D9D2DA"/>
-                    <line y1="-0.5" x2="15.3495" y2="-0.5" transform="matrix(0.708475 -0.705736 0.79514 0.606425 1424.59 102.91)" stroke="#9C9C9C"/>
-                    <ellipse cx="1344" cy="17" rx="12" ry="10" fill="#D9D2DA"/>
-                    <line y1="-0.5" x2="15.3495" y2="-0.5" transform="matrix(0.708475 -0.705736 0.79514 0.606425 1339.15 23.0195)" stroke="#9C9C9C"/>
-                    <ellipse cx="18" cy="15.5" rx="12" ry="10.5" fill="#D9D2DA"/>
-                    <line y1="-0.5" x2="15.3495" y2="-0.5" transform="matrix(0.708475 -0.705736 0.79514 0.606425 12.4281 21.6653)" stroke="#9C9C9C"/>
-                    <ellipse cx="22" cy="595" rx="12" ry="10" fill="#D9D2DA"/>
-                    <line y1="-0.5" x2="15.3495" y2="-0.5" transform="matrix(0.708475 -0.705736 0.79514 0.606425 17.0887 601.214)" stroke="#9C9C9C"/>
-                    <ellipse cx="107" cy="674" rx="12" ry="10" fill="#D9D2DA"/>
-                    <line y1="-0.5" x2="15.3495" y2="-0.5" transform="matrix(0.708475 -0.705736 0.79514 0.606425 100.98 679.751)" stroke="#9C9C9C"/>
-                    <path d="M168.315 83.67L249.125 47H410.25H732.5H1377V336.5V481.25V553.625V589.812L1337.34 607.472L1296.44 626H1215.88H1054.75H732.5H88V336.5V191.75V119.375L168.315 83.67Z" fill="#6F7E9F"/>
-                    <foreignObject x="10%" y="50" width="80%" height="6cm">
-                        <h3 class="question-title">{{title}}</h3>
-                    </foreignObject>
-                    <foreignObject x="12%" y="280" width="80%" height="10cm">
-                        <p class="center question-content">{{content}}</p>
-                      </foreignObject>
-                </svg> 
-            </div>
-            <form action="" enctype="multipart/form-data">
-                <fieldset>
-                    <label for="Answer-1">
-                        <input id="Answer-1" data-content-answer="{{content_anwser_1}}" data-is-correct="{{check_1}}" type="checkbox" class="Answer">
-                        <div class="answer_box">
-                            <div class="img_box">
-                                <img src="{{anwser_1}}">
-                            </div>
-                        </div>
-                    </label>  
-                    <label for="Answer-2">
-                        <input id="Answer-2" data-content-answer="{{content_anwser_2}}" data-is-correct="{{check_2}}" type="checkbox" class="Answer">
-                        <div class="answer_box">
-                            <div class="img_box">
-                                <img src="{{anwser_2}}">
-                            </div>
-                        </div>
-                    </label>
-                    <label for="Answer-3">
-                        <input id="Answer-3" data-content-answer="{{content_anwser_3}}" data-is-correct="{{check_3}}" type="checkbox" class="Answer">
-                        <div class="answer_box">
-                            <div class="img_box">
-                                <img src="{{anwser_3}}">
-                            </div>
-                        </div>
-                    </label>
-                </fieldset>
-            </form>
-        </section>
-        
-        <div class="{% if progress >= limitator %} go-next {% elif progress <= limitator %} hide {% endif %}">
-            <a href="">
-                <svg viewBox="0 0 105 122" fill="none">
-                    <path d="M105 60.6218L0 121.244L15 60.6218L0 0L105 60.6218Z" fill="#E86030"/>
-                    <path d="M92.0239 60.7682L7.02393 109.749L30.5239 60.7682L7.02393 12.7485L92.0239 60.7682Z" fill="#984223"/>
-                </svg>
-                <p class="redir-btn">Siguiente parte</p>
-            </a>
-        </div>
-    </main>
+        </main>
 
-    <!-- Modal Oculto Pa -->
-    <section id="myModal" class="modal">
-        <div class="modal-content">
-            <div id="modalstyles" class="modal-content-bg">
-                <span class="close">&times;</span>
-                <H2 id="answerIsCorrect"></H2>
-                <p></p>
-                <div id="grid-stats">
-                    <h3 id="Time" class="hide"></h3>
-                    <h3 id="Points" class="hide"></h3>
-                    <button id="modalButton" class="hide"></button>
+        <!-- Modal Oculto Pa -->
+        <section id="myModal" class="modal">
+            <div class="modal-content">
+                <div id="modalstyles" class="modal-content-bg">
+                    <span class="close">&times;</span>
+                    <H2 id="answerIsCorrect"></H2>
+                    <p></p>
+                    <div id="grid-stats">
+                        <h3 id="Time" class="hide"></h3>
+                        <h3 id="Points" class="hide"></h3>
+                        <button id="modalButton" class="hide"></button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+            var csrfToken = "{{ csrf_token }}";
+            </script>
+        <script src="{% static 'levelLogic.js' %}"></script>
+        <script>
+            const song = document.getElementById('song');
+            const ctrlIcon = document.getElementById('ctrlIcon');
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-        var csrfToken = "{{ csrf_token }}";
-    </script>
-    <script src="{% static 'levelLogic.js' %}"></script>
-</body>
+            // <i class="fa-solid fa-rotate-left"></i>
+
+            function playPause() {
+                if(ctrlIcon.classList.contains('fa-pause')) {
+                song.pause();
+                stopIntervalSong();
+                ctrlIcon.classList.remove('fa-pause');
+                ctrlIcon.classList.add('fa-play');
+                }
+                else if(ctrlIcon.classList.contains('fa-rotate-left'))
+                {
+                    song.play();
+                    startIntervalSong();
+                    ctrlIcon.classList.remove('fa-rotate-left');
+                    ctrlIcon.classList.add('fa-pause');
+                }
+                else 
+                {
+                    song.play();
+                    startIntervalSong();
+                    ctrlIcon.classList.remove('fa-play');
+                    ctrlIcon.classList.add('fa-pause');
+                }
+            }
+
+
+            function startIntervalSong() {
+                intervalSong = setInterval(() => {
+                    
+                    console.log('a');
+                    if (song.currentTime == song.duration)
+                    {
+                        ctrlIcon.classList.remove('fa-pause');
+                        ctrlIcon.classList.add('fa-rotate-left');
+                        stopIntervalSong();
+                    };
+                }, 500);
+            }
+
+            function stopIntervalSong() {
+                clearInterval(intervalSong);
+            }
+        </script>
+    </body>
 </html>

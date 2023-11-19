@@ -4,6 +4,7 @@ $(document).ready(function(){
     let progress = $("#Counter").data("progress"); 
     let limitator = $("#Counter").data("limitator");
     let temp;
+    let crono;
     let initTemp;
     let points;
     let iscorrect;
@@ -15,8 +16,9 @@ $(document).ready(function(){
         url: timerUrl,
         success: function (response) {
             temp = response.live_counter;
+            crono = response.cronometer;
             initTemp = temp;
-            $('.counter').empty().append(temp);
+            $('.counter').empty().append(crono);
         },
         error:function(response){
             alert("Contador no encontrado");
@@ -27,12 +29,15 @@ $(document).ready(function(){
 
     function updateCounter() {
         if(temp > 0){
-            temp -= 1;
-            $('.counter').empty().append(temp);
+            let minutes = Math.floor(temp / 60);
+            let seconds = temp % 60;
+            let cronometer = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            $('.counter').empty().append(cronometer);
+            temp--;
         }
 
         if (temp == 0){
-            $('.counter').empty().append('TIEMPO!')
+            $('.counter').empty().append('00:00')
         }
     };
     
@@ -109,7 +114,7 @@ $(document).ready(function(){
             iscorrect = true;
         }
 
-        $('#myModal #Time').text('Tiempo: ' + temp + ' segundos.');
+        $('#myModal #Time').text('Tiempo: ' + (120 - temp) + ' segundos.');
         
 
         if (boolean == 'True' && progress == limitator){
@@ -138,5 +143,4 @@ $(document).ready(function(){
             location.reload();
         }
     };
-    
 });
