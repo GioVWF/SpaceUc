@@ -58,7 +58,6 @@ body {
     position: absolute;
     right: 0;
     top: 28%;
-    transform: translateX(-5vw);
 }
 
 .about_planet {
@@ -81,7 +80,7 @@ body {
     justify-self: center;
     z-index: 1;
     position: absolute;
-    left: 0;
+    left: 5vw;
 }
 
 .resources_planet{
@@ -181,7 +180,7 @@ body {
 
     .welcome_text {
         margin: 165px auto 0 auto;
-        font-size: 20px;
+        font-size: 40px;
     }
 }
 

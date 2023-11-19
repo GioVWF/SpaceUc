@@ -83,6 +83,7 @@ class Question(models.Model):
     number_question = models.IntegerField(default=0)
     title_question = models.CharField(max_length=200)
     description_question = models.CharField(max_length=400)
+    audio_question = models.FileField(blank=True, null=True, upload_to="audio")
     level_id_level = models.ForeignKey(Level, on_delete=models.CASCADE)
 
 class Answer(models.Model):

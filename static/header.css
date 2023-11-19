@@ -548,7 +548,8 @@ h1 {
     left: 0;
     width: 300px;
     height: 100%;
-    background-color: rgba(70, 75, 120, 1);
+    background-color: hsl(234 26% 37% / 0.5);
+    backdrop-filter: blur(1rem);
     transition: 0.4s;
     z-index: 2;
 }
