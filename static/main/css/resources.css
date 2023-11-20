@@ -67,7 +67,7 @@ main {
     flex-direction: column;
     align-items: center;
     position: absolute;
-    gap: 0.3vh;
+    gap: 1.3vh;
     top: 0;
     left: 10px;
     right: 0px;
@@ -141,5 +141,529 @@ main {
     }
 }
 
+
+@media (max-width: 350.98px){
+    .svg_star_resources {
+        width: 1000%;
+        left: -214%;
+    }
+
+    .text_photo_control {
+        display: flex;
+        position: fixed;
+        gap: 2%;
+        margin: 64% 0 0 1%;
+        flex-direction: column;
+    }
+
+    .text_resource {
+
+        margin: 0;
+        width: 100%;
+
+    }
+
+    .box_2_1 {
+        width: 81%;
+        right: -42px;
+        bottom: -45px;
+    }
+
+    .levels {
+        top: 90%;
+        left: 94%;
+        font-size: 15px;
+    }
+
+    .photo_nasa {
+        position: relative;
+        width: 95%;
+        height: 100%;
+    }
+
+    .svg_photo_nasa {
+        width: auto;
+        height: auto;
+    }
+
+    .contet_photo_nasa img {
+        width: 227px;
+        height: 227px;
+        margin-top: 2%;
+    }
+
+    .contet_photo_nasa  {
+        gap: 2vh;
+    }
+
+    .title_resource{
+        font-size: 30px;
+    }
+
+    .paragraph_resource{
+        font-size: 15px;
+    }
+
+    .central_galaxy {
+        width: 200%;
+        margin: 0 -200px;
+    }
+
+    .contet_photo_nasa {
+        gap: 0vh;
+        margin: -3px 0 0 0;
+        font-size: 7px;
+    }
+}
+
+@media (min-width: 351px) and (max-width: 417.98px){
+    .svg_star_resources{
+        width: 450%;
+
+    }
+
+    .text_photo_control {
+        display: flex;
+        position: fixed;
+        gap: 2%;
+        margin: 30% 0 0 1%;
+        flex-direction: column;
+    }
+
+    .text_resource {
+
+        margin: 0;
+        width: 100%;
+
+    }
+
+    .box_2_1 {
+        width: 81%;
+        right: -42px;
+        bottom: -45px;
+    }
+
+    .levels {
+        top: 90%;
+        left: 94%;
+        font-size: 15px;
+    }
+
+    .photo_nasa {
+        position: relative;
+        width: 95%;
+        height: 100%;
+    }
+
+    .svg_photo_nasa {
+        width: auto;
+        height: auto;
+    }
+
+    .contet_photo_nasa img {
+        width: 227px;
+        height: 227px;
+        margin-top: 2%;
+    }
+
+    .contet_photo_nasa  {
+        gap: 2vh;
+    }
+
+    .title_resource{
+        font-size: 30px;
+    }
+
+    .paragraph_resource{
+        font-size: 15px;
+    }
+
+    .central_galaxy {
+        width: 200%;
+        margin: 0 -200px;
+    }
+}
+
+@media (min-width: 418px) and (max-width: 460.98px){
+    .svg_star_resources{
+        width: 450%;
+
+    }
+
+    .text_photo_control {
+        display: flex;
+        position: fixed;
+        gap: 2%;
+        margin: 30% 0 0 1%;
+        flex-direction: column;
+    }
+
+    .text_resource {
+
+        margin: 0;
+        width: 100%;
+
+    }
+
+    .box_2_1 {
+        width: 81%;
+        right: -42px;
+        bottom: -45px;
+    }
+
+    .levels {
+        top: 90%;
+        left: 94%;
+        font-size: 15px;
+    }
+
+    .photo_nasa {
+        position: relative;
+        width: 95%;
+        height: 100%;
+    }
+
+    .svg_photo_nasa {
+        width: auto;
+        height: auto;
+    }
+
+    .contet_photo_nasa img {
+        width: 227px;
+        height: 227px;
+        margin-top: 2%;
+    }
+
+    .contet_photo_nasa  {
+        gap: 4vh;
+    }
+
+    .title_resource{
+        font-size: 30px;
+    }
+
+    .paragraph_resource{
+        font-size: 15px;
+    }
+
+    .central_galaxy {
+        width: 200%;
+        margin: 0 -200px;
+    }
+}
+
+@media (min-width: 461px) and (max-width: 517.98px){
+    .svg_star_resources{
+        width: 450%;
+
+    }
+
+    .text_photo_control {
+        display: flex;
+        position: fixed;
+        gap: 2%;
+        margin: 30% 0 0 1%;
+        flex-direction: column;
+    }
+
+    .text_resource {
+
+        margin: 0;
+        width: 100%;
+
+    }
+
+    .box_2_1 {
+        width: 81%;
+        right: -42px;
+        bottom: -45px;
+    }
+
+    .levels {
+        top: 90%;
+        left: 94%;
+        font-size: 15px;
+    }
+
+    .photo_nasa {
+        position: relative;
+        width: 95%;
+        height: 100%;
+    }
+
+    .svg_photo_nasa {
+        width: auto;
+        height: auto;
+    }
+
+    .contet_photo_nasa img {
+        width: 227px;
+        height: 227px;
+        margin-top: 2%;
+    }
+
+    .contet_photo_nasa  {
+        gap: 7vh;
+    }
+
+    .title_resource{
+        font-size: 30px;
+    }
+
+    .paragraph_resource{
+        font-size: 15px;
+    }
+
+    .central_galaxy {
+        width: 200%;
+        margin: 0 -200px;
+    }
+}
+
+
+@media (min-width: 518px) and (max-width: 575.98px) {
+    .svg_star_resources{
+        width: 340%;
+
+    }
+
+    .text_photo_control {
+        display: flex;
+        position: fixed;
+        gap: 2%;
+        margin: 20% 0 0 1%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text_resource {
+
+        margin: 0;
+        width: 100%;
+
+    }
+
+    .box_2_1 {
+        width: 81%;
+        right: -39px;
+        bottom: -218px;
+    }
+    .levels {
+        top: 90%;
+        font-size: 15px;
+        left: 95%;
+    }
+
+    .photo_nasa {
+        position: relative;
+        width: 90%;
+        height: auto;
+    }
+
+    .central_galaxy {
+        width: 118%;
+        margin: 0 -43px;
+    }
+
+    .title_resource{
+        font-size: 30px;
+    }
+
+    .paragraph_resource{
+        font-size: 15px;
+    }
+
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .svg_star_resources{
+        width: 340%;
+
+    }
+
+    .central_galaxy {
+        width: 200%;
+        margin: 0 -211px;
+    }
+
+    .text_photo_control {
+        display: flex;
+        position: fixed;
+        gap: 2%;
+        margin: 20% 0 0 1%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text_resource {
+
+        margin: 0;
+        width: 100%;
+
+    }
+
+    .box_2_1 {
+        width: 81%;
+        right: -50px;
+        bottom: -239px;
+    }
+    .levels {
+        top: 90%;
+        font-size: 15px;
+        left: 95%;
+    }
+
+    .photo_nasa {
+        position: relative;
+        width: 90%;
+        height: auto;
+    }
+
+    .central_galaxy {
+        width: 118%;
+        margin: 0 -43px;
+    }
+
+    .title_resource{
+        font-size: 30px;
+    }
+
+    .paragraph_resource{
+        font-size: 16px;
+    } 
+
+    .svg_photo_nasa{
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .text_photo_control {
+        display: flex;
+        position: fixed;
+        gap: 2%;
+        margin: 24% 0 0 4%;
+        width: auto;
+        height: auto;
+    }
+
+    .central_galaxy {
+        width: 200%;
+        margin: 0 -190px;
+    }
+}
+
+@media only screen and  (992px <= width <= 1199.98px) {
+    .text_photo_control {
+        display: flex;
+        position: fixed;
+        gap: 2%;
+        margin: 20% 0 0 9%;
+        width: auto;
+        height: auto;
+    }
+
+    .central_galaxy {
+        width: 200%;
+        margin: 0 -190px;
+    }
+}
+
+@media only screen and (1200px <= width <= 1439.98px) {
+    .text_photo_control {
+        display: flex;
+        position: fixed;
+        gap: 2%;
+        margin: 17% 0 0 9%;
+        width: auto;
+        height: auto;
+    }
+
+    .central_galaxy {
+        width: 200%;
+        margin: 0 -190px;
+    }
+}
+
+@media only screen and (1440px <= width <= 2000.98px) {
+    .text_photo_control {
+        display: flex;
+        position: fixed;
+        gap: 2%;
+        margin: 17% 0 0 9%;
+        width: auto;
+        height: auto;
+    }
+
+    .central_galaxy {
+        width: 200%;
+        margin: 0 -190px;
+    }
+}
+
+@media only screen and (2540px <= width <= 4560px) {
+    
+    .box_2 {
+        display: flex;
+        flex-direction: column;
+        gap: 30.5vh;
+        width: 25vh;
+    }
+
+    .levels {
+        position: absolute;
+        color: rgb(0, 0, 0);
+        writing-mode: vertical-lr;
+        z-index: 100;
+        top: 91.5%;
+        left: 98%;
+        font-weight: bolder;
+        transform: scale(-1);
+        font-size: 40px;
+    }
+
+    .photo_nasa {
+        position: relative;
+        width: 31%;
+        height: auto;
+    }
+
+    .svg_photo_nasa {
+        width: 100%;
+        height: 100%;
+    }
+
+    .contet_photo_nasa {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        gap: 2.3vh;
+        top: 0;
+        left: 10px;
+        right: 0px;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        font-size: 2em;
+        margin: -20px 0 0 0;
+    }
+
+
+    .contet_photo_nasa img {
+        width: 70%;
+        height: 64%;
+        margin-top: 0%;
+    }
+
+    .text_resource {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        color: rgb(0, 0, 0);
+        width: 30%;
+        font-size: 5em;
+    }
+}
 
 

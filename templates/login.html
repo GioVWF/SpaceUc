@@ -67,7 +67,7 @@
 
                 <form action="{% url 'log_in_' %}" method = "POST" name = "login_form" id = "login_form" class = "login_content">
                     {% csrf_token %}
-                    <h1 id ="title">Bienvenido Astronauta</h1>
+                    <h1 id ="title">Bienvenido, astronauta</h1>
                     <h1 id ="title2">Inicia sesión</h1>
                     <div id = "error_msg" class = "error_msg">
 
@@ -109,7 +109,7 @@
                     <span class="close">&times;</span>
                     <p class = "title_modal">Recordatorio</p>
                     <p>Recuerda que para iniciar sesión debes ingresar tu RUT con el guion y sin el punto (12345678-9).</p><br>
-                    <p>Tu contraseña son los primeros 4 dígitos de tu RUT (En este caso con el rut de arriba la contraseña seria: 1234)..</p>
+                    <p>Tu contraseña son los primeros 4 dígitos de tu RUT (En este caso, con el RUT de arriba, la contraseña sería: 1234).</p>
                   
                 </div>
             </div>
