@@ -73,11 +73,18 @@ def levels_info(request):
     users = User_ours.objects.all()
     icon = Icon.objects.all()
     perIcon = PerIcon.objects.all()
+    level_description = Level.objects.all().order_by('name_level')
+    
+    
     context = {
         'users': users,
         'icon' : icon,
         'perIcon' : perIcon,
-        
+        'info_1' : level_description[0].description_level,
+        'info_2' : level_description[1].description_level,
+        'info_3' : level_description[2].description_level,
+        'info_4' : level_description[3].description_level,
+        'info_5' : level_description[4].description_level
     }
     return render(request, 'levels-info.html', context)
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -28,7 +28,7 @@ class Level(models.Model):
     id_level = models.AutoField(primary_key=True)
     name_level = models.CharField(max_length=60)
     description_level = models.CharField(max_length=200)
-    svg_level = models.TextField(default='')
+    svg_level = models.TextField(blank=True, null=True, default='')
 
 class TypePage(models.Model):
     id_type_page = models.AutoField(primary_key=True)

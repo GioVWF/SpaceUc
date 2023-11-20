@@ -71,7 +71,7 @@ def level_question(request, level,id):
 
 def levels(request, level):
     level_info = Level.objects.filter(id_level = level)
-    questions_info = Question.objects.filter(level_id_level = level).order_by('id_question')
+    questions_info = Question.objects.filter(level_id_level = level)
     
     level_svg = level_info[0].svg_level
     level_id = level_info[0].id_level
