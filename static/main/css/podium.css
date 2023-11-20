@@ -35,7 +35,7 @@ main{
     position: absolute;
     width: 30%;
     min-width: 350px;
-    bottom: 5vh;
+    bottom: 0;
 }
 
 .text_podium{
