@@ -206,7 +206,7 @@ main {
 
     .central_galaxy {
         width: 200%;
-        margin: 0 -212px;
+        margin: 0 -200px;
     }
 
     .contet_photo_nasa {
@@ -280,7 +280,7 @@ main {
 
     .central_galaxy {
         width: 200%;
-        margin: 0 -212px;
+        margin: 0 -200px;
     }
 }
 
@@ -348,7 +348,7 @@ main {
 
     .central_galaxy {
         width: 200%;
-        margin: 0 -212px;
+        margin: 0 -200px;
     }
 }
 
@@ -416,7 +416,7 @@ main {
 
     .central_galaxy {
         width: 200%;
-        margin: 0 -212px;
+        margin: 0 -200px;
     }
 }
 
@@ -549,7 +549,7 @@ main {
 
     .central_galaxy {
         width: 200%;
-        margin: 0 -211px;
+        margin: 0 -190px;
     }
 }
 
@@ -565,7 +565,7 @@ main {
 
     .central_galaxy {
         width: 200%;
-        margin: 0 -211px;
+        margin: 0 -190px;
     }
 }
 
@@ -581,7 +581,23 @@ main {
 
     .central_galaxy {
         width: 200%;
-        margin: 0 -211px;
+        margin: 0 -190px;
+    }
+}
+
+@media only screen and (1440px <= width <= 2000.98px) {
+    .text_photo_control {
+        display: flex;
+        position: fixed;
+        gap: 2%;
+        margin: 17% 0 0 9%;
+        width: auto;
+        height: auto;
+    }
+
+    .central_galaxy {
+        width: 200%;
+        margin: 0 -190px;
     }
 }
 
