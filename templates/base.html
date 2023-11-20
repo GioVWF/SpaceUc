@@ -74,7 +74,7 @@
                                     <circle cx="79.5" cy="80.5" r="1.5" fill="#D9D2DA"/><circle cx="4.5" cy="80.5" r="1.5" fill="#D9D2DA"/><circle cx="79.5" cy="4.5" r="1.5" fill="#D9D2DA"/><circle cx="4.5" cy="4.5" r="1.5" fill="#D9D2DA"/></svg>
                             </div>
                             <div class="navbar-podium-text-position">
-                                <h2>PODIO</h2>
+                                <h2>Pódio</h2>
                             </div>
                         </a>
                         {% else %}
@@ -89,7 +89,7 @@
                                     <circle cx="79.5" cy="80.5" r="1.5" fill="#D9D2DA"/><circle cx="4.5" cy="80.5" r="1.5" fill="#D9D2DA"/><circle cx="79.5" cy="4.5" r="1.5" fill="#D9D2DA"/><circle cx="4.5" cy="4.5" r="1.5" fill="#D9D2DA"/></svg>
                             </div>
                             <div class="navbar-podium-text-position">
-                                <h2 class="navbar-">PODIO</h2>
+                                <h2 class="navbar-">Pódio</h2>
                             </div>
                         </a>
                         {% endif %}
@@ -97,7 +97,7 @@
                         <div class="navbar-buttons-position">
                             <div class="navbar-panel-blackButton-left"> 
                                 <a href="{% url 'about_page' %}" class="navbar-panel-blackButton-left-inner">
-                                    <div class="navbar-black-text-position-left"><h2 class="navbar-black-text">Quienes <br> Somos</h2></div>
+                                    <div class="navbar-black-text-position-left"><h2 class="navbar-black-text">Quiénes <br> Somos</h2></div>
                                 </a>
                                 <div class="navbar-panel-greyButton-left">
                                     <a href="{% url 'levels_info' %}" class="navbar-panel-greyButton-left-inner">
@@ -356,13 +356,13 @@
     <nav class="mobile-nav is-active">
         <a href="{% url 'home_page'%}" class="mobile-nav_btn1">Home</a>
         {% if user.is_authenticated %}
-        <a href="{% url 'podium_page' %}" class="mobile-nav_btn2">PODIO</a>    
+        <a href="{% url 'podium_page' %}" class="mobile-nav_btn2">Pódio</a>    
         {% else %}
-        <a href="{% url 'login_page' %}" class="mobile-nav_btn2">PODIO</a>      
+        <a href="{% url 'login_page' %}" class="mobile-nav_btn2">Pódio</a>      
         {% endif %} 
         <a href="{% url 'levels_info' %}" class="mobile-nav_btn1">Niveles</a>     
         <a href="{% url 'resources_page' %}" class="mobile-nav_btn2">Recursos</a>
-        <a href="{% url 'about_page' %}"class="mobile-nav_btn1">Quienes Somos</a>
+        <a href="{% url 'about_page' %}"class="mobile-nav_btn1">Quiénes Somos</a>
     </nav>
 
 {% block content %}
