@@ -45,8 +45,9 @@ main {
     justify-content: space-between;
     flex-direction: column;
     position: relative;
-    height: 100vh;
+    height: 95vh;
     width: 14vw;
+    margin-top: 5vh;
 }
 
 .about_box {
@@ -141,24 +142,42 @@ main {
     width: 70vw;
 }
 
-.svg_yellow_planet {
-    width: 85vw;
-    height: 110vh;
-    margin-left: -14vw;
+.svg_yellow_position {
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
+
+.svg_yellow_planet {
+    width: 100%;
+    height: 100%;
+}
+
 
 .levels_content {
     display: flex;
     position: fixed;
     flex-direction: column;
-    top: 26vh;
-    width: 37vw;
-    right: 15vw;
+    top: 25vh;
+    width: 50%;
+    right: 0;
     font-size: 24px;
+    text-align: justify;
 }
 
-.levels_content .text_levels,.paragraph_levels {
-    margin: 0 0 10px 0;
+.text_levels {
+    font-size: clamp(1.5rem, 2.5vw, 9.5rem);
+    margin: 0;
+    text-align: center;
+}
+
+.paragraph_levels {
+    font-size: clamp(1rem, 1.5vw, 7rem);
+    margin: 10px 30px;
+}
+
+.accordion {
+    margin: 0 auto;
 }
 
 .accordion a {
@@ -167,6 +186,8 @@ main {
 
 .svg_accordion {
     color: var(--accordion-bg);
+    width: 45vw;
+    height: auto;
 }
 
 .svg_paragraph {
@@ -177,4 +198,91 @@ main {
     text-align: start;
 }
 
+@media only screen and (max-width: 575.98px) {
+    .svg_yellow_planet {
+        width: 150%;
+        height: 100%;
+        margin-left: -20%;
+    }
+
+    .levels_content {
+        top: 30vh;
+    }
+
+    .paragraph_levels {
+        margin: 0;
+    }
+
+    .box_1 {
+        display: none;
+    }
+    
+    .box_2 {
+        height: 90vh;
+        margin-top: 10vh;
+    }
+
+    .about_box {
+        gap: 2vh;
+    }
+    
+    .about_planet {
+        margin-left: 25px;
+    }
+    
+    .svg_about_planet {
+        width: 50vw;
+        height: auto;
+    }
+    
+    .resources_pointer {
+        margin-bottom: -130px;
+    }
+    
+    .svg_resources_planet {
+        height: 40vh;
+        width: 60vw;
+    }
+    
+    .box_3 {
+        height: 100%;
+        width: 100%;
+    }
+    
+    .levels_content {
+        display: flex;
+        position: fixed;
+        flex-direction: column;
+        top: 30vh;
+        width: 50%;
+        right: 10%;
+        font-size: 24px;
+        text-align: justify;
+    }
+    
+    .accordion {
+        margin: 20px 0 0 -37px;
+    }
+    
+    .svg_accordion {
+        color: var(--accordion-bg);
+        min-width: 65vw;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .levels_content {
+        top: 30vh;
+    }
+
+    .svg_about_planet {
+        width: auto;
+        height: 30vh;
+    }
+
+    .svg_resources_planet {
+        height: 25vh;
+        width: auto;
+    }
+}
 

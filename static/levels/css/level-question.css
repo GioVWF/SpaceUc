@@ -247,7 +247,7 @@ p[class="redir-btn"] {
     border: 5px solid rgba(111, 126, 159, 1);
     position: absolute;
     top: 30px;
-    right: 0;
+    right: 30px;
 }
 
 .inner_timer {

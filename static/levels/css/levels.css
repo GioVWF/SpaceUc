@@ -176,11 +176,14 @@ p[class="redir-btn"] {
     width: 100%;
     height: 100%;
     text-decoration: none;
-    color: #EAEAEA;  
+    color: #EAEAEA;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.842);
+    position: absolute;
+    top: 0;
+    left: 0;
     display: flex;
-    align-items: center;
-    margin-left: -7px;
+    align-items: center; 
+    justify-content: center; 
 }
 
 .lesson::after {
