@@ -16,7 +16,7 @@ a {
     text-decoration: none;
 }
 
-h1 {
+h2 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -148,7 +148,7 @@ h1 {
     height: 30px;
 }
 
-.navbar-logger-user-name  h1 {
+.navbar-logger-user-name  h2 {
     font-family: monospace;
     font-size: 16px;
     margin: 0;

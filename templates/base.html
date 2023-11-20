@@ -74,7 +74,7 @@
                                     <circle cx="79.5" cy="80.5" r="1.5" fill="#D9D2DA"/><circle cx="4.5" cy="80.5" r="1.5" fill="#D9D2DA"/><circle cx="79.5" cy="4.5" r="1.5" fill="#D9D2DA"/><circle cx="4.5" cy="4.5" r="1.5" fill="#D9D2DA"/></svg>
                             </div>
                             <div class="navbar-podium-text-position">
-                                <h1>PODIO</h1>
+                                <h2>PODIO</h2>
                             </div>
                         </a>
                         {% else %}
@@ -89,7 +89,7 @@
                                     <circle cx="79.5" cy="80.5" r="1.5" fill="#D9D2DA"/><circle cx="4.5" cy="80.5" r="1.5" fill="#D9D2DA"/><circle cx="79.5" cy="4.5" r="1.5" fill="#D9D2DA"/><circle cx="4.5" cy="4.5" r="1.5" fill="#D9D2DA"/></svg>
                             </div>
                             <div class="navbar-podium-text-position">
-                                <h1>PODIO</h1>
+                                <h2 class="navbar-">PODIO</h2>
                             </div>
                         </a>
                         {% endif %}
@@ -97,11 +97,11 @@
                         <div class="navbar-buttons-position">
                             <div class="navbar-panel-blackButton-left"> 
                                 <a href="{% url 'about_page' %}" class="navbar-panel-blackButton-left-inner">
-                                    <div class="navbar-black-text-position-left"><h1 class="navbar-black-text">Quienes <br> Somos</h1></div>
+                                    <div class="navbar-black-text-position-left"><h2 class="navbar-black-text">Quienes <br> Somos</h2></div>
                                 </a>
                                 <div class="navbar-panel-greyButton-left">
                                     <a href="{% url 'levels_info' %}" class="navbar-panel-greyButton-left-inner">
-                                        <div class="navbar-grey-text-position-left"><h1 class="navbar-grey-text">Niveles</h1></div>
+                                        <div class="navbar-grey-text-position-left"><h2 class="navbar-grey-text">Niveles</h2></div>
                                     </a>
                                 </div>
                             </div>
@@ -142,7 +142,7 @@
                             {% else %}
     
                                 <a href="{% url 'login_page' %}" class="navbar-play">
-                                    <div class="navbar-play-inner"><h1 class="navbar-playButton">¡JUGAR!</h1></div>
+                                    <div class="navbar-play-inner"><h2 class="navbar-playButton">¡JUGAR!</h2></div>
                                 </a>       
                             {% endif %}
                                 
@@ -150,11 +150,11 @@
                             <div class="navbar-panel-blackButton-right">
                                 <div class="navbar-panel-greyButton-right">
                                     <a href="{% url 'home_page'%}" class="navbar-panel-greyButton-right-inner">
-                                        <div class="navbar-grey-text-position-right"><h1 class="navbar-grey-text">Home</h1></div>
+                                        <div class="navbar-grey-text-position-right"><h2 class="navbar-grey-text">Home</h2></div>
                                     </a>
                                 </div>
                                 <a href="{% url 'resources_page' %}" class="navbar-panel-blackButton-right-inner" >
-                                    <div class="navbar-black-text-position-right"><h1 class="navbar-black-text">Recursos</h1></div>
+                                    <div class="navbar-black-text-position-right"><h2 class="navbar-black-text">Recursos</h2></div>
                                 </a>
                             </div>
                         </div>
@@ -224,7 +224,7 @@
                                         <div class="navbar-logged-user">
                                             <div class = "data_user">
                                                 <div class="navbar-logger-user-name">
-                                                    <h1>{{ i.first_name_user }}</h1>
+                                                    <h2>{{ i.first_name_user }}</h2>
                                                 </div>
                                                 
                                                 <div class = "icon_container" id = "icon_container_id">

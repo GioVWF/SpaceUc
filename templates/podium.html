@@ -41,33 +41,31 @@
     
 <main>
     <section class="podium_position">   
-        <div class = "text_podium">
-            <h1>Podio</h1>
-            <div class = "control_text_user">
-                {% for x in first_places %}
-                <div class="text_user_podium{% if forloop.counter == 1 %}_middle{% elif forloop.counter == 2 %}_right{% endif %}">
-                    
-                    <h2>{{x.alias_user}} </h2>
-                    <p>{{x.point_user}}pts </p>
-                </div>
+            <h1 class="shadow">Podio</h1>
+            <!-- <div class = "control_text_user">
+            {% for x in first_places %}
+            <div class="text_user_podium{% if forloop.counter == 1 %}_middle{% elif forloop.counter == 2 %}_right{% endif %}">
                 
-            {% endfor %}
-            </div>
-        </div>
+                <h2>{{x.alias_user}} </h2>
+                <p>{{x.point_user}}pts </p>
+            </div>  
+            
+        {% endfor %}
+        </div> -->
         <svg viewBox="0 0 670 643" fill="none" xmlns="http://www.w3.org/2000/svg" class = "svg_positions_podium">
             <rect x="277" Y="80" width="113" height="643" fill="#FFE13E"/>
-            <text text-anchor="middle" x="50%" y="30" font-family="monospace" font-size="32" font-weight="900" fill="white">{{position_one.alias_user}}</text>
-            <text x="277" y="70" font-family="monospace" font-size="32" font-weight="900" fill="white">{{position_one.point_user}} pts</text>
+            <text text-anchor="middle" x="50%" y="30" font-family="monospace" font-size="32" font-weight="900" style="text-shadow: 1px 1px black;" fill="#FFE13E">{{position_one.alias_user}}</text>
+            <text x="277" y="70" font-family="monospace" font-size="32" font-weight="900" style="text-shadow: 1px 1px black;" fill="#FFE13E">{{position_one.point_user}} pts</text>
             <rect x="290" y="89" width="90" height="634" fill="#FFF1A4"/>
             <rect x="235" y="491" width="200" height="152" fill="#6F7E9F"/>
             <rect x="247" y="503" width="180" height="128" fill="#464B78"/>
             <rect x="509" y="163" width="114" height="480" fill="#C0C0C0"/>
-            <text text-anchor="middle" x="85%" y="123" font-family="monospace" font-size="32" font-weight="900" fill="white">{{position_two.alias_user}}</text>
-            <text text-anchor="middle" x="85%" y="153" font-family="monospace" font-size="32" font-weight="900" fill="white">{{position_two.point_user}} pts</text>
+            <text text-anchor="middle" x="85%" y="123" font-family="monospace" font-size="32" font-weight="900" style="text-shadow: 1px 1px black;" fill="#C0C0C0">{{position_two.alias_user}}</text>
+            <text text-anchor="middle" x="85%" y="153" font-family="monospace" font-size="32" font-weight="900" style="text-shadow: 1px 1px black;" fill="#C0C0C0">{{position_two.point_user}} pts</text>
             <rect x="524" y="175" width="84" height="468" fill="#EBEBEB"/>
             <rect x="44" y="326" width="113" height="317" fill="#907142"/>
-            <text text-anchor="middle" x="15%" y="286" font-family="monospace" font-size="32" font-weight="900" fill="white">{{position_three.alias_user}}</text>
-            <text text-anchor="middle" x="15%" y="316" font-family="monospace" font-size="32" font-weight="900" fill="white">{{position_three.point_user}} pts</text>
+            <text text-anchor="middle" x="15%" y="286" font-family="monospace" font-size="32" font-weight="900" style="text-shadow: 1px 1px black;" fill="#907142">{{position_three.alias_user}}</text>
+            <text text-anchor="middle" x="15%" y="316" font-family="monospace" font-size="32" font-weight="900" style="text-shadow: 1px 1px black;" fill="#907142">{{position_three.point_user}} pts</text>
             <rect x="59" y="339" width="83" height="304" fill="#ADA18E"/>
             <rect x="470" y="491" width="200" height="152" fill="#6F7E9F"/>
             <rect y="491" width="200" height="152" fill="#6F7E9F"/>
