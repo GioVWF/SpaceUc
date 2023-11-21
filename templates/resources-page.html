@@ -61,11 +61,11 @@
                                     <img src="{{ data.url }}" alt="photo">
                                     <h3>"{{ data.title }}"</h3>
                                 {% elif data.media_type == "video"%}
-                                    <iframe width="560" height="315" src="{{ data.url }}" frameborder="0" allowfullscreen></iframe>
-                                    <h3>"{{ data.title }}"</h3>
+                                    <img src="https://apod.nasa.gov/apod/image/2311/Horsehead_Hanson_960.jpg" alt="photo">
+                                    <h3>"The Horsehead Nebula"</h3>
                                 {% else %}
-                                    <img src="https://developers.google.com/static/maps/documentation/streetview/images/error-image-generic.png" alt="photo">
-                                    <h3>"Imagen no encontrada"</h3>
+                                    <img src="https://apod.nasa.gov/apod/image/2311/Horsehead_Hanson_960.jpg" alt="photo">
+                                    <h3>"The Horsehead Nebula"</h3>
                                 {% endif %}
                                     
                                 
@@ -143,9 +143,9 @@
         
         <a href="{% url 'levels_info' %}" class = "box_2_1">
             
-            <div id = "click_other_page">
+            <div id = "click_other_page" style = "margin-rigth: -10px;">
                 
-                <svg width="auto" height="auto" viewBox="0 0 271 375" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="auto" height="auto" viewBox="0 0 271 400" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M28.0194 27.7382L205.448 158.432L156.917 206.476L28.0194 27.7382Z" fill="#8A8466"/>
                     <path d="M22.2507 270.73L240.136 237.745L239.772 306.033L22.2507 270.73Z" fill="#8A8466"/>
                     <path d="M134.9 464.449L169.933 365.271L223.453 407.687L134.9 464.449Z" fill="#8A8466"/>

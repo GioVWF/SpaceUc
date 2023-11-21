@@ -9,6 +9,7 @@ from django.core import serializers
 from django.db.models import Q
 from django.contrib import messages
 from django.template import RequestContext
+from main.views import teacher_follow
 # Create your views here.
 
 def login_page(request):
@@ -62,7 +63,7 @@ def register_student_(request, id):
         last_name_form = request.POST['last_name']
         rut_form = request.POST['rut'] #Remmember our user to log in is the RUT of the student
         password_form = rut_form[:4] 
-        alias_user_pref = f"{last_name_form} {name_student_form}"
+        alias_user_pref = f"{last_name_form[0:4]} {name_student_form[0:4]}"
         point_user_pref = 0
         grade_user_pref = '5A'
         user_type_pref = 2
@@ -73,7 +74,7 @@ def register_student_(request, id):
         last_name_form = request.POST['last_name']
         rut_form = request.POST['rut'] #Remmember our user to log in is the RUT of the student
         password_form = rut_form[:4] 
-        alias_user_pref = f"{last_name_form} {name_student_form}"
+        alias_user_pref = f"{last_name_form[0:4]} {name_student_form[0:4]}"
         point_user_pref = 0
         grade_user_pref = '5B'
         user_type_pref = 2
@@ -84,7 +85,7 @@ def register_student_(request, id):
         last_name_form = request.POST['last_name']
         rut_form = request.POST['rut'] #Remmember our user to log in is the RUT of the student
         password_form = rut_form[:4] 
-        alias_user_pref = f"{last_name_form} {name_student_form}"
+        alias_user_pref = f"{last_name_form[0:4]} {name_student_form[0:4]}"
         point_user_pref = 0
         grade_user_pref = '5C'
         user_type_pref = 2
@@ -119,7 +120,7 @@ def register_student_(request, id):
         PerIcon.objects.create(color_icon = 0, icon_id_icon = get_default_backgraund , user_ours_id_user_ours = get_new_user )
         
         messages.success(request, "Usuario creado")
-        return redirect(home)
+        return redirect(teacher_follow)
 
     return redirect(register_page)
 
