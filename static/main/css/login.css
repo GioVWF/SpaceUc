@@ -6,6 +6,7 @@ html{
 }
 
 main{
+    overflow: hidden ;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,11 +17,20 @@ main{
 
 .login_background{
     position: absolute;
-    z-index: -1;
-    right: -44vh;
     top: 0;
-    width: 120%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
     height: 100%;
+    overflow: hidden;
+}
+
+.svg_background{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    right: -230px;
 }
 
 .control_form_container{
@@ -56,6 +66,11 @@ main{
 
 button{
     all: unset;
+}
+
+.btn_submit{
+    width:120px;
+    height:110px;
 }
 
 .input_div{
@@ -235,3 +250,910 @@ a{
    
 }
 
+@media (max-width: 380.98px){
+    .svg_background {
+        width: 148%;
+        height: 100%;
+        position: absolute;
+        right: -173px;
+    }
+
+    .control_form_container {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        height: 80%;
+    }
+
+    .login_content {
+        position: absolute;
+        width: 89%;
+        height: auto;
+        text-align: center;
+        top: 13vh;
+        color: white;
+    }
+
+    .login_content h1 {
+        font-weight: 50;
+        font-size: 19px;
+    }
+
+    .link_forgott {
+        
+        padding-right: 0vh; 
+        
+    }
+
+    .control_button {
+        margin: 3vh 0 0 0;
+    }
+
+    .btn_submit {
+        width: 65px;
+        height: 55px;
+    }
+
+    .modal-content {
+        background-color: #454B78;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 81%;
+        height: 50%;
+        margin: 20vh auto;
+        padding: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        position: relative;
+        clip-path: polygon(0 0, 91% 0, 100% 18%, 100% 100%, 5% 100%, 0 80%);
+    }
+
+    .modal-content-bg {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #6F7E9F;
+        height: 80%;
+        width: 80%;
+        margin: auto;
+    }
+
+    .modal-content-bg .title_modal {
+        font-size: 3vh;
+        color: white;
+        padding: 0 5% 0 5%;
+        margin: 0;
+    }
+
+    .modal-content-bg p {
+        font-size: small;
+        color: white;
+        padding: 0 5% 0 5%;
+    }
+
+    .error_msg {
+       
+        background-color: rgba(255, 0, 0, 0.6);
+        border-radius: 10px;
+        padding: 1vh;
+        width: auto;
+    }
+
+    .error_sub_text {
+        font-size: 10px;
+        font-weight: bold;
+    }
+
+    .error_text {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .alert_msg {
+        width: 65vw;
+        
+    }
+
+}
+
+@media (min-width: 381px) and (max-width: 417.98px){
+    .svg_background {
+        width: 148%;
+        height: 100%;
+        position: absolute;
+        right: -173px;
+    }
+
+    .control_form_container {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        height: 80%;
+    }
+
+    .login_content {
+        position: absolute;
+        width: 89%;
+        height: auto;
+        text-align: center;
+        top: 20.5vh;
+        color: white;
+    }
+
+    .login_content h1 {
+        font-weight: 50;
+        font-size: 19px;
+    }
+
+    .link_forgott {
+        
+        padding-right: 0vh; 
+        
+    }
+
+    .control_button {
+        margin: 3vh 0 0 0;
+    }
+
+    .btn_submit {
+        width: 65px;
+        height: 55px;
+    }
+
+    .modal-content {
+        background-color: #454B78;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 81%;
+        height: 50%;
+        margin: 20vh auto;
+        padding: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        position: relative;
+        clip-path: polygon(0 0, 91% 0, 100% 18%, 100% 100%, 5% 100%, 0 80%);
+    }
+
+    .modal-content-bg {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #6F7E9F;
+        height: 80%;
+        width: 80%;
+        margin: auto;
+    }
+
+    .modal-content-bg .title_modal {
+        font-size: 3vh;
+        color: white;
+        padding: 0 5% 0 5%;
+        margin: 0;
+    }
+
+    .modal-content-bg p {
+        font-size: small;
+        color: white;
+        padding: 0 5% 0 5%;
+    }
+
+    .error_msg {
+       
+        background-color: rgba(255, 0, 0, 0.6);
+        border-radius: 10px;
+        padding: 1vh;
+        width: auto;
+    }
+
+    .error_sub_text {
+        font-size: 10px;
+        font-weight: bold;
+    }
+
+    .error_text {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .alert_msg {
+        width: 65vw;
+        
+    }
+}
+
+@media (min-width: 418px) and (max-width: 460.98px){
+    .svg_background {
+        width: 148%;
+        height: 100%;
+        position: absolute;
+        right: -173px;
+    }
+
+    .control_form_container {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        height: 80%;
+    }
+
+    .login_content {
+        position: absolute;
+        width: 89%;
+        height: auto;
+        text-align: center;
+        top: 21vh;
+        color: white;
+    }
+
+    .login_content h1 {
+        font-weight: 50;
+        font-size: 19px;
+    }
+
+    .link_forgott {
+        
+        padding-right: 0vh; 
+        
+    }
+
+    .control_button {
+        margin: 3vh 0 0 0;
+    }
+
+    .btn_submit {
+        width: 65px;
+        height: 55px;
+    }
+
+    .modal-content {
+        background-color: #454B78;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 81%;
+        height: 50%;
+        margin: 20vh auto;
+        padding: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        position: relative;
+        clip-path: polygon(0 0, 91% 0, 100% 18%, 100% 100%, 5% 100%, 0 80%);
+    }
+
+    .modal-content-bg {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #6F7E9F;
+        height: 80%;
+        width: 80%;
+        margin: auto;
+    }
+
+    .modal-content-bg .title_modal {
+        font-size: 3vh;
+        color: white;
+        padding: 0 5% 0 5%;
+        margin: 0;
+    }
+
+    .modal-content-bg p {
+        font-size: small;
+        color: white;
+        padding: 0 5% 0 5%;
+    }
+
+    .error_msg {
+       
+        background-color: rgba(255, 0, 0, 0.6);
+        border-radius: 10px;
+        padding: 1vh;
+        width: auto;
+    }
+
+    .error_sub_text {
+        font-size: 10px;
+        font-weight: bold;
+    }
+
+    .error_text {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .alert_msg {
+        width: 65vw;
+        
+    }  
+}
+
+@media (min-width: 461px) and (max-width: 517.98px){
+    .svg_background {
+        width: 148%;
+        height: 100%;
+        position: absolute;
+        right: -173px;
+    }
+
+    .control_form_container {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        height: 80%;
+    }
+
+    .login_content {
+        position: absolute;
+        width: 89%;
+        height: auto;
+        text-align: center;
+        top: 17vh;
+        color: white;
+    }
+
+    .login_content h1 {
+        font-weight: 50;
+        font-size: 19px;
+    }
+
+    .link_forgott {
+        
+        padding-right: 0vh; 
+        
+    }
+
+    .control_button {
+        margin: 3vh 0 0 0;
+    }
+
+    .btn_submit {
+        width: 90px;
+        height: 80px;
+    }
+
+    .modal-content {
+        background-color: #454B78;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 81%;
+        height: 50%;
+        margin: 20vh auto;
+        padding: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        position: relative;
+        clip-path: polygon(0 0, 91% 0, 100% 18%, 100% 100%, 5% 100%, 0 80%);
+    }
+
+    .modal-content-bg {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #6F7E9F;
+        height: 80%;
+        width: 80%;
+        margin: auto;
+    }
+
+    .modal-content-bg .title_modal {
+        font-size: 3vh;
+        color: white;
+        padding: 0 5% 0 5%;
+        margin: 0;
+    }
+
+    .modal-content-bg p {
+        font-size: small;
+        color: white;
+        padding: 0 5% 0 5%;
+    }
+
+    .error_msg {
+       
+        background-color: rgba(255, 0, 0, 0.6);
+        border-radius: 10px;
+        padding: 1vh;
+        width: auto;
+    }
+
+    .error_sub_text {
+        font-size: 10px;
+        font-weight: bold;
+    }
+
+    .error_text {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .alert_msg {
+        width: 65vw;
+        
+    }  
+}
+
+
+@media (min-width: 518px) and (max-width: 575.98px) {
+    .svg_background {
+        width: 148%;
+        height: 100%;
+        position: absolute;
+        right: -173px;
+    }
+
+    .control_form_container {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        height: 80%;
+    }
+
+    .login_content {
+        position: absolute;
+        width: 89%;
+        height: auto;
+        text-align: center;
+        top: 14vh;
+        color: white;
+    }
+
+    .login_content h1 {
+        font-weight: 50;
+        font-size: 30px;
+    }
+
+    .link_forgott {
+        
+        padding-right: 0vh; 
+        
+    }
+
+    .control_button {
+        margin: 3vh 0 0 0;
+    }
+
+    .btn_submit {
+        width: 110px;
+        height: 100px;
+    }
+
+    .modal-content {
+        background-color: #454B78;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 81%;
+        height: 50%;
+        margin: 20vh auto;
+        padding: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        position: relative;
+        clip-path: polygon(0 0, 91% 0, 100% 18%, 100% 100%, 5% 100%, 0 80%);
+    }
+
+    .modal-content-bg {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #6F7E9F;
+        height: 80%;
+        width: 80%;
+        margin: auto;
+    }
+
+    .modal-content-bg .title_modal {
+        font-size: 3vh;
+        color: white;
+        padding: 0 5% 0 5%;
+        margin: 0;
+    }
+
+    .modal-content-bg p {
+        font-size: small;
+        color: white;
+        padding: 0 5% 0 5%;
+    }
+
+    .error_msg {
+       
+        background-color: rgba(255, 0, 0, 0.6);
+        border-radius: 10px;
+        padding: 1vh;
+        width: auto;
+    }
+
+    .error_sub_text {
+        font-size: 10px;
+        font-weight: bold;
+    }
+
+    .error_text {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .alert_msg {
+        width: 65vw;
+        
+    }  
+
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .svg_background {
+        width: 148%;
+        height: 100%;
+        position: absolute;
+        right: -173px;
+    }
+
+    .control_form_container {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        height: 80%;
+    }
+
+    .login_content {
+        position: absolute;
+        width: 89%;
+        height: auto;
+        text-align: center;
+        top: 14vh;
+        color: white;
+    }
+
+    .login_content h1 {
+        font-weight: 50;
+        font-size: 30px;
+    }
+
+    .link_forgott {
+        
+        padding-right: 0vh; 
+        
+    }
+
+    .control_button {
+        margin: 3vh 0 0 0;
+    }
+
+    .btn_submit {
+        width: 110px;
+        height: 100px;
+    }
+
+    .modal-content {
+        background-color: #454B78;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 81%;
+        height: 50%;
+        margin: 20vh auto;
+        padding: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        position: relative;
+        clip-path: polygon(0 0, 91% 0, 100% 18%, 100% 100%, 5% 100%, 0 80%);
+    }
+
+    .modal-content-bg {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #6F7E9F;
+        height: 80%;
+        width: 80%;
+        margin: auto;
+    }
+
+    .modal-content-bg .title_modal {
+        font-size: 3vh;
+        color: white;
+        padding: 0 5% 0 5%;
+        margin: 0;
+    }
+
+    .modal-content-bg p {
+        font-size: small;
+        color: white;
+        padding: 0 5% 0 5%;
+    }
+
+    .error_msg {
+       
+        background-color: rgba(255, 0, 0, 0.6);
+        border-radius: 10px;
+        padding: 1vh;
+        width: auto;
+    }
+
+    .error_sub_text {
+        font-size: 10px;
+        font-weight: bold;
+    }
+
+    .error_text {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .alert_msg {
+        width: 65vw;
+        
+    }   
+
+    label {
+        position: absolute;
+        z-index: 3;
+        top: 2.7vh;
+        left: 8.2vh;
+        font-size: large;
+    }
+    
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .svg_background {
+        width: 148%;
+        height: 100%;
+        position: absolute;
+        right: -173px;
+    }
+
+    .control_form_container {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        height: 80%;
+    }
+
+    .login_content {
+        position: absolute;
+        width: 89%;
+        height: auto;
+        text-align: center;
+        top: 14vh;
+        color: white;
+    }
+
+    .login_content h1 {
+        font-weight: 50;
+        font-size: 30px;
+    }
+
+    .link_forgott {
+        
+        padding-right: 0vh; 
+        
+    }
+
+    .control_button {
+        margin: 3vh 0 0 0;
+    }
+
+    .btn_submit {
+        width: 110px;
+        height: 100px;
+    }
+
+    .modal-content {
+        background-color: #454B78;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 81%;
+        height: 50%;
+        margin: 20vh auto;
+        padding: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        position: relative;
+        clip-path: polygon(0 0, 91% 0, 100% 18%, 100% 100%, 5% 100%, 0 80%);
+    }
+
+    .modal-content-bg {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #6F7E9F;
+        height: 80%;
+        width: 80%;
+        margin: auto;
+    }
+
+    .modal-content-bg .title_modal {
+        font-size: 3vh;
+        color: white;
+        padding: 0 5% 0 5%;
+        margin: 0;
+    }
+
+    .modal-content-bg p {
+        font-size: small;
+        color: white;
+        padding: 0 5% 0 5%;
+    }
+
+    .error_msg {
+       
+        background-color: rgba(255, 0, 0, 0.6);
+        border-radius: 10px;
+        padding: 1vh;
+        width: auto;
+    }
+
+    .error_sub_text {
+        font-size: 10px;
+        font-weight: bold;
+    }
+
+    .error_text {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .alert_msg {
+        width: 65vw;
+        
+    }   
+
+    label {
+        position: absolute;
+        z-index: 3;
+        top: 2.7vh;
+        left: 23.2vh;
+        font-size: large;
+    }
+
+    input {
+        position: relative;
+        background-color: #4D5C7D;
+        border-radius: 1.5vh;
+        width: 56%;
+        height: 5vh;
+        color: white;
+        border: none;
+        padding: 5px;
+        font-size: 16px;
+        transition: 0.2s;
+    }
+}
+
+@media only screen and  (992px <= width <= 1199.98px) {
+    .control_form_container {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 68.5%;
+        height: 80%;
+    }
+
+    label {
+        position: absolute;
+        z-index: 3;
+        top: 2.7vh;
+        left: 8.2vh;
+        font-size: large;
+    }
+}
+
+@media only screen and (1200px <= width <= 1439.98px) {
+    .control_form_container {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 53.5%;
+        height: 80%;
+    }
+
+    label {
+        position: absolute;
+        z-index: 3;
+        top: 2.7vh;
+        left: 8.2vh;
+        font-size: large;
+    }
+}
+
+@media only screen and (1440px <= width <= 1500.98px) {
+    .control_form_container {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 53.5%;
+        height: 80%;
+    }
+
+    label {
+        position: absolute;
+        z-index: 3;
+        top: 2.7vh;
+        left: 8.2vh;
+        font-size: large;
+    }
+}
+
+@media only screen and (2540px <= width <= 4560px) {
+    
+    .control_form_container {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 45.5%;
+        height: 80%;
+    }
+
+    .login_content h1 {
+        font-weight: 50;
+        font-size: 81px;
+    }
+
+    label {
+        position: absolute;
+        z-index: 3;
+        top: 1.7vh;
+        left: 7.2vh;
+        font-size: 40px;
+    }
+
+    .link_forgott {
+        text-decoration: underline;
+        display: block;
+        padding-right: 17vw;
+        padding-top: 1vh;
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-size: 33px;
+    }
+
+    .btn_submit {
+        width: 320px;
+        height: 310px;
+    }
+
+    .error_msg {
+       
+        background-color: rgba(255, 0, 0, 0.6);
+        border-radius: 10px;
+        padding: 1vh;
+        width: 73%;
+        margin: auto;
+        height: 288px;
+    }
+
+    .error_text {
+        margin: 0;
+        font-size: 39px;
+    }
+
+    .error_sub_text {
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .alert_msg p {
+        color: rgb(0, 0, 0);
+        font-size: 50px;
+        margin: 0;
+        text-align: center;
+    }
+    input {
+        font-size: 50px; 
+    }
+
+}
