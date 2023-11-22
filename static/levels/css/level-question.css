@@ -2,6 +2,11 @@ html {
     font-size: 24px;
 }
 
+@font-face {
+    font-family: 'digital-dream.narrow';
+    src: url(/static/fonts/digital-dream.narrow.ttf);
+}
+
 body {
     font-family: monospace, Courier;
     margin: 0;
@@ -280,19 +285,27 @@ p[class="redir-btn"] {
 
 .text_timer {
     color: greenyellow;
-    font-size: 100px;
+    font-size: 90px;
+    font-family: 'digital-dream.narrow', monospace;
+    font-weight: 300;
     text-align: center;
-    margin: 0 0 0 30px;
+    margin: 15px 0 15px 30px;
 }
 
 .paragraph_timer {
-  color: greenyellow;
-  border-top: 1px solid greenyellow;
-  border-bottom: 1px solid greenyellow;
-  text-align: center;
-  font-size: 25px;
-  font-weight: bolder;
-  margin: 0;
+    color: greenyellow;
+    border-top: 1px solid greenyellow;
+    border-bottom: 1px solid greenyellow;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 300;
+    margin: 0;
+    padding: 2px 0 4px 0;
+}
+
+.paragraph_timer span {
+    font-family: 'digital-dream.narrow', monospace;
+    margin: 0 0 0 30px;
 }
 
 .button {

@@ -54,11 +54,12 @@ def level_question(request, level,id):
     date = datetime.now()
     
     number_day_spanish = date.weekday()
-    days_spanish = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo']
+    days_spanish = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo']
     
     day_name_spanish = days_spanish[number_day_spanish]
     
-    date_format = date.strftime(f"{day_name_spanish} %d/%m")
+    day = day_name_spanish
+    date_format = date.strftime("%d/%m")
     
     question_context = {
         'level': level,
@@ -78,7 +79,8 @@ def level_question(request, level,id):
         'progress': progress,
         'limitator': limitator,
         'next': limitator+1,
-        'date': date_format
+        'date': date_format,
+        'day': day
     }
 
     return render(request, 'level-question.html', question_context)
