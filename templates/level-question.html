@@ -14,7 +14,7 @@
             <div class="estrellas"></div>
             <section>
                 <h1>Bienvenido, astronauta</h1>
-                <p class="subtitle">Nivel {{level}} - Lección {{lesson}}</p>
+                <p id="level-info" data-lesson="{{lesson}}" class="subtitle">Nivel {{level}} - Lección {{lesson}}</p>
                 <div class="go-back">
                     <a href="{% url 'levels' level %}">
                         <svg viewBox="0 0 105 122" fill="none">
@@ -34,7 +34,7 @@
                             <div class="clock_lines"></div>
                         </div>
                         <h2 id="Counter" class="counter text_timer" data-limitator="{{limitator}}" data-progress="{{progress}}" data-timer-url="{% url 'get_timer' %}"></h2>
-                        <p class="paragraph_timer">WED 12/ 1</p>  
+                        <p class="paragraph_timer">{{date}}</p>  
                         <div class="bigButton posT5"></div>  
                     </div>
                 </div>
@@ -106,8 +106,12 @@
                 </form>
             </section>
             
-            <div class="{% if progress >= limitator %} go-next {% elif progress <= limitator %} hide {% endif %}">
-                <a href="">
+            <div class="{% if progress >= limitator %} go-next {% elif progress < limitator %} hide {% endif %}">
+            {% if lesson != 3%}
+                <a href="{% url 'question' level next %}">
+            {% else %}
+                <a href="{% url 'game_page' %}">
+            {% endif %}
                     <svg viewBox="0 0 105 122" fill="none">
                         <path d="M105 60.6218L0 121.244L15 60.6218L0 0L105 60.6218Z" fill="#E86030"/>
                         <path d="M92.0239 60.7682L7.02393 109.749L30.5239 60.7682L7.02393 12.7485L92.0239 60.7682Z" fill="#984223"/>
@@ -127,7 +131,7 @@
                     <div id="grid-stats">
                         <h3 id="Time" class="hide"></h3>
                         <h3 id="Points" class="hide"></h3>
-                        <button id="modalButton" class="hide"></button>
+                        <button data-next-url="{% url 'question' level next %}" data-game-url="{% url 'game_page' %}" id="modalButton" class="hide"></button>
                     </div>
                 </div>
             </div>

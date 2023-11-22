@@ -1,5 +1,6 @@
 $(document).ready(function(){
     let timerInterval;
+    let lesson = $("#level-info").data("lesson");
     let timerUrl = $("#Counter").data("timer-url");
     let progress = $("#Counter").data("progress"); 
     let limitator = $("#Counter").data("limitator");
@@ -8,6 +9,8 @@ $(document).ready(function(){
     let initTemp;
     let points;
     let iscorrect;
+    let nextUrl = $("#modalButton").data("next-url");
+    let gameUrl = $("#modalButton").data("game-url");
 
     const retryButton = document.getElementById('modalButton');
 
@@ -61,30 +64,6 @@ $(document).ready(function(){
         });
     }
 
-    //  
-    //     $.ajax({
-    //         url: timerUrl,
-    //         type: 'POST',
-    //         data: {
-    //             'csrfmiddlewaretoken': csrfToken
-    //         },
-    //         success: function (data) {
-    //             console.log("Respuesta de AJAX:", data);
-    //             if (data.success) {
-    //                 clearInterval(timerInterval); // Detener el intervalo al restablecer
-    //                 timerInterval = setInterval(updateCounter, 1000); // Iniciar nuevamente
-    //                 console.log("Seconds: " + data.seconds);
-    //             } else {
-    //                 alert("Error al restablecer el contador.");
-    //             }
-    //         },
-    //         error: function () {
-    //             alert("Error en la solicitud AJAX");
-    //             clearInterval(timerInterval); // Detener el intervalo en caso de error
-    //         }
-    //     });
-    // });
-
     $('.Answer').click(function() {
         let checkbox = $(this).siblings('input[type="checkbox"]');
         checkbox.prop('checked', true);
@@ -105,7 +84,6 @@ $(document).ready(function(){
             $('#myModal #modalButton').text("REINTENTAR").removeClass('hide').removeClass('correct-button').addClass('incorrect-button');
             $('#myModal #grid-stats').removeClass('stats-grid');
             $('#myModal h3').addClass('hide').removeClass('stats-text');
-            
             iscorrect = false;
         } else if (boolean == 'True') {
             $('#myModal #modalButton').text("SIGUIENTE").removeClass('hide').addClass('correct-button');
@@ -117,11 +95,11 @@ $(document).ready(function(){
         $('#myModal #Time').text('Tiempo: ' + (120 - temp) + ' segundos.');
         
 
-        if (boolean == 'True' && progress == limitator){
+        if (boolean == 'True' && progress < limitator){
             addPoints();
             $('#myModal #Points').text('Puntos: ' + points + ' puntos.');
             console.log('puntos añadidos');
-        } else if (boolean =='True' && progress != limitator) {
+        } else if (boolean =='True' && progress >= limitator) {
             clearInterval(timerInterval);
             $('#myModal #Points').text('No puedes ganar más puntos.');
         }
@@ -138,9 +116,16 @@ $(document).ready(function(){
 
     retryButton.onclick = function(){
         if (iscorrect){
-            console.log('BOTON SIGUIENTE PRESIONADO!');
+            if (lesson != 3) 
+            {
+                window.location.href = nextUrl;
+            } 
+            else
+            {
+                window.location.href = gameUrl;
+            }
         } else if (!iscorrect) {
-            location.reload();
+            closeModal();
         }
     };
 });

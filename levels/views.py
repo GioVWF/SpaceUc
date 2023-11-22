@@ -4,6 +4,7 @@ from . models import Timer
 from django.http import JsonResponse
 from django.contrib.auth.models import User
 import random
+from datetime import datetime
 
 def level_question(request, level,id):
     if request.user.is_authenticated:
@@ -31,7 +32,7 @@ def level_question(request, level,id):
         limitator = limitators[level][lesson_number]
     
     anwser_urls = [answer.img_answer.url for answer in answer_info if answer.img_answer]
-    random.shuffle(anwser_urls)
+    random.shuffle(anwser_urls)  
     
     anwser_1 = anwser_urls[0]
     anwser_2 = anwser_urls[1]
@@ -47,6 +48,17 @@ def level_question(request, level,id):
         if anwser_urls[2] == i.img_answer.url:
             check_3 = i.option_answer
             content_anwser_3 = i.content_answer
+    
+    
+    
+    date = datetime.now()
+    
+    number_day_spanish = date.weekday()
+    days_spanish = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo']
+    
+    day_name_spanish = days_spanish[number_day_spanish]
+    
+    date_format = date.strftime(f"{day_name_spanish} %d/%m")
     
     question_context = {
         'level': level,
@@ -64,7 +76,9 @@ def level_question(request, level,id):
         'content_anwser_2': content_anwser_2,
         'content_anwser_3': content_anwser_3,
         'progress': progress,
-        'limitator': limitator
+        'limitator': limitator,
+        'next': limitator+1,
+        'date': date_format
     }
 
     return render(request, 'level-question.html', question_context)
