@@ -1006,6 +1006,14 @@ a{
         width: 200px;
         height: 200px;
     }
+
+    .register_input_div_radio .second_son {
+        font-size: 50px;
+    }
+
+    .register_input_div_radio .first_son {
+        font-size: 50px;
+    }
    
 
 }
