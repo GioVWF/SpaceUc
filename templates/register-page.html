@@ -103,7 +103,7 @@
                             
                     
                             <button type= "submit"  class = "control_button">
-                                <svg width="120" height="110" viewBox="0 0 120 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg viewBox="0 0 120 110" fill="none" xmlns="http://www.w3.org/2000/svg" class = "svg_btn">
                                     <path d="M0 0H60H90L105 14.2788L120 27.5V55V110H60H30H15L7.24138 103.125L0 96.25V82.5V55V0Z" fill="#E86030"/>
                                     <path d="M5 5H60H87.5L101.25 17.9808L115 30V55V105H60H32.5H18.75L11.6379 98.75L5 92.5V80V55V5Z" fill="#984223"/>
                                     <rect x="20" y="49" width="79" height="12" fill="#D9D9D9"/>
@@ -176,11 +176,8 @@
                 if( msg != "<p class = 'error_text'>Valores ingresados invalidos, vuelva a intentar</p>" ){
                     $("#error_msg").html(msg);
                     $("#error_msg").css('display', 'block');
-                    $("#control_button").css('margin', '2vh');
-                    $("#title").css('margin-top','5px');
-                    $("#title").css('margin-bottom','5px');
-                    $("#title2").css('margin-top','5px');
-                    $("#title2").css('margin-bottom','5px');
+                   
+                    ;
                     event.preventDefault();
                     
                     return
