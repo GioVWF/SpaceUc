@@ -16,11 +16,17 @@ main{
 
 .profile_background{
     position: absolute;
-   
-    top: 0;
-    width: 90%;
-    height: 10%;
-    left: -10vh;
+    width: 100%;
+    height: 100%;
+  
+    overflow: hidden;
+}
+
+.svg_background{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 165px;
 }
 
 /*father*/
@@ -163,7 +169,7 @@ main{
 .btn_form_save{
     width: 60%;
     position: relative;
-    left: 8vh;
+    left: 70px;
     
 
 }
@@ -172,8 +178,8 @@ main{
     position: relative;
     width: auto;
     height: auto;
-    left: 13.5vh;
-    bottom: .5vh;
+    left: 120px;
+    bottom: 2px;
     
 }
 
@@ -188,8 +194,8 @@ main{
     position: relative;
     width: auto;
     height: auto;
-    left: 4.5vh;
-    bottom: .5vh;
+    left: 45px;
+    bottom: 2px;
 }
 
 button{
@@ -232,3 +238,883 @@ label{
 
 }
 
+
+
+@media (max-width: 417.98px){
+    .container_profile {
+        
+        width: 88%;
+        top: 101px;
+        left: 25px;
+        
+    }
+
+    .svg_background {
+       
+        width: 200%;
+        right: 0px;
+    }
+
+    .body_icon {
+        top: 48%;      
+    }
+
+    .head_icon {
+        top: 38%;   
+    }
+
+    .btn_custom_profile {
+        width: 45%;
+        bottom: 24vh;
+    }
+
+    .profile_form h1 {
+        font-size: 12px;
+    }
+
+    label {
+        font-size: 10px;
+        padding: 1px;
+    }
+
+    form input {
+        
+        width: 100%;
+        height: 2vh;
+        font-size: 10px;
+        
+    }
+
+    .username_control {
+        margin-left: 3vh;
+    }
+
+    .profile_form {
+        margin-top: -2vh;
+    }
+
+    .container_full_name {
+        gap: 3vh;
+        margin: 0 20px 0 0;
+    }
+
+    .button_control {
+        width: auto;
+        height: auto;
+        position: absolute;
+        display: flex;
+        bottom: 0px;
+        right: -48px;
+        left: -26px;
+        z-index: 3;
+        gap: 35px;
+    }
+
+    .button_control p {
+        position: relative;
+        color: white;
+        font-size: 8px;
+        z-index: 7;
+        top: -53px;
+        right: 15px;
+    }
+
+    .text_save{
+        position: relative;
+        width: auto;
+        height: auto;
+        left: 101px;
+        bottom: 7px;
+        
+    }
+    .text_discard{
+        position: relative;
+        width: auto;
+        height: auto;
+        left: 30px;
+        bottom: 7px;
+    }
+}
+
+@media (min-width: 418px) and (max-width: 460.98px){
+    .container_profile {
+        
+        width: 88%;
+        top: 101px;
+        left: 25px;
+        
+    }
+
+    .svg_background {
+       
+        width: 200%;
+        right: 0px;
+    }
+
+    .body_icon {
+        top: 48%;      
+    }
+
+    .head_icon {
+        top: 38%;   
+    }
+
+    .btn_custom_profile {
+        width: 45%;
+        bottom: 24vh;
+    }
+
+    .profile_form h1 {
+        font-size: 12px;
+    }
+
+    label {
+        font-size: 9px;
+        padding: 1px;
+    }
+
+    form input {
+        
+        width: 100%;
+        height: 2vh;
+        font-size: 10px;
+        
+    }
+
+    .username_control {
+        margin-left: 3vh;
+    }
+
+    .profile_form {
+        margin-top: -2vh;
+    }
+
+    .container_full_name {
+        gap: 3vh;
+        margin: 0 20px 0 0;
+    }
+
+    .button_control {
+        width: auto;
+        height: auto;
+        position: absolute;
+        display: flex;
+        bottom: -12px;
+        right: -48px;
+        left: -26px;
+        z-index: 3;
+        gap: 30px;
+    }
+
+    .button_control p {
+        position: relative;
+        color: white;
+        font-size: 10px;
+        z-index: 7;
+        top: -63px;
+        right: 21px;
+    }
+
+    .text_save{
+        position: relative;
+        width: auto;
+        height: auto;
+        left: 110px;
+        bottom: 7px;
+        
+    }
+    .text_discard{
+        position: relative;
+        width: auto;
+        height: auto;
+        left: 38px;
+        bottom: 7px;
+    }
+}
+
+@media (min-width: 461px) and (max-width: 517.98px){
+    .container_profile {
+        
+        width: 88%;
+        top: 101px;
+        left: 25px;
+        
+    }
+
+    .svg_background {
+       
+        width: 200%;
+        right: 0px;
+    }
+
+    .body_icon {
+        top: 48%;      
+    }
+
+    .head_icon {
+        top: 38%;   
+    }
+
+    .btn_custom_profile {
+        width: 45%;
+        bottom: 31%;
+    }
+
+    .profile_form h1 {
+        font-size: 12px;
+    }
+
+    label {
+        font-size: 9px;
+        padding: 1px;
+    }
+
+    form input {
+        
+        width: 100%;
+        height: 2vh;
+        font-size: 10px;
+        
+    }
+
+    .username_control {
+        margin-left: 3vh;
+    }
+
+    .profile_form {
+        margin-top: -2vh;
+    }
+
+    .container_full_name {
+        gap: 3vh;
+        margin: 0 20px 0 0;
+    }
+
+    .button_control {
+        width: auto;
+        height: auto;
+        position: absolute;
+        display: flex;
+        bottom: 10px;
+        right: -48px;
+        left: -26px;
+        z-index: 3;
+        gap: 30px;
+    }
+
+    .button_control p {
+        position: relative;
+        color: white;
+        font-size: 10px;
+        z-index: 7;
+        top: -63px;
+        right: 21px;
+    }
+    
+    .text_save{
+        position: relative;
+        width: auto;
+        height: auto;
+        left: 120px;
+        bottom: 2px;
+        
+    }
+    .text_discard{
+        position: relative;
+        width: auto;
+        height: auto;
+        left: 45px;
+        bottom: 2px;
+    }
+}
+
+
+@media (min-width: 518px) and (max-width: 575.98px) {
+    .container_profile {
+        
+        width: 88%;
+        top: 101px;
+        left: 25px;
+        
+    }
+
+    .svg_background {
+       
+        width: 200%;
+        right: 0px;
+    }
+
+    .body_icon {
+        top: 48%;      
+    }
+
+    .head_icon {
+        top: 34%;   
+    }
+
+    .btn_custom_profile {
+        width: 45%;
+        bottom: 23%;
+    }
+
+    .profile_form h1 {
+        font-size: 12px;
+    }
+
+    label {
+        font-size: 9px;
+        padding: 1px;
+    }
+
+    form input {
+        
+        width: 100%;
+        height: 2vh;
+        font-size: 10px;
+        
+    }
+
+    .username_control {
+        margin-left: 3vh;
+    }
+
+    .profile_form {
+        margin-top: -2vh;
+    }
+
+    .container_full_name {
+        gap: 3vh;
+        margin: 0 20px 0 0;
+    }
+
+    .button_control {
+        width: auto;
+        height: auto;
+        position: absolute;
+        display: flex;
+        bottom: -69px;
+        right: -48px;
+        left: -12px;
+        z-index: 3;
+        gap: 30px;
+    }
+
+    .button_control p {
+        position: relative;
+        color: white;
+        font-size: 10px;
+        z-index: 7;
+        top: -73px;
+        right: 10px;
+    }
+
+    .text_save{
+        position: relative;
+        width: auto;
+        height: auto;
+        left: 104px;
+        bottom: 2px;
+        
+    }
+    .text_discard{
+        position: relative;
+        width: auto;
+        height: auto;
+        left: 30px;
+        bottom: 2px;
+    }
+
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .container_profile {
+        
+        width: 88%;
+        top: 101px;
+        left: 25px;
+        
+    }
+
+    .svg_background {
+       
+        width: 200%;
+        right: 0px;
+    }
+
+    .body_icon {
+        top: 48%;      
+    }
+
+    .head_icon {
+        top: 34%;   
+    }
+
+    .btn_custom_profile {
+        width: 45%;
+        bottom: 23%;
+    }
+
+    .profile_form h1 {
+        font-size: 16px;
+    }
+
+    label {
+        font-size: 12px;
+        padding: 3px;
+    }
+
+    form input {
+        
+        width: 100%;
+        height: 20px;
+        font-size: 10px;
+        
+    }
+
+    .username_control {
+        margin-left: 3vh;
+    }
+
+    .profile_form {
+        margin-top: -2vh;
+        gap: 13px;
+    }
+
+    .container_full_name {
+        gap: 3vh;
+        margin: 0 12px 0 0;
+    }
+
+    .button_control {
+        width: auto;
+        height: auto;
+        position: absolute;
+        display: flex;
+        bottom: -140px;
+        right: -48px;
+        left: -12px;
+        z-index: 3;
+        gap: 6px;
+    }
+
+    .button_control p {
+        position: relative;
+        color: white;
+        font-size: 14px;
+        z-index: 7;
+        top: -94px;
+        right: 18px;
+    }
+
+    .text_save{
+        position: relative;
+        width: auto;
+        height: auto;
+        left: 120px;
+        bottom: 2px;
+        
+    }
+    .text_discard{
+        position: relative;
+        width: auto;
+        height: auto;
+        left: 45px;
+        bottom: 2px;
+    }
+    
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .container_profile {
+        
+        width: 88%;
+        top: 101px;
+        left: 25px;
+        
+    }
+
+    .svg_background {
+       
+        width: 200%;
+        right: 0px;
+    }
+
+    .body_icon {
+        top: 48%;      
+    }
+
+    .head_icon {
+        top: 30%;   
+    }
+
+    .btn_custom_profile {
+        width: 45%;
+        bottom: 17%;
+    }
+
+    .profile_form h1 {
+        font-size: 26px;
+    }
+
+    label {
+        font-size: 16px;
+        padding: 3px;
+    }
+
+    form input {
+       
+        height: 30px;
+        font-size: 14px;
+    }
+
+    .username_control {
+        margin-left: 3vh;
+    }
+
+    .profile_form {
+        margin-top: -2vh;
+        gap: 13px;
+    }
+
+    .container_full_name {
+        gap: 3vh;
+        margin: 0 12px 0 0;
+    }
+
+    .button_control {
+        width: auto;
+        height: auto;
+        position: absolute;
+        display: flex;
+        bottom: -138px;
+        right: -48px;
+        left: -12px;
+        z-index: 3;
+        gap: 6px;
+    }
+
+    .button_control p {
+        position: relative;
+        color: white;
+        font-size: 16px;
+        z-index: 7;
+        top: -103px;
+        right: 17px;
+    }
+
+    .text_save{
+        position: relative;
+        width: auto;
+        height: auto;
+        left: 130px;
+        bottom: 12px;
+        
+    }
+    .text_discard{
+        position: relative;
+        width: auto;
+        height: auto;
+        left: 50px;
+        bottom: 12px;
+    }
+}
+
+@media only screen and  (992px <= width <= 1099.98px) {
+    .container_profile {
+        
+        width: 88%;
+        top: 101px;
+        left: 25px;
+        
+    }
+
+    .svg_background {
+       
+        width: 200%;
+        right: 0px;
+    }
+
+    .body_icon {
+        top: 48%;      
+    }
+
+    .head_icon {
+        top: 30%;   
+    }
+
+    .btn_custom_profile {
+        width: 45%;
+        bottom: 17%;
+    }
+
+    .profile_form h1 {
+        font-size: 26px;
+    }
+
+    label {
+        font-size: 16px;
+        padding: 3px;
+    }
+
+    form input {
+       
+        height: 30px;
+        font-size: 14px;
+    }
+
+    .username_control {
+        margin-left: 3vh;
+    }
+
+    .profile_form {
+        margin-top: -2vh;
+        gap: 13px;
+    }
+
+    .container_full_name {
+        gap: 3vh;
+        margin: 0 12px 0 0;
+    }
+
+    .button_control {
+        width: auto;
+        height: auto;
+        position: absolute;
+        display: flex;
+        bottom: -138px;
+        right: -48px;
+        left: -12px;
+        z-index: 3;
+        gap: 6px;
+    }
+
+    .button_control p {
+        position: relative;
+        color: white;
+        font-size: 16px;
+        z-index: 7;
+        top: -103px;
+        right: 17px;
+    }
+
+    .text_save{
+        position: relative;
+        width: auto;
+        height: auto;
+        left: 130px;
+        bottom: 12px;
+        
+    }
+    .text_discard{
+        position: relative;
+        width: auto;
+        height: auto;
+        left: 50px;
+        bottom: 12px;
+    }
+}
+
+@media only screen and (1100px <= width <= 1439.98px) {
+    .container_profile {
+        
+        width: 88%;
+        top: 101px;
+        left: 25px;
+        
+    }
+
+    .svg_background {
+       
+        width: 200%;
+        right: 0px;
+    }
+
+    .body_icon {
+        top: 46%;      
+    }
+
+    .head_icon {
+        top: 23%;   
+    }
+
+    .btn_custom_profile {
+        width: 45%;
+        bottom: 10%;
+    }
+
+    .profile_form h1 {
+        font-size: 26px;
+    }
+
+    label {
+        font-size: 16px;
+        padding: 3px;
+    }
+
+    form input {
+       
+        height: 30px;
+        font-size: 14px;
+    }
+
+    .username_control {
+        margin-left: 3vh;
+    }
+
+    .profile_form {
+        margin-top: -2vh;
+        gap: 13px;
+    }
+
+    .container_full_name {
+        gap: 3vh;
+        margin: 0 12px 0 0;
+    }
+
+    .button_control {
+        width: auto;
+        height: auto;
+        position: absolute;
+        display: flex;
+        bottom: -246px;
+        right: -48px;
+        left: -12px;
+        z-index: 3;
+        gap: 6px;
+    }
+
+    .button_control p {
+        position: relative;
+        color: white;
+        font-size: 20px;
+        z-index: 7;
+        top: -132px;
+        right: 10px;
+    }
+
+    .text_save{
+        position: relative;
+        width: auto;
+        height: auto;
+        left: 130px;
+        bottom: 12px;
+        
+    }
+    .text_discard{
+        position: relative;
+        width: auto;
+        height: auto;
+        left: 50px;
+        bottom: 12px;
+    }
+}
+
+@media only screen and (1440px <= width <= 1500.98px) {
+    .btn_custom_profile {
+        width: 38%;
+        bottom: 9vh;
+        position: absolute;
+        z-index: 4;
+    } 
+
+    .head_icon {
+        width: 50%;
+        z-index: 3;
+        top: 19vh;
+        position: absolute;
+    }
+
+    .button_control {
+        width: auto;
+        height: auto;
+        position: absolute;
+        display: flex;
+        bottom: -24vh;
+        right: -48vh;
+        z-index: 3;
+    }
+
+
+}
+
+@media only screen and (2540px <= width <= 4560px) {
+    
+    .btn_custom_profile {
+        width: 37%;
+        bottom: 6vh;
+        position: absolute;
+        z-index: 4;
+    }
+
+    .profile_form h1 {
+        text-align: center;
+        font-size: 70px;
+    }
+
+    label {
+        font-size: 45px;
+        padding: 5px;
+    }
+
+    form input {
+        
+        font-size: 44px;
+        
+    }
+
+    .button_control {
+       
+        bottom: -15vh;
+        right: -44vh;
+        
+    }
+
+    .button_control {
+        bottom: -21vh;
+        right: -44vh;
+        gap: 160px;
+    }
+
+    .btn_form_save {
+        width: 100%;
+        position: relative;
+        left: 70px;
+    }
+
+    .btn_form_discard {
+        width: 100%;
+        position: relative;
+    }
+
+    .button_control p {
+        position: relative;
+        color: white;
+        font-size: 38px;
+        z-index: 7;
+        top: -251px;
+    }
+}
+
+
+
+
+@media (min-height: 200px) and (max-height: 500px) {
+    .head_icon {
+        top: 31%;
+    }
+
+
+    .btn_custom_profile {
+        width: 45%;
+        bottom: 20vh;
+    }
+
+    .button_control {
+        
+        bottom: -62px;
+       
+    }
+  }
+
+
+ 
