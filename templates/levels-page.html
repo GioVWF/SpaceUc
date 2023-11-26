@@ -28,9 +28,21 @@
             <div class="svg_container">
                 {{svg|safe}}
                 <div class="lessons-container">
+                    {% if progress >= limit.1 %}
                     <div class="lesson"><a href="{% url 'question' level first %}">Lección 1</a></div>
+                    {% else %}
+                    <div class="lesson-inactive"><p class="p-inactive">Lección 1</p></div>
+                    {% endif %}
+                    {% if progress >= limit.2 %}
                     <div class="lesson"><a href="{% url 'question' level second %}">Lección 2</a></div>
+                    {% else %}
+                    <div class="lesson-inactive"><p class="p-inactive">Lección 2</p></div>
+                    {% endif %}
+                    {% if progress >= limit.3 %}
                     <div class="lesson"><a href="{% url 'question' level third %}">Lección 3</a></div>
+                    {% else %}
+                    <div class="lesson-inactive"><p class="p-inactive">Lección 3</p></div>
+                    {% endif %}
                 </div>
             </div>
         </section>

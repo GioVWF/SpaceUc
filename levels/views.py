@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from db_spaceuc.models import Level, Question, Answer, User_ours
 from . models import Timer
 from django.http import JsonResponse
@@ -86,23 +86,41 @@ def level_question(request, level,id):
     return render(request, 'level-question.html', question_context)
 
 def levels(request, level):
-    level_info = Level.objects.filter(id_level = level)
-    questions_info = Question.objects.filter(level_id_level = level)
+    if request.user.is_authenticated:
+        user_ours = User_ours.objects.get(user=request.user)
+        
+    level_getter =  'Nivel ' + str(level)
+        
+    progress = user_ours.progress_user    
+    level_info = Level.objects.filter(name_level = level_getter)
+    questions_info = Question.objects.filter(level_id_level = level_info[0].id_level)
     
     level_svg = level_info[0].svg_level
-    level_id = level_info[0].id_level
     level_name = level_info[0].name_level
     first_question_id = questions_info[0].id_question
     second_question_id = questions_info[1].id_question
     third_question_id = questions_info[2].id_question
     
+    limitator = {
+        1: { 1: 0, 2: 1,3: 2  },
+        2: { 1: 3, 2: 4,3: 5  },
+        3: { 1: 6, 2: 7,3: 8  },
+        4: { 1: 9, 2: 10,3: 11  },
+        5: { 1: 12, 2: 13,3: 14  }
+    }
+    
+    if level in limitator:
+        limit = limitator[level]
+    
     question_context = {
-        'level': level_id,
+        'level': level,
         'subtitle': level_name,
         'first': first_question_id,
         'second': second_question_id,
         'third': third_question_id,
-        'svg': level_svg
+        'svg': level_svg,
+        'progress': progress,
+        'limit': limit
     }
 
     return render(request, 'levels-page.html', question_context)

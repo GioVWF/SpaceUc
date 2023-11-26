@@ -21,26 +21,37 @@ def home(request):
     }
     return render(request, 'home.html', context)
 
+# @login_required(login_url='/users/')
 def game(request):
+    if request.user.is_authenticated:
+        user_ours = User_ours.objects.get(user=request.user)
+        
     level_info = Level.objects.all().order_by('name_level')
     users = User_ours.objects.all()
     icon = Icon.objects.all()
     perIcon = PerIcon.objects.all()
+    progress = user_ours.progress_user
     
-    level_1 = level_info[0].id_level
-    level_2 = level_info[1].id_level
-    # level_3 = level_info[2].id_level
-    # level_4 = level_info[3].id_level
-    # level_5 = level_info[4].id_level
+   
+    
+    level_1 = (level_info[0].name_level)[-1:] 
+    level_2 = (level_info[1].name_level)[-1:] 
+    level_3 = (level_info[2].name_level)[-1:] 
+    level_4 = (level_info[3].name_level)[-1:] 
+    level_5 = (level_info[4].name_level)[-1:] 
+    
     
     context = {
         'users': users,
         'icon' : icon,
         'perIcon' : perIcon,
-        'level_1': level_1,
-        'level_2': level_2
+        'level_1': int(level_1),
+        'level_2': int(level_2),
+        'level_3': int(level_3),
+        'level_4': int(level_4),
+        'level_5': int(level_5),
+        'progress': progress
     }
-    
     
     return render(request, 'game.html', context)
 
@@ -75,7 +86,6 @@ def levels_info(request):
     perIcon = PerIcon.objects.all()
     level_description = Level.objects.all().order_by('name_level')
     
-    
     context = {
         'users': users,
         'icon' : icon,
@@ -86,6 +96,7 @@ def levels_info(request):
         'info_4' : level_description[3].description_level,
         'info_5' : level_description[4].description_level
     }
+    
     return render(request, 'levels-info.html', context)
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
