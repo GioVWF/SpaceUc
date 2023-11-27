@@ -2,7 +2,7 @@ $(document).ready(function(){
     let timerInterval;
     let lesson = $("#level-info").data("lesson");
     let timerUrl = $("#Counter").data("timer-url");
-    let progress = $("#Counter").data("progress"); 
+    let progress = $("#Counter").data("progress");
     let limitator = $("#Counter").data("limitator");
     let temp;
     let crono;
@@ -53,7 +53,7 @@ $(document).ready(function(){
             data: {
                 'csrfmiddlewaretoken': csrfToken,
                 'points': points,
-                'progress': progress
+                'progress': progress,
             },
             success: function() {
                 clearInterval(timerInterval)

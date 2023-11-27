@@ -11,6 +11,12 @@ body {
     overflow-y: auto;
 }
 
+h2 {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
 main {
     position: absolute;
     bottom: 0;

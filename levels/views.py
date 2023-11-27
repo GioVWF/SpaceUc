@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from db_spaceuc.models import Level, Question, Answer, User_ours
+from db_spaceuc.models import Level, Question, Answer, User_ours, FollowUp
 from . models import Timer
 from django.http import JsonResponse
 from django.contrib.auth.models import User
@@ -82,7 +82,7 @@ def level_question(request, level,id):
         'limitator': limitator,
         'next': limitator+1,
         'date': date_format,
-        'day': day
+        'day': day,
     }
 
     redirect_limit = {
@@ -145,24 +145,23 @@ def questionTimer(request):
     if request.user.is_authenticated:
         user_ours = User_ours.objects.get(user=request.user)
     count = Timer.objects.first()
+    
     if request.method == 'POST':
         pointsToAdd = int(request.POST.get('points'))
         progressToSet = int(request.POST.get('progress'))
+        
+        follow_up = FollowUp.objects.get(id_follow = user_ours.follow_up_id_follow.id_follow)
+        
+        follow_up.last_date_follow = datetime.now()
+        
         user_ours.point_user += pointsToAdd
         user_ours.progress_user = progressToSet
         user_ours.save()
+        follow_up.save()
         return JsonResponse({'success': True})
     
     minutes = count.time_left // 60;
     seconds = count.time_left % 60;
     
     crono = f"{minutes}:{seconds:02d}"
-    #     count = User_ours.objects.first()
-    #     seconds =  120 - count.time_left 
-    #     count.time_left = 120 
-    #     count.save()
-    #     return JsonResponse({'success': True, 'seconds':seconds})
-    # if count.time_left >= 0:
-    #     count.time_left -=1
-    #     count.save()
     return JsonResponse({'live_counter':count.time_left, 'cronometer':crono})
