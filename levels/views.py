@@ -85,6 +85,16 @@ def level_question(request, level,id):
         'day': day
     }
 
+    redirect_limit = {
+        1: { 1: 0, 2: 1,3: 2  },
+        2: { 1: 3, 2: 4,3: 5  },
+        3: { 1: 6, 2: 7,3: 8  },
+        4: { 1: 9, 2: 10,3: 11  },
+        5: { 1: 12, 2: 13,3: 14  }
+    }
+    
+    if progress < redirect_limit[level][lesson_number]:
+        return redirect('game_page')
     return render(request, 'level-question.html', question_context)
 
 @login_required(login_url='/users/')
@@ -126,6 +136,9 @@ def levels(request, level):
         'limit': limit
     }
 
+    if progress < limit[1]:
+        return redirect('game_page')
+    
     return render(request, 'levels-page.html', question_context)
 
 def questionTimer(request):
