@@ -8,6 +8,7 @@ from db_spaceuc.models import Level
 from django.db.models import Q
 from django.contrib import messages
 from django.template import RequestContext
+from django.contrib.auth.decorators import login_required
 
 def home(request):
     users = User_ours.objects.all()
@@ -21,7 +22,7 @@ def home(request):
     }
     return render(request, 'home.html', context)
 
-# @login_required(login_url='/users/')
+@login_required(login_url='/users/')
 def game(request):
     if request.user.is_authenticated:
         user_ours = User_ours.objects.get(user=request.user)
@@ -125,6 +126,7 @@ def resources_page(request):
     return render(request, 'resources-page.html', context)
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+@login_required(login_url='/users/')
 def podium(request):
 
     users = User_ours.objects.all()

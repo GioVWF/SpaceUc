@@ -5,7 +5,9 @@ from django.http import JsonResponse
 from django.contrib.auth.models import User
 import random
 from datetime import datetime
+from django.contrib.auth.decorators import login_required
 
+@login_required(login_url='/users/')
 def level_question(request, level,id):
     if request.user.is_authenticated:
         user_ours = User_ours.objects.get(user=request.user)
@@ -85,6 +87,7 @@ def level_question(request, level,id):
 
     return render(request, 'level-question.html', question_context)
 
+@login_required(login_url='/users/')
 def levels(request, level):
     if request.user.is_authenticated:
         user_ours = User_ours.objects.get(user=request.user)

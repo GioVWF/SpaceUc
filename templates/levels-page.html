@@ -12,17 +12,15 @@
     <div class="stars"></div>
     <main>
         <section>
-            <h1>Bienvenido, astronauta</h1>
+            <h1>Bienvenido astronauta</h1>
             <p class="subtitle">{{subtitle}}</p>
-            <div class="go-back">
-                <a href="{% url 'game_page' %}">
+            <a href="{% url 'game_page' %}" class="go-back">
                     <svg viewBox="0 0 105 122" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 61L105 0.378265L90 61L105 121.622L0 61Z" fill="#E86030"/>
                         <path d="M13 60.9803L98 12L74.5 60.9803L98 109L13 60.9803Z" fill="#984223"/>
                     </svg>
                     <p class="redir-btn">Volver</p>
-                </a>
-            </div>
+            </a>
         </section>
         <section class="level_content"> 
             <div class="svg_container">
