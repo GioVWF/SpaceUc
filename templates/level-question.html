@@ -13,7 +13,7 @@
         <main>
             <div class="estrellas"></div>
             <section>
-                <h1>Bienvenido, astronauta</h1>
+                <h1 class="welcome">Bienvenido astronauta</h1>
                 <p id="level-info" data-lesson="{{lesson}}" class="subtitle">Nivel {{level}} - Lección {{lesson}}</p>
                 <div class="go-back">
                     <a href="{% url 'levels' level %}">
@@ -53,7 +53,7 @@
                         </div>
                         <div id="content">
                             
-                            <h1 class="question-title">{{title}}</h1>
+                            <h2 class="question-title">{{title}}</h2>
                             <p class="question-content ">{{content}}</p>
 
                             <div class="controls">
@@ -116,7 +116,7 @@
                         <path d="M105 60.6218L0 121.244L15 60.6218L0 0L105 60.6218Z" fill="#E86030"/>
                         <path d="M92.0239 60.7682L7.02393 109.749L30.5239 60.7682L7.02393 12.7485L92.0239 60.7682Z" fill="#984223"/>
                     </svg>
-                    <p class="redir-btn">Siguiente parte</p>
+                    <p class="redir-btn">Siguiente</p>
                 </a>
             </div>
         </main>

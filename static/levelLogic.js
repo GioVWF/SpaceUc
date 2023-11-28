@@ -40,7 +40,7 @@ $(document).ready(function(){
         }
 
         if (temp == 0){
-            $('.counter').empty().append('00:00')
+            $('.counter').empty().append('0:00')
         }
     };
     
