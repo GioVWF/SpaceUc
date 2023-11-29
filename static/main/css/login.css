@@ -45,6 +45,7 @@ main{
     position: absolute;
     width: 100%;
     height: 100%;
+    min-height: 360px;
 }
 
 .login_content{
@@ -76,7 +77,8 @@ button{
 .input_div{
  
     position: relative;
-    padding: 5px;
+    padding: 10px;
+    height: 35px;
 }
 
 input{
@@ -84,7 +86,7 @@ input{
     background-color: #4D5C7D; 
     border-radius: 1.5vh; 
     width: 80%;
-    height: 5vh;
+    height: 100%;
     color: white; 
     border: none;
     padding: 5px; 
@@ -105,9 +107,9 @@ label{
 
     position: absolute;
     z-index: 3;
-    top: 2.7vh;
-    left: 6.2vh;
+    bottom: 14px;
     font-size: large;
+    margin-left: 10px;
     
     
     
@@ -260,19 +262,22 @@ a{
 
     .control_form_container {
         display: flex;
-        justify-content: center;
         position: relative;
         width: 100%;
-        height: 80%;
+        height: 60%;
+        justify-content: center;
     }
 
     .login_content {
-        position: absolute;
+        position: relative;
         width: 89%;
-        height: auto;
+        height: 100%;
         text-align: center;
-        top: 13vh;
+        display: flex;
+        top: 0px;
         color: white;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .login_content h1 {
@@ -286,8 +291,10 @@ a{
         
     }
 
+    
+
     .control_button {
-        margin: 3vh 0 0 0;
+        margin: 20px 0 0 0;
     }
 
     .btn_submit {
@@ -302,7 +309,7 @@ a{
         justify-content: center;
         max-width: 81%;
         height: 50%;
-        margin: 20vh auto;
+        margin: 200px auto;
         padding: 20px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         position: relative;
@@ -321,7 +328,7 @@ a{
     }
 
     .modal-content-bg .title_modal {
-        font-size: 3vh;
+        font-size: 20px;
         color: white;
         padding: 0 5% 0 5%;
         margin: 0;
@@ -333,8 +340,28 @@ a{
         padding: 0 5% 0 5%;
     }
 
+    
+
+    .error_sub_text {
+        font-size: 10px;
+        font-weight: bold;
+    }
+
+    .error_text {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .alert_msg {
+        width: 65vw;
+        
+    }
+
+    
     .error_msg {
-       
+        
+        position: absolute;
+        top: -111px;
         background-color: rgba(255, 0, 0, 0.6);
         border-radius: 10px;
         padding: 1vh;
@@ -352,8 +379,16 @@ a{
     }
 
     .alert_msg {
-        width: 65vw;
-        
+        width: 50%;
+        height: 10%;
+        background-color: rgb(255, 190, 190);
+        transition: opacity 1s;
+        border-radius: 10px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
     }
 
 }
@@ -368,19 +403,28 @@ a{
 
     .control_form_container {
         display: flex;
-        justify-content: center;
         position: relative;
         width: 100%;
-        height: 80%;
+        height: 60%;
+        justify-content: center;
     }
-
-    .login_content {
+    .svg_form_control {
         position: absolute;
+        width: 100%;
+        height: 100%;
+        min-height: 400px;
+    }
+    .login_content {
+        position: relative;
         width: 89%;
-        height: auto;
+        min-height: 400px;
+        height: 100%;
         text-align: center;
-        top: 20.5vh;
+        display: flex;
+        top: 0px;
         color: white;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .login_content h1 {
@@ -395,7 +439,7 @@ a{
     }
 
     .control_button {
-        margin: 3vh 0 0 0;
+        margin: 20px 0 0 0;
     }
 
     .btn_submit {
@@ -410,7 +454,7 @@ a{
         justify-content: center;
         max-width: 81%;
         height: 50%;
-        margin: 20vh auto;
+        margin: 200px auto;
         padding: 20px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         position: relative;
@@ -429,7 +473,7 @@ a{
     }
 
     .modal-content-bg .title_modal {
-        font-size: 3vh;
+        font-size: 20px;
         color: white;
         padding: 0 5% 0 5%;
         margin: 0;
@@ -462,6 +506,37 @@ a{
     .alert_msg {
         width: 65vw;
         
+    }
+
+    
+    .error_msg {
+        
+        position: absolute;
+        top: -107px;
+        width: auto;
+    }
+
+    .error_sub_text {
+        font-size: 10px;
+        font-weight: bold;
+    }
+
+    .error_text {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .alert_msg {
+        width: 50%;
+        height: 10%;
+        background-color: rgb(255, 190, 190);
+        transition: opacity 1s;
+        border-radius: 10px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
     }
 }
 
@@ -475,19 +550,28 @@ a{
 
     .control_form_container {
         display: flex;
-        justify-content: center;
         position: relative;
         width: 100%;
-        height: 80%;
+        height: 60%;
+        justify-content: center;
     }
-
-    .login_content {
+    .svg_form_control {
         position: absolute;
+        width: 100%;
+        height: 100%;
+        min-height: 500px;
+    }
+    .login_content {
+        position: relative;
         width: 89%;
-        height: auto;
+        min-height: 500px;
+        height: 100%;
         text-align: center;
-        top: 21vh;
+        display: flex;
+        top: 0px;
         color: white;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .login_content h1 {
@@ -502,7 +586,7 @@ a{
     }
 
     .control_button {
-        margin: 3vh 0 0 0;
+        margin: 20px 0 0 0;
     }
 
     .btn_submit {
@@ -517,7 +601,7 @@ a{
         justify-content: center;
         max-width: 81%;
         height: 50%;
-        margin: 20vh auto;
+        margin: 200px auto;
         padding: 20px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         position: relative;
@@ -536,7 +620,7 @@ a{
     }
 
     .modal-content-bg .title_modal {
-        font-size: 3vh;
+        font-size: 20px;
         color: white;
         padding: 0 5% 0 5%;
         margin: 0;
@@ -569,7 +653,38 @@ a{
     .alert_msg {
         width: 65vw;
         
-    }  
+    }
+
+    
+    .error_msg {
+        
+        position: absolute;
+        top: -107px;
+        width: auto;
+    }
+
+    .error_sub_text {
+        font-size: 10px;
+        font-weight: bold;
+    }
+
+    .error_text {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .alert_msg {
+        width: 50%;
+        height: 10%;
+        background-color: rgb(255, 190, 190);
+        transition: opacity 1s;
+        border-radius: 10px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+    }
 }
 
 @media (min-width: 461px) and (max-width: 517.98px){
@@ -582,19 +697,28 @@ a{
 
     .control_form_container {
         display: flex;
-        justify-content: center;
         position: relative;
         width: 100%;
-        height: 80%;
+        height: 60%;
+        justify-content: center;
     }
-
-    .login_content {
+    .svg_form_control {
         position: absolute;
-        width: 89%;
-        height: auto;
+        width: 100%;
+        height: 100%;
+        min-height: 400px;
+    }
+    .login_content {
+        position: relative;
+        width: 70%;
+        min-height: 400px;
+        height: 100%;
         text-align: center;
-        top: 17vh;
+        display: flex;
+        top: 0px;
         color: white;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .login_content h1 {
@@ -609,12 +733,12 @@ a{
     }
 
     .control_button {
-        margin: 3vh 0 0 0;
+        margin: 20px 0 0 0;
     }
 
     .btn_submit {
-        width: 90px;
-        height: 80px;
+        width: 65px;
+        height: 55px;
     }
 
     .modal-content {
@@ -624,7 +748,7 @@ a{
         justify-content: center;
         max-width: 81%;
         height: 50%;
-        margin: 20vh auto;
+        margin: 200px auto;
         padding: 20px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         position: relative;
@@ -643,7 +767,7 @@ a{
     }
 
     .modal-content-bg .title_modal {
-        font-size: 3vh;
+        font-size: 20px;
         color: white;
         padding: 0 5% 0 5%;
         margin: 0;
@@ -676,7 +800,38 @@ a{
     .alert_msg {
         width: 65vw;
         
-    }  
+    }
+
+    
+    .error_msg {
+        
+        position: absolute;
+        top: -107px;
+        width: auto;
+    }
+
+    .error_sub_text {
+        font-size: 10px;
+        font-weight: bold;
+    }
+
+    .error_text {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .alert_msg {
+        width: 50%;
+        height: 10%;
+        background-color: rgb(255, 190, 190);
+        transition: opacity 1s;
+        border-radius: 10px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+    }
 }
 
 
@@ -690,24 +845,33 @@ a{
 
     .control_form_container {
         display: flex;
-        justify-content: center;
         position: relative;
         width: 100%;
-        height: 80%;
+        height: 60%;
+        justify-content: center;
     }
-
-    .login_content {
+    .svg_form_control {
         position: absolute;
-        width: 89%;
-        height: auto;
+        width: 100%;
+        height: 100%;
+        min-height: 450px;
+    }
+    .login_content {
+        position: relative;
+        width: 70%;
+        min-height: 450px;
+        height: 100%;
         text-align: center;
-        top: 14vh;
+        display: flex;
+        top: 0px;
         color: white;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .login_content h1 {
         font-weight: 50;
-        font-size: 30px;
+        font-size: 22px;
     }
 
     .link_forgott {
@@ -717,12 +881,12 @@ a{
     }
 
     .control_button {
-        margin: 3vh 0 0 0;
+        margin: 20px 0 0 0;
     }
 
     .btn_submit {
-        width: 110px;
-        height: 100px;
+        width: 65px;
+        height: 55px;
     }
 
     .modal-content {
@@ -732,7 +896,7 @@ a{
         justify-content: center;
         max-width: 81%;
         height: 50%;
-        margin: 20vh auto;
+        margin: 200px auto;
         padding: 20px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         position: relative;
@@ -751,7 +915,7 @@ a{
     }
 
     .modal-content-bg .title_modal {
-        font-size: 3vh;
+        font-size: 20px;
         color: white;
         padding: 0 5% 0 5%;
         margin: 0;
@@ -784,7 +948,38 @@ a{
     .alert_msg {
         width: 65vw;
         
-    }  
+    }
+
+    
+    .error_msg {
+        
+        position: absolute;
+        top: -107px;
+        width: auto;
+    }
+
+    .error_sub_text {
+        font-size: 10px;
+        font-weight: bold;
+    }
+
+    .error_text {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .alert_msg {
+        width: 50%;
+        height: 10%;
+        background-color: rgb(255, 190, 190);
+        transition: opacity 1s;
+        border-radius: 10px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+    }
 
 }
 
@@ -798,24 +993,33 @@ a{
 
     .control_form_container {
         display: flex;
-        justify-content: center;
         position: relative;
         width: 100%;
         height: 80%;
+        justify-content: center;
     }
-
-    .login_content {
+    .svg_form_control {
         position: absolute;
-        width: 89%;
-        height: auto;
+        width: 100%;
+        height: 100%;
+        min-height: 450px;
+    }
+    .login_content {
+        position: relative;
+        width: 70vh;
+        min-height: 450px;
+        height: 100%;
         text-align: center;
-        top: 14vh;
+        display: flex;
+        top: 0px;
         color: white;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .login_content h1 {
         font-weight: 50;
-        font-size: 30px;
+        font-size: 22px;
     }
 
     .link_forgott {
@@ -825,12 +1029,12 @@ a{
     }
 
     .control_button {
-        margin: 3vh 0 0 0;
+        margin: 20px 0 0 0;
     }
 
     .btn_submit {
-        width: 110px;
-        height: 100px;
+        width: 65px;
+        height: 55px;
     }
 
     .modal-content {
@@ -840,7 +1044,7 @@ a{
         justify-content: center;
         max-width: 81%;
         height: 50%;
-        margin: 20vh auto;
+        margin: 200px auto;
         padding: 20px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         position: relative;
@@ -859,7 +1063,7 @@ a{
     }
 
     .modal-content-bg .title_modal {
-        font-size: 3vh;
+        font-size: 20px;
         color: white;
         padding: 0 5% 0 5%;
         margin: 0;
@@ -871,13 +1075,7 @@ a{
         padding: 0 5% 0 5%;
     }
 
-    .error_msg {
-       
-        background-color: rgba(255, 0, 0, 0.6);
-        border-radius: 10px;
-        padding: 1vh;
-        width: auto;
-    }
+    
 
     .error_sub_text {
         font-size: 10px;
@@ -892,21 +1090,48 @@ a{
     .alert_msg {
         width: 65vw;
         
-    }   
+    }
 
-    label {
+    
+    .error_msg {
+        
         position: absolute;
-        z-index: 3;
-        top: 2.7vh;
-        left: 8.2vh;
-        font-size: large;
+        top: -65px;
+        background-color: rgba(255, 0, 0, 0.6);
+        border-radius: 10px;
+        padding: 1vh;
+        width: 62vh;
+      
+    }
+
+    .error_sub_text {
+        font-size: 10px;
+        font-weight: bold;
+    }
+
+    .error_text {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .alert_msg {
+        width: 50%;
+        height: 10%;
+        background-color: rgb(255, 190, 190);
+        transition: opacity 1s;
+        border-radius: 10px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
     }
     
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
     .svg_background {
-        width: 148%;
+        width: 100%;
         height: 100%;
         position: absolute;
         right: -173px;
@@ -914,24 +1139,33 @@ a{
 
     .control_form_container {
         display: flex;
-        justify-content: center;
         position: relative;
         width: 100%;
         height: 80%;
+        justify-content: center;
     }
-
-    .login_content {
+    .svg_form_control {
         position: absolute;
-        width: 89%;
-        height: auto;
+        width: 100%;
+        height: 100%;
+        min-height: 450px;
+    }
+    .login_content {
+        position: relative;
+        width: 60vh;
+        min-height: 450px;
+        height: 100%;
         text-align: center;
-        top: 14vh;
+        display: flex;
+        top: 0px;
         color: white;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .login_content h1 {
         font-weight: 50;
-        font-size: 30px;
+        font-size: 4vh;
     }
 
     .link_forgott {
@@ -941,12 +1175,12 @@ a{
     }
 
     .control_button {
-        margin: 3vh 0 0 0;
+        margin: 20px 0 0 0;
     }
 
     .btn_submit {
-        width: 110px;
-        height: 100px;
+        width: 65px;
+        height: 55px;
     }
 
     .modal-content {
@@ -956,7 +1190,7 @@ a{
         justify-content: center;
         max-width: 81%;
         height: 50%;
-        margin: 20vh auto;
+        margin: 200px auto;
         padding: 20px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         position: relative;
@@ -975,7 +1209,7 @@ a{
     }
 
     .modal-content-bg .title_modal {
-        font-size: 3vh;
+        font-size: 20px;
         color: white;
         padding: 0 5% 0 5%;
         margin: 0;
@@ -987,13 +1221,7 @@ a{
         padding: 0 5% 0 5%;
     }
 
-    .error_msg {
-       
-        background-color: rgba(255, 0, 0, 0.6);
-        border-radius: 10px;
-        padding: 1vh;
-        width: auto;
-    }
+   
 
     .error_sub_text {
         font-size: 10px;
@@ -1008,81 +1236,453 @@ a{
     .alert_msg {
         width: 65vw;
         
-    }   
-
-    label {
-        position: absolute;
-        z-index: 3;
-        top: 2.7vh;
-        left: 23.2vh;
-        font-size: large;
     }
 
-    input {
-        position: relative;
-        background-color: #4D5C7D;
-        border-radius: 1.5vh;
-        width: 56%;
-        height: 5vh;
-        color: white;
-        border: none;
-        padding: 5px;
-        font-size: 16px;
-        transition: 0.2s;
+    
+    .error_msg {
+        
+        position: absolute;
+        top: -68px;
+        background-color: rgba(255, 0, 0, 0.6);
+        border-radius: 10px;
+        padding: 1vh;
+       
+        width: 57vh;
+       
+    }
+
+    .error_sub_text {
+        font-size: 10px;
+        font-weight: bold;
+    }
+
+    .error_text {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .alert_msg {
+        width: 50%;
+        height: 10%;
+        background-color: rgb(255, 190, 190);
+        transition: opacity 1s;
+        border-radius: 10px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
     }
 }
 
 @media only screen and  (992px <= width <= 1199.98px) {
-    .control_form_container {
-        display: flex;
-        justify-content: center;
-        position: relative;
-        width: 68.5%;
-        height: 80%;
+    .svg_background {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        right: -173px;
     }
 
-    label {
+    .control_form_container {
+        display: flex;
+        position: relative;
+        width: 100%;
+        height: 80%;
+        justify-content: center;
+    }
+    .svg_form_control {
         position: absolute;
-        z-index: 3;
-        top: 2.7vh;
-        left: 8.2vh;
-        font-size: large;
+        width: 100%;
+        height: 100%;
+        min-height: 450px;
+    }
+    .login_content {
+        position: relative;
+        width: 60vh;
+        min-height: 450px;
+        height: 80vh;
+        text-align: center;
+        display: flex;
+        top: 0px;
+        color: white;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .login_content h1 {
+        font-weight: 50;
+        font-size: 4vh;
+    }
+
+    .link_forgott {
+        
+        padding-right: 0vh; 
+        
+    }
+
+    .control_button {
+        margin: 20px 0 0 0;
+    }
+
+    .btn_submit {
+        width: 65px;
+        height: 55px;
+    }
+
+    .modal-content {
+        background-color: #454B78;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 81%;
+        height: 50%;
+        margin: 200px auto;
+        padding: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        position: relative;
+        clip-path: polygon(0 0, 91% 0, 100% 18%, 100% 100%, 5% 100%, 0 80%);
+    }
+
+    .modal-content-bg {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #6F7E9F;
+        height: 80%;
+        width: 80%;
+        margin: auto;
+    }
+
+    .modal-content-bg .title_modal {
+        font-size: 20px;
+        color: white;
+        padding: 0 5% 0 5%;
+        margin: 0;
+    }
+
+    .modal-content-bg p {
+        font-size: small;
+        color: white;
+        padding: 0 5% 0 5%;
+    }
+
+    
+
+    .error_sub_text {
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .error_text {
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .alert_msg {
+        width: 65vw;
+        
+    }
+
+    
+    .error_msg {
+        position: absolute;
+        top: 0;
+        width: 57vh;
+        
+        background-color: rgba(255, 0, 0, 0.6);
+        border-radius: 10px;
+        padding: 1vh;
+    }
+
+
+    
+
+    .alert_msg {
+        width: 50%;
+        height: 10%;
+        background-color: rgb(255, 190, 190);
+        transition: opacity 1s;
+        border-radius: 10px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
     }
 }
 
 @media only screen and (1200px <= width <= 1439.98px) {
-    .control_form_container {
-        display: flex;
-        justify-content: center;
-        position: relative;
-        width: 53.5%;
-        height: 80%;
+    .svg_background {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        right: -173px;
     }
 
-    label {
+    .control_form_container {
+        display: flex;
+        position: relative;
+        width: 100%;
+        height: 80%;
+        justify-content: center;
+    }
+    .svg_form_control {
         position: absolute;
-        z-index: 3;
-        top: 2.7vh;
-        left: 8.2vh;
-        font-size: large;
+        width: 100%;
+        height: 100%;
+        min-height: 450px;
+    }
+    .login_content {
+        position: relative;
+        width: 60vh;
+        min-height: 450px;
+        height: 80vh;
+        text-align: center;
+        display: flex;
+        top: 0px;
+        color: white;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .login_content h1 {
+        font-weight: 50;
+        font-size: 4vh;
+    }
+
+    .link_forgott {
+        
+        padding-right: 0vh; 
+        
+    }
+
+    .control_button {
+        margin: 20px 0 0 0;
+    }
+
+    .btn_submit {
+        width: 65px;
+        height: 55px;
+    }
+
+    .modal-content {
+        background-color: #454B78;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 81%;
+        height: 50%;
+        margin: 200px auto;
+        padding: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        position: relative;
+        clip-path: polygon(0 0, 91% 0, 100% 18%, 100% 100%, 5% 100%, 0 80%);
+    }
+
+    .modal-content-bg {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #6F7E9F;
+        height: 80%;
+        width: 80%;
+        margin: auto;
+    }
+
+    .modal-content-bg .title_modal {
+        font-size: 20px;
+        color: white;
+        padding: 0 5% 0 5%;
+        margin: 0;
+    }
+
+    .modal-content-bg p {
+        font-size: small;
+        color: white;
+        padding: 0 5% 0 5%;
+    }
+
+    
+
+    .error_sub_text {
+        font-size: 1.1vh;
+        font-weight: bold;
+    }
+
+    .error_text {
+        margin: 0;
+        font-size: 1.5vh;
+    }
+
+    .alert_msg {
+        width: 65vw;
+        
+    }
+
+    
+    .error_msg {
+        position: relative;
+        top: 0;
+        width: 50vh;
+        background-color: rgba(255, 0, 0, 0.6);
+        border-radius: 10px;
+        padding: 1vh;
+        margin: 0 auto;
+    }
+
+
+    
+
+    .alert_msg {
+        width: 50%;
+        height: 10%;
+        background-color: rgb(255, 190, 190);
+        transition: opacity 1s;
+        border-radius: 10px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
     }
 }
 
 @media only screen and (1440px <= width <= 1500.98px) {
-    .control_form_container {
-        display: flex;
-        justify-content: center;
-        position: relative;
-        width: 53.5%;
-        height: 80%;
+    .svg_background {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        right: -173px;
     }
 
-    label {
+    .control_form_container {
+        display: flex;
+        position: relative;
+        width: 100%;
+        height: 80%;
+        justify-content: center;
+    }
+    .svg_form_control {
         position: absolute;
-        z-index: 3;
-        top: 2.7vh;
-        left: 8.2vh;
-        font-size: large;
+        width: 100%;
+        height: 100%;
+        min-height: 450px;
+    }
+    .login_content {
+        position: relative;
+        width: 60vh;
+        min-height: 450px;
+        height: 80vh;
+        text-align: center;
+        display: flex;
+        top: 0px;
+        color: white;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .login_content h1 {
+        font-weight: 50;
+        font-size: 4vh;
+    }
+
+    .link_forgott {
+        
+        padding-right: 0vh; 
+        
+    }
+
+    .control_button {
+        margin: 20px 0 0 0;
+    }
+
+    .btn_submit {
+        width: 80px;
+        height: 80px;
+    }
+
+    .modal-content {
+        background-color: #454B78;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 81%;
+        height: 50%;
+        margin: 200px auto;
+        padding: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        position: relative;
+        clip-path: polygon(0 0, 91% 0, 100% 18%, 100% 100%, 5% 100%, 0 80%);
+    }
+
+    .modal-content-bg {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #6F7E9F;
+        height: 80%;
+        width: 80%;
+        margin: auto;
+    }
+
+    .modal-content-bg .title_modal {
+        font-size: 20px;
+        color: white;
+        padding: 0 5% 0 5%;
+        margin: 0;
+    }
+
+    .modal-content-bg p {
+        font-size: small;
+        color: white;
+        padding: 0 5% 0 5%;
+    }
+
+    
+
+    .error_sub_text {
+        font-size: 1.1vh;
+        font-weight: bold;
+    }
+
+    .error_text {
+        margin: 0;
+        font-size: 1.5vh;
+    }
+
+    .alert_msg {
+        width: 65vw;
+        
+    }
+
+    
+    .error_msg {
+        position: relative;
+        top: 0;
+        width: 50vh;
+        background-color: rgba(255, 0, 0, 0.6);
+        border-radius: 10px;
+        padding: 1vh;
+        margin: 0 auto;
+    }
+
+
+    
+
+    .alert_msg {
+        width: 50%;
+        height: 10%;
+        background-color: rgb(255, 190, 190);
+        transition: opacity 1s;
+        border-radius: 10px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
     }
 }
 
@@ -1154,6 +1754,26 @@ a{
     }
     input {
         font-size: 50px; 
+    }
+
+    .input_div {
+        position: relative;
+        padding: 10px;
+        height: 4.5vh;
+    }
+    .modal-content-bg p {
+        font-size: 2.3vh;
+        color: white;
+        padding: 0 5% 0 5%;
+    }
+    .close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 150px;
+        cursor: pointer;
+        color: #fff;
+        margin-top: -16px;
     }
 
 }
