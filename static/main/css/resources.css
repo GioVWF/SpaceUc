@@ -583,6 +583,10 @@ main {
         width: 200%;
         margin: 0 -190px;
     }
+    .svg_photo_nasa {
+        width: 500px;
+        height: 530px;
+    }
 }
 
 @media only screen and (1440px <= width <= 2000.98px) {
