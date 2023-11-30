@@ -512,21 +512,31 @@ select{
 
 
 @media (max-width: 417.98px){
-    .first_son { 
-        height: 27%;
+    main {
+        align-items: flex-end;
+        justify-content: center;
+    }
+    .first_son {
+        height: 95%;
+        margin: 10px;
+        background-color: rgb(0, 84, 136);
     }
 
     .students_container {
         margin: auto;
         font-size: 8px;
+        background: #013657;
     }
 
     .student_control_table {
         padding: 0px 10px;
     }
-    .filters_container {  
+    .filters_container {
         height: 10.1%;
-        gap: 28px;
+        gap: 11px;
+        background: #013657;
+        margin: auto;
+        width: 90%;
     }
     form{
         display: flex;
@@ -539,10 +549,10 @@ select{
         font-size: 8px;
     }
 
-    button[type = "submit"] { 
-        height: 8px;
-        width: 21px;
-        font-size: 7px;
+    button[type = "submit"] {
+        height: 11px;
+        width: 28px;
+        font-size: 6px;
     }
 
     select {
@@ -550,40 +560,804 @@ select{
         font-size: 7px;
         width: 47px;
     }
+
+    .control_buttons a {
+        width: 14px;
+        height: auto;
+    }
+
+    .svg_container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: none;
+       
+    }
+
+    .father_container {
+        background-color: rgb(0, 48, 78);
+        margin-top: 0%;
+        margin-bottom: 10px;
+    }
+
+    .container_text {
+        width: 93%;
+    }
+
+    .container_text p {  
+        font-size: 11px;
+    }
+
+    .svg_icon_container {   
+        width: 80%;
+    }
+
+    .modal-content {
+        background-color: #454B78;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 85%;
+        height: 50%;
+        
+    }
+
+    .btn_yes {
+        width: 90px;
+    }
+    .btn_no{
+        width: 90px;
+    }
+
+    .modal-content-bg-searcher p {
+        padding: 20px;
+        font-size: 18px;
+    }
 }
 
 
 @media (min-width: 418px) and (max-width: 460.98px){
-   
+    main {
+        align-items: flex-end;
+        justify-content: center;
+    }
+    .first_son {
+        height: 95%;
+        margin: 10px;
+        background-color: rgb(0, 84, 136);
+    }
+
+    .students_container {
+        margin: auto;
+        font-size: 8px;
+        background: #013657;
+    }
+
+    .student_control_table {
+        padding: 0px 10px;
+    }
+    .filters_container {
+        height: 10.1%;
+        gap: 11px;
+        background: #013657;
+        margin: auto;
+        width: 90%;
+    }
+    form{
+        display: flex;
+    }
+
+    input {
+        width: 35px;
+        height: 1px;
+        padding: 5px;
+        font-size: 8px;
+    }
+
+    button[type = "submit"] {
+        height: 11px;
+        width: 28px;
+        font-size: 6px;
+    }
+
+    select {
+        height: 11px;
+        font-size: 7px;
+        width: 47px;
+    }
+
+    .control_buttons a {
+        width: 14px;
+        height: auto;
+    }
+
+    .svg_container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: none;
+       
+    }
+
+    .father_container {
+        background-color: rgb(0, 48, 78);
+        margin-top: 0%;
+        margin-bottom: 10px;
+    }
+
+    .container_text {
+        width: 93%;
+    }
+
+    .container_text p {  
+        font-size: 11px;
+    }
+
+    .svg_icon_container {   
+        width: 80%;
+    }
+
+    .modal-content {
+        background-color: #454B78;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 85%;
+        height: 50%;
+        
+    }
+
+    .btn_yes {
+        width: 90px;
+    }
+    .btn_no{
+        width: 90px;
+    }
+
+    .modal-content-bg-searcher p {
+        padding: 20px;
+        font-size: 18px;
+    }
 }
 
 @media (min-width: 461px) and (max-width: 517.98px){
-    
+    main {
+        align-items: flex-end;
+        justify-content: center;
+    }
+    .first_son {
+        height: 95%;
+        margin: 10px;
+        background-color: rgb(0, 84, 136);
+    }
+
+    .students_container {
+        margin: auto;
+        font-size: 8px;
+        background: #013657;
+    }
+
+    .student_control_table {
+        padding: 0px 10px;
+    }
+    .filters_container {
+        height: 10.1%;
+        gap: 11px;
+        background: #013657;
+        margin: auto;
+        width: 90%;
+    }
+    form{
+        display: flex;
+    }
+
+    input {
+        width: 35px;
+        height: 1px;
+        padding: 5px;
+        font-size: 8px;
+    }
+
+    button[type = "submit"] {
+        height: 11px;
+        width: 28px;
+        font-size: 6px;
+    }
+
+    select {
+        height: 11px;
+        font-size: 7px;
+        width: 47px;
+    }
+
+    .control_buttons a {
+        width: 14px;
+        height: auto;
+    }
+
+    .svg_container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: none;
+       
+    }
+
+    .father_container {
+        background-color: rgb(0, 48, 78);
+        margin-top: 0%;
+        margin-bottom: 10px;
+    }
+
+    .container_text {
+        width: 93%;
+    }
+
+    .container_text p {  
+        font-size: 11px;
+    }
+
+    .svg_icon_container {   
+        width: 80%;
+    }
+
+    .modal-content {
+        background-color: #454B78;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 85%;
+        height: 50%;
+        
+    }
+
+    .btn_yes {
+        width: 90px;
+    }
+    .btn_no{
+        width: 90px;
+    }
+
+    .modal-content-bg-searcher p {
+        padding: 20px;
+        font-size: 18px;
+    }
 }
 
 
-@media (min-width: 518px) and (max-width: 575.98px) {
-    
+@media (min-width: 518px) and (max-width: 685.98px) {
+    main {
+        align-items: flex-end;
+        justify-content: center;
+    }
+    .first_son {
+        height: 95%;
+        margin: 10px;
+        background-color: rgb(0, 84, 136);
+    }
+
+    .students_container {
+        margin: auto;
+        font-size: 8px;
+        background: #013657;
+    }
+
+    .student_control_table {
+        padding: 0px 10px;
+    }
+    .filters_container {
+        height: 10.1%;
+        gap: 11px;
+        background: #013657;
+        margin: auto;
+        width: 90%;
+    }
+    form{
+        display: flex;
+    }
+
+    input {
+        width: 35px;
+        height: 1px;
+        padding: 5px;
+        font-size: 8px;
+    }
+
+    button[type = "submit"] {
+        height: 11px;
+        width: 28px;
+        font-size: 6px;
+    }
+
+    select {
+        height: 11px;
+        font-size: 7px;
+        width: 47px;
+    }
+
+    .control_buttons a {
+        width: 14px;
+        height: auto;
+    }
+
+    .svg_container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: none;
+       
+    }
+
+    .father_container {
+        background-color: rgb(0, 48, 78);
+        margin-top: 0%;
+        margin-bottom: 10px;
+    }
+
+    .container_text {
+        width: 93%;
+    }
+
+    .container_text p {  
+        font-size: 11px;
+    }
+
+    .svg_icon_container {   
+        width: 80%;
+    }
+
+    .modal-content {
+        background-color: #454B78;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 85%;
+        height: 50%;
+        
+    }
+
+    .btn_yes {
+        width: 90px;
+    }
+    .btn_no{
+        width: 90px;
+    }
+
+    .modal-content-bg-searcher p {
+        padding: 20px;
+        font-size: 18px;
+    }
 
 }
 
-@media (min-width: 576px) and (max-width: 767.98px) {
-    
+@media (min-width: 686px) and (max-width: 991.98px) {
+    main {
+        align-items: flex-end;
+        justify-content: center;
+    }
+    .first_son {
+        height: 95%;
+        margin: 10px;
+        background-color: rgb(0, 84, 136);
+    }
+
+    .students_container {
+        margin: auto;
+        font-size: 8px;
+        background: #013657;
+    }
+
+    .student_control_table {
+        padding: 0px 10px;
+    }
+    .filters_container {
+        height: 10.1%;
+        gap: 59px;
+        background: #013657;
+        margin: auto;
+        width: 90%;
+    }
+    form{
+        display: flex;
+    }
+
+    input {
+        width: 77px;
+        height: 10px;
+        padding: 5px;
+        font-size: 8px;
+    }
+
+    button[type = "submit"] {
+        height: 20px;
+        width: 41px;
+        font-size: 10px;
+    }
+
+    select {
+        height: 20px;
+        font-size: 7px;
+        width: 79px;
+    }
+
+    .control_buttons a {
+        width: 14px;
+        height: auto;
+    }
+
+    .svg_container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: none;
+       
+    }
+
+    .father_container {
+        background-color: rgb(0, 48, 78);
+        margin-top: 0%;
+        margin-bottom: 10px;
+    }
+
+    .container_text {
+        width: 93%;
+    }
+
+    .container_text p {  
+        font-size: 11px;
+    }
+
+    .svg_icon_container {   
+        width: 80%;
+    }
+
+    .modal-content {
+        background-color: #454B78;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 85%;
+        height: 50%;
+        
+    }
+
+    .btn_yes {
+        width: 90px;
+    }
+    .btn_no{
+        width: 90px;
+    }
+
+    .modal-content-bg-searcher p {
+        padding: 20px;
+        font-size: 18px;
+    }
 }
 
 @media only screen and  (992px <= width <= 1199.98px) {
-    
+    main {
+        align-items: flex-end;
+        justify-content: center;
+    }
+    .first_son {
+        height: 95%;
+        margin: 10px;
+        background-color: rgb(0, 84, 136);
+    }
+
+    .students_container {
+        margin: auto;
+        font-size: 8px;
+        background: #013657;
+    }
+
+    .student_control_table {
+        padding: 0px 10px;
+    }
+    .filters_container {
+        height: 10.1%;
+        gap: 120px;
+        background: #013657;
+        margin: auto;
+        width: 90%;
+    }
+    form {
+        display: flex;
+        gap: 8px;
+        margin-left: 10px;
+    }
+
+    input {
+        width: 110px;
+        height: 20px;
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    button[type = "submit"] {
+        height: 30px;
+        width: 47px;
+        font-size: 10px;
+    }
+
+    select {
+        height: 30px;
+        font-size: 12px;
+        width: 117px;
+        margin-right: 10px;
+    }
+
+    .control_buttons a {
+        width: 20px;
+        height: auto;
+    }
+
+    .svg_container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: none;
+       
+    }
+
+    .father_container {
+        background-color: rgb(0, 48, 78);
+        margin-top: 0%;
+        margin-bottom: 10px;
+    }
+
+    .container_text {
+        width: 93%;
+    }
+
+    .container_text p {  
+        font-size: 11px;
+    }
+
+    .svg_icon_container {   
+        width: 80%;
+    }
+
+    .modal-content {
+        background-color: #454B78;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 85%;
+        height: 50%;
+        
+    }
+
+    .btn_yes {
+        width: 90px;
+    }
+    .btn_no{
+        width: 90px;
+    }
+
+    .modal-content-bg-searcher p {
+        padding: 20px;
+        font-size: 18px;
+    }
+
+    table {
+        
+        font-size: 11px;
+    }
 }
 
 @media only screen and (1200px <= width <= 1439.98px) {
-    
+    .first_son {
+        position: relative;
+        width: 49%;
+        height: 65%;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .control_buttons a {
+        width: 40px;
+        height: auto;
+    }
+
+    .filters_container{
+        margin-bottom: 4.5vw;
+        gap: 139px;
+    }
+
+    form{
+        display: flex;
+    }
+
+    .svg_container {
+      
+        min-height: 600px;
+    }
+
+    .second_son {
+        position: relative;
+        display: flex;
+        width: 50%;
+        height: 100%;
+        z-index: 2;
+        justify-content: center;
+        align-items: flex-end;
+        margin-bottom: 15px;
+    }
+
+    .specific_student {
+        width: 77.2%;
+        height: 83.8%;
+        margin: 0 0 2.7vh 0.6vh;
+    }
 }
 
 @media only screen and (1440px <= width <= 2000.98px) {
     
 }
 
-@media only screen and (2540px <= width <= 4560px) {
+@media only screen and (3740px <= width <= 4560px) {
+    .first_son {
+        position: relative;
+        width: 50%;
+        height: 91%;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    input {
+        position: relative;
+        background-color: #4D5C7D;
+        border-radius: 1.5vh;
+        width: 10vw;
+        height: 3vh;
+        color: white;
+        border: none;
+        padding: 5px;
+        font-size: 30px;
+        transition: 0.2s;
+        display: inline;
+    }
+
+    button[type = "submit"] {
+        background-color: rgb(152, 66, 35);
+        border: none;
+        outline: none;
+        transition: background-color,color 0.3s ease;
+        border-radius: 10px;
+        height: 3vh;
+        width: 3vw;
+        font-size: 30px;
+    }
+
+    form {
+        display: flex;
+        gap: 20px;
+    }
+
+    select {
+        border: none;
+        outline: none;
+        background-color: #4D5C7D;
+        color: white;
+        border-radius: 10px;
+        height: 3vh;
+        width: 8vw;
+        font-size: 16px;
+    }
+
+
+    table {
+        color: white;
+        width: 95%;
+        height: 100%;
+        border-collapse: collapse;
+        margin: auto;
+        font-size: 28px;
+    }
+
+    .control_buttons a {
+        width: 60px;
+        height: auto;
+    }
+
+    .container_text p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 40px;
+        margin: 1vh 1vh 1vh 1vh;
+        padding: .3vh;
+        background-color: #0081D0;
+        width: 100%;
+        height: auto;
+    }
+
+    .modal-content-bg-searcher p {
+        padding: 20px;
+        font-size: 65px;
+    }
+
+    .btn_no {
+        appearance: button;
+        background-color: #ff0000;
+        border: solid transparent;
+        border-width: 0 0 4px;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        cursor: pointer;
+        display: inline-block;
+        font-family: din-round,sans-serif;
+        font-size: 35px;
+        font-weight: 700;
+        letter-spacing: .8px;
+        line-height: 20px;
+        margin: 25px 0 0 0;
+        outline: none;
+        overflow: visible;
+        padding: 13px 16px;
+        text-align: center;
+        text-transform: uppercase;
+        touch-action: manipulation;
+        transform: translateZ(0);
+        transition: filter .2s;
+        user-select: none;
+        -webkit-user-select: none;
+        vertical-align: middle;
+        white-space: nowrap;
+        width: 300px;
+        height: 90px;
+    }
+
+    .btn_yes {
+        appearance: button;
+        background-color: greenyellow;
+        border: solid transparent;
+        border-width: 0 0 4px;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        cursor: pointer;
+        display: inline-block;
+        font-family: din-round,sans-serif;
+        font-size: 35px;
+        font-weight: 700;
+        letter-spacing: .8px;
+        line-height: 20px;
+        margin: 25px auto 0 auto;
+        outline: none;
+        overflow: visible;
+        padding: 13px 16px;
+        text-align: center;
+        text-transform: uppercase;
+        touch-action: manipulation;
+        transform: translateZ(0);
+        transition: filter .2s;
+        user-select: none;
+        -webkit-user-select: none;
+        vertical-align: middle;
+        white-space: nowrap;
+        width: 300px;
+        height: 90px;
+    }
+
+    .title_modal {
+        font-size: 58px;
+        text-align: center;
+    }
     
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 130px;
+    cursor: pointer;
+    color: #fff;
+    margin-top: -16px;
+}
     
 }

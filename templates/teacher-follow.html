@@ -311,10 +311,10 @@
   <section id="myModal_nofinded" class="modal">
     <div class="modal-content">
         <div id="modalstyles" class="modal-content-bg-searcher">
-            <span class="close">&times;</span>
+            <span class="close close3">&times;</span>
             <p>No se ha encontrado ningún resultado con la búsqueda realizada.</p>
             
-            <button class = "btn_no close2"><a class = "close2">Cerrar</a></button>
+            <button class = "btn_no close3"><a class = "close3">Cerrar</a></button>
         </div>
     </div>
 </section>
@@ -343,10 +343,15 @@
 
         $('.close').click(function() {
             closeModal();
-            location.reload();
+            
         });
 
         $('.close2').click(function() {
+            closeModal();
+            
+        }); 
+
+        $('.close3').click(function() {
             closeModal();
             location.reload();
         }); 
