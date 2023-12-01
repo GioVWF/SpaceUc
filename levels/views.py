@@ -51,8 +51,6 @@ def level_question(request, level,id):
             check_3 = i.option_answer
             content_anwser_3 = i.content_answer
     
-    
-    
     date = datetime.now()
     
     number_day_spanish = date.weekday()
