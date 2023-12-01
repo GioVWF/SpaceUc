@@ -154,7 +154,7 @@ def update_profileStudent_(request):
     get_user_ours.last_name_user = last_name_form
     get_user_ours.alias_user = alias_user_pref
     get_user_ours.save()
-
+    messages.success(request, "Nombre de usuario modificado")
     return redirect(profile_page)
 
 
@@ -166,10 +166,6 @@ def custom_profile(request):
     perIcon = PerIcon.objects.all()
     users = User_ours.objects.all()
     
-
-    
-
-
 
     context = {
         'icon' : icon,
@@ -218,13 +214,13 @@ def update_profile_photo_(request):
         oldIcon_backgraund.save()
     
         
-        
+    
         
     
     
     
 
-
+    messages.success(request, "Icono modificado")
     return redirect(custom_profile)
    
 #----------------------------------------------------------------

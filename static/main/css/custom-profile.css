@@ -537,7 +537,28 @@ label{
 }
 
 
+.alert_msg{
+    width: 20vw;
+    height: 10vh;
+    background-color: rgb(255, 190, 190);
+    transition: opacity 1s;
+    border-radius: 10px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
 
+.alert_msg p{ 
+   
+   
+    color: rgb(0, 0, 0);
+    font-size: large;
+    margin: 0;
+    text-align: center;
+   
+}
 
 @media (max-width: 410.98px){
     .svg_background {

@@ -170,6 +170,7 @@ main{
     width: 60%;
     position: relative;
     left: 70px;
+    cursor: pointer;
     
 
 }
@@ -180,13 +181,14 @@ main{
     height: auto;
     left: 120px;
     bottom: 2px;
+    cursor: pointer;
     
 }
 
 .btn_form_discard{
     width: 60%;
     position: relative;
-    
+    cursor: pointer;
 
 }
 
@@ -196,6 +198,7 @@ main{
     height: auto;
     left: 45px;
     bottom: 2px;
+    cursor: pointer;
 }
 
 button{
@@ -238,6 +241,28 @@ label{
 
 }
 
+.alert_msg{
+    width: 20vw;
+    height: 10vh;
+    background-color: rgb(255, 190, 190);
+    transition: opacity 1s;
+    border-radius: 10px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.alert_msg p{ 
+   
+   
+    color: rgb(0, 0, 0);
+    font-size: large;
+    margin: 0;
+    text-align: center;
+   
+}
 
 
 @media (max-width: 417.98px){
@@ -1079,11 +1104,13 @@ label{
         width: 100%;
         position: relative;
         left: 70px;
+        cursor: pointer;
     }
 
     .btn_form_discard {
         width: 100%;
         position: relative;
+        cursor: pointer;
     }
 
     .button_control p {
@@ -1092,6 +1119,7 @@ label{
         font-size: 38px;
         z-index: 7;
         top: -251px;
+        cursor: pointer;
     }
 }
 

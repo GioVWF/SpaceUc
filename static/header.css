@@ -48,6 +48,7 @@ h2 {
     position: absolute;
     left: 0;
     top: -110px;
+    cursor: pointer;
 }
 
 .navbar-logo-text-position{
@@ -453,6 +454,7 @@ h2 {
 
 .button_container > svg{
     width: 50px;
+    cursor: pointer;
 }
 
 .navbar-Logged-teacher{
@@ -480,6 +482,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .head_icon_mini{
