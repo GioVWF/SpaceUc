@@ -451,6 +451,11 @@ input[type="checkbox"]:hover {
     clip-path: polygon(0 0, 91% 0, 100% 18%, 100% 100%, 5% 100%, 0 80%);
 }
 
+.initModal {
+    height: 25%;
+    margin: 35vh auto;
+}
+
 .modal-content-bg {
     position: absolute;
     background-color: #6F7E9F;
@@ -484,6 +489,14 @@ input[type="checkbox"]:hover {
     color: greenyellow;
 }
 
+.audioText {
+    font-size: 35px;
+    box-shadow: 0 1px 8px 2px greenyellow;
+    color: white;
+    height: fit-content;
+    padding-bottom: 15px;
+}
+
 .hide {
     display: none;
 }
@@ -502,12 +515,12 @@ input[type="checkbox"]:hover {
     font-weight: 700;
     letter-spacing: .8px;
     line-height: 20px;
-    margin: 25px 0 0 0;
+    margin: 25px auto 0 auto;
     outline: none;
     overflow: visible;
     padding: 13px 16px;
     text-align: center;
-    text-transform: uppercase;
+    text-transform: uppercase;  
     touch-action: manipulation;
     transform: translateZ(0);
     transition: filter .2s;
@@ -515,6 +528,7 @@ input[type="checkbox"]:hover {
     -webkit-user-select: none;
     vertical-align: middle;
     white-space: nowrap;
+    width: 136px;
 }
 
 .incorrect-button:after {
@@ -617,6 +631,13 @@ input[type="checkbox"]:hover {
 .stats-grid {
     display: grid;
     grid-template-columns: 35% 35% 30%;
+    justify-content: center;
+    width: 100%;
+}
+
+.audio-grid {
+    display: grid;
+    grid-template-columns: 25% 25%;
     justify-content: center;
     width: 100%;
 }
