@@ -133,8 +133,6 @@ p[class="redir-btn"] {
 }
 
 .lessons-container {
-    height: 300px;
-    width: 300px;
     display: grid;
     grid-template-rows: auto auto auto;
     gap: 1px;

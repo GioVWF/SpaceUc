@@ -1,6 +1,6 @@
 body {
     padding: 0;
-    background:  url("/static/levels/img/gamebg.png"); 
+    background: url("/static/levels/img/gamebg.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -11,10 +11,12 @@ body {
     overflow-y: auto;
 }
 
-h2 {
+h3 {
     display: block;
     margin: 0 auto;
     text-align: center;
+    font-size: clamp(23px, 1.5vw, 50px);
+    color: black;
 }
 
 main {
@@ -31,16 +33,145 @@ main {
 .earth {
     display: flex;
     justify-content: end;
-    width: 20vw;
-    height: 30vh;
 }
 
-.star {
-    width: 20vw;
-    height: 30vh;
+.svgSize {
+    width: 15vw;
+    height: 15vw;
+    display: flex;
+    margin: 0 auto;
+}
+
+.moon {
+    display: flex;
+    margin: 0 auto;
+    width: 13vw;
+}
+
+.asteroid {
+    display: flex;
+    margin: 0 auto;
+    width: 13vw;
+}
+
+.galaxy {
+    display: flex;
+    margin: 0 auto;
+    width: 12vw;
+}
+
+.game_gid>a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 900.98px) {
+    body {
+        background: none;
+    }
+    
+    main {
+        grid-template-columns: 1fr 1fr 1fr;
+        height: 60%;
+        bottom: 10%;
+        align-items: normal;
+    }
+
+    .align-900 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .earthHref {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    
+    .svgSize {
+        width: 30vw;
+        height: 30vw;
+    }
+
+    .moon {
+        width: 24vw;
+    }
+
+    .asteroid {
+        width: 30vw;
+    }
+
+    .galaxy {
+        width: 28vw ;
+    }
+
+    h3 {
+        color: white;
+    }
 }
 
 
+@media only screen and (901px <= width <= 1109.98px) {
+    body {
+        background: none;
+    }
+    
+    main {
+        grid-template-columns: 1fr 1fr 1fr;
+        height: 60%;
+        bottom: 10%;
+    }
 
+    .earthHref {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
 
+    .svgSize {
+        width: 23vw;
+        height: 25vw;
+    }
 
+    .moon {
+        width: 21vw;
+    }
+
+    .asteroid {
+        width: 23vw;
+    }
+
+    .galaxy {
+        width: 22vw;
+    }
+
+    h3 {
+        color: white;
+    }
+
+}
+
+@media only screen and (1110px <= width <= 1600px) {
+    body {
+        background: none;
+    }
+    
+    main {
+        grid-template-columns: 1fr 1fr 1fr;
+        height: 60%;
+        bottom: 10%;
+    }
+
+    .earthHref {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    h3 {
+        color: white;
+    }
+}

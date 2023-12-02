@@ -1455,6 +1455,76 @@ h2 {
     }
 }
 
+@media only screen and (min-width: 2100px) {
+    .navbar-podium-position {
+        top: -135px;
+    }
+
+    .navbar-podium-position > svg {
+        width: 130px;
+    }
+
+    .navbar-podium-text-position {
+        font-size: 25px;
+        top: -80px;
+    }
+
+    .navbar-logIn-position {
+        margin-top: -140px;
+    }
+
+    .navbar-logged-user {
+        width: 295px;
+    }
+
+    .navbar-logger-user-name {
+        height: 30px;
+    }
+
+    .navbar-logger-user-name h2 {
+        font-size: 37px;
+        font-weight: bolder;
+    }
+
+    .icon_container {
+        width: 80px;
+    }
+
+    .head_icon_mini {
+        width: 50%;
+        top: 4px;
+    }
+
+    .body_icon_mini {
+        top: 37px;
+        width: 75%;
+    }
+
+    .navbar-logger-user-points {
+        height: 28px;
+        background-color: #ffffff00;
+        border: none;
+    }
+
+    .navbar-logger-user-points p {
+        font-size: 30px;
+        letter-spacing: 2px;
+        margin: 0;
+    }
+
+    .button_container {
+        width: 25%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .button_container > svg {
+        width: 70px;
+    }
+}
+
+
+
 
 
 

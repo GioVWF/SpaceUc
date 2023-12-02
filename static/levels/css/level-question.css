@@ -478,19 +478,23 @@ input[type="checkbox"]:hover {
 }
 
 .Incorrect {
-    font-size: 35px;
+    font-size: clamp(30px, 2vw, 70px);
     box-shadow: 0 1px 8px 2px red;
     color: red;
+    height: fit-content;
+    padding-bottom: 15px;
 }
 
 .Correct {
-    font-size: 35px;
+    font-size: clamp(30px, 2vw, 70px);
     box-shadow: 0 1px 8px 2px greenyellow;
     color: greenyellow;
+    height: fit-content;
+    padding-bottom: 15px;
 }
 
 .audioText {
-    font-size: 35px;
+    font-size: clamp(30px, 2vw, 70px);
     box-shadow: 0 1px 8px 2px greenyellow;
     color: white;
     height: fit-content;
@@ -509,16 +513,15 @@ input[type="checkbox"]:hover {
     box-sizing: border-box;
     color: #FFFFFF;
     cursor: pointer;
-    display: inline-block;
+    display: flex;
     font-family: din-round,sans-serif;
-    font-size: 15px;
-    font-weight: 700;
+    font-size: clamp(13px, 1vw, 50px);
+    font-weight: 300;
     letter-spacing: .8px;
     line-height: 20px;
-    margin: 25px auto 0 auto;
+    margin: 25px auto auto auto;
     outline: none;
     overflow: visible;
-    padding: 13px 16px;
     text-align: center;
     text-transform: uppercase;  
     touch-action: manipulation;
@@ -528,8 +531,12 @@ input[type="checkbox"]:hover {
     -webkit-user-select: none;
     vertical-align: middle;
     white-space: nowrap;
-    width: 136px;
+    width: 38%;
+    height: clamp(35px, 2vw, 200px);
+    justify-content: center;
+    align-items: center;
 }
+
 
 .incorrect-button:after {
     background-clip: padding-box;
@@ -572,16 +579,14 @@ input[type="checkbox"]:hover {
     box-sizing: border-box;
     color: #FFFFFF;
     cursor: pointer;
-    display: inline-block;
+    display: flex;
     font-family: din-round,sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: .8px;
+    font-size: clamp(13px, 1vw, 50px);
+    font-weight: 300;
     line-height: 20px;
-    margin: 25px auto 0 auto;
+    margin: 25px auto auto auto;
     outline: none;
     overflow: visible;
-    padding: 13px 16px;
     text-align: center;
     text-transform: uppercase;
     touch-action: manipulation;
@@ -591,8 +596,10 @@ input[type="checkbox"]:hover {
     -webkit-user-select: none;
     vertical-align: middle;
     white-space: nowrap;
-    width: 136px;
-    height: 50px;
+    width: 38%;
+    height: 60%;
+    justify-content: center;
+    align-items: center;
 }
 
 .correct-button:after {
@@ -1233,5 +1240,19 @@ input[type="checkbox"]:hover {
 
     p[class="redir-btn"] {
         font-size: 1vw;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .incorrect-button {
+        width: 80%;
+    }
+
+    .correct-button {
+        width: 80%;
+    }
+
+    .stats-text {
+        font-size: .5em;
     }
 }

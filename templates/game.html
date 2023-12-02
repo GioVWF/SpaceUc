@@ -7,9 +7,10 @@
 
 {% block content %}
 <main>
-    <section class="game_grid" style="display: flex; justify-content: end;">
-        <a href="{% url 'levels' level_1 %}">
-            <svg viewBox="0 0 236 209" fill="none" xmlns="http://www.w3.org/2000/svg" class="earth">
+    <section class="game_grid align-900" style="display: flex; justify-content: end;">
+        <a href="{% url 'levels' level_1 %}" class="earthHref">
+            <h3>Nivel 1</h3>
+            <svg viewBox="0 0 236 209" fill="none" xmlns="http://www.w3.org/2000/svg" class="earth svgSize">
                 <circle cx="100" cy="109" r="100" fill="#093EF8"/>
                 <circle cx="221" cy="15" r="15" fill="#7D7D7D"/>
                 <ellipse cx="219.5" cy="15" rx="13.5" ry="14" fill="#575555"/>
@@ -24,10 +25,11 @@
                 </svg>
         </a>
     </section>
-    <section class="game_grid">
+    <section class="game_grid align-900">
         {% if progress >= 3 %}
         <a href="{% url 'levels' level_2 %}">
-            <svg viewBox="0 0 464 462" fill="none" xmlns="http://www.w3.org/2000/svg" class="star">
+            <h3>Nivel 2</h3>
+            <svg viewBox="0 0 464 462" fill="none" xmlns="http://www.w3.org/2000/svg" class="svgSize">
                 <path d="M235 0L261.847 171.75H208.153L235 0Z" fill="#9DD4E0"/>
                 <path d="M464 229L292.25 255.847V202.153L464 229Z" fill="#9DD4E0"/>
                 <path d="M235 462L208.153 290.25H261.847L235 462Z" fill="#9DD4E0"/>
@@ -41,7 +43,8 @@
                 </svg>                
         </a>
         {% else %}
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 464 462" fill="none" class="star">
+        <h3>Nivel 2</h3>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 464 462" fill="none" class="svgSize">
             <path d="M235 0L261.847 171.75H208.153L235 0Z" fill="#656565"/>
             <path d="M464 229L292.25 255.847V202.153L464 229Z" fill="#656565"/>
             <path d="M235 462L208.153 290.25H261.847L235 462Z" fill="#656565"/>
@@ -55,10 +58,11 @@
             </svg>
         {% endif %}
     </section>
-    <section class="game_grid">
+    <section class="game_grid align-900">
         {% if progress >= 6%}
         <a href="{% url 'levels' level_3 %}">
-            <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <h3>Nivel 3</h3>
+            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="svgSize moon">
                 <circle cx="100" cy="100" r="100" fill="#FEFFC6"/>
                 <ellipse cx="72" cy="102.5" rx="72" ry="80.5" fill="#5F6047"/>
                 <circle cx="157" cy="47" r="9" fill="#A5A685"/>
@@ -76,7 +80,8 @@
                 </svg>                
         </a>
         {% else %}
-        <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none">
+        <h3>Nivel 3</h3>
+        <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none" class="svgSize moon">
             <circle cx="100" cy="100" r="100" fill="#656565"/>
             <ellipse cx="72" cy="102.5" rx="72" ry="80.5" fill="#161611"/>
             <circle cx="157" cy="47" r="9" fill="#A5A685"/>
@@ -96,8 +101,9 @@
     </section>
     <section class="game_grid">
         {% if progress >= 9%}
-        <a href="{% url 'levels' level_4%}" >
-            <svg width="231" height="203" viewBox="0 0 231 203" fill="none" xmlns="http://www.w3.org/2000/svg" >
+        <a href="{% url 'levels' level_4%}">
+            <h3>Nivel 4</h3>
+            <svg width="231" height="203" viewBox="0 0 231 203" fill="none" xmlns="http://www.w3.org/2000/svg" class="svgSize asteroid">
                 <path d="M208.263 100.605C220.263 154.105 159.263 213.605 117.763 200.605C17.7633 207.605 0.763282 153.105 17.7633 100.605C32.7633 48.605 68.2632 -6.39508 117.763 0.604999C142.263 8.60498 200.763 48.105 208.263 100.605Z" fill="#D9D9D9"/>
                 <path d="M207.536 23.6428C206.209 29.4533 196.327 31.488 192.287 27.7785C180.628 22.4902 181.439 16.2868 185.995 12.2985C190.3 8.23884 197.073 5.11415 202.319 8.72864C204.688 10.9496 209.322 18.1956 207.536 23.6428Z" fill="#D9D9D9"/>
                 <path d="M19.6831 32.9753C26.8249 32.8507 32.2792 43.299 29.2524 48.8237C26.7873 63.2709 19.3522 64.0779 13.307 60.1025C7.25787 56.4267 1.51692 49.7428 4.05559 42.9013C5.88348 39.6494 12.8179 32.4887 19.6831 32.9753Z" fill="#D9D9D9"/>
@@ -119,7 +125,8 @@
                 </svg>
         </a>
         {% else %}
-        <svg xmlns="http://www.w3.org/2000/svg" width="231" height="203" viewBox="0 0 231 203" fill="none">
+        <h3>Nivel 4</h3>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 231 203" fill="none" class="svgSize asteroid">
             <path d="M208.263 100.605C220.263 154.105 159.263 213.605 117.763 200.605C17.7633 207.605 0.763282 153.105 17.7633 100.605C32.7633 48.605 68.2632 -6.39508 117.763 0.604999C142.263 8.60498 200.763 48.105 208.263 100.605Z" fill="#5B5B5B"/>
             <path d="M207.536 23.6428C206.209 29.4533 196.327 31.488 192.287 27.7785C180.628 22.4902 181.439 16.2868 185.995 12.2985C190.3 8.23884 197.073 5.11415 202.319 8.72864C204.688 10.9496 209.322 18.1956 207.536 23.6428Z" fill="#5B5B5B"/>
             <path d="M19.6831 32.9753C26.8249 32.8507 32.2792 43.299 29.2524 48.8237C26.7873 63.2709 19.3522 64.0779 13.307 60.1025C7.25787 56.4267 1.51692 49.7428 4.05559 42.9013C5.88348 39.6494 12.8179 32.4887 19.6831 32.9753Z" fill="#5B5B5B"/>
@@ -144,7 +151,8 @@
     <section class="game_grid">
         {% if progress >= 12%}
         <a href="{% url 'levels' level_5%}">
-            <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <h3>Nivel 5</h3>
+            <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="svgSize galaxy">
                 <circle cx="100" cy="100" r="99.5" stroke="white"/>
                 <circle cx="100" cy="100" r="99.5" stroke="white"/>
                 <circle cx="100" cy="102" r="84.5" stroke="white"/>
@@ -164,7 +172,8 @@
                 </svg>
         </a>
         {% else %}
-        <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none">
+        <h3>Nivel 5</h3>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" class="svgSize galaxy">
             <circle cx="100" cy="100" r="99.5" stroke="black"/>
             <circle cx="100" cy="100" r="99.5" stroke="black"/>
             <circle cx="100" cy="102" r="84.5" stroke="black"/>
@@ -184,5 +193,6 @@
             </svg>
         {% endif %}
     </section>
+
 </main>
 {% endblock %}
