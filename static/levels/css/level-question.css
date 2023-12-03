@@ -494,11 +494,16 @@ input[type="checkbox"]:hover {
 }
 
 .audioText {
-    font-size: clamp(30px, 2vw, 70px);
+    font-size: clamp(16px, 2vw, 70px);
     box-shadow: 0 1px 8px 2px greenyellow;
     color: white;
     height: fit-content;
     padding-bottom: 15px;
+}
+
+.audioText > h2 {
+    margin-bottom: 0;
+    margin-top: 30px;
 }
 
 .hide {

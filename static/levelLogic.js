@@ -12,6 +12,9 @@ $(document).ready(function () {
     let gameUrl = $("#modalButton").data("game-url");
     let timerInterval;
 
+    const audioH3 = '¿Quieres escuchar el audio de la pregunta?';
+    const audioP = 'Al darle a NO el temporizador comenzara inmediatamente'
+
     const retryButton = document.getElementById('modalButton');
     const playButton = document.getElementById('playButton');
     const song = document.getElementById('song');
@@ -92,9 +95,8 @@ $(document).ready(function () {
     function openModal(boolean, content) {
         $('#myModal .close').removeClass(boolean != 'audio' ? 'audio' : '').addClass(boolean == 'audio' ? 'audio' : '');
         $('#myModal #modalstyles').removeClass(boolean == 'True' ? 'Incorrect audioText' : 'Correct audioText').addClass(boolean == 'True' ? 'Correct' : boolean == 'audio' ? 'audioText' : 'Incorrect');
-        $('#myModal #answerIsCorrect').text(boolean == 'True' ? '¡Correcto!' : boolean == 'audio' ? '' : '¡Incorrecto!');
-        $('#myModal p').text(content);
-
+        $('#myModal #answerIsCorrect').text(boolean == 'True' ? '¡Correcto!' : boolean == 'audio' ? content : '¡Incorrecto!');
+        $('#myModal p').text(boolean == 'True' ? content : boolean == 'False' ? content : boolean == 'audio' ? audioP : '');
         if (boolean == 'False') {
             $('#myModal #modalButton').text("REINTENTAR").removeClass('hide').removeClass('correct-button').addClass('incorrect-button');
             $('#myModal #grid-stats').removeClass('stats-grid');
@@ -201,5 +203,5 @@ $(document).ready(function () {
     });
 
     $('.close').addClass('initModal');
-    openModal('audio', '¿Quieres escuchar el audio de la pregunta?');
+    openModal('audio', audioH3);
 });

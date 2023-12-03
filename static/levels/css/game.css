@@ -74,8 +74,8 @@ main {
     
     main {
         grid-template-columns: 1fr 1fr 1fr;
-        height: 60%;
-        bottom: 10%;
+        height: 90%;
+        bottom: 0%;
         align-items: normal;
     }
 
@@ -121,8 +121,8 @@ main {
     
     main {
         grid-template-columns: 1fr 1fr 1fr;
-        height: 60%;
-        bottom: 10%;
+        height: 80%;
+        bottom: 0%;
     }
 
     .earthHref {
@@ -132,20 +132,20 @@ main {
     }
 
     .svgSize {
-        width: 23vw;
-        height: 25vw;
+        width: 15vw;
+        height: 15vw;
     }
 
     .moon {
-        width: 21vw;
+        width: 13vw;
     }
 
     .asteroid {
-        width: 23vw;
+        width: 13vw;
     }
 
     .galaxy {
-        width: 22vw;
+        width: 12vw;
     }
 
     h3 {
@@ -161,8 +161,8 @@ main {
     
     main {
         grid-template-columns: 1fr 1fr 1fr;
-        height: 60%;
-        bottom: 10%;
+        height: 70%;
+        bottom: 0;
     }
 
     .earthHref {
