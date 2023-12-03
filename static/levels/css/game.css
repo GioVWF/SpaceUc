@@ -74,7 +74,7 @@ main {
     
     main {
         grid-template-columns: 1fr 1fr 1fr;
-        height: 90%;
+        height: 75%;
         bottom: 0%;
         align-items: normal;
     }
@@ -83,6 +83,7 @@ main {
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
     }
 
     .earthHref {
@@ -92,20 +93,20 @@ main {
     }
     
     .svgSize {
-        width: 30vw;
-        height: 30vw;
+        width: 20vw;
+        height: 20vw;
     }
 
     .moon {
-        width: 24vw;
+        width: 19vw;
     }
 
     .asteroid {
-        width: 30vw;
+        width: 20vw;
     }
 
     .galaxy {
-        width: 28vw ;
+        width: 18vw ;
     }
 
     h3 {
@@ -154,7 +155,7 @@ main {
 
 }
 
-@media only screen and (1110px <= width <= 1600px) {
+@media only screen and (1110px <= width <= 1600.98px) {
     body {
         background: none;
     }
@@ -173,5 +174,12 @@ main {
 
     h3 {
         color: white;
+    }
+}
+
+@media only screen and (min-width: 1601px) {
+    .earth-align {
+        display: flex;
+        justify-content: end;
     }
 }
