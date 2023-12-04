@@ -3,6 +3,7 @@
 
 {% block extrahead %}
 <link rel="stylesheet" href="{% static 'main/css/podium.css' %}">
+<title>Podio</title>
 {% endblock %}
 
 {% block content %}
@@ -41,17 +42,7 @@
     
 <main>
     <section class="podium_position">   
-            <h1 class="shadow">Pódio</h1>
-            <!-- <div class = "control_text_user">
-            {% for x in first_places %}
-            <div class="text_user_podium{% if forloop.counter == 1 %}_middle{% elif forloop.counter == 2 %}_right{% endif %}">
-                
-                <h2>{{x.alias_user}} </h2>
-                <p>{{x.point_user}}pts </p>
-            </div>  
-            
-        {% endfor %}
-        </div> -->
+            <h1 class="shadow">Podio</h1>
         <svg viewBox="0 0 670 643" fill="none" xmlns="http://www.w3.org/2000/svg" class = "svg_positions_podium">
             <rect x="277" Y="80" width="113" height="643" fill="#FFE13E"/>
             <text text-anchor="middle" x="50%" y="30" font-family="monospace" font-size="32" font-weight="900" style="text-shadow: 1px 1px black;" fill="#FFE13E">{{position_one.alias_user}}</text>

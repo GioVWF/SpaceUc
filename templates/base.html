@@ -151,7 +151,7 @@
                             <div class="navbar-panel-blackButton-right">
                                 <div class="navbar-panel-greyButton-right">
                                     <a href="{% url 'home_page'%}" class="navbar-panel-greyButton-right-inner">
-                                        <div class="navbar-grey-text-position-right"><h2 class="navbar-grey-text">Home</h2></div>
+                                        <div class="navbar-grey-text-position-right"><h2 class="navbar-grey-text">Inicio</h2></div>
                                     </a>
                                 </div>
                                 <a href="{% url 'resources_page' %}" class="navbar-panel-blackButton-right-inner" >
@@ -355,7 +355,7 @@
     </header>
 
     <nav class="mobile-nav is-active">
-        <a href="{% url 'home_page'%}" class="mobile-nav_btn1">Home</a>
+        <a href="{% url 'home_page'%}" class="mobile-nav_btn1">Inicio</a>
         {% if user.is_authenticated %}
         <a href="{% url 'podium_page' %}" class="mobile-nav_btn2">Pódio</a>    
         {% else %}
