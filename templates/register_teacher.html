@@ -63,7 +63,7 @@
                        
                         <form action="{% url 'register_teacher_' %}" method = "POST" name = "register_form_t" id = "register_form_t" class = "register_content">
                             {% csrf_token %}
-                              <h1 id ="title" >Bienvenido, admin</h1>
+                              <h1 id ="title" >Bienvenido admin</h1>
                               <h1 id ="title2">Registro de profesores</h1>
 
                               <div id = "error_msg" class = "error_msg">
@@ -71,12 +71,12 @@
                               </div>
                 
                             <div class = "register_input_div">
-                                <label for="name_student" id = "label_name_student"> Nombres Profesor </label>
+                                <label for="name_student" id = "label_name_student">Nombre Profesor</label>
                                 <input type="text" name="name_student" id="name_student">
                             </div>
         
                             <div class = "register_input_div">
-                                <label for="last_name" id = "label_last_name"> Apellidos Profesor </label>
+                                <label for="last_name" id = "label_last_name">Apellido Profesor</label>
                                 <input type="text" name="last_name" id="last_name">
                             </div>
                           
