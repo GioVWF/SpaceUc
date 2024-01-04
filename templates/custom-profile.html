@@ -12,16 +12,12 @@
     {% if messages %}
                 <div id = "alert_msg" class = "alert_msg">
                     {% for message in messages %}
-                    
                     {% if message.tags == "success" %}
                         <p>{{ message }}</p>
                     {% endif %}
-                        
-                        
                     {% endfor %}
                 </div>
     {% endif %}
-    
     <div class = "profile_background">
         <svg  viewBox="0 0 1550 1080" fill="none" xmlns="http://www.w3.org/2000/svg" class = "svg_background">
             <circle cx="550" cy="624" r="1000" fill="#C0C0C0"/>
@@ -39,13 +35,9 @@
             <circle cx="1273" cy="309" r="100" fill="#928E8A"/>
             <circle cx="1277" cy="1080" r="50" fill="#928E8A"/>
             </svg>
-        
     </div>  
-    
-
         <main>
             <div class = "container_profile">
-                
                 <svg  viewBox="0 0 1407 652" fill="none" xmlns="http://www.w3.org/2000/svg" class = "svg_profile">
                     <path d="M0 0H703.5H1055.25H1231.12H1319.06H1363.03L1386.5 21.5L1407 40.75V81.5V163V326V652H703.5H351.75H175.875H87.9375H43.9688L21.5 632.5L0 611.25V570.5V489V326V0Z" fill="#454B78"/>
                     <circle cx="1352.5" cy="16.5" r="7.5" fill="#D9D2DA"/>
@@ -70,231 +62,117 @@
                     <circle cx="57.5" cy="14.5" r="7.5" fill="#D9D2DA"/>
                     <line x1="53.6237" y1="18.6707" x2="60.6237" y2="10.6707" stroke="#9C9C9C"/>
                     </svg>
-                    
-                    
-               
                 {% if user.is_authenticated %}
-                <div class = "container_photo">
-
-
-                    
-                {% for us in users %}
-
-                        
+                <div class = "container_photo"> 
+                {% for us in users %}                       
                     {% if user.username == us.run_user %}
-
-                        {% for x in perIcon %}
-                       
+                        {% for x in perIcon %}                       
                             {% for ic in icon%}
-
                                 {% if  x.icon_id_icon.id_icon == ic.id_icon and x.user_ours_id_user_ours.run_user == user.username %}
-
-
                                     <div class="{% if ic.type_icon == 0 %}head_icon{% elif ic.type_icon == 1 %}body_icon{% elif ic.type_icon == 2 %}background_icon{% endif %}">
-                                        
                                         {{ x.icon_id_icon.svg_icon|safe  }}
-
                                     </div>
                                     <div class = "hidden_icon">
                                         <div class="{% if ic.type_icon == 0 %}head_icon_hiden{% elif ic.type_icon == 1 %}body_icon_hiden{% elif ic.type_icon == 2 %}background_icon_hiden{% endif %}">
                                             <input type="checkbox" hidden id="{% if ic.type_icon == 0 %}head_icon_hiden_input{% elif ic.type_icon == 1 %}body_icon_hiden_input{% elif ic.type_icon == 2 %}background_icon_hiden_input{% endif %}" value = "{{ ic.id_icon }}" data-new-value="{{ ic.color }}" data-new-name="{{ ic.name_icon }}" data-points = "{{ i.point_user }}" > 
                                             {{ x.icon_id_icon.svg_icon|safe  }}
-    
                                         </div>
                                     </div>
-                                    
-
                                 {% endif %}
-                            
-                            
                             {% endfor %}
-                            
-                        
-                        
-                   
-                   
-                  
-            
-                        
-                   
                         {% endfor %}   
                     {% endif %}
-                            
-                        
                 {% endfor %}
-                        
-                    
-                        
             </div>
-
-
-
-                            
                             <div class = "container_form">
                             {% for i in users %}
                                 {% if user.username == i.run_user %}
-                                
                                     <form action="{% url 'update_profile_photo_' %}" method = "POST" name = "profile_form" id = "profile_form" class = "profile_form">
                                         {% csrf_token %}
-
                                         <h1>Creacion de icono</h1>
-                                        
                                         <div class = "container_cat_color_svg"> 
                                             <div class = "container_father_cat">
-                                                
                                                 <div class = "svg_categorias">
                                                     <svg  viewBox="0 0 409 401" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M0 0H162.5H243.75H284.375L306.429 13.0341L325 23.875V47.75V95.5V191H0V0Z" fill="#093159"/>
                                                         <path d="M0 41H204.5H306.75H357.875H383.438L396.556 64.1579L409 86V131V221V401H204.5H102.25H51.125H25.5625L12.4442 378.895L0 356V311V221V41Z" fill="#4D5C7D"/>
-                                                        </svg>
-                                                        
+                                                        </svg> 
                                                 </div>
-    
                                                 <div class = "container_category">
-                                                    
-        
-        
                                                     <ul class = "ul">
                                                         <li class = "li active">Cabeza</li>
                                                         <li class = "li">Cuerpo</li>
                                                         <li class = "li">Fondo</li>
                                                     </ul>
-        
                                                     <div class="sub_container">
                                                         <div class = "block active">
                                                             <div class = "head_category input_cat">
-                                                                
-                                                            
                                                                 {% for ic in icon  %}
-                                                            
                                                                     {% if ic.type_icon == 0%}
-                                                                            
-                                                                    
                                                                         {% if  ic.name_icon == "default_head" or ic.name_icon == "alien_default_head" or ic.name_icon == "armor_default_head" %}
-                                                                        
                                                                             {% if ic.name_icon == "default_head" %}
-                                                                                
                                                                                 {% if i.point_user > 0 or i.point_user == 0 and i.point_user < 3000 or i.point_user == 3000 %}
                                                                                     <div class = "available" id = "default_head_available">
-                                                                            
-                                                    
                                                                                         <input type="checkbox" hidden name="head_election" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" data-name="{{ ic.name_icon }}" data-color="{{ ic.color }}" data-points = "{{ i.point_user }}" onclick = "get_color_head(this.value, this.getAttribute('data-color'),this.getAttribute('data-name'),this.getAttribute('data-points'))"> 
                                                                                         <label for="{{ ic.id_icon }}">
                                                                                         {{ ic.svg_icon|safe }}
                                                                                         </label>
                                                                                     </div>
                                                                                 {% endif %}
-                                                                          
-                                                                
-                                                    
-                                                                               
                                                                             {% elif  i.point_user > 500 or i.point_user == 500 and i.point_user < 3000 or i.point_user == 3000 %}
-                                                                    
-                                                                
-                                                                        
                                                                                 {% if  ic.name_icon == "alien_default_head" %}
-                                                                            
                                                                                     <div class = "available" id = "alien_default_head_available">
                                                                                         {% comment %} <input type="checkbox" hidden name="head_election" data-new-value="{{ ic.color }}" data-new-name="{{ ic.name_icon }}" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_head(this.value, this.getAttribute('data-new-value'), this.getAttribute('data-new-name'))">  {% endcomment %}
                                                                                         <input type="checkbox" hidden name="head_election" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" data-name="{{ ic.name_icon }}" data-color="{{ ic.color }}" data-points = "{{ i.point_user }}" onclick = "get_color_head(this.value, this.getAttribute('data-color'),this.getAttribute('data-name'),this.getAttribute('data-points'))"> 
                                                                                         <label for="{{ ic.id_icon }}">
                                                                                         {{ ic.svg_icon|safe }}
                                                                                         </label>
-
                                                                                     </div>
                                                                                 {% elif ic.name_icon == "armor_default_head" %}
                                                                                     {% if i.point_user > 1000 or i.point_user == 1000 and i.point_user < 3000 or i.point_user == 3000 %}
-                                                                            
                                                                                             <div class = "available" id = "alien_default_head_available">
                                                                                                 {% comment %} <input type="checkbox" hidden name="head_election" data-new-value="{{ ic.color }}" data-new-name="{{ ic.name_icon }}" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_head(this.value, this.getAttribute('data-new-value'), this.getAttribute('data-new-name'))">  {% endcomment %}
                                                                                                 <input type="checkbox" hidden name="head_election" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" data-name="{{ ic.name_icon }}" data-color="{{ ic.color }}" data-points = "{{ i.point_user }}" onclick = "get_color_head(this.value, this.getAttribute('data-color'),this.getAttribute('data-name'),this.getAttribute('data-points'))"> 
                                                                                                 <label for="{{ ic.id_icon }}">
                                                                                                 {{ ic.svg_icon|safe }}
                                                                                                 </label>
-
                                                                                             </div>
                                                                                      {% else %}
                                                                                             <div class ="no-clickable" id = "no-clickable">
-                                                                            
-                                                                                        
                                                                                                 <input type="checkbox" hidden name="head_election" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" data-name="{{ ic.name_icon }}" data-color="{{ ic.color }}" data-points = "{{ i.point_user }}" > 
                                                                                                 <label for="{{ ic.id_icon }}">
                                                                                                 {{ ic.svg_icon|safe }}
                                                                                                 </label>
                                                                                             </div>
                                                                                      {% endif %}
-
                                                                                 {% else %}
                                                                                     <div class ="no-clickable" id = "no-clickable">
-                                                                            
-                                                                                    
                                                                                         <input type="checkbox" hidden name="head_election" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" data-name="{{ ic.name_icon }}" data-color="{{ ic.color }}" data-points = "{{ i.point_user }}" > 
                                                                                         <label for="{{ ic.id_icon }}">
                                                                                         {{ ic.svg_icon|safe }}
                                                                                         </label>
                                                                                     </div>
-
                                                                                 {% endif %}
-                                                                    
-
-                                                                            
-                                                                    
-                                                                
-                                                                        
-                                                                                
-                                                                
-                                                                    
-                                                                            
-
-
-
                                                                             {% else %}
-
                                                                                 <div class ="no-clickable" id = "no-clickable">
-                                                                            
                                                                                     {% comment %} <input type="checkbox" hidden name="head_election" data-new-value="{{ ic.color }}" data-new-name="{{ ic.name_icon }}" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_head(this.value, this.getAttribute('data-new-value'), this.getAttribute('data-new-name'))">  {% endcomment %}
                                                                                     <input type="checkbox" hidden name="head_election" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" data-name="{{ ic.name_icon }}" data-color="{{ ic.color }}" data-points = "{{ i.point_user }}"> 
                                                                                     <label for="{{ ic.id_icon }}">
                                                                                     {{ ic.svg_icon|safe }}
                                                                                     </label>
                                                                                 </div>
-                                                               
                                                                             {% endif %}
                                                                         {% endif %}
-                                                                        
-                                                                   
-                                                                            
-                                                                           
-                                                                                
-                                                                    
-
-                                                                    
-                                                                            
-                                                                           
-                                                                        
-                                                                    
-                                                                        
-                                                                    
-                  
                                                                     {% endif %}
-                                                                
                                                                 {% endfor %}
-            
                                                             </div>
                                                         </div>
-                                                            
                                                         <div class = "block">
                                                             <div class = "body_category input_cat">
-                                                                
                                                                 {% for ic in icon %}
-                                                            
                                                                     {% if ic.type_icon == 1 %}
-                                                                    
-                                                                        
                                                                         {% if ic.name_icon == "default_body" or ic.name_icon == "alien_default_body" or ic.name_icon == "armor_default_body" %}
-
                                                                             {% if ic.name_icon == "default_body" %}
-                                                                            
                                                                                 {% if i.point_user > 0 or i.point_user == 0 and i.point_user < 3000 or i.point_user == 3000 %}
                                                                                     <div class ="available">   
                                                                                         <input type="checkbox" hidden name="body_election" data-new-value="{{ ic.color }}" data-new-name="{{ ic.name_icon }}" data-points="{{ i.point_user }}" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" onclick = "get_color_body(this.value, this.getAttribute('data-new-value'), this.getAttribute('data-new-name'), this.getAttribute('data-points'))"> 
@@ -303,24 +181,15 @@
                                                                                         </label>
                                                                                     </div>
                                                                                 {% endif %}
-                                                                            
-                                                                    
-                                                                                   
-                                                                                
-
-                                                                            {% elif  i.point_user > 500 or i.point_user == 500 and i.point_user < 3000 or i.point_user == 3000 %}
-                                                                             
+                                                                            {% elif  i.point_user > 500 or i.point_user == 500 and i.point_user < 3000 or i.point_user == 3000 %}                                                                            
                                                                                 {% if ic.name_icon == "alien_default_body" %}
                                                                                     <div class = "available">   
                                                                                         <input type="checkbox" hidden name="body_election" data-new-value="{{ ic.color }}" data-new-name="{{ ic.name_icon }}" data-points="{{ i.point_user }}" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" onclick = "get_color_body(this.value, this.getAttribute('data-new-value'), this.getAttribute('data-new-name'), this.getAttribute('data-points'))"> 
                                                                                         <label for="{{ ic.id_icon }}">
                                                                                         {{ ic.svg_icon|safe }}
                                                                                         </label>
-                                                                                    </div>
-                                                                                
-                                                                            
-                                                                                {% elif ic.name_icon == "armor_default_body" %}
-                                                                             
+                                                                                    </div>                                                                                                                                                            
+                                                                                {% elif ic.name_icon == "armor_default_body" %}                                                                            
                                                                                     {% if i.point_user > 1000 or i.point_user == 1000 and i.point_user < 3000 or i.point_user == 3000 %}
                                                                                         <div class = "available">   
                                                                                             <input type="checkbox" hidden name="body_election" data-new-value="{{ ic.color }}" data-new-name="{{ ic.name_icon }}" data-points="{{ i.point_user }}" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" onclick = "get_color_body(this.value, this.getAttribute('data-new-value'), this.getAttribute('data-new-name'), this.getAttribute('data-points'))"> 
@@ -329,21 +198,17 @@
                                                                                             </label>
                                                                                         </div>
                                                                                     {% else %}
-                                                                                    <div class ="no-clickable">
-                                                                                    
+                                                                                    <div class ="no-clickable">                                                                                    
                                                                                         {% comment %} <input type="checkbox" hidden name="head_election" data-new-value="{{ ic.color }}" data-new-name="{{ ic.name_icon }}" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_head(this.value, this.getAttribute('data-new-value'), this.getAttribute('data-new-name'))">  {% endcomment %}
                                                                                         <input type="checkbox" hidden name="head_election" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" data-name="{{ ic.name_icon }}" data-color="{{ ic.color }}" data-points = "{{ i.point_user }}" > 
                                                                                         <label for="{{ ic.id_icon }}">
                                                                                         {{ ic.svg_icon|safe }}
                                                                                         </label>
                                                                                     </div>
-
                                                                                     {% endif %}
-                                                                    
                                                                                 {% endif %}
                                                                             {% else %}
                                                                                 <div class ="no-clickable">
-                                                                                    
                                                                                     {% comment %} <input type="checkbox" hidden name="head_election" data-new-value="{{ ic.color }}" data-new-name="{{ ic.name_icon }}" id=" {{ ic.id_icon }} " value = " {{ ic.id_icon }} " onclick = "selection_head(this.value, this.getAttribute('data-new-value'), this.getAttribute('data-new-name'))">  {% endcomment %}
                                                                                     <input type="checkbox" hidden name="head_election" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" data-name="{{ ic.name_icon }}" data-color="{{ ic.color }}" data-points = "{{ i.point_user }}"> 
                                                                                     <label for="{{ ic.id_icon }}">
@@ -352,38 +217,16 @@
                                                                                 </div>
                                                                             {% endif %}
                                                                         {% endif %}
-                                                                            
-                                                                        
-                                                                        
-                                                                            
-                                                                    
-                                                                            
-                                                                            
-                                                                        
-                                                                    
-                                                                        
-                                                                    
-                  
                                                                     {% endif %}
-                  
                                                                 {% endfor %}
                                                             </div>
                                                         </div>
-            
-                                                            
-                                                        
                                                         <div class = "block">
                                                             <div class = "backgraund_category input_cat">
-                                                                
                                                                 {% for ic in icon %}
-                                                                
                                                                     {% if ic.type_icon == 2 %}
-                                                                        
-                                                                        
                                                                         {% if ic.name_icon == "default_background" or ic.name_icon == "alien_default_background" or ic.name_icon == "armor_default_background" %}
-                                                                            
                                                                             {% if ic.name_icon == "default_background" %}
-                                                                            
                                                                                 {% if i.point_user > 0 or i.point_user == 0 and i.point_user < 3000 or i.point_user == 3000 %}
                                                                                     <div class = "available" >
                                                                                         <input type="checkbox" hidden name="body_election" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" data-new-value="{{ ic.color }}" data-new-name="{{ ic.name_icon }}" data-points = "{{ i.point_user }}" onclick = "get_color_background(this.value, this.getAttribute('data-new-value'), this.getAttribute('data-new-name'), this.getAttribute('data-points'))"> 
@@ -392,11 +235,7 @@
                                                                                         </label>
                                                                                     </div>
                                                                                 {% endif %}
-
-
-                                                                                
                                                                             {% elif i.point_user > 500 or i.point_user == 500 and i.point_user < 3000 or i.point_user == 3000 %}
-                                                                            
                                                                                     {% if ic.name_icon == "alien_default_background" %}
                                                                                         <div class = "available">
                                                                                             <input type="checkbox" hidden name="body_election" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" data-new-value="{{ ic.color }}" data-new-name="{{ ic.name_icon }}" data-points = "{{ i.point_user }}" onclick = "get_color_background(this.value, this.getAttribute('data-new-value'), this.getAttribute('data-new-name'), this.getAttribute('data-points'))"> 
@@ -404,10 +243,7 @@
                                                                                             {{ ic.svg_icon|safe }}
                                                                                             </label>
                                                                                         </div>
-                                                                                    
-                                                                            
                                                                                     {% elif ic.name_icon == "armor_default_background" %}
-                                                                            
                                                                                             {% if i.point_user > 1000 or i.point_user == 1000 and i.point_user < 3000 or i.point_user == 3000 %}
                                                                                                 <div class = "available">
                                                                                                     <input type="checkbox" hidden name="body_election" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" data-new-value="{{ ic.color }}" data-new-name="{{ ic.name_icon }}" data-points = "{{ i.point_user }}" onclick = "get_color_background(this.value, this.getAttribute('data-new-value'), this.getAttribute('data-new-name'), this.getAttribute('data-points'))"> 
@@ -423,194 +259,64 @@
                                                                                                     </label>
                                                                                                 </div>
                                                                                             {% endif %}  
-
                                                                                     {% endif %}
                                                                             {% else %}
                                                                                 <div class ="no-clickable">
-                                                                                        
-                                                                                    
                                                                                     <input type="checkbox" hidden name="head_election" id="{{ ic.id_icon }}" value = "{{ ic.id_icon }}" data-name="{{ ic.name_icon }}" data-color="{{ ic.color }}" data-points = "{{ i.point_user }}" > 
                                                                                     <label for="{{ ic.id_icon }}">
                                                                                     {{ ic.svg_icon|safe }}
                                                                                     </label>
                                                                                 </div>
                                                                             {% endif %}
-
                                                                         {% endif %}
-                                                                            
-                                                                        
-
-                                                                            
-                                                                        
-                                                                                    
-                                                                            
-                                                                            
-                                                                            
-                                                                        
-                                                                            
-                                                                        
-                      
                                                                     {% endif %}
-                      
                                                                 {% endfor %}
                                                             </div>
-            
                                                         </div>
-                                                        </div>
-            
-                                                            
+                                                        </div>     
                                                 </div>
                                             </div> 
-                                            
-                                            
-
-
-                                        
-                                            
-
                                         <div class = "container_father_color">
-                                            
                                             <div class = "svg_colores">
                                                 <svg  viewBox="0 0 313 401" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M313 0H219.5H172.75H149.375L136.686 13.0341L126 23.875V47.75V95.5V191H313V0Z" fill="#093159"/>
                                                     <path d="M19.0036 63.9412L39.125 41H78.25H156.5H313V221V311V356L295.114 378.059L273.875 401H234.75H156.5H0V221V131V86L19.0036 63.9412Z" fill="#4D5C7D"/>
-                                                    </svg>
-                                                    
+                                                    </svg> 
                                             </div>
-
-
                                             <div class = "containter_colors">
-
                                                 <h2>colores</h2>
-
                                                 <div class = "content_father_colors">
                                                     <div class = "color_head active color_grid" id = "color_head">
-                                                    
-                                                
-                                                 
-                                                
                                                         {% for users in  users %}
-                                                            
                                                             {% if user.username == users.run_user %}
-                                                                
-                                                                
-
-                                                               
-            
-                                                            {% endif %}
-                                                                
+                                                            {% endif %}  
                                                         {% endfor %}
-                                                            
-                                                       
-            
                                                     </div>
-        
-        
                                                     <div class= "color_body color_grid" id = "color_body">
-                                                                    
-                                                    
-                                                    
-                                                     
-                                                    
                                                     {% for users in  users %}
-                                                        
                                                         {% if user.username == users.run_user %}
-                                                            
-                                                            
-                                                           
-                                                        {% endif %}
-                                                            
+                                                        {% endif %} 
                                                     {% endfor %}
-        
-        
                                                     </div>
-        
-        
                                                     <div class = "color_backgraund color_grid" id = "color_backgraund">
-                                                        
-                                                    
-                                                     
-                                                    
                                                             {% for users in  users %}
-                                                        
-                                                                {% if user.username == users.run_user %}
-                                                            
-                                                                   
-                                                                        
+                                                                {% if user.username == users.run_user %} 
                                                                 {% endif %}
-                                                            
                                                             {% endfor %}
                                                     </div>
-        
                                                 </div>
-        
-    
-                                            </div>
-                                                
+                                            </div>   
                                         </div>
                                                 </div>
-                                                
-                                        
-
-                                        
-                                            
-
-                                        
-
-                                       
-
-
                                             <input type="text" hidden name="id_user" id="id_user" value = "{{ i.id_user_ours }} ">
-                                            
-
-                                                   
-                                        
-                                        
-                                            
-                        
-                                        
-                    
                                             {% for x in perIcon %}
-
-                                                    
-              
-                                            
                                                 {% for ic in icon%}
-                    
                                                     {% if  x.icon_id_icon.id_icon == ic.id_icon and x.user_ours_id_user_ours.run_user == user.username %}
-                    
-                    
                                                         <input type="text" hidden name="{% if ic.type_icon == 0 %}head_final_election{% elif ic.type_icon == 1 %}body_final_election{% elif ic.type_icon == 2 %}backgraund_final_election{% endif %}" id="{% if ic.type_icon == 0 %}head_final_election{% elif ic.type_icon == 1 %}body_final_election{% elif ic.type_icon == 2 %}backgraund_final_election{% endif %}" value = " {{x.icon_id_icon.id_icon}} ">
-                                                        
-                                                        <input type="text" hidden name="{% if ic.type_icon == 0 %}head_inital{% elif ic.type_icon == 1 %}body_initial{% elif ic.type_icon == 2 %}backgraund_initial{% endif %}" id="{% if ic.type_icon == 0 %}head_inital{% elif ic.type_icon == 1 %}body_initial{% elif ic.type_icon == 2 %}backgraund_initial{% endif %}" value = "{{x.icon_id_icon.id_icon}}"  data-name = "{{ ic.name_icon }}" data-color = "{{ ic.color }}" data-points = "{{i.point_user}}">
-                    
-                                                    {% endif %}
-                                                
-                                                
+                                                        <input type="text" hidden name="{% if ic.type_icon == 0 %}head_inital{% elif ic.type_icon == 1 %}body_initial{% elif ic.type_icon == 2 %}backgraund_initial{% endif %}" id="{% if ic.type_icon == 0 %}head_inital{% elif ic.type_icon == 1 %}body_initial{% elif ic.type_icon == 2 %}backgraund_initial{% endif %}" value = "{{x.icon_id_icon.id_icon}}"  data-name = "{{ ic.name_icon }}" data-color = "{{ ic.color }}" data-points = "{{i.point_user}}">                    
+                                                    {% endif %}   
                                                 {% endfor %}
-                                                
-                                            
-                                            
-                                       
-                                       
-                                      
-                                
-                                            
-                                       
                                             {% endfor %}   
-                                       
-                                                
-                                            
-
-                                            
-                                                    
-                                    
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
                                         <div class = "button_control">
                                             <button type= "submit"  class = "control_button" >
                                                 <svg  viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" class = "btn_form_save">
@@ -621,35 +327,24 @@
                                                     <p>Guardar</p>
                                                     <p>cambios</p>    
                                                 </div>
-                                                
                                             </button>
-                            
                                             <button type= "reset"  class = "control_button" onclick = "customReset()" >
                                                 <svg  viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" class = "btn_form_discard">
                                                     <path d="M0 0H50H100H150L177.387 27.5L200 50V100V150V200H100H50L26.1307 176L0 150V100V50V0Z" fill="#25B5C1"/>
                                                     <path d="M10 11H55H100H145L169.648 35.75L190 56V101V146V191H100H55L33.5176 169.4L10 146V101V56V11Z" fill="#1F9DA8"/>
                                                 </svg>
-
                                                 <div class = "text_discard">
                                                     <p>Descartar</p>
                                                     <p>cambios</p>    
                                                 </div>
                                             </button>
-                            
                                         </div>
-                                        
                                     </form>
-                    
                                 </div>
-                                
                                 {% endif %}
                             {% endfor %}
                 {% endif %}                
-                
-                
             </div>
-            
-
   <!-- Modal Oculto Pa -->
   <section id="myModal" class="modal">
     <div class="modal-content">
@@ -658,15 +353,10 @@
             <p class = "title_modal">No tienes los puntos suficientes para usar este icono.</p>
             <p>Recuerda que para poder utilizar los iconos de alien debes tener mas de <strong>500 puntos.</strong></p><br>
             <p>Para los iconos de armadura debes tener mas de <strong>1000 puntos, ¡completa niveles para ganar más puntos!</strong></p>
-          
         </div>
     </div>
 </section>
-
         </main>
-            
-            
-            
         <script>
             $('.no-clickable').click(function() {
                 
@@ -693,11 +383,10 @@
         <script>
             $(document).ready(function() {
                 var msg_div = document.getElementById('alert_msg');
-
                 if(msg_div){
                     msg_div.style.display = 'flex';
                     msg_div.style.opacity = 1;
-                
+
                     setTimeout(function() {
                         msg_div.style.opacity = 0;
                         setTimeout(function() {
@@ -705,24 +394,6 @@
                         }, 1000);
                     }, 2000);
                 }
-                
-        
-        
-        
             });
         </script>
-           
-            
-        
-        
-       
-            
-            
-            
-                    
- 
-   
-    
-
-
 {%  endblock %}
