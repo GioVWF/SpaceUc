@@ -1,5 +1,5 @@
 #!/bin/bash
 
 # build_files.sh
-python3.12 -m pip install -r requirements.txt
-python3.12 manage.py collectstatic --noinput
+python -m pip install -r requirements.txt
+python manage.py collectstatic --noinput
