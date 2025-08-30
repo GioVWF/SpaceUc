@@ -20,7 +20,7 @@ def home(request):
         'perIcon' : perIcon,
         
     }
-    return render(request, 'home.html', context)
+    return render(request, 'main/Home.html', context)
 
 @login_required(login_url='/users/')
 def game(request):
