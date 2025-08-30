@@ -14,6 +14,8 @@ from pathlib import Path
 from decouple import config
 import dj_database_url
 import os
+import pymysql
+pymysql.install_as_MySQLdb()
 
 DB_PASSWORD = "1234"
 
