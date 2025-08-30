@@ -23,5 +23,10 @@
       "src": "/(.*)",
       "dest": "SpaceUC/wsgi.py"
     }
-  ]
+  ],
+  "functions": {
+    "SpaceUC/wsgi.py": {
+      "includeFiles": "templates/**"
+    }
+  }
 }
