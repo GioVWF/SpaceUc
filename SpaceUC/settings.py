@@ -31,6 +31,8 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1']
 
+if 'VERCEL_URL' in os.environ:
+    ALLOWED_HOSTS.append(os.environ['VERCEL_URL'])
 
 # Application definition
 
