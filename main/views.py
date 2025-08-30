@@ -54,7 +54,7 @@ def game(request):
         'progress': progress
     }
     
-    return render(request, 'game.html', context)
+    return render(request, 'main/game.html', context)
 
 def navbar(request):
     users = User_ours.objects.all()
@@ -66,7 +66,7 @@ def navbar(request):
         'perIcon' : perIcon,
         
     }
-    return render(request, 'base.html', context)
+    return render(request, 'main/base.html', context)
 
 
 def about(request):
@@ -79,7 +79,7 @@ def about(request):
         'perIcon' : perIcon,
         
     }
-    return render(request, 'about.html', context)
+    return render(request, 'main/about.html', context)
 
 def levels_info(request):
     users = User_ours.objects.all()
@@ -98,7 +98,7 @@ def levels_info(request):
         'info_5' : level_description[4].description_level
     }
     
-    return render(request, 'levels-info.html', context)
+    return render(request, 'main/levels-info.html', context)
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 def resources_page(request):
@@ -123,7 +123,7 @@ def resources_page(request):
         'perIcon' : perIcon,
         
     }
-    return render(request, 'resources-page.html', context)
+    return render(request, 'main/resources-page.html', context)
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 @login_required(login_url='/users/')
@@ -152,7 +152,7 @@ def podium(request):
         'perIcon' : perIcon,
     }
 
-    return render(request, 'podium.html', context)
+    return render(request, 'main/podium.html', context)
 
 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -169,7 +169,7 @@ def teacher_follow(request):
         'teacher' : teacher
     }
 
-    return render(request, 'teacher-follow.html', context)
+    return render(request, 'main/teacher-follow.html', context)
 
 
 def get_info_student_(request, id_student):

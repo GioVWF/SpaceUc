@@ -93,7 +93,7 @@ def level_question(request, level,id):
     
     if progress < redirect_limit[level][lesson_number]:
         return redirect('game_page')
-    return render(request, 'level-question.html', question_context)
+    return render(request, 'main/level-question.html', question_context)
 
 @login_required(login_url='/users/')
 def levels(request, level):
@@ -137,7 +137,7 @@ def levels(request, level):
     if progress < limit[1]:
         return redirect('game_page')
     
-    return render(request, 'levels-page.html', question_context)
+    return render(request, 'main/levels-page.html', question_context)
 
 def questionTimer(request):
     if request.user.is_authenticated:

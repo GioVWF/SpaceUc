@@ -2,6 +2,7 @@ __pycache__
 migrations
 venv/
 .idea/
+staticfiles
 
 # Ignorar archivos de Pipenv para el despliegue en Vercel
 Pipfile

@@ -13,7 +13,7 @@ from main.views import teacher_follow
 # Create your views here.
 
 def login_page(request):
-    return render(request, 'login.html')
+    return render(request, 'main/login.html')
 
 def log_in_(request):
 
@@ -52,7 +52,7 @@ def register_page(request):
     data = {
         'users' : users,
     }
-    return render(request, 'register-page.html',data)
+    return render(request, 'main/register-page.html', data)
 
 def register_student_(request, id):
 
@@ -138,7 +138,7 @@ def profile_page(request):
         'users': users,
     }
     
-    return render(request, 'profile-page.html',context)
+    return render(request, 'main/profile-page.html', context)
 
 def update_profileStudent_(request):
 
@@ -174,7 +174,7 @@ def custom_profile(request):
         
     }
 
-    return render(request, 'custom-profile.html', context)
+    return render(request, 'main/custom-profile.html', context)
 
 def update_profile_photo_(request):
 
@@ -381,7 +381,7 @@ def get_color_background(request, id):
 
 
 def register_teacher(request):
-    return render(request, 'register_teacher.html')
+    return render(request, 'main/register_teacher.html')
 
 
 def register_teacher_(request):
