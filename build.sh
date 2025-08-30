@@ -1,6 +1,8 @@
 #!/bin/bash
+set -e
 
-
-.\venv\Scripts\activate
+# Instalar dependencias
 pip install -r requirements.txt
+
+# Recolectar estáticos
 python manage.py collectstatic --noinput
